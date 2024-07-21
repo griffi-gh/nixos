@@ -7,6 +7,7 @@
     };
     kernelPackages = pkgs.linuxPackages_latest; # Use latest stable Linux
     kernelParams = [
+      "modprobe.blacklist=sp5100_tco"
       "nmi_watchdog=0"
       "nowatchdog"
     ];
