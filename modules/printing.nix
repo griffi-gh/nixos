@@ -1,8 +1,8 @@
 { config, lib, pkgs, ... }: {
   # Enable CUPS to print documents.
-  services.printing {
+  services.printing = {
     enable = true;
     stateless = true;
     startWhenNeeded = true;
-  }
+  };
 }

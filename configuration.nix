@@ -13,7 +13,8 @@
     ./modules/user.nix
   ];
 
-  hardware.enableAllFirmware = true;
+  # hardware.enableAllFirmware = true; (unfree)
+  hardware.enableRedistributableFirmware = true;
   
   system.switch = {
     enable = false;
