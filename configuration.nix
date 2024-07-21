@@ -9,7 +9,7 @@
     ./modules/sound.nix
     ./modules/printing.nix
     ./modules/desktop-kde.nix
-    ./modules/services
+    ./modules/services/ssh.nix
     ./modules/user.nix
   ];
 
