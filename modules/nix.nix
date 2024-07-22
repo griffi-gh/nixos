@@ -41,7 +41,7 @@
       protocol = "ssh-ng";
     };
     channel = {
-      enable = true;
+      enable = false;
     };
     gc = {
       automatic = true;
