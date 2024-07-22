@@ -2,8 +2,8 @@
   # networking :3
   networking = {
     networkmanager = {
-  	  enable = true;
-  	  wifi.backend = "iwd";
+      enable = true;
+      wifi.backend = "iwd";
     };
     wireless.iwd.enable = true;
 
@@ -12,9 +12,12 @@
       enable = true;
       allowedTCPPorts = [
         22    # ssh
+        3389  # rdp
         54686 # vscode-server port forwarding
       ];
-      allowedUDPPorts = [];
+      allowedUDPPorts = [
+        3389  # rdp
+      ];
     };
     
     # proxy.default = "http://user:password@proxy:port/";
