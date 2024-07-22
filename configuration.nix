@@ -1,6 +1,9 @@
 { config, lib, pkgs, ... }: {
   system.stateVersion = "24.11";
 
+  hardware.enableAllFirmware = true;
+  # hardware.enableRedistributableFirmware = true;
+
   imports = [ 
     ./modules/nix.nix
     ./modules/boot.nix
@@ -16,10 +19,7 @@
 
   # Locale/timezone
   i18n.defaultLocale = "en_IE.UTF-8";
-  time.timeZone = "Europe/Warsaw";
-
-  # hardware.enableAllFirmware = true; (unfree)
-  hardware.enableRedistributableFirmware = true;
+  time.timeZone = "Europe/Warsaw"; 
 
   # Enable 32-bit graphics packages
   hardware.graphics.enable32Bit = true;
