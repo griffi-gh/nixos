@@ -9,6 +9,7 @@
     ./modules/boot.nix
     ./modules/networking.nix
     ./modules/bluetooth.nix
+    ./modules/power.nix
     ./modules/desktop-kde.nix
     ./modules/services/ssh.nix
     ./modules/services/sound.nix

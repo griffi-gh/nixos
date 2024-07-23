@@ -5,9 +5,6 @@
     wayland.enable = true;
   };
   services.desktopManager.plasma6.enable = true;
-  
-  # for kde power managment
-  powerManagement.enable = true;
 
   # xdg portals
   xdg.portal = {
