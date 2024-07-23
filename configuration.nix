@@ -40,9 +40,12 @@
   services.libinput.enable = true;
 
   programs = {
-    nix-ld.enable = true;
-  	git.enable = true;
-  	vim.enable = true;
+    nix-ld = {
+      enable = true;
+      package = pkgs.nix-ld-rs;
+    };
+    git.enable = true;
+    vim.enable = true;
   };
 
   programs.gnupg.agent = {

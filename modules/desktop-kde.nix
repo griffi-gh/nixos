@@ -8,4 +8,10 @@
   
   # for kde power managment
   powerManagement.enable = true;
+
+  # xdg portals
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+  };
 }
