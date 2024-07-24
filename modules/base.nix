@@ -41,12 +41,6 @@
   # Enable power profile daemon
   services.power-profiles-daemon.enable = true;
 
-  # Enable vscode-sever service
-  services.vscode-server = {
-    enable = true;
-    nodejsPackage = pkgs.nodejs;
-  };
-
   programs = {
     nix-ld = {
       enable = true;
@@ -60,7 +54,7 @@
     };
     fish.enable = true;
   };
-  
+
   environment.systemPackages = with pkgs; [
     vim
     micro
@@ -68,7 +62,7 @@
     curl
     nodejs
   ];
-  
+
   security.sudo-rs.enable = true;
 
   environment.variables = {
