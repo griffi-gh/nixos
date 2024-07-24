@@ -14,7 +14,6 @@
   outputs = inputs@{ 
     self, 
     nixpkgs,
-    flake-programs-sqlite,
     ... 
   }:
     let
@@ -31,11 +30,11 @@
           inherit system;
           specialArgs = { 
             inherit inputs pkgs system; 
-            programs-sqlite-db = flake-programs-sqlite.packages.${system}.programs-sqlite;
           };
           modules = [
-            ./hosts/asus-pc
-            ./configuration.nix
+            (import ./hosts/asus-pc)
+            (import ./configuration.nix)
+            inputs.flake-programs-sqlite.nixosModules.programs-sqlite
           ];
         };
       };

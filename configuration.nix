@@ -1,4 +1,4 @@
-{ config, lib, pkgs, programs-sqlite-db, ... }: {
+{ config, lib, pkgs, ... }: {
   system.stateVersion = "24.11";
 
   hardware.enableAllFirmware = true;
@@ -55,10 +55,6 @@
       enableSSHSupport = true;
     };
     fish.enable = true;
-    command-not-found = {
-      enable = true;
-      dbPath = programs-sqlite-db;
-    };
   };
   
   environment.systemPackages = with pkgs; [
