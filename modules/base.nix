@@ -5,17 +5,17 @@
   # hardware.enableRedistributableFirmware = true;
 
   imports = [ 
-    ./modules/nix.nix
-    ./modules/boot.nix
-    ./modules/networking.nix
-    ./modules/bluetooth.nix
-    ./modules/power.nix
-    ./modules/desktop-kde.nix
-    ./modules/services/ssh.nix
-    ./modules/services/sound.nix
-    ./modules/services/printing.nix
-    ./modules/services/xserver.nix
-    ./modules/user.nix
+    ./base/nix.nix
+    ./base/boot.nix
+    ./base/networking.nix
+    ./base/bluetooth.nix
+    ./base/power.nix
+    ./base/desktop-kde.nix
+    ./base/services/ssh.nix
+    ./base/services/sound.nix
+    ./base/services/printing.nix
+    ./base/services/xserver.nix
+    ./base/user.nix
   ];
 
   # Locale/timezone

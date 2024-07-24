@@ -5,14 +5,14 @@
       url = "github:wamserma/flake-programs-sqlite";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # home-manager = {
-    #   url = "github:nix-community/home-manager";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ 
-    self, 
+    self,
     nixpkgs,
     ... 
   }:
@@ -24,6 +24,11 @@
           allowUnfree = true;
         };
       };
+      nixosModules = {
+        inherit
+          inputs.flake-programs-sqlite.nixosModules.programs-sqlite
+          inputs.home-manager.nixosModules.home-manager;
+      };
     in {
       nixosConfigurations = {
         asus-pc = nixpkgs.lib.nixosSystem {
@@ -32,9 +37,21 @@
             inherit inputs pkgs system; 
           };
           modules = [
-            (import ./hosts/asus-pc)
-            (import ./configuration.nix)
-            inputs.flake-programs-sqlite.nixosModules.programs-sqlite
+            (import ./hosts/asus-pc/configuration.nix)
+            (import ./modules/base.nix)
+            nixosModules.programs-sqlite
+            nixosModules.home-manager {
+              home-manager = {
+                users.user = {
+                  imports = [
+                    ./hosts/asus-pc/home/user.nix
+                  ];
+                };
+                extraSpecialArgs = specialArgs;
+                useGlobalPkgs = true;
+                useUserPackages = true;
+              }
+            }
           ];
         };
       };
