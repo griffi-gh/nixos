@@ -31,9 +31,7 @@
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
-        config = {
-          allowUnfree = true;
-        };
+        config.allowUnfree = true;
       };
       nixosModules = {
         programs-sqlite = inputs.flake-programs-sqlite.nixosModules.programs-sqlite;
