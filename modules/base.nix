@@ -62,12 +62,20 @@
     curl
     nodejs
   ];
-
-  security.sudo-rs.enable = true;
+  
+  # sudo
+  sexurity.sudo.enable = false;
+  security.sudo-rs = {
+    enable = true;
+    execWheelOnly = true;
+  };
 
   environment.variables = {
     EDITOR = "nano";
+  };
+
+  environment.sessionVariables = {
     MOZ_USE_XINPUT2 = "1";
     MOZ_ENABLE_WAYLAND = "1";
-  };
+  };  
 }
