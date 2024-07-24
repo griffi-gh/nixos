@@ -14,6 +14,6 @@
         value = 2;
         immutable = true;
       };
-    }
-  }
+    };
+  };
 }
