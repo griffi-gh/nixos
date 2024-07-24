@@ -64,8 +64,10 @@
   ];
   
   security.sudo-rs.enable = true;
-  
+
   environment.variables = {
     EDITOR = "nano";
+    MOZ_USE_XINPUT2 = "1";
+    MOZ_ENABLE_WAYLAND = "1";
   };
 }

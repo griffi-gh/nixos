@@ -9,11 +9,19 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
   };
 
   outputs = inputs@{ 
     self,
     nixpkgs,
+    flake-programs-sqlite,
+    home-manager,
+    plasma-manager,
     ... 
   }:
     let
@@ -25,8 +33,8 @@
         };
       };
       nixosModules = {
-        programs-sqlite = inputs.flake-programs-sqlite.nixosModules.programs-sqlite;
-        home-manager    = inputs.home-manager.nixosModules.home-manager;
+        programs-sqlite = flake-programs-sqlite.nixosModules.programs-sqlite;
+        home-manager    = home-manager.nixosModules.home-manager;
       };
       specialArgs = { 
         inherit inputs pkgs system; 
@@ -43,12 +51,11 @@
             nixosModules.programs-sqlite
             nixosModules.home-manager {
               home-manager = {
-                users.user = {
-                  imports = [
-                    ./hosts/asus-pc/home/user.nix
-                  ];
-                };
+                users.user = import ./hosts/asus-pc/home/user.nix;
                 extraSpecialArgs = specialArgs;
+                sharedModules = [ 
+                  plasma-manager.homeManagerModules.plasma-manager
+                ];
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 backupFileExtension = "bak";
