@@ -40,6 +40,9 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
+  # Enable power profile daemon
+  services.power-profiles-daemon.enable = true;
+
   programs = {
     nix-ld = {
       enable = true;
@@ -47,11 +50,10 @@
     };
     git.enable = true;
     vim.enable = true;
-  };
-
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+    };
   };
   
   environment.systemPackages = with pkgs; [
