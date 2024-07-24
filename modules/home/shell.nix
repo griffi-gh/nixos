@@ -3,6 +3,7 @@
     fish = {
       enable = true;
       shellAliases = {
+        ls = "eza";
         cat = "bat";
         cls = "clear";
         "cd.." = "cd ..";
