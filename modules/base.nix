@@ -41,6 +41,12 @@
   # Enable power profile daemon
   services.power-profiles-daemon.enable = true;
 
+  # Enable vscode-sever service
+  services.vscode-server = {
+    enable = true;
+    nodejsPackage = pkgs.nodejs;
+  };
+
   programs = {
     nix-ld = {
       enable = true;

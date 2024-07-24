@@ -1,6 +1,8 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs = {
+      url = "github:NixOS/nixpkgs/nixos-unstable";
+    };
     flake-programs-sqlite = {
       url = "github:wamserma/flake-programs-sqlite";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -13,6 +15,9 @@
       url = "github:nix-community/plasma-manager";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
+    };
+    vscode-server = {
+      url = "github:nix-community/nixos-vscode-server";
     };
   };
 
@@ -35,6 +40,7 @@
       nixosModules = {
         programs-sqlite = flake-programs-sqlite.nixosModules.programs-sqlite;
         home-manager    = home-manager.nixosModules.home-manager;
+        vscode-server   = vscode-server.nixosModules.default;
       };
       specialArgs = { 
         inherit inputs pkgs system; 
@@ -61,6 +67,7 @@
                 backupFileExtension = "bak";
               };
             }
+            nixosModules.vscode-server
           ];
         };
       };
