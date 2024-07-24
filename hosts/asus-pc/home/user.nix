@@ -32,6 +32,9 @@
       userName = "griffi-gh";
       userEmail = "prasol258@gmail.com";
       lfs.enable = true;
+      extraConfig = {
+        credential.helper = "store";
+      };
     };
   };
 
