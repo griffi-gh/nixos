@@ -3,7 +3,7 @@
     enable = true;
     workspace = {
       lookAndFeel = "org.kde.breezedark.desktop";
-      wallpaper = "/home/user/nixos/wallpapers/whatever.png", #TODO use relative path?
+      wallpaper = "/home/user/nixos/wallpapers/whatever.png"; #TODO use relative path?
     };
     configFile = {
       kwinrc.Desktops.Number = {
