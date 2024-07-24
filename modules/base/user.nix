@@ -6,17 +6,7 @@
       "networkmanager"
     ];
     initialHashedPassword = "$y$j9T$rBfGrT8nzukk5Uh7KQ31u/$v8AXjUZXGwWYfc2Pve/Sx84LRAeRLGyKs7fh8br4Uv2"; #change
-    packages = with pkgs; [
-      htop
-      tree
-      glxinfo
-      nushell
-      firefox
-      thunderbird
-      blender
-      principia
-      galaxy-buds-client
-    ];
+    packages = with pkgs; [];
     shell = pkgs.fish;
     openssh.authorizedKeys.keys = [
       # dell-pc

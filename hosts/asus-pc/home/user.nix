@@ -4,7 +4,16 @@
     username = "user";
     homeDirectory = "/home/user";
     packages = with pkgs; [
-      # ...
+      eza
+      htop
+      tree
+      glxinfo
+      nushell
+      firefox
+      thunderbird
+      blender
+      principia
+      galaxy-buds-client
     ];
   };
 
