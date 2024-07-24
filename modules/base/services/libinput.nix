@@ -13,5 +13,5 @@
       tapping = true;
       clickMethod = "clickfinger";
     };
-  }
+  };
 }
