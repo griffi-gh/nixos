@@ -51,6 +51,7 @@
                 extraSpecialArgs = specialArgs;
                 useGlobalPkgs = true;
                 useUserPackages = true;
+                backupFileExtension = "bak";
               };
             }
           ];
