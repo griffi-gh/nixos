@@ -2,35 +2,40 @@
   nix = {
     package = pkgs.nixVersions.git;
     settings = {
-      # All Experimental Features on as of April 26th, 2024
+      # See https://nixos.org/manual/nix/stable/command-ref/conf-file.html
+      # for a complete list of Nix configuration options.
+
+      # 2024-07-24
+      # https://github.com/NixOS/nix/blob/fb450de20ec8df558f9f7f167d748acf7cabe151/src/libutil/experimental-features.cc
       experimental-features = [
-        "auto-allocate-uids"
         "ca-derivations"
+        "impure-derivations"
+        "flakes"
+        "fetch-tree"
+        "nix-command"
+        "git-hashing"
+        "recursive-nix"
+        "no-url-literals"
+        "fetch-closure"
+        "auto-allocate-uids"
         "cgroups"
-        "configurable-impure-env"
         "daemon-trust-override"
         "dynamic-derivations"
-        "fetch-closure"
-        "fetch-tree"
-        "flakes"
-        "git-hashing"
-        "impure-derivations"
-        "local-overlay-store"
-        "mounted-ssh-store"
-        "nix-command"
-        "no-url-literals"
         "parse-toml-timestamps"
         "read-only-local-store"
-        "recursive-nix"
+        "local-overlay-store"
+        "configurable-impure-env"
+        "mounted-ssh-store"
         "verified-fetches"
       ];
+
+      sandbox = "relaxed";
       auto-allocate-uids = true;
       auto-optimise-store = true;
+      keep-derivations = true;
+      keep-outputs = true;
       keep-build-log = false;
-      keep-derivations = false;
-      keep-outputs = false;
       pure-eval = false;
-      sandbox = true;
       use-cgroups = true;
       use-xdg-base-directories = true;
     };
