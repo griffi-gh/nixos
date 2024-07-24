@@ -25,17 +25,18 @@
         };
       };
       nixosModules = {
-        inherit
-          inputs.flake-programs-sqlite.nixosModules.programs-sqlite
-          inputs.home-manager.nixosModules.home-manager;
+        programs-sqlite = inputs.flake-programs-sqlite.nixosModules.programs-sqlite;
+        home-manager    = inputs.home-manager.nixosModules.home-manager;
+      };
+      specialArgs = { 
+        inherit inputs pkgs system; 
       };
     in {
       nixosConfigurations = {
         asus-pc = nixpkgs.lib.nixosSystem {
-          inherit system;
-          specialArgs = { 
-            inherit inputs pkgs system; 
-          };
+          inherit 
+            system 
+            specialArgs;
           modules = [
             (import ./hosts/asus-pc/configuration.nix)
             (import ./modules/base.nix)
@@ -50,7 +51,7 @@
                 extraSpecialArgs = specialArgs;
                 useGlobalPkgs = true;
                 useUserPackages = true;
-              }
+              };
             }
           ];
         };
