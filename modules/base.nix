@@ -13,6 +13,7 @@
     ./base/desktop-kde.nix
     ./base/services/ssh.nix
     ./base/services/sound.nix
+    ./base/services/libinput.nix
     ./base/services/printing.nix
     ./base/services/xserver.nix
     ./base/user.nix
@@ -36,9 +37,6 @@
   #   keyMap = "us";
   #   useXkbConfig = true; # use xkb.options in tty.
   # };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.libinput.enable = true;
 
   # Enable power profile daemon
   services.power-profiles-daemon.enable = true;
@@ -64,7 +62,9 @@
     curl
     nodejs
   ];
-
+  
+  security.sudo-rs.enable = true;
+  
   environment.variables = {
     EDITOR = "nano";
   };
