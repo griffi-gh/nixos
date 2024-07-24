@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }: {
+{ config, lib, pkgs, programs-sqlite-db, ... }: {
   system.stateVersion = "24.11";
 
   hardware.enableAllFirmware = true;
@@ -53,6 +53,11 @@
     gnupg.agent = {
       enable = true;
       enableSSHSupport = true;
+    };
+    fish.enable = true;
+    command-not-found = {
+      enable = true;
+      dbPath = programs-sqlite-db;
     };
   };
   

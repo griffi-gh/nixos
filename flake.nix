@@ -1,13 +1,22 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    flake-programs-sqlite = {
+      url = "github:wamserma/flake-programs-sqlite";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # home-manager = {
     #   url = "github:nix-community/home-manager";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
   };
 
-  outputs = inputs@{ self, nixpkgs, ... }:
+  outputs = inputs@{ 
+    self, 
+    nixpkgs,
+    flake-programs-sqlite,
+    ... 
+  }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -22,6 +31,7 @@
           inherit system;
           specialArgs = { 
             inherit inputs pkgs system; 
+            programs-sqlite-db = flake-programs-sqlite.packages.${system}.programs-sqlite;
           };
           modules = [
             ./hosts/asus-pc
