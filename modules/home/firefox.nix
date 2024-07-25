@@ -38,6 +38,8 @@
     show_experimental = true;    # Show "Firefox Experiments" tab in preferences, even on Stable
     hide_morefrommozilla = true; # Hide "More from Mozilla" ad from the preferences screen
   };
+  # TODO control search engine suggestions
+  # search.engine, search.suggestions (.show_ahead, .trending etc)
 }; in {
   programs.firefox = {
     enable = true;
@@ -295,6 +297,15 @@
 
           # Prevent trans panel from popping up during first use
           "browser.translations.panelShown" = true;
+
+          # Disable Firefox Relay feature
+          "signon.firefoxRelay.feature" = false;
+
+          # Disable password breach alerts
+          "signon.management.page.breach-alerts.enabled" = false;
+
+          # Enable "Block new requests asking to allow notifications"
+          "permissions.default.desktop-notification" = 2;
         }
       );
     };
