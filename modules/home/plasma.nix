@@ -31,6 +31,26 @@
         systemsettingsrc.systemsettings_sidebar_mode = {
           HighlightNonDefaultSettings = immutable true;
         };
+
+        plasma-localerc.Formats =
+          let
+            lang = "en_US.UTF8";
+            locale = "en_IE.UTF-8";
+          in {
+            LANG = immutable lang;
+            LC_CTYPE = immutable locale;
+            LC_NUMERIC = immutable locale;
+            LC_TIME = immutable locale;
+            LC_COLLATE = immutable locale;
+            LC_MONETARY = immutable locale;
+            LC_MESSAGES = immutable locale;
+            LC_PAPER = immutable locale;
+            LC_NAME = immutable locale;
+            LC_ADDRESS = immutable locale;
+            LC_TELEPHONE = immutable locale;
+            LC_MEASUREMENT = immutable locale;
+            LC_IDENTIFICATION = immutable locale;
+          };
       };
   };
 }
