@@ -9,20 +9,22 @@
   disable_telemetry = true;      # Completely disable telemetry, studies and crash reports
   disable_safebrowsing = true;   # Disable Google Safe Browsing (and prevent downloading blocklists from Google)
   disable_browser_check = true;  # Disable default browser check
-  skip_oobe = true;              # Skip the first-run experience (about:welcome)
   disable_pocket = true;         # Disable Pocket (ew)
-  force_webrender = true;        # Force-enable webrender, even on unsupported hardware
-  privacy_strict = true;         # Enable strict privacy options
+  disable_prefetch = true;       # Disable prefetching (will be disabled by uBlock Origin anyway)
+  disable_accessibility = true;  # Accessibility (Disabling slightly improves rendering performance)
+  enable_webrender = true;       # Force-enable WebRender, even on unsupported hardware
   enable_compact_ui = true;      # Enable Compact Mode (deprecated)
   enable_https_only = true;      # Enable HTTPS-only mode
   enable_legacy_css = true;      # Enable legacy CSS customizations (aka userChrome.css)
-  disable_prefetch = true;       # Disable prefetching (will be disabled by uBlock Origin anyway)
-  accessibility = false;         # Accessibility (Disabling slightly improves rendering performance)
+  privacy_strict = true;         # Enable strict privacy options
   bookmark_toolbar = "always";   # Set the initial state of the bookmarks toolbar ("always"/"never"/"newtab")
+  about.welcome = {              # Customize about:welcome
+    skip = true;                 # Skip the first-run experience
+  };
   about.newtab = {               # Customize the "about:newtab" screen (aka Home)
     enable = true;               # Enable homescreen customizations (if set to false, options below will be ignored)
     locked = true;               # Prevent modification from Firefox UI (default: true)
-    shown = {                    # Select which items to show
+    show = {                     # Select which items to show:
       Search = true;             # Show the search bar
       TopSites = false;          # Show pinned websites
       SponsoredTopSites = false; # - Include "sponsored" tiles (ads)
@@ -69,13 +71,13 @@
       // (if about.newtab.enable then {
         # Customize the Firefox Home page.
         FirefoxHome = {
-          Search = about.newtab.shown.Search or false;
-          TopSites = about.newtab.shown.TopSites or false;
-          SponsoredTopSites = about.newtab.shown.SponsoredTopSites or false;
-          Highlights = about.newtab.shown.Highlights or false;
-          Pocket = about.newtab.shown.Pocket or false;
-          SponsoredPocket = about.newtab.shown.SponsoredPocket or false;
-          Snippets = about.newtab.shown.Snippets or false;
+          Search = about.newtab.show.Search or false;
+          TopSites = about.newtab.show.TopSites or false;
+          SponsoredTopSites = about.newtab.show.SponsoredTopSites or false;
+          Highlights = about.newtab.show.Highlights or false;
+          Pocket = about.newtab.show.Pocket or false;
+          SponsoredPocket = about.newtab.show.SponsoredPocket or false;
+          Snippets = about.newtab.show.Snippets or false;
           Locked = about.newtab.locked or true;
         };
       } else {})
@@ -94,12 +96,12 @@
           "network.trr.mode" = 5;
         })
 
-        // (if !accessibility then {
+        // (if disable_accessibility then {
           # Disable Accessibility
           "accessibility.force_disabled" = "1";
         } else {})
 
-        // (if skip_oobe then {
+        // (if about.welcome.skip then {
           # Disable OOBE/first-run experience
           "trailhead.firstrun.didSeeAboutWelcome" = true;
           "trailhead.firstrun.branches" = "nofirstrun-empty";
@@ -128,7 +130,7 @@
           "browser.uidensity" = 1;
         } else {})
 
-        // (if force_webrender then {
+        // (if enable_webrender then {
           # Enable WebRender on all devices
           "gfx.webrender.all" = true;
         } else {})
