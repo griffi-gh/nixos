@@ -28,9 +28,9 @@
           XftSubPixel = immutable "rgb";
         };
 
-        # systemsettingsrc.systemsettings_sidebar_mode = {
-        #   HighlightNonDefaultSettings = immutable true;
-        # };
+        systemsettingsrc.systemsettings_sidebar_mode = {
+          HighlightNonDefaultSettings = immutable true;
+        };
       };
   };
 }
