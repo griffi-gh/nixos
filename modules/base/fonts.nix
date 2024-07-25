@@ -3,7 +3,7 @@
     fontDir.enable = true;
     fontconfig = {
       subpixel.rgba = "rgb";
-      hinting.stlye = "slight";
+      hinting.style = "slight";
       cache32Bit.enable = true;
       useEmbeddedBitmaps = true;
     };
