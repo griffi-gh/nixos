@@ -28,6 +28,7 @@
       };
       timeout = 0;
     };
+    tmp.useTmpfs = true;
     # TODO fix plymouth:
     # plymouth = {
     #   enable = true;
