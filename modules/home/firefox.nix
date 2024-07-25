@@ -246,6 +246,9 @@
         // {
           # Misc. stuff
 
+          # Use OS locale(s)
+          "intl.regional_prefs.use_os_locales" = true;
+
           # Enable "Open previous windows and tabs" by default
           "browser.startup.page" = 3;
 
