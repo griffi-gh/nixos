@@ -5,7 +5,7 @@
       subpixel.rgba = "rgb";
       hinting.style = "slight";
       cache32Bit = true;
-      useEmbeddedBitmaps = true;
+      # useEmbeddedBitmaps = true;
     };
     enableDefaultPackages = false; # (Specified explicitly below instead)
     packages = with pkgs; [
