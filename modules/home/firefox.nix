@@ -82,10 +82,13 @@
     );
     profiles.default = {
       settings = with ffConfig; (
-        (if doh.enable then {
+        (if doh.enable then let
+          doh_url = doh.url or "https://cloudflare-dns.com/dns-query";
+        in {
           # Configure DoH
           "network.trr.mode" = 2;
-          "network.trr.custom_uri" = doh.url or "https://cloudflare-dns.com/dns-query";
+          "network.trr.uri" = doh_url;
+          "network.trr.custom_uri" = doh_url;
         } else {
           # Use system DNS
           "network.trr.mode" = 5;
