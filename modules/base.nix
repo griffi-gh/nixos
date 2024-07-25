@@ -16,6 +16,7 @@
     ./base/services/libinput.nix
     ./base/services/printing.nix
     ./base/services/xserver.nix
+    ./base/services/zerotier.nix
     ./base/user.nix
   ];
 
