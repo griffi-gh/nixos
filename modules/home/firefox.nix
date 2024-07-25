@@ -246,6 +246,9 @@
         // {
           # Misc. stuff
 
+          # Disable "privacy-preserving" attribution (ad measurement)
+          dom.private-attribution.submission.enabled = false;
+
           # Use OS locale(s)
           "intl.regional_prefs.use_os_locales" = true;
 
