@@ -8,11 +8,12 @@
   hardware.cpu.amd.updateMicrocode = true;
 
   # gpu
+  boot.blacklistedKernelModules = [ "radeon" ];
   services.xserver.videoDrivers = [ "amdgpu" ];
   hardware.amdgpu = {
     initrd.enable = true;
-    legacySupport.enable = true;
     opencl.enable = true;
+    legacySupport.enable = true;
   };
   environment.variables = {
     ROC_ENABLE_PRE_VEGA = "1";
