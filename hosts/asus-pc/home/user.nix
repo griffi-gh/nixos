@@ -4,7 +4,6 @@
     username = "user";
     homeDirectory = "/home/user";
     packages = with pkgs; [
-      eza
       htop
       tree
       glxinfo
