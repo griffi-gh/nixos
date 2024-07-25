@@ -3,7 +3,7 @@
     fish = {
       enable = true;
       shellAliases = {
-        ls = "eza -a --icons=auto --hyperlink --across";
+        ls = "eza -a";
         cat = "bat";
         cls = "clear";
         "cd.." = "cd ..";
@@ -16,5 +16,33 @@
       enableTransience = true;
     };
     bat.enable = true;
+    eza = {
+      enable = true;
+      icons = true;
+      git = true;
+      extraOptions = [
+        "--hyperlink"
+        "--across"
+      ];
+    };
+    hyfetch = {
+      enable = true;
+      settings = {
+        preset = "transgender";
+        mode = "rgb";
+        light_dark = "dark";
+        lightness = 0.65;
+        color_align = {
+          mode = "horizontal";
+          custom_colors = [];
+          fore_back = null;
+        };
+        backend = "neofetch";
+        args = null;
+        distro = null;
+        pride_month_shown = [];
+        pride_month_disable = false;
+      };
+    };
   };
 }
