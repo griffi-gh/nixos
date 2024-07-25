@@ -5,7 +5,7 @@
       enable = true;
       wifi.backend = "iwd";
     };
-    wireless.iwd.enable = true;
+    # wireless.iwd.enable = true;
 
     nftables.enable = true;
     firewall = {
