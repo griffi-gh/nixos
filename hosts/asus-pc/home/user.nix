@@ -10,6 +10,7 @@
       nushell
       firefox
       thunderbird
+      libreoffice-qt6-fresh
       blender
       principia
       galaxy-buds-client
