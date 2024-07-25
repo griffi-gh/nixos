@@ -292,6 +292,9 @@
           # Disable add-on suggestions: (using Google Analytics)
           "extensions.getAddons.showPane" = false;
           "extensions.htmlaboutaddons.recommendations.enabled" = false;
+
+          # Prevent trans panel from popping up during first use
+          "browser.translations.panelShown" = true;
         }
       );
     };
