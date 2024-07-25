@@ -1,6 +1,9 @@
+# Over-Engineered Firefox Module (tm)
+
 { ... }:
 let ffConfig = {
-  # This module can be configured here, still extremely opinionated tho :p
+  # This module can be configured below,
+  # ...still extremely opinionated tho :p
   disable_telemetry = true; # Completely disable telemetry, studies, etc.
   # XXX: above option will still disable most telemetry even if set to false lmao (cause im lazy)
   doh = {                   # DNS-over-HTTPS Configuration
