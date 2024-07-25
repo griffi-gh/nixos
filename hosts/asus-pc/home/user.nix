@@ -13,7 +13,6 @@
       lshw-gui              # (provides both lshw command and the gui :p)
 
       # Software:
-      firefox               # Firefox
       thunderbird           # Thunderbird
       libreoffice-qt6-fresh # LibreOffice
       blender               # Blender
