@@ -4,7 +4,7 @@
     fontconfig = {
       subpixel.rgba = "rgb";
       hinting.style = "slight";
-      cache32Bit.enable = true;
+      cache32Bit = true;
       useEmbeddedBitmaps = true;
     };
     enableDefaultPackages = false; # (Specified explicitly below instead)
