@@ -7,6 +7,7 @@
     extraConfig = {
       init.defaultBranch = "master";
       credential.helper = "store";
+      core.editor = "nano";
     };
   };
 }
