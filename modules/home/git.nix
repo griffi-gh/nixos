@@ -8,7 +8,10 @@
     extraConfig = {
       init.defaultBranch = "master";
       core.editor = "nano";
-      credential.helper = "${pkgs.gitFull}/bin/git-credential-libsecret";
+      credential = {
+        credentialStore = "secretservice";
+        credential.helper = "${pkgs.gitFull}/bin/git-credential-libsecret";
+      };
     };
   };
 }
