@@ -62,8 +62,8 @@
       } else {})
 
       // (if disable_telemetry then {
-        DisableFirefoxStudies = disable_telemetry; # Disable Firefox studies (Shield).
-        DisableTelemetry = disable_telemetry;      # DisableTelemetry
+        DisableFirefoxStudies = true; # Disable Firefox studies (Shield).
+        DisableTelemetry = true;      # DisableTelemetry
       } else {})
 
       // (if about.newtab.enable then {
