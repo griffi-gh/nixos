@@ -19,8 +19,8 @@
   disable_prefetch = true;       # Disable prefetching (will be disabled by uBlock Origin anyway)
   accessibility = false;         # Accessibility (Disabling slightly improves rendering performance)
   bookmark_toolbar = "always";   # Set the initial state of the bookmarks toolbar ("always"/"never"/"newtab")
-  newtab = {
-    enable = true;               # Override the about:newtab/home screen
+  about.newtab = {               # Customize the "about:newtab" screen (aka Home)
+    enable = true;               # Enable homescreen customizations (if set to false, options below will be ignored)
     locked = true;               # Prevent modification from Firefox UI (default: true)
     shown = {                    # Select which items to show
       Search = true;             # Show the search bar
@@ -32,9 +32,9 @@
       Snippets = false;          # Show tips from Mozilla
     };
   };
-  preferences = {                # Customize the "about:preferences" screen
+  about.preferences = {          # Customize the "about:preferences" screen (aka Settings)
     show_experimental = true;    # Show "Firefox Experiments" tab in preferences, even on Stable
-    hide_morefrommozilla = true; # Hide "More from Mozilla" ad from the preferences tab
+    hide_morefrommozilla = true; # Hide "More from Mozilla" ad from the preferences screen
   };
 }; in {
   programs.firefox = {
@@ -66,17 +66,17 @@
         DisableTelemetry = disable_telemetry;      # DisableTelemetry
       } else {})
 
-      // (if newtab.enable then {
+      // (if about.newtab.enable then {
         # Customize the Firefox Home page.
         FirefoxHome = {
-          Search = newtab.shown.Search or false;
-          TopSites = newtab.shown.TopSites or false;
-          SponsoredTopSites = newtab.shown.SponsoredTopSites or false;
-          Highlights = newtab.shown.Highlights or false;
-          Pocket = newtab.shown.Pocket or false;
-          SponsoredPocket = newtab.shown.SponsoredPocket or false;
-          Snippets = newtab.shown.Snippets or false;
-          Locked = newtab.locked or true;
+          Search = about.newtab.shown.Search or false;
+          TopSites = about.newtab.shown.TopSites or false;
+          SponsoredTopSites = about.newtab.shown.SponsoredTopSites or false;
+          Highlights = about.newtab.shown.Highlights or false;
+          Pocket = about.newtab.shown.Pocket or false;
+          SponsoredPocket = about.newtab.shown.SponsoredPocket or false;
+          Snippets = about.newtab.shown.Snippets or false;
+          Locked = about.newtab.locked or true;
         };
       } else {})
     );
@@ -233,12 +233,12 @@
           "datareporting.policy.dataSubmissionEnabled" = false;
         } else {})
 
-        // (if preferences.show_experimental then {
+        // (if about.preferences.show_experimental then {
           # Preferences - Enable the "Experimental" tab
           "browser.preferences.experimental" = true;
         } else {})
 
-        // (if preferences.hide_morefrommozilla then {
+        // (if about.preferences.hide_morefrommozilla then {
           # Preferences - Hide "More from Mozilla" button
           "browser.preferences.moreFromMozilla" = false;
         } else {})
