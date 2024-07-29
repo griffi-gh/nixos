@@ -23,6 +23,7 @@
       extraOptions = [
         "--hyperlink"
         "--across"
+        "--group-directories-first"
       ];
     };
     hyfetch = {
