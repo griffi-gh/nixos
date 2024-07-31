@@ -7,6 +7,7 @@
     lfs.enable = true;
     extraConfig = {
       init.defaultBranch = "master";
+      push.autoSetupRemote = true;
       core.editor = "nano";
       credential = {
         credentialStore = "secretservice";
