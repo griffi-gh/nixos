@@ -2,6 +2,7 @@
   programs.thunderbird = {
     enable = true;
     profiles.default = {
+      isDefault = true;
       withExternalGnupg = true;
       settings = {
         #TODO fill this out :p
@@ -71,5 +72,5 @@
         "extensions.htmlaboutaddons.recommendations.enabled" = false;
       };
     };
-  }
+  };
 }
