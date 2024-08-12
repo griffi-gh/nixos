@@ -1,8 +1,12 @@
-{ config, lib, pkgs, ... }: {
-  networking.hostName = "asus-pc";
+{ config, lib, pkgs, ... }: let
+  hostname = "asus-pc";
+in {
   imports = [
     ./hardware-configuration.nix
   ];
+
+  # hostname
+  networking.hostName = hostname;
 
   # cpu
   hardware.cpu.amd.updateMicrocode = true;
