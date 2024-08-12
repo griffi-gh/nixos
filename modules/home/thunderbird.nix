@@ -71,5 +71,5 @@
         "extensions.htmlaboutaddons.recommendations.enabled" = false;
       };
     };
-  }
+  };
 }
