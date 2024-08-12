@@ -18,7 +18,7 @@
       # Software:
       libreoffice-qt6-fresh # LibreOffice
       blender               # Blender
-      transmission-qt       # Transmission (Qt)
+      transmission_4-qt6    # Transmission (Qt)
 
       # TODO fix galaxy-buds-client somehow (borked and outdated)
       # galaxy-buds-client  # GalaxyBudsClient (unofficial)
