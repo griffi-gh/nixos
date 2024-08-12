@@ -16,8 +16,7 @@
       vulkan-tools          # vulkan-tools (for e.g. vulkaninfo)
       lshw-gui              # (provides both lshw command and the gui :p)
 
-      # Software:
-      thunderbird           # Thunderbird
+      # Software:s
       libreoffice-qt6-fresh # LibreOffice
       blender               # Blender
 
@@ -31,10 +30,13 @@
     ];
   };
 
+  # services.kdeconnect.enable = true;
+
   imports = [
     ./home/shell.nix
     ./home/git.nix
     ./home/plasma.nix
     ./home/firefox.nix
+    ./home/thunderbird.nix
   ];
 }

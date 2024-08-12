@@ -57,7 +57,7 @@
             nixosModules.home-manager
             {
               home-manager = {
-                users.user = import ./hosts/asus-pc/home/user.nix;
+                users.user = import ./modules/home.nix;
                 extraSpecialArgs = specialArgs;
                 sharedModules = [
                   homeModules.plasma-manager
