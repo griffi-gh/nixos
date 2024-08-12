@@ -12,20 +12,28 @@
       tree
       pciutils
       glxinfo
-      vulkan-tools          # vulkan-tools (for e.g. vulkaninfo)
-      lshw-gui              # (provides both lshw command and the gui :p)
+      vulkan-tools # vulkan-tools (for e.g. vulkaninfo)
+      lshw-gui     # (provides both lshw command and the gui :p)
 
       # Software:
       libreoffice-qt6-fresh # LibreOffice
       blender               # Blender
+      transmission-qt       # Transmission (Qt)
 
       # TODO fix galaxy-buds-client somehow (borked and outdated)
-      # galaxy-buds-client    # GalaxyBudsClient (unofficial)
+      # galaxy-buds-client  # GalaxyBudsClient (unofficial)
 
       # Games:
-      principia             # Principia
-      the-powder-toy        # The Powder Toy
-      prismlauncher         # Minecraft
+      principia      # Principia
+      the-powder-toy # The Powder Toy
+      prismlauncher  # Minecraft
+
+      # Emulators:
+      ryujinx        # Ryujinx (Switch)
+      cemu           # Cemu (Wii U)
+      # sameboy      # SameBoy (GB/GBC)
+      mgba           # mGBA (GB/GBC/GBA)
+      # vita3k is not in nixpkgs :<
     ];
   };
 
