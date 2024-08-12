@@ -17,6 +17,7 @@
 
       # Software:
       libreoffice-qt6-fresh # LibreOffice
+      inkscape              # Inkscape
       blender               # Blender
       transmission_4-qt6    # Transmission (Qt)
 
