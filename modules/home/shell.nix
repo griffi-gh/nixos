@@ -1,5 +1,6 @@
 { ... }: {
   programs = {
+    # Shells:
     fish = {
       enable = true;
       shellAliases = {
@@ -10,11 +11,16 @@
       };
     };
     nushell.enable = true;
+
+    # prompt:
     carapace.enable = true;
     starship = {
       enable = true;
       enableTransience = true;
     };
+
+    # tools:
+    htop.enable = true;
     bat.enable = true;
     eza = {
       enable = true;
