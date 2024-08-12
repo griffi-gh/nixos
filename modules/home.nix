@@ -27,6 +27,7 @@
       principia      # Principia
       the-powder-toy # The Powder Toy
       prismlauncher  # Minecraft
+      # osu-lazer-bin  # Osu (lazer)
 
       # Emulators:
       ryujinx        # Ryujinx (Switch)
