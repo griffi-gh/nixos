@@ -27,6 +27,7 @@
       transmission_4-qt6    # Transmission (Qt)
       bitwarden-desktop     # BitWarden Desktop client
       vesktop               # Discord (vesktop/vencord)
+      telegram-desktop      # Telegram
 
       # Dev. Stuff/Code editors
       zed-editor            # Zed Editor (gui)

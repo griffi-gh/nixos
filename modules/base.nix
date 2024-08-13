@@ -67,6 +67,7 @@
     efibootmgr
     e2fsprogs
     btrfs-progs
+    lm_sensors
     vim
     micro
     wget
