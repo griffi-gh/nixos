@@ -73,8 +73,10 @@
     wget
     curl
     nodejs
+    python3
     unrar
     p7zip
+    appimage-run
   ];
   
   # sudo
