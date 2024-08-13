@@ -60,6 +60,7 @@
       enableSSHSupport = true;
     };
     fish.enable = true;
+    dconf.enable = true;
   };
 
   environment.systemPackages = with pkgs; [

@@ -56,6 +56,7 @@
 
   imports = [
     ./home/shell.nix
+    ./home/gtk.nix
     ./home/git.nix
     ./home/plasma.nix
     ./home/firefox.nix
