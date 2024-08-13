@@ -64,6 +64,8 @@
     wget
     curl
     nodejs
+    unrar
+    p7zip
   ];
   
   # sudo
