@@ -25,7 +25,8 @@
       transmission_4-qt6    # Transmission (Qt)
       bitwarden-desktop     # BitWarden Desktop client
       vesktop               # Discord (vesktop/vencord)
-	
+      zed-editor            # Zed Editor
+
       # TODO fix galaxy-buds-client somehow (borked and outdated)
       # galaxy-buds-client  # GalaxyBudsClient (unofficial)
 
