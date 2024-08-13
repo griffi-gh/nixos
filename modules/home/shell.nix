@@ -8,6 +8,10 @@
         cat = "bat";
         cls = "clear";
         "cd.." = "cd ..";
+        helix = "hx";
+      };
+      functions = {
+        rebuild-switch = "sudo nixos-rebuild switch --flake ~/nixos#$hostname";
       };
     };
     nushell.enable = true;
