@@ -31,7 +31,10 @@
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
-        config.allowUnfree = true;
+        config = {
+          allowUnfree = true;
+          firefox.enablePlasmaBrowserIntegration = true;
+        };
       };
       nixosModules = {
         programs-sqlite = inputs.flake-programs-sqlite.nixosModules.programs-sqlite;
@@ -45,13 +48,13 @@
         inherit inputs pkgs system;
       };
     in {
-      nixosConfigurations = {
-        asus-pc = nixpkgs.lib.nixosSystem {
+      nixosConfigurations = let
+        buildNixosSystem = host: nixpkgs.lib.nixosSystem {
           inherit
             system
             specialArgs;
           modules = [
-            (import ./hosts/asus-pc/configuration.nix)
+            (import ./hosts/${host}/configuration.nix)
             (import ./modules/base.nix)
             nixosModules.programs-sqlite
             nixosModules.home-manager
@@ -76,6 +79,9 @@
             }
           ];
         };
+      in {
+        dell-pc = buildNixosSystem "dell-pc";
+        asus-pc = buildNixosSystem "asus-pc";
       };
     };
 }

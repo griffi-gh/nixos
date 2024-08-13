@@ -18,7 +18,8 @@
     ./base/services/libinput.nix
     ./base/services/printing.nix
     ./base/services/xserver.nix
-    ./base/services/zerotier.nix
+    # ./base/services/zerotier.nix # broken
+    ./base/programs/steam.nix
   ];
 
   # Locale/timezone

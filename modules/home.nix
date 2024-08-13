@@ -20,6 +20,7 @@
       inkscape              # Inkscape
       blender               # Blender
       transmission_4-qt6    # Transmission (Qt)
+      bitwarden-desktop     # BitWarden Desktop client
 
       # TODO fix galaxy-buds-client somehow (borked and outdated)
       # galaxy-buds-client  # GalaxyBudsClient (unofficial)

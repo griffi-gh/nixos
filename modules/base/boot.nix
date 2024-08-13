@@ -10,6 +10,8 @@
       "modprobe.blacklist=sp5100_tco"
       "nmi_watchdog=0"
       "nowatchdog"
+      "quiet"
+      "splash"
     ];
     initrd = {
       systemd = {
@@ -29,10 +31,9 @@
       timeout = 0;
     };
     tmp.useTmpfs = true;
-    # TODO fix plymouth:
-    # plymouth = {
-    #   enable = true;
-    #   theme = "bgrt";
-    # };
+    plymouth = {
+      enable = true;
+      theme = "bgrt";
+    };
   };
 }

@@ -46,6 +46,10 @@
         # Make configured extensions work
         "extensions.autoDisableScopes" = 0;
 
+        # Enable overscroll and autoscroll
+        "apz.overscroll.enabled" = 1;
+        "general.autoScroll" = 1;
+
         # Allow unsigned extensions
         # "xpinstall.signatures.required" = false;
 
