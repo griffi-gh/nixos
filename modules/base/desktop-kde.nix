@@ -14,4 +14,10 @@
     enable = true;
     xdgOpenUsePortal = true;
   };
+
+  # extra stuff
+  environment.systemPackages = with pkgs.kdePackages; [
+    kaccounts-integration
+    kaccounts-providers
+  ];
 }
