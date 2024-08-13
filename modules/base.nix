@@ -62,6 +62,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    efibootmgr
     vim
     micro
     wget
