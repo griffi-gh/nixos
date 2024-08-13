@@ -63,6 +63,8 @@
 
   environment.systemPackages = with pkgs; [
     efibootmgr
+    e2fsprogs
+    btrfs-progs
     vim
     micro
     wget

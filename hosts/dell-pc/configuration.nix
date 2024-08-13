@@ -33,4 +33,12 @@ in {
 
   # fs
   fileSystems."/nix".options = [ "noatime" ];
+
+
+  # services
+  services.thermald.enable = true;
+  services.fwupd.enable = true;
+
+  # HACK: disable hibernation
+  boot.kernelParams = [ "nohibernate" ];
 }
