@@ -39,14 +39,15 @@
       # Games:
       principia      # Principia
       the-powder-toy # The Powder Toy
-      prismlauncher  # Minecraft
+      prismlauncher  # Minecraft (Prism Launcher)
       # osu-lazer-bin  # Osu (lazer)
+      # everest-mons   # mons (Celeste/Everest mod loader installer)
 
       # Emulators:
       ryujinx        # Ryujinx (Switch)
       cemu           # Cemu (Wii U)
-      # sameboy      # SameBoy (GB/GBC)
       mgba           # mGBA (GB/GBC/GBA)
+      # sameboy      # SameBoy (GB/GBC)
       # vita3k is not in nixpkgs :<
     ];
   };
