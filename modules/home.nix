@@ -53,12 +53,17 @@
     ];
   };
 
-  # services.kdeconnect.enable = true;
+  # KDE Connect
+  services.kdeconnect.enable = true;
+
+  # Manage GTK stuff
+  gtk.enable = true;
 
   imports = [
     ./home/shell.nix
     ./home/git.nix
     ./home/plasma.nix
+    ./home/cursor.nix
     ./home/firefox.nix
     ./home/thunderbird.nix
   ];
