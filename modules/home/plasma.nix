@@ -9,6 +9,18 @@
       let
         immutable = value: { inherit value; immutable = true; };
       in {
+        # accent color
+        kdeglobals.General.AccentColor = immutable "250,140,200";
+        kdeglobals.General.LastUsedCustomAccentColor = "250,140,200";
+
+        # keyboard layouts
+        kxkbrc.Layout.DisplayNames = immutable ",";
+        kxkbrc.Layout.LayoutList = immutable "us,ua";
+        kxkbrc.Layout.Options = immutable "grp:win_space_toggle";
+        kxkbrc.Layout.ResetOldOptions = immutable true;
+        kxkbrc.Layout.Use = immutable true;
+        kxkbrc.Layout.VariantList = immutable ",";
+
         # plugins
         kwinrc.Plugins = {
           cubeEnabled = immutable true; # cube :3
