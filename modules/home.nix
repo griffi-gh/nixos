@@ -21,7 +21,7 @@
       # Software:
       libreoffice-qt6-fresh # LibreOffice
       inkscape              # Inkscape
-      blender               # Blender
+      blender-hip           # Blender (with HIP support)
       transmission_4-qt6    # Transmission (Qt)
       bitwarden-desktop     # BitWarden Desktop client
 

@@ -27,7 +27,10 @@
   time.timeZone = "Europe/Warsaw"; 
 
   # Enable 32-bit graphics packages
-  hardware.graphics.enable32Bit = true;
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
 
   # Enable switch-ng
   system.switch = {
