@@ -188,6 +188,13 @@
         # Preferences - Hide "More from Mozilla" button
         "browser.preferences.moreFromMozilla" = false;
 
+        # Use XDG desktop portals
+        "widget.use-xdg-desktop-portal.file-picker" = 1;
+        "widget.use-xdg-desktop-portal.location" = 1;
+        "widget.use-xdg-desktop-portal.mime-handler" = 1;
+        "widget.use-xdg-desktop-portal.open-uri" = 1;
+        "widget.use-xdg-desktop-portal.settings" = 1;
+
         # Misc. stuff
 
         # Disable "privacy-preserving" attribution (ad measurement)
