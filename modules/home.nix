@@ -12,10 +12,12 @@
       tree
       pciutils
       glxinfo
+      inxi
       vulkan-tools # vulkan-tools (for e.g. vulkaninfo)
       lshw-gui     # (provides both lshw command and the gui :p)
-
+      
       # etc. tools
+      xorg.xeyes
       mangohud
 
       # Software:
@@ -25,8 +27,12 @@
       transmission_4-qt6    # Transmission (Qt)
       bitwarden-desktop     # BitWarden Desktop client
       vesktop               # Discord (vesktop/vencord)
-      zed-editor            # Zed Editor
 
+      # Dev. Stuff/Code editors
+      zed-editor            # Zed Editor (gui)
+      helix                 # Helix Editor (cli)
+
+      # Device drivers etc
       # TODO fix galaxy-buds-client somehow (borked and outdated)
       # galaxy-buds-client  # GalaxyBudsClient (unofficial)
 
