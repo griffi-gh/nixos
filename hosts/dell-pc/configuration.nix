@@ -10,7 +10,7 @@ in {
 
   # gpu
   hardware.amdgpu = {
-    initrd.enable = true;
+    # initrd.enable = true;
   };
 
   # fs
