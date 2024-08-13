@@ -78,6 +78,12 @@
     p7zip
     appimage-run
   ];
+
+  # AppImage support
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
   
   # sudo
   security.sudo.enable = false;
