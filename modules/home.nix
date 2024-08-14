@@ -23,6 +23,8 @@
       steamtinkerlaunch
 
       # Software:
+      snapshot              # Gnome's Camera App
+      haruna                # KDE's Video player
       libreoffice-qt6-fresh # LibreOffice
       inkscape              # Inkscape
       blender-hip           # Blender (with HIP support)
