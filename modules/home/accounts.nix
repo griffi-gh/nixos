@@ -1,21 +1,5 @@
-{ ... }: let
-    gmail = {
-        flavor = "gmail.com";
-        smtp = {
-            host = "smtp.gmail.com";
-            port = 587;
-            tls = {
-                enable = true;
-                useStartTls = true;
-            };
-        };
-        imap = {
-            host = "imap.gmail.com";
-            port = 993;
-            tls.enable = true;
-        };
-    };
-    thunderbird = {
+{ inputs, ... }: let
+    thunderbird_oauth = {
         thunderbird = {
             enable = true;
             settings = id: let OAuth2 = 10; in {
@@ -29,11 +13,7 @@
         };
     };
 in {
-    accounts.email.accounts = {
-        "prasol258@gmail.com" = {
-            primary = true;
-            address = "prasol258@gmail.com";
-            realName = "Alex Prasol";
-        } // gmail // thunderbird;
+    accounts.email.accounts = import "${inputs.private}/accounts.nix" {
+        inherit thunderbird_oauth;
     };
 }

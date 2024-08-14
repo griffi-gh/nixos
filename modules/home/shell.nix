@@ -11,7 +11,7 @@
         helix = "hx";
       };
       functions = {
-        rebuild-switch = "rm ~/.gtkrc-2.0.bak; sudo nixos-rebuild switch --flake ~/nixos#$hostname";
+        rebuild-switch = "rm -f ~/.gtkrc-2.0.bak; nixos-rebuild switch --flake ~/nixos#$hostname --use-remote-sudo";
       };
     };
     nushell.enable = true;

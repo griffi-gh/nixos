@@ -24,6 +24,12 @@
       url = "github:nix-community/nixos-vscode-server";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Private stuff.
+    private = {
+        url = "git+ssh://git@github.com/griffi-gh/nixos-private.git";
+        flake = false;
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, ... }:
@@ -41,7 +47,7 @@
         home-manager    = inputs.home-manager.nixosModules.home-manager;
       };
       homeModules = {
-        plasma-manager  = inputs.plasma-manager.homeManagerModules.plasma-manager; 
+        plasma-manager  = inputs.plasma-manager.homeManagerModules.plasma-manager;
       	vscode-server   = inputs.vscode-server.homeModules.default;
       };
       specialArgs = {
