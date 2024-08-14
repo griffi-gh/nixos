@@ -19,5 +19,13 @@
   environment.systemPackages = with pkgs.kdePackages; [
     kaccounts-integration
     kaccounts-providers
+    qtimageformats
+    kimageformats
   ];
+
+  # kde connect
+  programs.kdeconnect = {
+    enable = true;
+    # package = pkgs.kdePackages.kdeconnect-kde;
+  };
 }

@@ -15,10 +15,12 @@
       inxi
       vulkan-tools # vulkan-tools (for e.g. vulkaninfo)
       lshw-gui     # (provides both lshw command and the gui :p)
-      
+      android-tools
+
       # etc. tools
       xorg.xeyes
       mangohud
+      steamtinkerlaunch
 
       # Software:
       libreoffice-qt6-fresh # LibreOffice
@@ -54,15 +56,13 @@
   };
 
   # KDE Connect
-  services.kdeconnect.enable = true;
-
-  # Manage GTK stuff
-  gtk.enable = true;
+  # services.kdeconnect.enable = true;
 
   imports = [
     ./home/shell.nix
     ./home/git.nix
     ./home/plasma.nix
+    ./home/gtk.nix
     ./home/cursor.nix
     ./home/firefox.nix
     ./home/thunderbird.nix
