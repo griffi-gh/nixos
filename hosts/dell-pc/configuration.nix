@@ -28,16 +28,18 @@ in {
       "L+    /opt/rocm   -    -    -     -    ${rocmEnv}"
     ];
 
-  # cpu
-  hardware.cpu.amd.updateMicrocode = true;
-
   # fs
   fileSystems."/nix".options = [ "noatime" ];
-
 
   # services
   services.thermald.enable = true;
   services.fwupd.enable = true;
+
+  # cpu
+  hardware.cpu.amd.updateMicrocode = true;
+
+  # HACK: wifi
+  networking.networkmanager.wifi.powersave = false;
 
   # HACK: disable hibernation
   boot.kernelParams = [ "nohibernate" ];
