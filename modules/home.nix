@@ -71,6 +71,7 @@
     ./home/gtk.nix
     ./home/cursor.nix
     ./home/firefox.nix
+    ./home/accounts.nix
     ./home/thunderbird.nix
   ];
 }

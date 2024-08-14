@@ -11,6 +11,9 @@
         "mailnews.default_sort_type" = 18;
         "mailnews.default_sort_order" = 2;
 
+        # autosync
+        "mail.server.default.autosync_max_age_days" = 30;
+
         # e2ee stuff
         "mail.e2ee.auto_enable" = true;
         "mail.e2ee.auto_disable" = true;
