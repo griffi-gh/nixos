@@ -4,7 +4,7 @@
   hardware.enableAllFirmware = true;
   # hardware.enableRedistributableFirmware = true;
 
-  imports = [ 
+  imports = [
     ./base/nix.nix
     ./base/boot.nix
     ./base/networking.nix
@@ -25,7 +25,7 @@
 
   # Locale/timezone
   i18n.defaultLocale = "en_IE.UTF-8";
-  time.timeZone = "Europe/Warsaw"; 
+  time.timeZone = "Europe/Warsaw";
 
   # Enable 32-bit graphics packages
   hardware.graphics = {
@@ -84,7 +84,7 @@
     enable = true;
     binfmt = true;
   };
-  
+
   # sudo
   security.sudo.enable = false;
   security.sudo-rs = {
@@ -99,6 +99,8 @@
   environment.sessionVariables = {
     MOZ_USE_XINPUT2 = "1";
     MOZ_ENABLE_WAYLAND = "1";
+    MOZ_DBUS_REMOTE = "1";
+    # SDL_VIDEODRIVER = "wayland";
     NIXOS_OZONE_WL = "1";
   };
 
