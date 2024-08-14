@@ -53,6 +53,9 @@
         "apz.overscroll.enabled" = 1;
         "general.autoScroll" = 1;
 
+        # Enable Hover-Preview
+        "browser.tabs.hoverPreview.enabled" = true;
+
         # Allow unsigned extensions
         # "xpinstall.signatures.required" = false;
 
