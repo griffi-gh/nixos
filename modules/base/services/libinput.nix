@@ -9,7 +9,7 @@
     };
     touchpad = {
       naturalScrolling = true;
-      disableWhileTyping = true;
+      disableWhileTyping = false;
       tapping = true;
       clickMethod = "clickfinger";
     };
