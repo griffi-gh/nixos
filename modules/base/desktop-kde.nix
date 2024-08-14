@@ -22,7 +22,6 @@
     kaccounts-providers
     qtimageformats
     kimageformats
-    # kamoso
   ];
 
   # kde connect

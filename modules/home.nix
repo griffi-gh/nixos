@@ -22,6 +22,9 @@
       mangohud
       steamtinkerlaunch
 
+      # kde stuff:
+      kdePackages.krdc      # KRDC
+
       # Software:
       snapshot              # Gnome's Camera App
       haruna                # KDE's Video player
@@ -32,6 +35,7 @@
       bitwarden-desktop     # BitWarden Desktop client
       vesktop               # Discord (vesktop/vencord)
       telegram-desktop      # Telegram
+      cinny-desktop         # Cinny (Matrix client)
 
       # Dev. Stuff/Code editors
       zed-editor            # Zed Editor (gui)
