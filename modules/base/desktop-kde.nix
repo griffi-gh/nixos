@@ -17,6 +17,7 @@
 
   # extra stuff
   environment.systemPackages = with pkgs.kdePackages; [
+    plasma-browser-integration
     kaccounts-integration
     kaccounts-providers
     qtimageformats
