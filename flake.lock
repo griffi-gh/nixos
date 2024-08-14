@@ -101,11 +101,11 @@
     "private": {
       "flake": false,
       "locked": {
-        "lastModified": 1723675603,
-        "narHash": "sha256-IHJWb+mWEDq06nCSZOlBbml0nPx/VIGvb6XfsZTI9nY=",
+        "lastModified": 1723676165,
+        "narHash": "sha256-29wr1v+wa9B1mpzhUcPPJaj/LvnjcUynKg3OLpFinEs=",
         "ref": "refs/heads/master",
-        "rev": "a26a95677e15a55310c26a4d22bfd71c7bac63f4",
-        "revCount": 3,
+        "rev": "94bb0d6150c5b6b4a861a3e889e2cc9173f1b410",
+        "revCount": 4,
         "type": "git",
         "url": "ssh://git@github.com/griffi-gh/nixos-private.git"
       },
