@@ -18,16 +18,13 @@
     thunderbird = {
         thunderbird = {
             enable = true;
-            settings = id: {
+            settings = id: let OAuth2 = 10; in {
+                "mail.smtpserver.smtp_${id}.authMethod" = OAuth2;
+                "mail.server.server_${id}.authMethod" = OAuth2;
                 "mail.server.server_${id}.autosync_max_age_days" = 30;
                 "mail.server.server_${id}.cleanupBodies" = true;
                 "mail.server.server_${id}.daysToKeepBodies" = 30;
                 "mail.server.server_${id}.daysToKeepHdrs" = 30;
-
-                # THIS IS GMAIL-SPECIFIC
-                "mail.server.server_${id}.is_gmail" = true;
-                "mail.server.server_${id}.oauth2.issuer" = "accounts.google.com";
-                "mail.server.server_${id}.oauth2.scope" = "https://mail.google.com/ https://www.googleapis.com/auth/carddav https://www.googleapis.com/auth/calendar";
             };
         };
     };
