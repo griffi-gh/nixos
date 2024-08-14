@@ -7,6 +7,9 @@
       settings = {
         #TODO fill this out :p
 
+        # Disable startpage
+        "mailnews.start_page.enabled" = false;
+
         # Set the default sort order to descending by date received.
         "mailnews.default_sort_type" = 18;
         "mailnews.default_sort_order" = 2;
