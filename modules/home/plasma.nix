@@ -23,7 +23,7 @@
 
         # plugins
         kwinrc.Plugins = {
-          cubeEnabled = immutable true; # cube :3
+          # cubeEnabled = immutable true; # cube :3
         };
 
         # virtual desktops conf.
