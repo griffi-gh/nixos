@@ -35,7 +35,7 @@
       bitwarden-desktop     # BitWarden Desktop client
       vesktop               # Discord (vesktop/vencord)
       telegram-desktop      # Telegram
-      cinny-desktop         # Cinny (Matrix client)
+      nheko                 # Nheko (matrix)
 
       # Dev. Stuff/Code editors
       zed-editor            # Zed Editor (gui)
