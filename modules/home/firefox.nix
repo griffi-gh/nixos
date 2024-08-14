@@ -1,6 +1,9 @@
-{ ... }:  {
+{ pkgs, ... }:  {
   programs.firefox = {
     enable = true;
+    nativeMessagingHosts = with pkgs; [
+      kdePackages.plasma-browser-integration
+    ];
     policies = {
       # Disable the menus for reporting sites.
       DisableFeedbackCommands = true;
