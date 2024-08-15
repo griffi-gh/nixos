@@ -22,9 +22,6 @@
       mangohud
       steamtinkerlaunch
 
-      # kde stuff:
-      kdePackages.krdc      # KRDC
-
       # Software:
       snapshot              # Gnome's Camera App
       haruna                # KDE's Video player
@@ -36,6 +33,8 @@
       vesktop               # Discord (vesktop/vencord)
       telegram-desktop      # Telegram
       nheko                 # Nheko (matrix)
+      okteta                # Okteta (hex editor)
+      kdePackages.krdc      # KRDC
 
       # Dev. Stuff/Code editors
       zed-editor            # Zed Editor (gui)
