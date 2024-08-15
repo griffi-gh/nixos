@@ -76,6 +76,7 @@
     python3
     unrar
     p7zip
+    icoutils
     appimage-run
   ];
 
