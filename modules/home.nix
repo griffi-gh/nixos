@@ -41,6 +41,7 @@
       # Dev. Stuff/Code editors
       zed-editor            # Zed Editor (gui)
       helix                 # Helix Editor (cli)
+      renderdoc             # RenderDoc (graphics debugger)
 
       # Device drivers etc
       # TODO fix galaxy-buds-client somehow (borked and outdated)
