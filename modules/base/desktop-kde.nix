@@ -4,7 +4,8 @@
     enable = true;
     wayland = {
       enable = true;
-      compositor = "kwin"; # may be borked, weston is the default :p
+      # may be borked, weston is the default :p
+      compositor = "kwin";
     };
   };
   services.desktopManager.plasma6.enable = true;
@@ -22,6 +23,7 @@
     kaccounts-providers
     qtimageformats
     kimageformats
+    qtvirtualkeyboard
   ];
 
   # kde connect
