@@ -9,8 +9,8 @@
             immutable = value: { inherit value; immutable = true; };
         in {
             # accent color
-            kdeglobals.General.AccentColor = immutable accent_color;
-            kdeglobals.General.LastUsedCustomAccentColor = accent_color;
+            kdeglobals.General.AccentColor = immutable "250,140,200";
+            kdeglobals.General.LastUsedCustomAccentColor = "250,140,200";
 
             # keyboard layouts
             kxkbrc.Layout.DisplayNames = immutable ",";

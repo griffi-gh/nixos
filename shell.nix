@@ -3,5 +3,6 @@ pkgs.mkShell {
   buildInputs = with pkgs; [
     git
     git-crypt
+    nixd
   ];
 }
