@@ -80,6 +80,9 @@
     appimage-run
   ];
 
+  # Gamemoderun
+  programs.gamemode.enable = true;
+
   # AppImage support
   programs.appimage = {
     enable = true;
