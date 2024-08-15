@@ -66,7 +66,7 @@
   # services.kdeconnect.enable = true;
 
   imports = [
-    ./home/shell.nix
+    ./home/shells.nix
     ./home/git.nix
     ./home/plasma.nix
     ./home/gtk.nix
