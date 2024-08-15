@@ -1,10 +1,16 @@
-{ ... }: {
+{ lib, inputs, ... }: {
   programs.thunderbird = {
     enable = true;
     profiles.default = {
       isDefault = true;
       withExternalGnupg = true;
-      settings = {
+      settings = let
+        toHashedName = x: "account_" + (builtins.hashString "sha256" x);
+        accounts = import "${inputs.private}/accounts-order.nix";
+      in {
+        # Set the list of email accounts to be used by Thunderbird.
+        "mail.accountmanager.accounts" = lib.concatStringsSep "," ((map toHashedName accounts) ++ ["account1"]);
+
         #TODO fill this out :p
 
         # Disable startpage
