@@ -33,7 +33,8 @@
       vesktop               # Discord (vesktop/vencord)
       telegram-desktop      # Telegram
       nheko                 # Nheko (matrix)
-      okteta                # Okteta (hex editor)
+      # okteta                # Okteta (hex editor) glitchy piece of crap
+      imhex
       kdePackages.krdc      # KRDC
 
       # Dev. Stuff/Code editors
