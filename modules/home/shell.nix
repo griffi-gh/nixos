@@ -11,10 +11,22 @@
         helix = "hx";
       };
       functions = {
-        rebuild-switch = "rm -f ~/.gtkrc-2.0.bak; nixos-rebuild switch --flake ~/nixos#$hostname --use-remote-sudo";
+        # rebuild-switch = "rm -f ~/.gtkrc-2.0.bak; nixos-rebuild switch --flake ~/nixos#$hostname --use-remote-sudo";
+        rebuild-switch = "rm -f ~/.gtkrc-2.0.bak; sudo nixos-rebuild switch --flake ~/nixos#$hostname";
       };
     };
     nushell.enable = true;
+
+    # direnv:
+    direnv = {
+        enable = true;
+        config.global = {
+            load_dotenv = true;
+            strict_env = true;
+            hide_env_diff = true;
+        };
+        nix-direnv.enable = true;
+    };
 
     # prompt:
     carapace.enable = true;

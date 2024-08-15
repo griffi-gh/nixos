@@ -1,4 +1,4 @@
-{ inputs, ... }: let
+{ lib, inputs, ... }: let
     thunderbird = { login ? true }: {
         thunderbird = {
             enable = true;
@@ -14,7 +14,8 @@
         };
     };
 in {
-    accounts.email.accounts = import "${inputs.private}/accounts.nix" {
-        inherit thunderbird;
-    };
+    accounts.email.accounts = lib.listToAttrs (
+        map (item: { name = item.address; value = item; })
+        (import ../../secrets/accounts.nix { inherit thunderbird; })
+    );
 }

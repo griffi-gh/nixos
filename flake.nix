@@ -24,12 +24,6 @@
       url = "github:nix-community/nixos-vscode-server";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # Private stuff.
-    private = {
-        url = "git+ssh://git@github.com/griffi-gh/nixos-private.git";
-        flake = false;
-    };
   };
 
   outputs = inputs@{ self, nixpkgs, ... }:

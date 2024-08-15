@@ -98,29 +98,12 @@
         "type": "github"
       }
     },
-    "private": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1723680261,
-        "narHash": "sha256-HDsNzORndQ5jJj+Zyfx+a3q5+X1OETLMRl0NGoVtHDE=",
-        "ref": "refs/heads/master",
-        "rev": "7b42d233c4e1b01add5a8f1934eda41a480ee3ea",
-        "revCount": 6,
-        "type": "git",
-        "url": "ssh://git@github.com/griffi-gh/nixos-private.git"
-      },
-      "original": {
-        "type": "git",
-        "url": "ssh://git@github.com/griffi-gh/nixos-private.git"
-      }
-    },
     "root": {
       "inputs": {
         "flake-programs-sqlite": "flake-programs-sqlite",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "plasma-manager": "plasma-manager",
-        "private": "private",
         "vscode-server": "vscode-server"
       }
     },
