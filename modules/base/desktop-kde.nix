@@ -4,8 +4,12 @@
     enable = true;
     wayland = {
       enable = true;
-      # may be borked, weston is the default :p
-      compositor = "kwin";
+      compositor = "kwin"; # may be borked, weston is the default :p
+    };
+    settings = {
+      General = {
+        InputMethod = "qtvirtualkeyboard";
+      };
     };
   };
   services.desktopManager.plasma6.enable = true;
@@ -14,6 +18,9 @@
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+    ];
   };
 
   # extra stuff
