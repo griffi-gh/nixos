@@ -49,8 +49,8 @@
       # Games:
       principia      # Principia
       the-powder-toy # The Powder Toy
+      osu-lazer-bin  # Osu (lazer)
       prismlauncher  # Minecraft (Prism Launcher)
-      # osu-lazer-bin  # Osu (lazer)
       # everest-mons   # mons (Celeste/Everest mod loader installer)
 
       # Emulators:
