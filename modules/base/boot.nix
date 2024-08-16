@@ -11,7 +11,6 @@
       "nmi_watchdog=0"
       "nowatchdog"
       "quiet"
-      "splash"
     ];
     initrd = {
       systemd = {
