@@ -74,6 +74,7 @@
     curl
     nodejs
     python3
+    zip
     unrar
     p7zip
     icoutils
