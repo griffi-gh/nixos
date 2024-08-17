@@ -59,17 +59,15 @@
     ];
   };
 
-  # KDE Connect
-  # services.kdeconnect.enable = true;
-
   imports = [
-    ./shells.nix
-    ./git.nix
-    ./plasma.nix
-    ./gtk.nix
-    ./cursor.nix
-    ./firefox.nix
-    ./accounts.nix
-    ./thunderbird.nix
+    ./user/shells.nix
+    ./user/git.nix
+    ./user/plasma.nix
+    ./user/gtk.nix
+    ./user/cursor.nix
+    ./user/firefox.nix
+    ./user/accounts.nix
+    ./user/thunderbird.nix
+    ./user/vscode-server.nix
   ];
 }
