@@ -16,13 +16,11 @@
           rm -f ~/.gtkrc-2.0.bak;
           sudo nixos-rebuild switch --flake ~/nixos#$hostname
         '';
-        update-rebuild-switch = ''
+        flake-update = ''
           cd ~/nixos;
           git pull;
           nix flake update --commit-lock-file;
           git push;
-          rm -f ~/.gtkrc-2.0.bak;
-          sudo nixos-rebuild switch --flake ~/nixos#$hostname
           cd -;
         '';
       };
