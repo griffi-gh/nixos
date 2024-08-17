@@ -52,7 +52,7 @@
 
       # Emulators:
       ryujinx        # Ryujinx (Switch)
-      cemu           # Cemu (Wii U)
+      # cemu           # Cemu (Wii U) (borked package)
       mgba           # mGBA (GB/GBC/GBA)
       # sameboy      # SameBoy (GB/GBC)
       # vita3k is not in nixpkgs :<
