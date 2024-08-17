@@ -64,6 +64,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    bashInteractive
     efibootmgr
     e2fsprogs
     btrfs-progs

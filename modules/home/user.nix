@@ -4,6 +4,9 @@
     username = "user";
     homeDirectory = "/home/user";
     packages = with pkgs; [
+      # fix for bash :p
+      bashInteractive
+
       # CLI tools:
       tree
       pciutils
