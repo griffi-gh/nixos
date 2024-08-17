@@ -14,7 +14,7 @@
         # rebuild-switch = "rm -f ~/.gtkrc-2.0.bak; nixos-rebuild switch --flake ~/nixos#$hostname --use-remote-sudo";
         rebuild-switch = ''
           rm -f ~/.gtkrc-2.0.bak;
-          sudo nixos-rebuild switch --flake ~/nixos#$hostname
+          NIX_REMOTE=daemon sudo nixos-rebuild switch --flake ~/nixos#$hostname;
         '';
         flake-update = ''
           cd ~/nixos;

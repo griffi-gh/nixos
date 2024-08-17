@@ -97,13 +97,12 @@
     execWheelOnly = true;
   };
 
-  # ulimit
-  security.pam.loginLimits = [{
-    domain = "*";
-    type = "soft";
-    item = "nofile";
-    value = "8192";
-  }];
+  # bump nofile limits
+  # systemd.extraConfig = "DefaultLimitNOFILE=8192";
+  security.pam.loginLimits = [
+    { domain = "*"; item = "nofile"; type = "-"; value = "32768"; }
+    { domain = "*"; item = "memlock"; type = "-"; value = "32768"; }
+  ];
 
   environment.variables = {
     EDITOR = "nano";
