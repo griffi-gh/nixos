@@ -18,9 +18,7 @@
         '';
         flake-update = ''
           cd ~/nixos;
-          git pull;
           nix flake update --commit-lock-file;
-          git push;
           cd -;
         '';
       };
