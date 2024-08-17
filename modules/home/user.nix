@@ -12,6 +12,7 @@
       vulkan-tools # vulkan-tools (for e.g. vulkaninfo)
       lshw-gui     # (provides both lshw command and the gui :p)
       android-tools
+      osslsigncode # verify code signatures
 
       # etc. tools
       xorg.xeyes
