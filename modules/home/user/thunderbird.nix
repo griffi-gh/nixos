@@ -6,7 +6,7 @@
       withExternalGnupg = true;
       settings = let
         toHashedName = x: "account_" + (builtins.hashString "sha256" x);
-        accounts = map (item: item.address) (import ../../secrets/accounts.nix {});
+        accounts = map (item: item.address) (import ../../../secrets/accounts.nix {});
       in {
         # Set the list of email accounts to be used by Thunderbird.
         # (this allows setting the order explicitly, and works around a bug in home-manager that keeps adding accounts to the list)
