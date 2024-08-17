@@ -3,6 +3,9 @@
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
+    nixpkgs-stable = {
+      url = "github:nixos/nixpkgs/nixos-24.05";
+    };
 
     # Home-manager stuff:
     home-manager = {
@@ -26,7 +29,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, ... }:
+  outputs = inputs@{ nixpkgs, nixpkgs-stable, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -35,6 +38,10 @@
           allowUnfree = true;
           firefox.enablePlasmaBrowserIntegration = true;
         };
+      };
+      pkgs-stable = import nixpkgs-stable {
+        inherit system;
+        config.allowUnfree = true;
       };
       nixosModules = {
         programs-sqlite = inputs.flake-programs-sqlite.nixosModules.programs-sqlite;
@@ -45,7 +52,7 @@
       	vscode-server   = inputs.vscode-server.homeModules.default;
       };
       specialArgs = {
-        inherit inputs pkgs system;
+        inherit inputs pkgs pkgs-stable system;
       };
     in {
       nixosConfigurations = let
