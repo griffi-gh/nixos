@@ -57,15 +57,13 @@
             (import ./hosts/${host}/configuration.nix)
             (import ./modules/base.nix)
             nixosModules.programs-sqlite
-            nixosModules.home-manager
-            {
+            nixosModules.home-manager {
               home-manager = {
                 users.user = import ./modules/home.nix;
                 extraSpecialArgs = specialArgs;
                 sharedModules = [
                   homeModules.plasma-manager
-                  homeModules.vscode-server
-                  {
+                  homeModules.vscode-server {
                     services.vscode-server = {
                       enable = true;
                       nodejsPackage = pkgs.nodejs;
