@@ -14,8 +14,9 @@
       inxi
       vulkan-tools # vulkan-tools (for e.g. vulkaninfo)
       lshw-gui     # (provides both lshw command and the gui :p)
-      android-tools
+      android-tools # adb, fastboot etc.
       osslsigncode # verify code signatures
+      gocryptfs    # gocryptfs
 
       # etc. tools
       xorg.xeyes
@@ -36,7 +37,7 @@
       kdePackages.krdc      # KRDC
       okteta                # Okteta (hex editor)
       imhex                 # imhex  (hex editor)
-
+      vaults                # Vaults (gocryptfs GTK GUI)
 
       # Dev. Stuff/Code editors
       zed-editor            # Zed Editor (gui)
