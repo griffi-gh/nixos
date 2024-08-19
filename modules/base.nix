@@ -91,6 +91,9 @@
     binfmt = true;
   };
 
+  # Flatpaks
+  services.flatpak.enable = true;
+
   # sudo
   security.sudo.enable = false;
   security.sudo-rs = {
