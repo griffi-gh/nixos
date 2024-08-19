@@ -17,6 +17,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
 
     # Misc.
     flake-programs-sqlite = {
@@ -50,6 +51,7 @@
       homeModules = {
         plasma-manager  = inputs.plasma-manager.homeManagerModules.plasma-manager;
       	vscode-server   = inputs.vscode-server.homeModules.default;
+        nix-flatpak     = inputs.nix-flatpak.homeManagerModules.nix-flatpak;
       };
       specialArgs = {
         inherit inputs pkgs pkgs-stable system;
@@ -75,6 +77,7 @@
                   { programs.home-manager.enable = true; }
                   homeModules.plasma-manager
                   homeModules.vscode-server
+                  homeModules.nix-flatpak
                 ];
                 useGlobalPkgs = true;
                 useUserPackages = true;
