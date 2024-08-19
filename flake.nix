@@ -37,6 +37,10 @@
         inherit system;
         config = {
           allowUnfree = true;
+          permittedInsecurePackages = [
+            # https://gitlab.matrix.org/matrix-org/olm/-/blob/6d4b5b07887821a95b144091c8497d09d377f985/README.md#important-libolm-is-now-deprecated
+            "olm-3.2.16"
+          ];
           firefox.enablePlasmaBrowserIntegration = true;
         };
       };
@@ -53,6 +57,7 @@
       	vscode-server   = inputs.vscode-server.homeModules.default;
         nix-flatpak     = inputs.nix-flatpak.homeManagerModules.nix-flatpak;
       };
+
       specialArgs = {
         inherit inputs pkgs pkgs-stable system;
       };

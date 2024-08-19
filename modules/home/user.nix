@@ -1,4 +1,4 @@
-{ pkgs, pkgs-stable, ... }: {
+{ pkgs, ... }: {
   home = {
     stateVersion = "24.11";
     username = "user";
@@ -62,7 +62,7 @@
 
       # Emulators:
       ryujinx        # Ryujinx (Switch)
-      pkgs-stable.cemu # Cemu (Wii U) (borked package)
+      cemu           # Cemu (Wii U) (borked package)
       mgba           # mGBA (GB/GBC/GBA)
       # sameboy      # SameBoy (GB/GBC)
       # vita3k is not in nixpkgs :<
