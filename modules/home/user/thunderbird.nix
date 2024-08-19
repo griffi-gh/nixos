@@ -15,7 +15,7 @@
         #TODO fill this out :p
 
         # Allow remote content (idc about privacy that much)
-        "mailnews.message_display.disable_remote_image" = false;
+        # "mailnews.message_display.disable_remote_image" = false;
 
         # Disable startpage
         "mailnews.start_page.enabled" = false;
