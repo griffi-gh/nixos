@@ -19,8 +19,8 @@
     ./base/services/printing.nix
     ./base/services/xserver.nix
     # ./base/services/zerotier.nix # broken
+    # ./base/programs/gamescope.nix # broken
     ./base/programs/steam.nix
-    ./base/programs/gamescope.nix
     ./base/programs/virtualbox.nix
   ];
 
