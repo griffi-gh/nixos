@@ -55,6 +55,11 @@
       prismlauncher  # Minecraft (Prism Launcher)
       # everest-mons   # mons (Celeste/Everest mod loader installer)
 
+      # Heroic/Legendary/GOG
+      heroic
+      gogdl
+      legendary-gl
+
       # Emulators:
       ryujinx        # Ryujinx (Switch)
       pkgs-stable.cemu # Cemu (Wii U) (borked package)
