@@ -50,7 +50,7 @@
 
       # Games:
       principia      # Principia
-      the-powder-toy # The Powder Toy
+      the-powder-toy # The Powder Toyelopers: PCGamingWiki staff m
       osu-lazer-bin  # Osu (lazer)
       prismlauncher  # Minecraft (Prism Launcher)
       # everest-mons   # mons (Celeste/Everest mod loader installer)
@@ -59,6 +59,9 @@
       heroic
       gogdl
       legendary-gl
+
+      # Gaming tools:
+      ludusavi       # Ludusavi (game save manager)
 
       # Emulators:
       ryujinx        # Ryujinx (Switch)
