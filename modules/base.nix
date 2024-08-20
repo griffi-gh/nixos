@@ -65,21 +65,33 @@
   };
 
   environment.systemPackages = with pkgs; [
+    # deps:
     bashInteractive
     efibootmgr
     e2fsprogs
     btrfs-progs
     lm_sensors
+
+    # basic cli tools
     vim
     micro
     wget
     curl
+
+    # runtimes:
+    jdk21
     nodejs
     python3
+
+    # archive:
     zip
     unrar
     p7zip
+
+    # exe icons
     icoutils
+
+    # appimage
     appimage-run
   ];
 

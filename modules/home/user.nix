@@ -17,9 +17,6 @@
       android-tools # adb, fastboot etc.
       osslsigncode # verify code signatures
 
-      # java:
-      jdk21
-
       # file stuff:
       gocryptfs    # gocryptfs
       rsync        # rsync/rclone
