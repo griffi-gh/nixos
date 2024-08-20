@@ -6,8 +6,4 @@
     gtk.enable = true;
     x11.enable = true;
   };
-  gtk.cursorTheme = {
-    name = "phinger-cursors-dark";
-    package = pkgs.phinger-cursors;
-  };
 }
