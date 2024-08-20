@@ -22,6 +22,7 @@
       xorg.xeyes
       mangohud
       steamtinkerlaunch
+      rsync
 
       # Software:
       snapshot              # Gnome's Camera App
