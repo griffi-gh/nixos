@@ -16,14 +16,14 @@
       lshw-gui     # (provides both lshw command and the gui :p)
       android-tools # adb, fastboot etc.
       osslsigncode # verify code signatures
-      gocryptfs    # gocryptfs
 
-      # etc. tools
-      xorg.xeyes
-      mangohud
-      steamtinkerlaunch
-      rsync
+      # file stuff:
+      gocryptfs    # gocryptfs
+      rsync        # rsync/rclone
       rclone
+
+      # etc.
+      xorg.xeyes
 
       # Software:
       snapshot              # Gnome's Camera App
@@ -57,13 +57,16 @@
       prismlauncher  # Minecraft (Prism Launcher)
       # everest-mons   # mons (Celeste/Everest mod loader installer)
 
-      # Heroic/Legendary/GOG
+      # Heroic Legendary/GOG/Amazon
       heroic
-      gogdl
-      legendary-gl
+      legendary-gl # legendary (epic games)
+      gogdl        # gogdl (GOG downloader)
+      nile         # Nile (Amazon Games)
 
       # Gaming tools:
       ludusavi       # Ludusavi (game save manager)
+      steamtinkerlaunch # SteamTinkerLaunch (Steam launcher)
+      mangohud       # MangoHud (fps overlay)
 
       # Emulators:
       ryujinx        # Ryujinx (Switch)
