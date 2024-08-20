@@ -23,6 +23,7 @@
       mangohud
       steamtinkerlaunch
       rsync
+      rclone
 
       # Software:
       snapshot              # Gnome's Camera App
