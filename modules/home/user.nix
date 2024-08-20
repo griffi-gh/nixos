@@ -40,6 +40,7 @@
       okteta                # Okteta (hex editor)
       imhex                 # imhex  (hex editor)
       vaults                # Vaults (gocryptfs GTK GUI)
+      apostrophe            # GTK Markdown editor
 
       # Dev. Stuff/Code editors
       zed-editor            # Zed Editor (gui)
