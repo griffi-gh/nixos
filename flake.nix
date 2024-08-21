@@ -6,20 +6,24 @@
     nixpkgs-stable = {
       url = "github:nixos/nixpkgs/nixos-24.05";
     };
-
-    # Home-manager stuff:
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     plasma-manager = {
       url = "github:nix-community/plasma-manager";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
+    nix-flatpak = {
+      url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
+    };
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-    # Misc.
     flake-programs-sqlite = {
       url = "github:wamserma/flake-programs-sqlite";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -48,6 +52,7 @@
         inherit system;
         config.allowUnfree = true;
       };
+      vscode-extensions = import inputs.nix-vscode-extensions.extensions.${system};
       nixosModules = {
         programs-sqlite = inputs.flake-programs-sqlite.nixosModules.programs-sqlite;
         home-manager    = inputs.home-manager.nixosModules.home-manager;
@@ -59,7 +64,7 @@
       };
 
       specialArgs = {
-        inherit inputs pkgs pkgs-stable system;
+        inherit inputs pkgs pkgs-stable vscode-extensions system;
       };
     in {
       nixosConfigurations = let
