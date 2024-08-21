@@ -21,7 +21,7 @@
     };
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
-      # inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     flake-programs-sqlite = {
@@ -52,7 +52,7 @@
         inherit system;
         config.allowUnfree = true;
       };
-      vscode-extensions = import inputs.nix-vscode-extensions.extensions.${system};
+      vscode-extensions = inputs.nix-vscode-extensions.extensions.${system};
       nixosModules = {
         programs-sqlite = inputs.flake-programs-sqlite.nixosModules.programs-sqlite;
         home-manager    = inputs.home-manager.nixosModules.home-manager;
