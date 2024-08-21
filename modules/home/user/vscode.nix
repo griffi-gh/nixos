@@ -1,7 +1,7 @@
 { pkgs, vscode-extensions, ... }: {
   programs.vscode = {
     enable = true;
-    packgae = pkgs.vscodium;
+    package = pkgs.vscodium;
     enableUpdateCheck = false;
     enableExtensionUpdateCheck = false;
     mutableExtensionsDir = false;
