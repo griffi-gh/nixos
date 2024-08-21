@@ -35,6 +35,9 @@
       "window.titleBarStyle" = "custom";
       "window.dialogStyle" = "custom";
 
+      # Git:
+      "git.openRepositoryInParentFolders" = "never";
+
       # Editing:
       "editor.linkedEditing" = true;
 
