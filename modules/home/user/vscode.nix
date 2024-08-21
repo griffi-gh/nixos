@@ -24,8 +24,9 @@
       gruntfuggly.todo-tree
       shardulm94.trailing-spaces
 
-      # Themes:
+      # Themes/Icons/etc.:
       github.github-vscode-theme
+      vscode-icons-team.vscode-icons
     ];
     userSettings = {
       # UI:
