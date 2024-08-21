@@ -32,6 +32,7 @@
       # UI:
       "workbench.startupEditor" = "none";
       "workbench.colorTheme" = "GitHub Dark Default";
+      "workbench.iconTheme" = "vscode-icons";
       "window.titleBarStyle" = "custom";
       "window.dialogStyle" = "custom";
 
@@ -49,6 +50,7 @@
       # Misc.:
       "extensions.autoUpdate" = false;
       "workbench.settings.enableNaturalLanguageSearch" = false;
+      "vsicons.dontShowNewVersionMessage" = true;
     };
   };
 

@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }: {
+{ pkgs, ... }: {
   nix = {
     package = pkgs.nixVersions.git;
     settings = {
