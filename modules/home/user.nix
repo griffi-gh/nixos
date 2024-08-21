@@ -89,6 +89,7 @@
     ./user/firefox.nix
     ./user/accounts.nix
     ./user/thunderbird.nix
+    ./user/vscode.nix
     ./user/vscode-server.nix
   ];
 }
