@@ -25,6 +25,7 @@
     ];
     userSettings = {
       # UI:
+      "workbench.startupEditor" = "none";
       "workbench.colorTheme" = "GitHub Dark Default";
       "window.titleBarStyle" = "custom";
       "window.dialogStyle" = "custom";
