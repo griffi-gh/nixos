@@ -9,6 +9,10 @@
       # Git
       eamodio.gitlens
 
+      # Nix/NixOS
+      mkhl.direnv
+      jnoortheen.nix-ide
+
       # Rust
       rust-lang.rust-analyzer
 
