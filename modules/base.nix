@@ -7,6 +7,7 @@
   imports = [
     ./base/nix.nix
     ./base/boot.nix
+    ./base/sudo.nix
     ./base/networking.nix
     ./base/bluetooth.nix
     ./base/power.nix
@@ -50,6 +51,7 @@
   services.power-profiles-daemon.enable = true;
 
   programs = {
+
     nix-ld = {
       enable = true;
       # package = pkgs.nix-ld-rs;
@@ -106,13 +108,6 @@
 
   # Flatpaks
   services.flatpak.enable = true;
-
-  # sudo
-  security.sudo.enable = false;
-  security.sudo-rs = {
-    enable = true;
-    execWheelOnly = true;
-  };
 
   # bump nofile limits
   # systemd.extraConfig = "DefaultLimitNOFILE=8192";
