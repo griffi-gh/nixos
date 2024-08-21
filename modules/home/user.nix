@@ -16,6 +16,7 @@
       lshw-gui     # (provides both lshw command and the gui :p)
       android-tools # adb, fastboot etc.
       osslsigncode # verify code signatures
+      yt-dlp       # yt-dlp (youtube-dl fork)
 
       # file stuff:
       gocryptfs    # gocryptfs
