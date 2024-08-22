@@ -27,6 +27,11 @@
       # Themes/Icons/etc.:
       github.github-vscode-theme
       vscode-icons-team.vscode-icons
+
+      # Remote
+      ms-vscode.remote-explorer
+      ms-vscode-remote.remote-ssh
+      ms-vscode-remote.remote-ssh-edit
     ];
     userSettings = {
       # UI:
