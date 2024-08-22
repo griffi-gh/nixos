@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }: {
+{ pkgs, ... }: {
   # Use the systemd-boot EFI boot loader.
   boot = {
     bootspec = {
@@ -29,7 +29,10 @@
       };
       timeout = 0;
     };
-    tmp.useTmpfs = true;
+    tmp = {
+      useTmpfs = true;
+      cleanOnBoot = true;
+    };
     plymouth = {
       enable = true;
       theme = "bgrt";
