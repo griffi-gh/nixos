@@ -17,6 +17,7 @@
       android-tools # adb, fastboot etc.
       osslsigncode # verify code signatures
       yt-dlp       # yt-dlp (youtube-dl fork)
+      btop         # htop but even more autistic :3
 
       # file stuff:
       gocryptfs    # gocryptfs
