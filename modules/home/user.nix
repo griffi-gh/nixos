@@ -48,7 +48,7 @@
       zed-editor            # Zed Editor (gui)
       helix                 # Helix Editor (cli)
       renderdoc             # RenderDoc (graphics debugger)
-      gitkraken             # GitKraken (git client)
+      # gitkraken           # GitKraken (git client)
 
       # Device drivers etc
       # TODO fix galaxy-buds-client somehow (borked and outdated)
