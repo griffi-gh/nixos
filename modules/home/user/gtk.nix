@@ -8,9 +8,9 @@
     # gtk4.extraCss = ''
     #   @import './colors.css';
     # '';
-    # theme = {
-    #   package = pkgs.kdePackages.breeze-gtk;
-    #   name = "Breeze-dark";
-    # };
+    theme = {
+      package = pkgs.kdePackages.breeze-gtk;
+      name = "Breeze-Dark";
+    };
   };
 }
