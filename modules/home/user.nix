@@ -51,7 +51,8 @@
       zed-editor            # Zed Editor (gui)
       helix                 # Helix Editor (cli)
       renderdoc             # RenderDoc (graphics debugger)
-      # gitkraken           # GitKraken (git client)
+      # (game engines and stuff:)
+      love                  # Love2D (lua game framework)
 
       # Device drivers etc
       # TODO fix galaxy-buds-client somehow (borked and outdated)
