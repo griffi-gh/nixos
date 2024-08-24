@@ -1,4 +1,4 @@
-{ lib, inputs, ... }: let
+{ lib, ... }: let
   thunderbird = { login ? true }: {
     thunderbird = {
       enable = true;

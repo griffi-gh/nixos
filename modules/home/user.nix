@@ -11,6 +11,7 @@
       tree
       pciutils
       glxinfo
+      libva-utils
       inxi
       nmap
       vulkan-tools # vulkan-tools (for e.g. vulkaninfo)

@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }: {
+{ pkgs, ... }: {
   # desktop nya :3
   services.displayManager.sddm = {
     enable = true;

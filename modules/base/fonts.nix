@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }: {
+{ pkgs, ... }: {
   fonts = {
     fontDir.enable = true;
     fontconfig = {

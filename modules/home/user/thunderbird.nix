@@ -1,4 +1,4 @@
-{ lib, inputs, ... }: {
+{ lib, ... }: {
   programs.thunderbird = {
     enable = true;
     profiles.default = {

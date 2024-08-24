@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }: {
+{ ... }: {
   # networking :3
   networking = {
     networkmanager = {

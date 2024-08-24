@@ -10,6 +10,7 @@ in {
 
   # cpu
   hardware.cpu.amd.updateMicrocode = true;
+  powerManagement.cpuFreqGovernor = "schedutil";
 
   # gpu
   boot.blacklistedKernelModules = [ "radeon" ];
