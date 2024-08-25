@@ -20,6 +20,6 @@
   };
 
   # Still, use Breeze-Dark for Firefox and Thunderbird
-  # programs.firefox.profiles.default.settings."widget.content.gtk-theme-override" = "Breeze-Dark";
-  # programs.thunderbird.profiles.default.settings."widget.content.gtk-theme-override" = "Breeze-Dark";
+  # programs.firefox.profiles.default.settings."widget.content.gtk-theme-override" = "Breeze:dark";
+  # programs.thunderbird.profiles.default.settings."widget.content.gtk-theme-override" = "Breeze:dark";
 }
