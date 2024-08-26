@@ -27,7 +27,7 @@
   # gpg signature for the sober repo
   xdg.dataFile."flatpak/repo/sober.trustedkeys.gpg" = {
     enable = true;
-    source = ../../../stuff/sober.trustedkeys.gpg;
+    source = ../../../assets/sober.trustedkeys.gpg;
   };
 
   # fix app icons not appearing

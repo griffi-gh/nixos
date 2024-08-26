@@ -10,23 +10,6 @@ in {
     configFile = let
       immutable = value: { inherit value; immutable = true; };
     in {
-      # =========== kde/qt applications ===========
-
-      # Dolphin
-      dolphinrc.General = {
-        GlobalViewProps = immutable false;
-        ConfirmClosingMultipleTabs = immutable false;
-        RememberOpenedTabs = immutable false;
-        ShowFullPath = immutable true;
-      };
-
-      # Konsole
-      konsolerc.TabBar = {
-        CloseTabOnMiddleMouseButton = immutable true;
-        TabBarPosition = immutable "Left";
-        TabBarVisibility = immutable "AlwaysShowTabBar";
-      };
-
       # =========== kde settings ===========
 
       # accent color

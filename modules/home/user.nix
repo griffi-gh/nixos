@@ -90,6 +90,8 @@
     ./user/shells.nix
     ./user/git.nix
     ./user/plasma.nix
+    ./user/kde-apps/konsole.nix
+    ./user/kde-apps/dolphin.nix
     ./user/gtk.nix
     ./user/flatpak.nix
     ./user/cursor.nix

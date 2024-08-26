@@ -91,7 +91,7 @@
                 ];
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                backupFileExtension = "bak";
+                backupFileExtension = "hm-bak";
               };
             }
           ];
