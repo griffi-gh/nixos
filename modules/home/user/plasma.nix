@@ -22,6 +22,7 @@ in {
 
       # Konsole
       konsolerc.TabBar = {
+        CloseTabOnMiddleMouseButton = immutable true;
         TabBarPosition = immutable "Left";
         TabBarVisibility = immutable "AlwaysShowTabBar";
       };
@@ -39,6 +40,14 @@ in {
         Image = immutable wallpaper;
         PreviewImage = immutable wallpaper;
       };
+
+      # powerdevil/power management conf.
+      # powerdevilrc = {
+      #   AC.Performance.PowerProfile = "performance";
+      #   Battery.Performance.PowerProfile = "power-saver";
+      #   BatteryManagemet.BatteryLowLevel = 15;
+      #   LowBattery.Performance.PowerProfile = "power-saver";
+      # };
 
       # keyboard layouts/kxkb
       kxkbrc.Layout = {
