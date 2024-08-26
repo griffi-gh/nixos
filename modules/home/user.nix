@@ -33,6 +33,8 @@
       # Software:
       snapshot              # Gnome's Camera App
       haruna                # KDE's Video player
+      kdePackages.filelight # Filelight (disk usage analyzer)
+      kdePackages.krdc      # KRDC
       libreoffice-qt6-fresh # LibreOffice
       inkscape              # Inkscape
       blender-hip           # Blender (with HIP support)
@@ -41,7 +43,6 @@
       vesktop               # Discord (vesktop/vencord)
       telegram-desktop      # Telegram
       nheko                 # Nheko (matrix)
-      kdePackages.krdc      # KRDC
       okteta                # Okteta (hex editor)
       imhex                 # imhex  (hex editor)
       vaults                # Vaults (gocryptfs GTK GUI)
