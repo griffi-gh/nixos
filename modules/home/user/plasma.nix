@@ -10,6 +10,24 @@ in {
     configFile = let
       immutable = value: { inherit value; immutable = true; };
     in {
+      # =========== kde/qt applications ===========
+
+      # Dolphin
+      dolphinrc.General = {
+        GlobalViewProps = immutable false;
+        ConfirmClosingMultipleTabs = immutable false;
+        RememberOpenedTabs = immutable false;
+        ShowFullPath = immutable true;
+      };
+
+      # Konsole
+      konsolerc.TabBar = {
+        TabBarPosition = immutable "Left";
+        TabBarVisibility = immutable "AlwaysShowTabBar";
+      };
+
+      # =========== kde settings ===========
+
       # accent color
       kdeglobals.General = {
         AccentColor = immutable "250,140,200";
@@ -20,14 +38,6 @@ in {
       kscreenlockerrc."Greeter/Wallpaper/org.kde.image/General" = {
         Image = immutable wallpaper;
         PreviewImage = immutable wallpaper;
-      };
-
-      # dolphin settings
-      dolphinrc.General = {
-        GlobalViewProps = immutable false;
-        ConfirmClosingMultipleTabs = immutable false;
-        RememberOpenedTabs = immutable false;
-        ShowFullPath = immutable true;
       };
 
       # keyboard layouts/kxkb
