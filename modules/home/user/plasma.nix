@@ -1,69 +1,38 @@
 { ... }: let
-  wallpaper = "/home/user/nixos/wallpapers/whatever.png"; #TODO use relative path?
+  # TODO use relative path?
+  wallpaper = "/home/user/nixos/wallpapers/whatever.png";
 in {
+  imports = [
+    ./plasma/kwin.nix
+    ./plasma/input.nix
+    ./plasma/dolphin.nix
+    ./plasma/konsole.nix
+  ];
   programs.plasma = {
     enable = true;
+    immutableByDefault = true;
     workspace = {
       inherit wallpaper;
       lookAndFeel = "org.kde.breezedark.desktop";
     };
-    configFile = let
-      immutable = value: { inherit value; immutable = true; };
-    in {
-      # =========== kde settings ===========
-
-      # accent color
+    kscreenlocker.appearance = {
+      inherit wallpaper;
+    };
+    configFile = {
       kdeglobals.General = {
-        AccentColor = immutable "250,140,200";
+        # accent color
+        AccentColor = "250,140,200";
         LastUsedCustomAccentColor = "250,140,200";
-      };
 
-      # set lock screen wallpaper
-      kscreenlockerrc."Greeter/Wallpaper/org.kde.image/General" = {
-        Image = immutable wallpaper;
-        PreviewImage = immutable wallpaper;
-      };
-
-      # powerdevil/power management conf.
-      # powerdevilrc = {
-      #   AC.Performance.PowerProfile = "performance";
-      #   Battery.Performance.PowerProfile = "power-saver";
-      #   BatteryManagemet.BatteryLowLevel = 15;
-      #   LowBattery.Performance.PowerProfile = "power-saver";
-      # };
-
-      # keyboard layouts/kxkb
-      kxkbrc.Layout = {
-        Use = immutable true;
-        ResetOldOptions = immutable true;
-        DisplayNames = immutable ",";
-        LayoutList = immutable "us,ua";
-        Options = immutable "grp:win_space_toggle";
-        VariantList = immutable ",";
-      };
-
-      # plugins
-      kwinrc.Plugins = {
-        # Dim on root prompt
-        dimscreenEnabled = immutable true;
-      };
-
-      # virtual desktops conf.
-      kwinrc.Desktops = {
-        Number = immutable 4;
-        Rows = immutable 2;
-      };
-
-      # enable font antialiasing
-      kdeglobals.General = {
-        XftAntialias = immutable true;
-        XftHintStyle = immutable "hintslight";
-        XftSubPixel = immutable "rgb";
+        # enable font antialiasing
+        XftAntialias = true;
+        XftHintStyle = "hintslight";
+        XftSubPixel = "rgb";
       };
 
       # Highlight non-default settings
       systemsettingsrc.systemsettings_sidebar_mode = {
-        HighlightNonDefaultSettings = immutable true;
+        HighlightNonDefaultSettings = true;
       };
 
       # Locale
@@ -71,19 +40,19 @@ in {
         lang = "en_US.UTF8";
         locale = "en_IE.UTF-8";
       in {
-        LANG = immutable lang;
-        LC_CTYPE = immutable locale;
-        LC_NUMERIC = immutable locale;
-        LC_TIME = immutable locale;
-        LC_COLLATE = immutable locale;
-        LC_MONETARY = immutable locale;
-        LC_MESSAGES = immutable locale;
-        LC_PAPER = immutable locale;
-        LC_NAME = immutable locale;
-        LC_ADDRESS = immutable locale;
-        LC_TELEPHONE = immutable locale;
-        LC_MEASUREMENT = immutable locale;
-        LC_IDENTIFICATION = immutable locale;
+        LANG = lang;
+        LC_CTYPE = locale;
+        LC_NUMERIC = locale;
+        LC_TIME = locale;
+        LC_COLLATE = locale;
+        LC_MONETARY = locale;
+        LC_MESSAGES = locale;
+        LC_PAPER = locale;
+        LC_NAME = locale;
+        LC_ADDRESS = locale;
+        LC_TELEPHONE = locale;
+        LC_MEASUREMENT = locale;
+        LC_IDENTIFICATION = locale;
       };
     };
   };
