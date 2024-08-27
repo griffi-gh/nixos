@@ -13,9 +13,18 @@
       };
     };
   };
+  emailAccounts = import ../../../secrets/emailAccounts.nix { inherit thunderbird; };
 in {
   accounts.email.accounts = lib.listToAttrs (
-    map (item: { name = item.address; value = item; })
-    (import ../../../secrets/accounts.nix { inherit thunderbird; })
+    map (item: { name = item.address; value = item; }) emailAccounts
   );
+
+  # Set the list of email accounts to be used by Thunderbird.
+  # (this allows setting the order explicitly, and works around a bug in home-manager that keeps adding accounts to the list)
+  programs.thunderbird.profiles.default.settings = let
+    toHashedName = x: "account_" + (builtins.hashString "sha256" x);
+    tbAccounts = map (item: item.address) emailAccounts;
+  in {
+    "mail.accountmanager.accounts" = lib.concatStringsSep "," ((map toHashedName tbAccounts) ++ ["account1"]);
+  };
 }
