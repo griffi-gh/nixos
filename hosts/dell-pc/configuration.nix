@@ -30,8 +30,10 @@ in {
 
   # fs
   fileSystems = {
-    "/".options = [ "noatime" ];
-    "/nix".options = [ "noatime" ];
+    "/".options = [ "ssd" "noatime" ];
+    "/home".options = [ "ssd" "noatime" ];
+    "/nix".options = [ "ssd" "noatime" ];
+    "/boot".options = [ "noatime" ];
   };
 
   # services
