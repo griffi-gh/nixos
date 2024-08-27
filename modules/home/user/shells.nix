@@ -1,25 +1,22 @@
 { ... }: {
+  home.shellAliases = {
+    ls = "eza -a";
+    cat = "bat";
+    cls = "clear";
+    helix = "hx";
+    balooctl = "balooctl6";
+  };
   programs = {
     # Shells:
     fish = {
       enable = true;
-      shellAliases = {
-        ls = "eza -a";
-        cat = "bat";
-        cls = "clear";
-        "cd.." = "cd ..";
-        helix = "hx";
-      };
+      shellAliases = {};
       functions = {
-        # rebuild-switch = "rm -f ~/.gtkrc-2.0.bak; nixos-rebuild switch --flake ~/nixos#$hostname --use-remote-sudo";
         rebuild-switch = ''
-          rm -f ~/.gtkrc-2.0.bak;
           NIX_REMOTE=daemon sudo nixos-rebuild switch --flake ~/nixos#$hostname;
         '';
         flake-update = ''
-          cd ~/nixos;
-          nix flake update --commit-lock-file;
-          cd -;
+          nix flake update --flake ~/nixos;
         '';
       };
     };
@@ -49,6 +46,7 @@
 
     # tools:
     htop.enable = true;
+    thefuck.enable = true;
     bat.enable = true;
     eza = {
       enable = true;
