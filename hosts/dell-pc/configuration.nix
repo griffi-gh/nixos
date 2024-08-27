@@ -29,7 +29,10 @@ in {
     ];
 
   # fs
-  fileSystems."/nix".options = [ "noatime" ];
+  fileSystems = {
+    "/".options = [ "noatime" ];
+    "/nix".options = [ "noatime" ];
+  };
 
   # services
   services.thermald.enable = true;
