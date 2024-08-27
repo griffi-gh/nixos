@@ -51,7 +51,6 @@
   services.power-profiles-daemon.enable = true;
 
   programs = {
-
     nix-ld = {
       enable = true;
       # package = pkgs.nix-ld-rs;
@@ -127,6 +126,9 @@
     # SDL_VIDEODRIVER = "wayland";
     NIXOS_OZONE_WL = "1";
   };
+
+  # enable rtkit
+  security.rtkit.enable = true;
 
   security = {
     protectKernelImage = false;
