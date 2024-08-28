@@ -30,9 +30,9 @@ in {
 
   # fs
   fileSystems = {
-    "/".options = [ "ssd" "noatime" ];
-    "/home".options = [ "ssd" "noatime" ];
-    "/nix".options = [ "ssd" "noatime" ];
+    "/".options = [ "ssd" "noatime" "compress=zstd:1" ];
+    "/home".options = [ "ssd" "noatime" "compress=zstd:1" ];
+    "/nix".options = [ "ssd" "noatime" "compress=zstd:1" ];
     "/boot".options = [ "noatime" ];
   };
 
