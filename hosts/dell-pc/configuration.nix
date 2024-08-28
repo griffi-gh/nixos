@@ -29,14 +29,17 @@ in {
     ];
 
   # fs
-  fileSystems = {
-    "/".options = [ "ssd" "noatime" "compress=zstd:1" ];
-    "/home".options = [ "ssd" "noatime" "compress=zstd:1" ];
-    "/nix".options = [ "ssd" "noatime" "compress=zstd:1" ];
+  fileSystems = let
+    btrfsOptions = [ "ssd" "noatime" "nodiscard" "compress=zstd:1" ];
+  in {
+    "/".options = btrfsOptions;
+    "/home".options = btrfsOptions;
+    "/nix".options =  btrfsOptions;
     "/boot".options = [ "noatime" ];
   };
 
   # services
+  services.fstrim.enable = true;
   services.thermald.enable = true;
   services.fwupd.enable = true;
 
