@@ -5,10 +5,12 @@
     update.onActivation = true;
     remotes = [
       { name = "flathub"; location = "https://flathub.org/repo/flathub.flatpakrepo"; }
+      { name = "flathub-beta"; location = "https://flathub.org/beta-repo/flathub-beta.flatpakrepo"; }
       { name = "sober"; location = "https://sober.vinegarhq.org/repo/"; }
     ];
     packages = [
       { appId = "org.vinegarhq.Sober"; origin = "sober";  }
+      # { appId = "org.gimp.GIMP"; origin = "flathub-beta"; }
     ];
     overrides = {
       global = {
@@ -24,11 +26,19 @@
     };
   };
 
-  # gpg signature for the sober repo
-  xdg.dataFile."flatpak/repo/sober.trustedkeys.gpg" = {
-    enable = true;
-    source = ../../../assets/sober.trustedkeys.gpg;
-  };
+  # gpg signature for flatpak repos
+  xdg.dataFile = let
+    trustRepo = repo: {
+      "flatpak/repo/${repo}.trustedkeys.gpg" = {
+        enable = true;
+        source = ../../../assets/trustedkeys/${repo}.trustedkeys.gpg;
+      };
+    };
+  in (
+    (trustRepo "flathub") //
+    (trustRepo "flathub-beta") //
+    (trustRepo "sober")
+  );
 
   # fix app icons not appearing
   xdg.systemDirs.data = [
