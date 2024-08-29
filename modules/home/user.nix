@@ -28,6 +28,10 @@
       rsync        # rsync/rclone
       rclone
 
+      # net:
+      # trayscale   # Trayscale (Tailscale gui)
+      ktailctl      # KTailCtl (Tailscale gui)
+
       # etc.
       xorg.xeyes
 
