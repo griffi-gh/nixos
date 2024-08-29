@@ -3,7 +3,12 @@
   networking = {
     networkmanager = {
       enable = true;
-      wifi.backend = "iwd";
+      # wifi.backend = "iwd";
+      # DOES NOT PLAY WELL WITH KDE!
+      # issues:
+      # - makes it forget wifi network is protected
+      # - wpa3 is borked
+      # - no hotspot
     };
     # wireless.iwd.enable = true;
 
