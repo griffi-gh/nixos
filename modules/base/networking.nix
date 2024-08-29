@@ -15,11 +15,13 @@
         3389  # rdp
         9993  # zerotier
         1714 1764 # kde connect
+        18886 # torrent
       ];
       allowedUDPPorts = [
         3389  # rdp
         9993  # zerotier
         1714 1764 # kde connect
+        18886 # torrent
       ];
     };
 
