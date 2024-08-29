@@ -28,4 +28,7 @@
     # proxy.default = "http://user:password@proxy:port/";
     # proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   };
+
+  # Unnecesary on single-user systems, slows down boot, causes rebuilds to fail
+  systemd.services.NetworkManager-wait-online.enable = false;
 }
