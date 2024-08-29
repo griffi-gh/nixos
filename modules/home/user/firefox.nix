@@ -45,6 +45,27 @@
       OfferToSaveLogins = false;
     };
     profiles.default = {
+      userChrome = ''
+        @-moz-document url("chrome://browser/content/browser.xhtml") {
+          #main-window {
+            min-width: 300px !important;
+          }
+          @media (max-width: 400px) {
+            #urlbar-container {
+              min-width: 80px !important;
+              flex-basis: 80px !important;
+            }
+
+            #identity-box,
+            #tracking-protection-icon-container,
+            #cookie-button,
+            #reader-mode-button,
+            #picture-in-picture-button {
+              display: none !important;
+            }
+          }
+        };
+      '';
       settings = {
         # Make configured extensions work
         "extensions.autoDisableScopes" = 0;

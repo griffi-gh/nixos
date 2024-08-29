@@ -45,19 +45,21 @@
       "window.titleBarStyle" = "custom";
       "window.dialogStyle" = "custom";
 
-      # Git:
-      "git.openRepositoryInParentFolders" = "never";
-
       # Editing:
       "editor.linkedEditing" = true;
 
-      # Telemetry:
+      # Git:
+      "git.openRepositoryInParentFolders" = "never";
+      "git.enableSmartCommit" = true;
+      "git.confirmSync" = false;
+
+      # Disable Telemetry and some Online Features:
       "telemetry.telemetryLevel" = "off";
       "workbench.enableExperiments" = false;
+      "workbench.settings.enableNaturalLanguageSearch" = false;
 
       # Misc.:
       "extensions.autoUpdate" = false;
-      "workbench.settings.enableNaturalLanguageSearch" = false;
 
       # ====== EXTENSION SETTINGS ======
 
