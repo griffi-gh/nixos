@@ -46,6 +46,11 @@ in {
   # cpu
   hardware.cpu.amd.updateMicrocode = true;
 
+  # reduce swappiness
+  boot.kernel.sysctl = {
+    "vm.swappiness" = 10;
+  };
+
   # HACK: wifi
   networking.networkmanager.wifi.powersave = false;
   boot.extraModprobeConfig = ''
