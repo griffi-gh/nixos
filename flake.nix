@@ -3,9 +3,7 @@
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
-    nixpkgs-stable = {
-      url = "github:nixos/nixpkgs/nixos-24.05";
-    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -34,7 +32,7 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, nixpkgs-stable, ... }:
+  outputs = inputs@{ nixpkgs, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -48,35 +46,30 @@
           firefox.enablePlasmaBrowserIntegration = true;
         };
       };
-      pkgs-stable = import nixpkgs-stable {
-        inherit system;
-        config.allowUnfree = true;
-      };
       vscode-extensions = inputs.nix-vscode-extensions.extensions.${system};
-      nixosModules = {
-        programs-sqlite = inputs.flake-programs-sqlite.nixosModules.programs-sqlite;
-        home-manager    = inputs.home-manager.nixosModules.home-manager;
+      nixosModules = with inputs; {
+        home-manager    = home-manager.nixosModules.home-manager;
+        programs-sqlite = flake-programs-sqlite.nixosModules.programs-sqlite;
       };
-      homeModules = {
-        plasma-manager  = inputs.plasma-manager.homeManagerModules.plasma-manager;
-      	vscode-server   = inputs.vscode-server.homeModules.default;
-        nix-flatpak     = inputs.nix-flatpak.homeManagerModules.nix-flatpak;
+      homeModules = with inputs; {
+        plasma-manager  = plasma-manager.homeManagerModules.plasma-manager;
+      	vscode-server   = vscode-server.homeModules.default;
+        nix-flatpak     = nix-flatpak.homeManagerModules.nix-flatpak;
+        # chaotic         = chaotic.homeManagerModules.default;
       };
 
       specialArgs = {
-        inherit inputs pkgs pkgs-stable vscode-extensions system;
+        inherit inputs pkgs vscode-extensions system;
       };
     in {
       nixosConfigurations = let
         buildNixosSystem = host: nixpkgs.lib.nixosSystem {
-          inherit
-            system
-            specialArgs;
+          inherit system specialArgs;
           modules = [
             (import ./hosts/${host}/configuration.nix)
             (import ./modules/base.nix)
-            nixosModules.programs-sqlite
             nixosModules.home-manager
+            nixosModules.programs-sqlite
             {
               home-manager = {
                 users = {

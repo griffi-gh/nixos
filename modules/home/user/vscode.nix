@@ -16,6 +16,10 @@
       # Rust
       rust-lang.rust-analyzer
 
+      # Debugging:
+      vadimcn.vscode-lldb
+      seaql.firedbg-rust
+
       # Copilot:
       github.copilot
       github.copilot-chat
@@ -50,12 +54,22 @@
       # Telemetry:
       "telemetry.telemetryLevel" = "off";
       "workbench.enableExperiments" = false;
-      "gitlens.telemetry.enabled" = false;
 
       # Misc.:
       "extensions.autoUpdate" = false;
       "workbench.settings.enableNaturalLanguageSearch" = false;
+
+      # ====== EXTENSION SETTINGS ======
+
+      # Vsicons
       "vsicons.dontShowNewVersionMessage" = true;
+
+      # GitLens:
+      "gitlens.telemetry.enabled" = false;
+
+      # FireDbg:
+      "firedbg.telemetry" = false;
+      "firedbg.showWelcome" = false;
     };
   };
 
