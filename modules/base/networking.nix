@@ -14,10 +14,12 @@
         22    # ssh
         3389  # rdp
         9993  # zerotier
+        1714 1764 # kde connect
       ];
       allowedUDPPorts = [
         3389  # rdp
         9993  # zerotier
+        1714 1764 # kde connect
       ];
     };
 

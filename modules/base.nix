@@ -19,7 +19,7 @@
     ./base/services/libinput.nix
     ./base/services/printing.nix
     ./base/services/xserver.nix
-    # ./base/services/zerotier.nix # broken
+    ./base/services/zerotier.nix # requires build from source
     # ./base/programs/gamescope.nix # broken
     ./base/programs/steam.nix
     ./base/programs/virtualbox.nix
