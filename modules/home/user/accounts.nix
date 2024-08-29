@@ -1,5 +1,5 @@
 { lib, ... }: let
-  thunderbird = { login ? true }: {
+  thunderbird = { login ? true, check ? login }: {
     thunderbird = {
       enable = true;
       settings = id: let OAuth2 = 10; in {
@@ -10,6 +10,7 @@
         "mail.server.server_${id}.daysToKeepBodies" = 30;
         "mail.server.server_${id}.daysToKeepHdrs" = 30;
         "mail.server.server_${id}.login_at_startup" = login;
+        "mail.server.server_${id}.check_new_mail" = check;
       };
     };
   };
