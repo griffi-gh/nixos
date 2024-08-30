@@ -30,7 +30,8 @@
         "verified-fetches"
       ];
 
-      sandbox = "relaxed";
+      # sandbox = "relaxed";
+      sandbox = true;
       auto-allocate-uids = true;
       auto-optimise-store = true;
       keep-derivations = true;
