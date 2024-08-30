@@ -7,7 +7,10 @@ in {
     enableUpdateCheck = false;
     enableExtensionUpdateCheck = false;
     mutableExtensionsDir = false;
-    extensions = with vscode-extensions.vscode-marketplace; [
+    extensions = (
+      let from-nixpkgs = pkgs.vscode-extensions; in
+      with vscode-extensions.vscode-marketplace;
+    [
       # Git
       eamodio.gitlens
 
@@ -20,6 +23,11 @@ in {
 
       # TOML
       tamasfe.even-better-toml
+
+      # C#/dotnet
+      from-nixpkgs.ms-dotnettools.csdevkit
+      from-nixpkgs.ms-dotnettools.csharp
+      from-nixpkgs.ms-dotnettools.vscode-dotnet-runtime
 
       # Debugging:
       vadimcn.vscode-lldb
@@ -42,7 +50,7 @@ in {
       ms-vscode.remote-explorer
       ms-vscode-remote.remote-ssh
       ms-vscode-remote.remote-ssh-edit
-    ];
+    ]);
     userSettings = {
       # UI:
       "workbench.startupEditor" = "none";
@@ -69,6 +77,9 @@ in {
 
       # ====== EXTENSION SETTINGS ======
 
+      # direnv:
+      "direnv.restart.automatic" = true;
+
       # Vsicons
       "vsicons.dontShowNewVersionMessage" = true;
 
@@ -81,10 +92,26 @@ in {
 
       # Project Manager:
       "projectManager.projectsLocation" = projectsFolder;
-      # "projectManager.any.baseFolders" = [ projectsFolder ];
       "projectManager.git.baseFolders" = [ projectsFolder ];
       "projectManager.removeCurrentProjectFromList" = false;
       "projectManager.ignoreProjectsWithinProjects" = true;
+
+      # C#:
+      "dotnetAcquisitionExtension.enableTelemetry" = false;
+      "csharp.preview.improvedLaunchExperience" = true;
+      "nuget.includePrereleasePackageVersions" = true;
+      "csharp.inlayHints.enableInlayHintsForImplicitObjectCreation" = true;
+      "csharp.inlayHints.enableInlayHintsForImplicitVariableTypes" = true;
+      "csharp.inlayHints.enableInlayHintsForLambdaParameterTypes" = true;
+      "csharp.inlayHints.enableInlayHintsForTypes" = true;
+      "dotnet.inlayHints.enableInlayHintsForIndexerParameters" = true;
+      "dotnet.inlayHints.enableInlayHintsForLiteralParameters" = true;
+      "dotnet.inlayHints.enableInlayHintsForObjectCreationParameters" = true;
+      "dotnet.inlayHints.enableInlayHintsForOtherParameters" = true;
+      "dotnet.inlayHints.enableInlayHintsForParameters" = true;
+      "dotnet.inlayHints.suppressInlayHintsForParametersThatDifferOnlyBySuffix" = true;
+      "dotnet.inlayHints.suppressInlayHintsForParametersThatMatchArgumentName" = true;
+      "dotnet.inlayHints.suppressInlayHintsForParametersThatMatchMethodIntent" = true;
     };
   };
 

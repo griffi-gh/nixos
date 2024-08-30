@@ -36,6 +36,8 @@
       xorg.xeyes
       scrcpy        # scrcpy (android screen mirroring)
 
+      gearlever     # manage AppImages
+
       # Software:
       snapshot              # Gnome's Camera App
       haruna                # KDE's Video player
