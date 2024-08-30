@@ -34,6 +34,7 @@
 
       # etc.
       xorg.xeyes
+      scrcpy        # scrcpy (android screen mirroring)
 
       # Software:
       snapshot              # Gnome's Camera App
