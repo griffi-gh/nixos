@@ -1,4 +1,6 @@
-{ pkgs, vscode-extensions, ... }: {
+{ pkgs, vscode-extensions, ... }: let
+  projectsFolder = "~/projects";
+in {
   programs.vscode = {
     enable = true;
     # package = pkgs.vscodium;
@@ -16,6 +18,9 @@
       # Rust
       rust-lang.rust-analyzer
 
+      # TOML
+      tamasfe.even-better-toml
+
       # Debugging:
       vadimcn.vscode-lldb
       seaql.firedbg-rust
@@ -27,6 +32,7 @@
       # Generic:
       gruntfuggly.todo-tree
       shardulm94.trailing-spaces
+      alefragnani.project-manager
 
       # Themes/Icons/etc.:
       github.github-vscode-theme
@@ -72,6 +78,13 @@
       # FireDbg:
       "firedbg.telemetry" = false;
       "firedbg.showWelcome" = false;
+
+      # Project Manager:
+      "projectManager.projectsLocation" = projectsFolder;
+      # "projectManager.any.baseFolders" = [ projectsFolder ];
+      "projectManager.git.baseFolders" = [ projectsFolder ];
+      "projectManager.removeCurrentProjectFromList" = false;
+      "projectManager.ignoreProjectsWithinProjects" = true;
     };
   };
 
