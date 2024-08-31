@@ -1,4 +1,4 @@
-{ ... }: {
+{ lib, ... }: {
   programs.plasma.window-rules = [
     {
       description = "hm-firefox-pip";
@@ -28,4 +28,8 @@
       apply.desktopfile = "/etc/profiles/per-user/user/share/applications/code.desktop";
     }
   ];
+  programs.plasma.configFile."kwinrulesrc".General = {
+    count.immutable = lib.mkForce false;
+    rules.immutable = lib.mkForce false;
+  };
 }
