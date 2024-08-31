@@ -39,6 +39,7 @@
     qtimageformats
     kimageformats
     qtvirtualkeyboard
+    krfb # remote desktop (vnc) and vitual monitor support
   ];
 
   # kde connect

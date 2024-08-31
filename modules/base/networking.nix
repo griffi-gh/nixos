@@ -18,13 +18,13 @@
       allowedTCPPorts = [
         22    # ssh
         3389  # rdp
-        9993  # zerotier
+        5900  # vnc
         1714 1764 # kde connect
         18886 # torrent
       ];
       allowedUDPPorts = [
         3389  # rdp
-        9993  # zerotier
+        5900  # vnc
         1714 1764 # kde connect
         18886 # torrent
       ];
