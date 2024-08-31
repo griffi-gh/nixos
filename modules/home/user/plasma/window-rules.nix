@@ -1,15 +1,13 @@
 { ... }: {
-  programs.plasma.window-rules =[
+  programs.plasma.window-rules = [
     {
       description = "hm-firefox-pip";
       match = {
         window-class = "firefox";
         title = "Picture-in-Picture";
       };
-      apply = {
-        above.value = true;
-        # desktops.value = "\\0";
-      };
+      apply.above = true;
+      # apply.desktops = "\\0";
     }
     {
       description = "hm-heroic-desktop-file";
