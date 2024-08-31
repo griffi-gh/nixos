@@ -21,9 +21,6 @@ in {
       inherit wallpaper;
     };
     configFile = {
-      # "Navigation Wraps Around"
-      kwinrc.Windows.RollOverDesktops = true;
-
       kdeglobals.General = {
         # accent color
         AccentColor = accentColor;
