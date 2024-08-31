@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   nix = {
-    package = pkgs.nixVersions.latest; # pkgs.nixVersions.git
+    package = pkgs.nixVersions.git;
     settings = {
       # See https://nixos.org/manual/nix/stable/command-ref/conf-file.html
       # for a complete list of Nix configuration options.
