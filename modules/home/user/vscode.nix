@@ -39,6 +39,10 @@ in {
       from-nixpkgs.ms-dotnettools.csharp
       from-nixpkgs.ms-dotnettools.vscode-dotnet-runtime
 
+      # JS/TS
+      dbaeumer.vscode-eslint
+      ms-vscode.vscode-typescript-next
+
       # Debugging:
       from-nixpkgs.vadimcn.vscode-lldb
       seaql.firedbg-rust
