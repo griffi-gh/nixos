@@ -1,6 +1,7 @@
 { ... }: let
   # TODO use relative path?
   wallpaper = "/home/user/nixos/wallpapers/whatever.png";
+  accentColor = "250,140,200";
 in {
   imports = [
     ./plasma/kwin.nix
@@ -25,8 +26,8 @@ in {
 
       kdeglobals.General = {
         # accent color
-        AccentColor = "250,140,200";
-        LastUsedCustomAccentColor = "250,140,200";
+        AccentColor = accentColor;
+        LastUsedCustomAccentColor = accentColor;
 
         # enable font antialiasing
         XftAntialias = true;
