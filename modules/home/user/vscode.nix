@@ -7,22 +7,22 @@ in {
     enableUpdateCheck = false;
     enableExtensionUpdateCheck = false;
     mutableExtensionsDir = false;
-    extensions = (
-      let from-nixpkgs = pkgs.vscode-extensions; in
-      with vscode-extensions.vscode-marketplace;
-    [
+    extensions = let
+      from-marketplace = vscode-extensions.vscode-marketplace;
+      from-nixpkgs = pkgs.vscode-extensions;
+    in [
       # Git
-      eamodio.gitlens
+      from-marketplace.eamodio.gitlens
 
       # Nix/NixOS
-      mkhl.direnv
-      jnoortheen.nix-ide
+      from-marketplace.mkhl.direnv
+      from-marketplace.jnoortheen.nix-ide
 
       # Rust
-      rust-lang.rust-analyzer
+      from-marketplace.rust-lang.rust-analyzer # nixpkgs is outdated
 
       # TOML
-      tamasfe.even-better-toml
+      from-marketplace.tamasfe.even-better-toml
 
       # C#/dotnet
       from-nixpkgs.ms-dotnettools.csdevkit
@@ -30,27 +30,33 @@ in {
       from-nixpkgs.ms-dotnettools.vscode-dotnet-runtime
 
       # Debugging:
-      vadimcn.vscode-lldb
-      seaql.firedbg-rust
+      from-nixpkgs.vadimcn.vscode-lldb
+      from-marketplace.seaql.firedbg-rust
 
       # Copilot:
-      github.copilot
-      github.copilot-chat
+      from-nixpkgs.github.copilot
+      from-nixpkgs.github.copilot-chat
 
       # Generic:
-      gruntfuggly.todo-tree
-      shardulm94.trailing-spaces
-      alefragnani.project-manager
+      from-marketplace.gruntfuggly.todo-tree
+      from-marketplace.shardulm94.trailing-spaces
+      from-marketplace.alefragnani.project-manager
 
       # Themes/Icons/etc.:
-      github.github-vscode-theme
-      vscode-icons-team.vscode-icons
+      from-marketplace.github.github-vscode-theme
+      from-marketplace.vscode-icons-team.vscode-icons
 
       # Remote
-      ms-vscode.remote-explorer
-      ms-vscode-remote.remote-ssh
-      ms-vscode-remote.remote-ssh-edit
-    ]);
+      from-marketplace.ms-vscode.remote-explorer
+      from-nixpkgs.ms-vscode-remote.remote-ssh
+      from-nixpkgs.ms-vscode-remote.remote-ssh-edit
+
+      # Intellicode
+      from-nixpkgs.visualstudioexptteam.vscodeintellicode
+      from-marketplace.visualstudioexptteam.vscodeintellicode-completions
+      from-nixpkgs.visualstudioexptteam.intellicode-api-usage-examples
+      from-nixpkgs.ms-dotnettools.vscodeintellicode-csharp # IntelliCode support for C# DevKit
+    ];
     userSettings = {
       # UI:
       "workbench.startupEditor" = "none";
