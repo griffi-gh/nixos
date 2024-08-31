@@ -15,6 +15,7 @@ InvertSelectionColors=false
 Name=fish
 Parent=FALLBACK/
 TerminalMargin=1
+InvertSelectionColors=true
 
 [Interaction Options]
 AllowEscapedLinks=true
