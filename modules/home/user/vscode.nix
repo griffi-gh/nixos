@@ -29,6 +29,9 @@ in {
       from-nixpkgs.ms-dotnettools.csharp
       from-nixpkgs.ms-dotnettools.vscode-dotnet-runtime
 
+      # MS Solution file support
+      logerfo.sln-support
+
       # EditorConfig support
       editorconfig.editorconfig
 
