@@ -8,18 +8,28 @@ in {
     enableExtensionUpdateCheck = false;
     mutableExtensionsDir = false;
     extensions =
-      let from-nixpkgs = pkgs.vscode-extensions; in
+      let from-nixpkgs = pkgs.vscode-extensions;
+          from-openvsx = vscode-extensions.open-vsx; in
       with vscode-extensions.vscode-marketplace;
     [
       # Git
       eamodio.gitlens
+
+      # Markdown
+      bierner.github-markdown-preview
+      bierner.markdown-preview-github-styles
+      bierner.markdown-emoji
+      bierner.markdown-checkbox
+      bierner.markdown-yaml-preamble
+      bierner.markdown-footnotes
+      bierner.markdown-mermaid
 
       # Nix/NixOS
       mkhl.direnv
       jnoortheen.nix-ide
 
       # Rust
-      rust-lang.rust-analyzer # nixpkgs is outdated
+      rust-lang.rust-analyzer # (nixpkgs is outdated)
 
       # TOML
       tamasfe.even-better-toml
@@ -29,12 +39,6 @@ in {
       from-nixpkgs.ms-dotnettools.csharp
       from-nixpkgs.ms-dotnettools.vscode-dotnet-runtime
 
-      # MS Solution file support
-      logerfo.sln-support
-
-      # EditorConfig support
-      editorconfig.editorconfig
-
       # Debugging:
       from-nixpkgs.vadimcn.vscode-lldb
       seaql.firedbg-rust
@@ -43,10 +47,17 @@ in {
       from-nixpkgs.github.copilot
       from-nixpkgs.github.copilot-chat
 
-      # Generic:
+      # Generic/Editor:
       gruntfuggly.todo-tree
+      aaron-bond.better-comments
       shardulm94.trailing-spaces
+      from-openvsx.drmerfy.overtype
       alefragnani.project-manager
+
+      # Misc. config file/language support
+      editorconfig.editorconfig # .editorconfig
+      logerfo.sln-support       # .sln
+      codezombiech.gitignore    # .gitignore
 
       # Themes/Icons/etc.:
       github.github-vscode-theme
@@ -62,6 +73,10 @@ in {
       visualstudioexptteam.vscodeintellicode-completions
       from-nixpkgs.visualstudioexptteam.intellicode-api-usage-examples
       from-nixpkgs.ms-dotnettools.vscodeintellicode-csharp # IntelliCode support for C# DevKit
+
+      # Misc.
+      anweber.vscode-httpyac # HTTPyac client
+      arcanis.vscode-zipfs   # ZIPFS
     ];
     userSettings = {
       # UI:
@@ -71,8 +86,17 @@ in {
       "window.titleBarStyle" = "custom";
       "window.dialogStyle" = "custom";
 
-      # Editing:
+      # Editor:
       "editor.linkedEditing" = true;
+      "editor.cursorSmoothCaretAnimation" = "explicit";
+
+      # Terminal:
+      "terminal.integrated.fontFamily" = "FiraCode Nerd Font Mono";
+
+      # Enable smooth scrolling:
+      "editor.smoothScrolling" = true;
+      "terminal.integrated.smoothScrolling" = true;
+      "workbench.list.smoothScrolling" = true;
 
       # Git:
       "git.openRepositoryInParentFolders" = "never";
@@ -111,6 +135,7 @@ in {
       # C#:
       "dotnetAcquisitionExtension.enableTelemetry" = false;
       "csharp.preview.improvedLaunchExperience" = true;
+      "csharp.experimental.debug.hotReload" = true;
       "nuget.includePrereleasePackageVersions" = true;
       "csharp.inlayHints.enableInlayHintsForImplicitObjectCreation" = true;
       "csharp.inlayHints.enableInlayHintsForImplicitVariableTypes" = true;
