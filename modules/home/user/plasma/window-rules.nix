@@ -8,7 +8,7 @@
       };
       apply = {
         above.value = true;
-        desktops.value = ''\\0'';
+        # desktops.value = "\\0";
       };
     }
     {
@@ -17,7 +17,7 @@
       apply.desktopfile = "/etc/profiles/per-user/user/share/applications/com.heroicgameslauncher.hgl.desktop";
     }
     {
-      description = "hm-ktailctl-desktop-file";
+      description = "hm#-ktailctl-desktop-file";
       match.window-class = "ktailctl";
       apply.desktopfile = "/etc/profiles/per-user/user/share/applications/com.github.kaeza.ktailctl.desktop";
     }
