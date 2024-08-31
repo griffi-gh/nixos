@@ -4,5 +4,6 @@ pkgs.mkShell {
     git
     git-crypt
     nixd
+    nil
   ];
 }
