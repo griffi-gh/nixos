@@ -30,6 +30,11 @@
       url = "github:nix-community/nixos-vscode-server";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    dwarffs = {
+      url = "github:edolstra/dwarffs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ nixpkgs, ... }:
@@ -51,6 +56,7 @@
       nixosModules = with inputs; {
         home-manager    = home-manager.nixosModules.home-manager;
         programs-sqlite = flake-programs-sqlite.nixosModules.programs-sqlite;
+        dwarffs         = dwarffs.nixosModules.dwarffs;
       };
       homeModules = with inputs; {
         plasma-manager  = plasma-manager.homeManagerModules.plasma-manager;
@@ -71,6 +77,7 @@
             (import ./modules/base.nix)
             nixosModules.home-manager
             nixosModules.programs-sqlite
+            nixosModules.dwarffs
             {
               home-manager = {
                 users = {
