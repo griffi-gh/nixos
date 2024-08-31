@@ -7,53 +7,56 @@ in {
     enableUpdateCheck = false;
     enableExtensionUpdateCheck = false;
     mutableExtensionsDir = false;
-    extensions = let
-      from-marketplace = vscode-extensions.vscode-marketplace;
-      from-nixpkgs = pkgs.vscode-extensions;
-    in [
+    extensions =
+      let from-nixpkgs = pkgs.vscode-extensions; in
+      with vscode-extensions.vscode-marketplace;
+    [
       # Git
-      from-marketplace.eamodio.gitlens
+      eamodio.gitlens
 
       # Nix/NixOS
-      from-marketplace.mkhl.direnv
-      from-marketplace.jnoortheen.nix-ide
+      mkhl.direnv
+      jnoortheen.nix-ide
 
       # Rust
-      from-marketplace.rust-lang.rust-analyzer # nixpkgs is outdated
+      rust-lang.rust-analyzer # nixpkgs is outdated
 
       # TOML
-      from-marketplace.tamasfe.even-better-toml
+      tamasfe.even-better-toml
 
       # C#/dotnet
       from-nixpkgs.ms-dotnettools.csdevkit
       from-nixpkgs.ms-dotnettools.csharp
       from-nixpkgs.ms-dotnettools.vscode-dotnet-runtime
 
+      # EditorConfig support
+      editorconfig.editorconfig
+
       # Debugging:
       from-nixpkgs.vadimcn.vscode-lldb
-      from-marketplace.seaql.firedbg-rust
+      seaql.firedbg-rust
 
       # Copilot:
       from-nixpkgs.github.copilot
       from-nixpkgs.github.copilot-chat
 
       # Generic:
-      from-marketplace.gruntfuggly.todo-tree
-      from-marketplace.shardulm94.trailing-spaces
-      from-marketplace.alefragnani.project-manager
+      gruntfuggly.todo-tree
+      shardulm94.trailing-spaces
+      alefragnani.project-manager
 
       # Themes/Icons/etc.:
-      from-marketplace.github.github-vscode-theme
-      from-marketplace.vscode-icons-team.vscode-icons
+      github.github-vscode-theme
+      vscode-icons-team.vscode-icons
 
       # Remote
-      from-marketplace.ms-vscode.remote-explorer
+      ms-vscode.remote-explorer
       from-nixpkgs.ms-vscode-remote.remote-ssh
       from-nixpkgs.ms-vscode-remote.remote-ssh-edit
 
       # Intellicode
       from-nixpkgs.visualstudioexptteam.vscodeintellicode
-      from-marketplace.visualstudioexptteam.vscodeintellicode-completions
+      visualstudioexptteam.vscodeintellicode-completions
       from-nixpkgs.visualstudioexptteam.intellicode-api-usage-examples
       from-nixpkgs.ms-dotnettools.vscodeintellicode-csharp # IntelliCode support for C# DevKit
     ];
