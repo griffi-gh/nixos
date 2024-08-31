@@ -67,6 +67,7 @@
         buildNixosSystem = host: nixpkgs.lib.nixosSystem {
           inherit system specialArgs;
           modules = [
+            ({ ... }: { nix.registry.nixpkgs.flake = nixpkgs; })
             (import ./hosts/${host}/configuration.nix)
             (import ./modules/base.nix)
             nixosModules.home-manager
