@@ -1,15 +1,13 @@
 { ... }: {
   # TODO use programs.konsole instead
-  programs.plasma.configFile.konsolerc = let
-    immutable = value: { inherit value; immutable = true; };
-  in {
+  programs.plasma.configFile.konsolerc = {
     "Desktop Entry" = {
       DefaultProfile = "fish.profile";
     };
     TabBar = {
-      CloseTabOnMiddleMouseButton = immutable true;
-      TabBarPosition = immutable "Left";
-      TabBarVisibility = immutable "AlwaysShowTabBar";
+      CloseTabOnMiddleMouseButton = true;
+      TabBarPosition = "Left";
+      TabBarVisibility = "AlwaysShowTabBar";
     };
   };
   xdg.dataFile = {

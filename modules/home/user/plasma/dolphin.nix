@@ -1,12 +1,10 @@
 { ... }: {
-  programs.plasma.configFile.dolphinrc = let
-    immutable = value: { inherit value; immutable = true; };
-  in {
+  programs.plasma.configFile.dolphinrc = {
     General = {
-      GlobalViewProps = immutable false;
-      ConfirmClosingMultipleTabs = immutable false;
-      RememberOpenedTabs = immutable false;
-      ShowFullPath = immutable true;
+      GlobalViewProps = false;
+      ConfirmClosingMultipleTabs = false;
+      RememberOpenedTabs = false;
+      ShowFullPath = true;
     };
   };
 }

@@ -4,6 +4,7 @@
 in {
   imports = [
     ./plasma/kwin.nix
+    ./plasma/window-rules.nix
     ./plasma/input.nix
     ./plasma/dolphin.nix
     ./plasma/konsole.nix
@@ -19,6 +20,9 @@ in {
       inherit wallpaper;
     };
     configFile = {
+      # "Navigation Wraps Around"
+      kwinrc.Windows.RollOverDesktops = true;
+
       kdeglobals.General = {
         # accent color
         AccentColor = "250,140,200";
