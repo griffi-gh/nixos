@@ -2,10 +2,8 @@
   programs.plasma.window-rules = [
     {
       description = "hm-firefox-pip";
-      match = {
-        window-class = "firefox";
-        title = "Picture-in-Picture";
-      };
+      match.window-class = "firefox";
+      match.title = "Picture-in-Picture";
       apply.above = true;
       # apply.desktops = "\\0";
     }
