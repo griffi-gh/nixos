@@ -8,6 +8,16 @@
       # apply.desktops = "\\0";
     }
     {
+      description = "hm-xeyes";
+      match.window-class = "xeyes XEyes";
+      apply.above = true;
+    }
+    {
+      description = "hm-bitwarden-desktop-file";
+      match.window-class = "electron Bitwarden";
+      apply.desktopfile = "/etc/profiles/per-user/user/share/applications/bitwarden.desktop";
+    }
+    {
       description = "hm-heroic-desktop-file";
       match.window-class = "electron heroic";
       apply.desktopfile = "/etc/profiles/per-user/user/share/applications/com.heroicgameslauncher.hgl.desktop";
