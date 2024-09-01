@@ -1,11 +1,13 @@
-{ lib, ... }: {
+{ lib, ... }: let
+  ALL_DESKTOPS = "\\0";
+in {
   programs.plasma.window-rules = [
     {
       description = "hm-firefox-pip";
       match.window-class = "firefox firefox";
       match.title = "Picture-in-Picture";
       apply.above = true;
-      # apply.desktops = "\\0";
+      apply.desktops = ALL_DESKTOPS;
     }
     {
       description = "hm-xeyes";
