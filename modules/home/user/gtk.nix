@@ -9,13 +9,17 @@
       # name = "adw-gtk3-dark";
     };
     gtk3 = {
+      extraCss = "@import 'colors.css';";
       extraConfig = {
         gtk-modules = "colorreload-gtk-module:window-decoration-gtk-module";
+        gtk-application-prefer-dark-theme = true;
       };
-      extraCss = "@import 'colors.css';";
     };
     gtk4 = {
       extraCss = "@import 'colors.css';";
+      extraConfig = {
+        gtk-application-prefer-dark-theme = true;
+      };
     };
   };
   # foce overwrite gtkrc
