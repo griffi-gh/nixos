@@ -79,6 +79,7 @@ in {
       from-nixpkgs.ms-dotnettools.vscodeintellicode-csharp # IntelliCode support for C# DevKit
 
       # Misc.
+      ms-vscode.hexeditor    # Built-in hex editor
       anweber.vscode-httpyac # HTTPyac client
       arcanis.vscode-zipfs   # ZIPFS
       fill-labs.dependi      # Rust and other lang dependency info
