@@ -97,6 +97,11 @@ in {
       # Terminal:
       "terminal.integrated.fontFamily" = "FiraCode Nerd Font Mono";
 
+      # Search:
+      "search.exclude" = {
+        "**/.direnv" = true;
+      };
+
       # Enable smooth scrolling:
       "editor.smoothScrolling" = true;
       "terminal.integrated.smoothScrolling" = true;
