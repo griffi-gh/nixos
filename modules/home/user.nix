@@ -95,6 +95,7 @@
       cemu           # Cemu (Wii U) (borked package)
       mgba           # mGBA (GB/GBC/GBA)
       # sameboy      # SameBoy (GB/GBC)
+      melonDS        # MelonDS (DS)
       # vita3k is not in nixpkgs :<
     ];
   };
