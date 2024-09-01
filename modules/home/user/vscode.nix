@@ -81,6 +81,7 @@ in {
       # Misc.
       anweber.vscode-httpyac # HTTPyac client
       arcanis.vscode-zipfs   # ZIPFS
+      fill-labs.dependi      # Rust and other lang dependency info
     ];
     userSettings = {
       # UI:
