@@ -39,6 +39,11 @@ in {
       match.window-class = "electron Bitwarden";
       apply.desktopfile = "/etc/profiles/per-user/user/share/applications/bitwarden.desktop";
     }
+    {
+      description = "hm-zulip-desktop-file";
+      match.window-class = "zulip Zulip";
+      apply.desktopfile = "/etc/profiles/per-user/user/share/applications/zulip.desktop";
+    }
   ];
   programs.plasma.configFile."kwinrulesrc".General = {
     count.immutable = lib.mkForce false;
