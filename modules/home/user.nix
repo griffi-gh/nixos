@@ -53,6 +53,7 @@
       vesktop               # Discord (vesktop/vencord)
       telegram-desktop      # Telegram
       nheko                 # Nheko (matrix)
+      zulip                 # Zulip desktop chat client
       okteta                # Okteta (hex editor)
       imhex                 # imhex  (hex editor)
       vaults                # Vaults (gocryptfs GTK GUI)
