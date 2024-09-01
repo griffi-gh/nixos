@@ -129,6 +129,10 @@ in {
       # Vsicons
       "vsicons.dontShowNewVersionMessage" = true;
 
+      # Trailing Spaces:
+      "trailing-spaces.trimOnSave" = true;
+      "trailing-spaces.deleteModifiedLinesOnly" = true;
+
       # GitLens:
       "gitlens.telemetry.enabled" = false;
 
