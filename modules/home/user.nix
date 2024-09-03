@@ -59,7 +59,7 @@
       imhex                 # imhex  (hex editor)
       vaults                # Vaults (gocryptfs GTK GUI)
       apostrophe            # GTK Markdown editor
-      # krita               # Krita (BROKEN)
+      krita                 # Krita ((no longer?) BROKEN)
       gimp                  # GIMP
       obs-studio            # OBS Studio
 
