@@ -12,8 +12,30 @@
       enable = true;
       shellAliases = {};
       functions = {
+        fish_greeting = ''
+          set blue (set_color "#5BCEFA")
+          set pink (set_color "#F5A9B8")
+          set white (set_color "#FFFFFF")
+          set char \u2594
+          set banner $blue$char$pink$char$white$char$pink$char$blue$char
+
+          set nixos_icon \uf313
+          set nixos_version (nixos-version | cut -d'.' -f1,2)
+          set tool_nixos $nixos_icon NixOS $nixos_version
+
+          set fish_icon \uee41
+          set fish_version $version
+          set tool_fish $fish_icon fish $fish_version
+
+          echo $banner $tool_fish on $tool_nixos
+
+          set_color normal;
+        '';
         rebuild-switch = ''
           NIX_REMOTE=daemon sudo nixos-rebuild switch --flake ~/nixos#$hostname;
+        '';
+        rebuild-boot = ''
+          NIX_REMOTE=daemon sudo nixos-rebuild boot --flake ~/nixos#$hostname;
         '';
         flake-update = ''
           nix flake update --flake ~/nixos;
