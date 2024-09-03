@@ -54,6 +54,7 @@
       telegram-desktop      # Telegram
       nheko                 # Nheko (matrix)
       zulip                 # Zulip desktop chat client
+      teams-for-linux       # Microsoft Teams (unofficial open-source electron wrapper)
       okteta                # Okteta (hex editor)
       imhex                 # imhex  (hex editor)
       vaults                # Vaults (gocryptfs GTK GUI)
