@@ -1,7 +1,7 @@
 { ... }: {
   home.shellAliases = {
     ls = "eza -a";
-    cat = "bat";
+    cat = "bat -pp";
     cls = "clear";
     helix = "hx";
     balooctl = "balooctl6";
