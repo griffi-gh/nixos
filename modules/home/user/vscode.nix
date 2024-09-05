@@ -38,6 +38,7 @@ in {
       from-nixpkgs.ms-dotnettools.csdevkit
       from-nixpkgs.ms-dotnettools.csharp
       from-nixpkgs.ms-dotnettools.vscode-dotnet-runtime
+      ms-dotnettools.dotnet-maui
 
       # JS/TS
       dbaeumer.vscode-eslint
