@@ -62,6 +62,8 @@
       krita                 # Krita ((no longer?) BROKEN)
       gimp                  # GIMP
       obs-studio            # OBS Studio
+      audacity              # Audacity
+      kdenlive              # Kdenlive
 
       # Dev. Stuff/Code editors
       zed-editor            # Zed Editor (gui)
