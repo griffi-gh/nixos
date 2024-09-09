@@ -5,7 +5,7 @@
   # hardware.enableRedistributableFirmware = true;
 
   imports = [
-    ./base/hacks/fontconfig-unbreak.nix
+    # ./base/hacks/fontconfig-unbreak.nix # no longer needed
     ./base/nix.nix
     ./base/boot.nix
     ./base/sudo.nix
