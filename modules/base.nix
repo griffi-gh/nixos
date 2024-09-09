@@ -82,6 +82,7 @@
     micro
     wget
     curl
+    killall
 
     # runtimes:
     jdk21
