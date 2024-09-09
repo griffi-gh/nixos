@@ -23,6 +23,8 @@
     ./base/services/tailscale.nix
     # ./base/services/zerotier.nix # requires build from source
     # ./base/programs/gamescope.nix # broken
+    ./base/programs/appimage.nix
+    ./base/programs/gamemode.nix
     ./base/programs/steam.nix
     ./base/programs/virtualbox.nix
   ];
@@ -93,19 +95,7 @@
 
     # exe icons
     icoutils
-
-    # appimage
-    appimage-run
   ];
-
-  # Gamemoderun
-  programs.gamemode.enable = true;
-
-  # AppImage support
-  programs.appimage = {
-    enable = true;
-    binfmt = true;
-  };
 
   # Flatpaks
   services.flatpak.enable = true;
