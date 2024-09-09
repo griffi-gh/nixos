@@ -4,6 +4,7 @@
     enable = true;
     settings = {
       general = {
+        renice = 10;
         igpu_power_threshold = -1;
       };
       gpu = {
