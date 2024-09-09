@@ -44,6 +44,9 @@ in {
       dbaeumer.vscode-eslint
       ms-vscode.vscode-typescript-next
 
+      # Nushell
+      thenuprojectcontributors.vscode-nushell-lang
+
       # Debugging:
       from-nixpkgs.vadimcn.vscode-lldb
       seaql.firedbg-rust
