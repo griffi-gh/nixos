@@ -9,6 +9,8 @@
 
       # CLI tools:
       tree
+      ripgrep
+      ripgrep-all
       pciutils
       glxinfo
       libva-utils
