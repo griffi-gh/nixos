@@ -47,6 +47,7 @@
       haruna                # KDE's Video player
       kdePackages.filelight # Filelight (disk usage analyzer)
       kdePackages.krdc      # KRDC (remote desktop client)
+      kdePackages.kcolorchooser # KColorChooser (color picker)
 
       # Software:
       snapshot              # Gnome's Camera App
