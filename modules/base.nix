@@ -15,6 +15,7 @@
     ./base/desktop-kde.nix
     ./base/fonts.nix
     ./base/user.nix
+    ./base/udevrules.nix
     ./base/services/ssh.nix
     ./base/services/sound.nix
     ./base/services/libinput.nix
