@@ -4,6 +4,7 @@
     extraGroups = [
       "wheel"
       "networkmanager"
+      "vboxusers"
       "gamemode"
       "kvm"
       "adbusers"
