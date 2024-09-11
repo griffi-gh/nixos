@@ -2,9 +2,9 @@
   home.shellAliases = {
     ls = "eza -a";
     cat = "bat -pp";
-    cls = "clear";
+    grep = "rg";
     helix = "hx";
-    balooctl = "balooctl6";
+    cls = "clear";
   };
   programs = {
     # Shells:
