@@ -10,7 +10,7 @@
       # CLI tools:
       tree
       ripgrep
-      # ripgrep-all (conflicts with radeon gpu profiler lmao)
+      ripgrep-all # (conflicts with radeon gpu profiler)
       pciutils
       glxinfo
       libva-utils
@@ -78,7 +78,7 @@
       zed-editor            # Zed Editor (gui)
       helix                 # Helix Editor (cli)
       renderdoc             # RenderDoc (graphics debugger)
-      rgp                   # Radeon GPU Profiler (compatible with RenderDoc)
+      # rgp                 # Radeon GPU Profiler (compatible with RenderDoc)
       love                  # Love2D (lua game framework)
 
       # Device drivers etc
