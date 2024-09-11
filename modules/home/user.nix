@@ -78,6 +78,7 @@
       zed-editor            # Zed Editor (gui)
       helix                 # Helix Editor (cli)
       renderdoc             # RenderDoc (graphics debugger)
+      rgp                   # Radeon GPU Profiler (compatible with RenderDoc)
       love                  # Love2D (lua game framework)
 
       # Device drivers etc
