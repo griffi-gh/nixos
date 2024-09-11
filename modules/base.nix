@@ -102,6 +102,9 @@
   # Flatpaks
   services.flatpak.enable = true;
 
+  # Debug symbols
+  services.nixseparatedebuginfod.enable = true;
+
   # bump nofile limits
   # systemd.extraConfig = "DefaultLimitNOFILE=8192";
   security.pam.loginLimits = [
