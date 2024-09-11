@@ -10,7 +10,7 @@
       # CLI tools:
       tree
       ripgrep
-      ripgrep-all
+      # ripgrep-all (conflicts with radeon gpu profiler lmao)
       pciutils
       glxinfo
       libva-utils
