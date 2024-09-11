@@ -25,7 +25,8 @@
       android-tools # adb, fastboot etc.
       osslsigncode # verify code signatures
       yt-dlp       # yt-dlp (youtube-dl fork)
-      btop         # htop but even more autistic :3
+      btop         # (system monitor) htop but even more autistic :3
+      glances      # (system monitor) Glances (with server)
       ffmpeg       # ffmpeg
 
       # file stuff:
