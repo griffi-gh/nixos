@@ -5,6 +5,7 @@
       "wheel"
       "networkmanager"
       "gamemode"
+      "kvm"
     ];
     # make sure to change it after install:
     initialHashedPassword = "$y$j9T$rBfGrT8nzukk5Uh7KQ31u/$v8AXjUZXGwWYfc2Pve/Sx84LRAeRLGyKs7fh8br4Uv2";
