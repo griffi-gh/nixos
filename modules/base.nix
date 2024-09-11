@@ -16,6 +16,8 @@
     ./base/fonts.nix
     ./base/user.nix
     ./base/udevrules.nix
+    ./base/debug.nix
+    ./base/location.nix
     ./base/services/ssh.nix
     ./base/services/sound.nix
     ./base/services/libinput.nix
@@ -97,20 +99,10 @@
 
     # exe icons
     icoutils
-
-    # system debugging tools
-    # (must be installed system-wide for nixseparatedebuginfod to work?)
-    gdb
-    strace
-    (elfutils.override { enableDebuginfod = true; })
-    bpftrace
   ];
 
-  services = {
-    flatpak.enable = true;               # Flatpaks
-    nixseparatedebuginfod.enable = true; # Debug symbols
-    geoclue2.enable = true;              # Geo-location
-  };
+  # Flatpaks
+  services.flatpak.enable = true;
 
   # bump nofile limits
   # systemd.extraConfig = "DefaultLimitNOFILE=8192";
