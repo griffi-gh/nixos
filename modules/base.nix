@@ -97,6 +97,13 @@
 
     # exe icons
     icoutils
+
+    # system debugging tools
+    # (must be installed system-wide for nixseparatedebuginfod to work?)
+    gdb
+    strace
+    elfutils
+    bpftrace
   ];
 
   # Flatpaks
