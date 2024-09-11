@@ -106,11 +106,11 @@
     bpftrace
   ];
 
-  # Flatpaks
-  services.flatpak.enable = true;
-
-  # Debug symbols
-  services.nixseparatedebuginfod.enable = true;
+  services = {
+    flatpak.enable = true;               # Flatpaks
+    nixseparatedebuginfod.enable = true; # Debug symbols
+    geoclue2.enable = true;              # Geo-location
+  };
 
   # bump nofile limits
   # systemd.extraConfig = "DefaultLimitNOFILE=8192";
@@ -131,10 +131,9 @@
     NIXOS_OZONE_WL = "1";
   };
 
-  # enable rtkit
-  security.rtkit.enable = true;
-
   security = {
+    # enable rtkit
+    rtkit.enable = true;
     protectKernelImage = false;
     allowSimultaneousMultithreading = true;
   };
