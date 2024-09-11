@@ -21,6 +21,7 @@
     ./base/services/ssh.nix
     ./base/services/sound.nix
     ./base/services/libinput.nix
+    ./base/services/avahi.nix
     ./base/services/printing.nix
     ./base/services/xserver.nix
     ./base/services/tailscale.nix
