@@ -102,7 +102,7 @@
     # (must be installed system-wide for nixseparatedebuginfod to work?)
     gdb
     strace
-    elfutils
+    (elfutils.override { enableDebuginfod = true; })
     bpftrace
   ];
 
