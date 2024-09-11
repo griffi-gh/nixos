@@ -286,7 +286,7 @@
         "browser.startup.homepage_override.mstone" = "ignore";
 
         # Use BeaconDB for geolocation
-        "geo.provider.network.url" = "https://beacondb.net/v1/geolocate";
+        "geo.provider.network.url" = import ../../../secrets/geolocate.nix;
       };
     };
   };
