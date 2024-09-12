@@ -86,7 +86,7 @@
       love                  # Love2D (lua game framework)
 
       # httpie (http client)
-      # httpie
+      httpie
       # httpie-desktop
 
       # Device drivers etc
