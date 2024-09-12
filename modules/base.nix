@@ -18,6 +18,7 @@
     ./base/udevrules.nix
     ./base/debug.nix
     ./base/location.nix
+    ./base/ubridge.nix
     ./base/services/ssh.nix
     ./base/services/sound.nix
     ./base/services/libinput.nix
@@ -102,8 +103,13 @@
     icoutils
   ];
 
-  # Flatpaks
-  services.flatpak.enable = true;
+  services = {
+    # Flatpaks
+    flatpak.enable = true;
+
+    # GNS3
+    # gns3-server.enable = true;
+  };
 
   # bump nofile limits
   # systemd.extraConfig = "DefaultLimitNOFILE=8192";
