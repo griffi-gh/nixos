@@ -1,7 +1,9 @@
 { pkgs, ... }: let
   cursor = {
-    name = "phinger-cursors-dark";
     package = pkgs.phinger-cursors;
+    name = "phinger-cursors-dark";
+    # package = pkgs.volantes-cursors;
+    # name = "volantes_cursors";
     size = 24;
   };
 in {
