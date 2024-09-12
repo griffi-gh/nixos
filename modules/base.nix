@@ -32,6 +32,7 @@
     ./base/programs/gamemode.nix
     ./base/programs/steam.nix
     ./base/programs/virtualbox.nix
+    ./base/programs/wireshark.nix
   ];
 
   # Locale/timezone
@@ -88,6 +89,8 @@
     wget
     curl
     killall
+    inetutils
+    iputils
 
     # runtimes:
     jdk21
