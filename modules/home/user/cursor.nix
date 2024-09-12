@@ -4,6 +4,8 @@
     name = "phinger-cursors-dark";
     # package = pkgs.volantes-cursors;
     # name = "volantes_cursors";
+    # name = "capitaine-cursors";
+    # package = pkgs.capitaine-cursors;
     size = 24;
   };
 in {
