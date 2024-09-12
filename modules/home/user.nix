@@ -85,6 +85,10 @@
       # rgp                 # Radeon GPU Profiler (compatible with RenderDoc)
       love                  # Love2D (lua game framework)
 
+      # httpie (http client)
+      httpie
+      httpie-desktop
+
       # Device drivers etc
       # TODO fix galaxy-buds-client somehow (borked and outdated)
       # galaxy-buds-client  # GalaxyBudsClient (unofficial)
