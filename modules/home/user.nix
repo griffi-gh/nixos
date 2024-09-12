@@ -120,11 +120,7 @@
 
       # Stuff i need for uni:
       ciscoPacketTracer8
-
-      # GNS3
-      gns3-gui
-      gns3-server
-      dynamips
+      gns3-gui # GNS3 GUI
     ];
   };
 

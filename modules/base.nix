@@ -18,7 +18,6 @@
     ./base/udevrules.nix
     ./base/debug.nix
     ./base/location.nix
-    ./base/ubridge.nix
     ./base/services/ssh.nix
     ./base/services/sound.nix
     ./base/services/libinput.nix
@@ -26,12 +25,12 @@
     ./base/services/printing.nix
     ./base/services/xserver.nix
     ./base/services/tailscale.nix
-    # ./base/services/zerotier.nix # requires build from source
     # ./base/programs/gamescope.nix # broken
     ./base/programs/appimage.nix
     ./base/programs/gamemode.nix
     ./base/programs/steam.nix
     ./base/programs/virtualbox.nix
+    ./base/programs/gns3-server.nix
     ./base/programs/wireshark.nix
   ];
 

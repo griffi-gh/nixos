@@ -1,7 +1,8 @@
-# ubridge (required by GNS3)
 { pkgs, lib, ... }: {
   environment.systemPackages = with pkgs; [
+    gns3-server
     ubridge
+    dynamips
   ];
   security.wrappers.ubridge = {
     source = lib.getExe pkgs.ubridge;
