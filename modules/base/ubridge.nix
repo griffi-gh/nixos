@@ -1,10 +1,10 @@
 # ubridge (required by GNS3)
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
   environment.systemPackages = with pkgs; [
     ubridge
   ];
   security.wrappers.ubridge = {
-    source = "/run/current-system/sw/bin/ubridge";
+    source = lib.getExe pkgs.ubridge;
     capabilities = "cap_net_admin,cap_net_raw=ep";
     owner = "root";
     group = "ubridge";
