@@ -3,7 +3,10 @@
     stateVersion = "24.11";
     username = "user";
     homeDirectory = "/home/user";
-    packages = with pkgs; [
+    packages = with pkgs; let
+      # "we have overlays at home"
+      ciscoPacketTracer8 = import ../../pkgs/ciscoPacketTracer8.nix { inherit pkgs; };
+    in [
       # fix for bash :p
       bashInteractive
 
@@ -110,6 +113,9 @@
       mgba           # mGBA (GB/GBC/GBA)
       melonDS        # MelonDS (DS)
       # vita3k is not in nixpkgs :<
+
+      # Stuff i need for uni:
+      ciscoPacketTracer8
     ];
   };
 
