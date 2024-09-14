@@ -38,6 +38,9 @@
       rsync        # rsync/rclone
       rclone
 
+      # cloud storage:
+      # nextcloud-client # Nextcloud client
+
       # net:
       # trayscale   # Trayscale (GTK Tailscale gui)
       ktailctl      # KTailCtl  (Qt Tailscale gui)
@@ -49,6 +52,7 @@
 
       # KDE stuff:
       haruna                # KDE's Video player
+      kdePackages.yakuake   # Yakuake (dropdown terminal)
       kdePackages.filelight # Filelight (disk usage analyzer)
       kdePackages.krdc      # KRDC (remote desktop client)
       kdePackages.kcolorchooser # KColorChooser (color picker)
