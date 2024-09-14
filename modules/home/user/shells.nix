@@ -1,5 +1,6 @@
 { ... }: {
   home.shellAliases = {
+    # cd = "z";
     ls = "eza -a";
     cat = "bat -pp";
     grep = "rg";
@@ -66,9 +67,13 @@
       enableTransience = true;
     };
 
-    # tools:
+    # cli sw.
     htop.enable = true;
+
+    # tools:
     thefuck.enable = true;
+    fzf.enable = true;
+    zoxide.enable = true;
     bat.enable = true;
     eza = {
       enable = true;
