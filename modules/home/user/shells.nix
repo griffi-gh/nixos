@@ -41,6 +41,10 @@
         flake-update = ''
           nix flake update --flake ~/nixos;
         '';
+        nuke-sycoca = ''
+          rm ~/.cache/ksycoca6_* -rf;
+          kbuildsycoca6 --noincremental
+        '';
       };
     };
     bash = {
