@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
   system.stateVersion = "24.11";
 
   hardware.enableAllFirmware = true;
@@ -131,6 +131,11 @@
     # SDL_VIDEODRIVER = "wayland";
     NIXOS_OZONE_WL = "1";
   };
+
+  # environment.profiles = lib.mkBefore [
+  #   "/nix/var/nix/profiles/default"
+  #   "/run/current-system/sw"
+  # ];
 
   security = {
     # enable rtkit

@@ -131,6 +131,7 @@
   };
 
   imports = [
+    ./user/face.nix
     ./user/shells.nix
     ./user/git.nix
     ./user/plasma.nix
