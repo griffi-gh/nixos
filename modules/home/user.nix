@@ -66,6 +66,7 @@
       imhex                 # imhex  (hex editor)
       apostrophe            # GTK Markdown editor
       obs-studio            # OBS Studio (streaming/recording tool)
+      logisim-evolution     # Logisim Evolution (digital logic simulator)
 
       # Photo/Video/Graphics stuff:
       inkscape              # Inkscape (vector graphics editor)
