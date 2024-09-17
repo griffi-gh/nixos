@@ -9,7 +9,12 @@
         dimAdminMode.enable = true;
       };
     };
-    # "Navigation Wraps Around"
-    configFile.kwinrc.Windows.RollOverDesktops = false;
+    configFile.kwinrc = {
+      # Effects: "Sheet"
+      Plugins.sheetEnabled = true;
+
+      # "Navigation Wraps Around"
+      Windows.RollOverDesktops = false;
+    };
   };
 }
