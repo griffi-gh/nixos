@@ -74,6 +74,10 @@
       gimp                  # GIMP  (image editor)
       krita                 # Krita (image editor)
       kdenlive              # Kdenlive (video editor)
+
+      # Audio stuff:
+      easyeffects           # EasyEffects (pa audio effects)
+      # TODO set up using home-manager option instead ^^^^^^
       audacity              # Audacity (audio editor)
 
       # Social/Communication stuff:
