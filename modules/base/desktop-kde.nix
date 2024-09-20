@@ -40,7 +40,10 @@
     kimageformats
     qtvirtualkeyboard
     krfb # remote desktop (vnc) and vitual monitor support
+
+    # Basic utilities:
     partitionmanager
+    kclock
   ];
 
   # kde connect

@@ -58,6 +58,7 @@
       kdePackages.kcolorchooser # KColorChooser (color picker)
 
       # Software:
+      pomodoro-gtk          # GTK Pomodoro Timer
       snapshot              # Gnome's Camera App
       libreoffice-qt6-fresh # LibreOffice
       transmission_4-qt6    # Transmission (Qt)
