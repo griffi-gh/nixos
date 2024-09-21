@@ -21,6 +21,7 @@
       nmap
       dig
       pwgen
+      mosh         # mosh (mobile shell, robust ssh over udp)
       compsize     # btrfs-compsize (btrfs compression ratio)
       trash-cli    # trash-cli (trash command)
       vulkan-tools # vulkan-tools (for e.g. vulkaninfo)
@@ -52,6 +53,7 @@
 
       # KDE stuff:
       haruna                # KDE's Video player
+      kdePackages.kalk      # Kalk (Calculator)
       kdePackages.yakuake   # Yakuake (dropdown terminal)
       kdePackages.filelight # Filelight (disk usage analyzer)
       kdePackages.krdc      # KRDC (remote desktop client)
