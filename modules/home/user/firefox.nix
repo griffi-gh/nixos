@@ -291,6 +291,13 @@
 
         # Use BeaconDB for geolocation
         "geo.provider.network.url" = import ../../../secrets/geolocate.nix;
+
+        # Enable AI thingy
+        "browser.ml.chat.enabled" = true;
+        "browser.ml.chat.hideLocalhost" = false;
+        "browser.ml.chat.sidebar" = true;
+        "browser.ml.chat.shortcuts" = false;
+        "browser.ml.chat.provider" = "https://chatgpt.com";
       };
     };
   };
