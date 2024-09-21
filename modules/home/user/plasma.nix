@@ -4,6 +4,7 @@
   accentColor = "250,140,200";
 in {
   imports = [
+    ./plasma/panels.nix
     ./plasma/kwin.nix
     ./plasma/window-rules.nix
     ./plasma/input.nix
