@@ -280,7 +280,7 @@
         "signon.management.page.breach-alerts.enabled" = false;
 
         # Enable "Block new requests asking to allow notifications"
-        "permissions.default.desktop-notification" = 2;
+        # "permissions.default.desktop-notification" = 2;
 
         # Disable the built-in password manager
         "pref.privacy.disable_button.view_passwords" = true;
