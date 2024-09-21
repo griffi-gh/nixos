@@ -103,6 +103,9 @@
 
     # exe icons
     icoutils
+
+    # mosh (mobile shell, robust ssh over udp)
+    mosh
   ];
 
   services = {

@@ -21,7 +21,6 @@
       nmap
       dig
       pwgen
-      mosh         # mosh (mobile shell, robust ssh over udp)
       compsize     # btrfs-compsize (btrfs compression ratio)
       trash-cli    # trash-cli (trash command)
       vulkan-tools # vulkan-tools (for e.g. vulkaninfo)
