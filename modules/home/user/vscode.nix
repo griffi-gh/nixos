@@ -171,7 +171,7 @@ in {
 
       # Nix IDE
       "nix.enableLanguageServer" = true;
-      "nix.serverPath" = "${pkgs.nil}/bin/nil",
+      "nix.serverPath" = "${pkgs.nil}/bin/nil";
     };
   };
 
