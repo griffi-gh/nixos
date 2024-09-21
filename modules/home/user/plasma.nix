@@ -1,4 +1,4 @@
-{ ... }: let
+{ lib, ... }: let
   # TODO use relative path?
   wallpaper = "/home/user/nixos/wallpapers/whatever.png";
   accentColor = "250,140,200";
@@ -58,4 +58,7 @@ in {
       };
     };
   };
+  # home.activation."kwin_reconfigure" = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+  #   qdbus org.kde.KWin /KWin reconfigure
+  # '';
 }

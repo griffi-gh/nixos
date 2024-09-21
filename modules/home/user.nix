@@ -58,7 +58,6 @@
       kdePackages.kcolorchooser # KColorChooser (color picker)
 
       # Software:
-      pomodoro-gtk          # GTK Pomodoro Timer
       snapshot              # Gnome's Camera App
       libreoffice-qt6-fresh # LibreOffice
       transmission_4-qt6    # Transmission (Qt)
@@ -68,6 +67,8 @@
       apostrophe            # GTK Markdown editor
       obs-studio            # OBS Studio (streaming/recording tool)
       logisim-evolution     # Logisim Evolution (digital logic simulator)
+      pomodoro-gtk          # GTK Pomodoro Timer
+      stremio               # Stremio (media center)
 
       # Photo/Video/Graphics stuff:
       inkscape              # Inkscape (vector graphics editor)

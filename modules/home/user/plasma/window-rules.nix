@@ -45,6 +45,13 @@ in {
       apply.desktopfile = "/etc/profiles/per-user/user/share/applications/zulip.desktop";
     }
     {
+      description = "hm-stremio";
+      match.window-class = "stremio com.stremio.stremio";
+      apply.desktopfile = "/etc/profiles/per-user/user/share/applications/smartcode-stremio.desktop";
+      apply.maximizehoriz = true;
+      apply.maximizevert = true;
+    }
+    {
       description = "hm-imhex-maximize";
       match.window-class = "imhex";
       apply.maximizehoriz = true;
