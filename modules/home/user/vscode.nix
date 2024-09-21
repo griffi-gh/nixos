@@ -168,6 +168,10 @@ in {
       "dotnet.inlayHints.suppressInlayHintsForParametersThatDifferOnlyBySuffix" = true;
       "dotnet.inlayHints.suppressInlayHintsForParametersThatMatchArgumentName" = true;
       "dotnet.inlayHints.suppressInlayHintsForParametersThatMatchMethodIntent" = true;
+
+      # Nix IDE
+      "nix.enableLanguageServer" = true;
+      "nix.serverPath" = "${pkgs.nil}/bin/nil",
     };
   };
 
