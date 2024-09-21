@@ -75,7 +75,6 @@
     # mosh (mobile shell, robust ssh over udp)
     mosh = {
       enable = true;
-      withUtempter = true;
       openFirewall = true;
     };
   };
