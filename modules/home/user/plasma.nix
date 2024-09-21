@@ -5,6 +5,7 @@
 in {
   imports = [
     ./plasma/panels.nix
+    ./plasma/widgets.nix
     ./plasma/kwin.nix
     ./plasma/window-rules.nix
     ./plasma/input.nix
