@@ -72,6 +72,12 @@
     };
     fish.enable = true;
     dconf.enable = true;
+    # mosh (mobile shell, robust ssh over udp)
+    mosh = {
+      enable = true;
+      withUtempter = true;
+      openFirewall = true;
+    };
   };
 
   environment.systemPackages = with pkgs; [
@@ -103,9 +109,6 @@
 
     # exe icons
     icoutils
-
-    # mosh (mobile shell, robust ssh over udp)
-    mosh
   ];
 
   services = {
