@@ -57,6 +57,13 @@ in {
       apply.maximizehoriz = true;
       apply.maximizevert = true;
     }
+    {
+      # Pomodoro timer: Above all windows and pin to all desktops
+      description = "hm-pomodoro-gtk";
+      match.window-class = "gjs-console io.gitlab.idevecore.Pomodoro";
+      apply.above = true;
+      apply.desktops = ALL_DESKTOPS;
+    }
   ];
   programs.plasma.configFile."kwinrulesrc".General = {
     count.immutable = lib.mkForce false;
