@@ -45,6 +45,9 @@
           rm ~/.cache/ksycoca6_* -rf;
           kbuildsycoca6 --noincremental
         '';
+        kwin-reconfigure = ''
+          qdbus org.kde.KWin /KWin reconfigure;
+        '';
       };
     };
     bash = {
