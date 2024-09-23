@@ -31,6 +31,7 @@
       btop         # (system monitor) htop but even more autistic :3
       glances      # (system monitor) Glances (with server)
       ffmpeg       # ffmpeg
+      http-server   # http-server (node.js)
 
       # file stuff:
       vaults       # Vaults (gocryptfs GTK GUI)

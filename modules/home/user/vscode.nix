@@ -51,6 +51,9 @@ in {
       from-nixpkgs.vadimcn.vscode-lldb
       seaql.firedbg-rust
 
+      # Browser Support:
+      firefox-devtools.vscode-firefox-debug
+
       # Copilot:
       from-nixpkgs.github.copilot
       from-nixpkgs.github.copilot-chat

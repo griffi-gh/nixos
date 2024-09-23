@@ -2,11 +2,12 @@
   cursor = {
     package = pkgs.phinger-cursors;
     name = "phinger-cursors-dark";
+    size = 26; # Cursed! base grid supported by phinger is either 24 or 32, 32/1.25 = 25.6, rounded...
+    # package = pkgs.capitaine-cursors;
+    # name = "capitaine-cursors";
+    # size = 24;
     # package = pkgs.volantes-cursors;
     # name = "volantes_cursors";
-    # name = "capitaine-cursors";
-    # package = pkgs.capitaine-cursors;
-    size = 24;
   };
 in {
   home.pointerCursor = {
@@ -15,7 +16,7 @@ in {
     x11.enable = true;
   };
   programs.plasma.workspace.cursor = {
-    theme = cursor.name;
     inherit (cursor) size;
+    theme = cursor.name;
   };
 }
