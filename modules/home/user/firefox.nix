@@ -85,8 +85,11 @@
         # "network.trr.uri" = "https://doh.sandbox.opendns.com/dns-query";
         # "network.trr.custom_uri" = "https://doh.sandbox.opendns.com/dns-query";
 
-        # Use system DNS
+        # Always use system DNS (and do not change automatically)
         "network.trr.mode" = 5;
+
+        # Prefer IPv6 DNS
+        "network.dns.preferIPv6" = true;
 
         # Disable Accessibility
         "accessibility.force_disabled" = "1";
