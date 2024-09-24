@@ -176,6 +176,11 @@ in {
       # Nix IDE
       "nix.enableLanguageServer" = true;
       "nix.serverPath" = "${pkgs.nil}/bin/nil";
+
+      # Live Server
+      "liveServer.settings.donotShowInfoMsg" = true;
+      "liveServer.settings.useLocalIp" = false;
+      "liveServer.settings.donotVerifyTags" = true;
     };
   };
 
