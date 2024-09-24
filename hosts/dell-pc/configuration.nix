@@ -1,5 +1,6 @@
 { config, lib, pkgs, ... }: let
   hostname = "dell-pc";
+  cur_rocmPackages = pkgs.rocmPackages_5;
 in {
   imports = [
     ./hardware-configuration.nix
@@ -12,21 +13,22 @@ in {
   # hardware.amdgpu.initrd.enable = true;
 
   # opencl
-  hardware.amdgpu.opencl.enable = true;
-  hardware.graphics.extraPackages = with pkgs; [
-    rocmPackages.clr.icd
+  # i'm overriding the default opencl option to use rocm 5 instead:
+  hardware.amdgpu.opencl.enable = false;
+  hardware.graphics.extraPackages = [
+    cur_rocmPackages.clr
+    cur_rocmPackages.clr.icd
   ];
 
   # hip/rocm
-  systemd.tmpfiles.rules =
-    let
-      rocmEnv = pkgs.symlinkJoin {
-        name = "rocm-combined";
-        paths = with pkgs.rocmPackages; [ rocblas hipblas clr ];
-      };
-    in [
-      "L+    /opt/rocm   -    -    -     -    ${rocmEnv}"
-    ];
+  systemd.tmpfiles.rules = let
+    rocmEnv = pkgs.symlinkJoin {
+      name = "rocm-combined";
+      paths = with cur_rocmPackages; [ rocblas hipblas clr ];
+    };
+  in [
+    "L+    /opt/rocm   -    -    -     -    ${rocmEnv}"
+  ];
 
   # fs
   fileSystems = let
@@ -64,7 +66,7 @@ in {
   boot.kernelParams = [ "nohibernate" ];
 
   # HACK: steam scaling
-  environment.sessionVariables = {
-    STEAM_FORCE_DESKTOPUI_SCALING = "1.25";
-  };
+  # environment.sessionVariables = {
+  #   STEAM_FORCE_DESKTOPUI_SCALING = "1.25";
+  # };
 }
