@@ -51,8 +51,9 @@ in {
       from-nixpkgs.vadimcn.vscode-lldb
       seaql.firedbg-rust
 
-      # Browser Support:
+      # Webdev/Browser Support/Web server:
       firefox-devtools.vscode-firefox-debug
+      ritwickdey.liveserver
 
       # Copilot:
       from-nixpkgs.github.copilot
@@ -64,6 +65,7 @@ in {
       shardulm94.trailing-spaces
       from-openvsx.drmerfy.overtype
       alefragnani.project-manager
+      fill-labs.dependi # Rust and other lang dependency info
 
       # Misc. config file/language support
       editorconfig.editorconfig # .editorconfig
@@ -89,7 +91,6 @@ in {
       ms-vscode.hexeditor    # Built-in hex editor
       anweber.vscode-httpyac # HTTPyac client
       arcanis.vscode-zipfs   # ZIPFS
-      fill-labs.dependi      # Rust and other lang dependency info
     ];
     userSettings = {
       # UI:
