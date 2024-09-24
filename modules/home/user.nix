@@ -85,8 +85,8 @@
       audacity              # Audacity (audio editor)
 
       # Social/Communication stuff:
-      # vesktop             # Discord (vesktop/vencord)
-      goofcord              # Discord (goofcord)
+      vesktop               # Discord (vesktop/vencord)
+      # goofcord            # Discord (goofcord)
       telegram-desktop      # Telegram
       nheko                 # Nheko (matrix)
       zulip                 # Zulip desktop chat client

@@ -32,7 +32,7 @@
 
   # extra stuff
   environment.systemPackages = with pkgs.kdePackages; [
-    kwalletmanager
+    kdbusaddons
     plasma-browser-integration
     kaccounts-integration
     kaccounts-providers
@@ -42,6 +42,7 @@
     krfb # remote desktop (vnc) and vitual monitor support
 
     # Basic utilities:
+    kwalletmanager
     partitionmanager
     kclock
   ];
