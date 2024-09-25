@@ -1,11 +1,11 @@
 { ... }: {
   home.shellAliases = {
-    # cd = "z";
     ls = "eza -a";
     cat = "bat -pp";
-    grep = "rg";
     helix = "hx";
     cls = "clear";
+    # cd = "z"; # causes loop on fish
+    # grep = "rg"; # not 100% compatible
   };
   programs = {
     # Shells:
