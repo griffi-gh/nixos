@@ -157,6 +157,7 @@ in {
 
       # C#:
       "dotnetAcquisitionExtension.enableTelemetry" = false;
+      "dotnetAcquisitionExtension.installTimeoutValue" = 0;
       "csharp.preview.improvedLaunchExperience" = true;
       "csharp.experimental.debug.hotReload" = true;
       "nuget.includePrereleasePackageVersions" = true;
