@@ -72,6 +72,13 @@
       pomodoro-gtk          # GTK Pomodoro Timer
       stremio               # Stremio (media center)
 
+      # Hunpell dicts:
+      hunspell
+      hunspellDicts.en_US
+      hunspellDicts.ru_RU
+      hunspellDicts.uk_UA
+      hunspellDicts.pl_PL
+
       # Photo/Video/Graphics stuff:
       inkscape              # Inkscape (vector graphics editor)
       blender-hip           # Blender (with HIP support)
