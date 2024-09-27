@@ -130,11 +130,19 @@
   };
 
   environment.sessionVariables = {
+    # Mozilla/Firefox/Thunderbird:
     MOZ_USE_XINPUT2 = "1";
     MOZ_ENABLE_WAYLAND = "1";
     MOZ_DBUS_REMOTE = "1";
-    # SDL_VIDEODRIVER = "wayland";
+
+    # Electron:
     NIXOS_OZONE_WL = "1";
+
+    # LibreOffice:
+    SAL_DISABLE_WATCHDOG = "1";
+    VCL_DOUBLEBUFFERING_FORCE_ENABLE = "1";
+
+    # SDL_VIDEODRIVER = "wayland";
   };
 
   # environment.profiles = lib.mkBefore [
