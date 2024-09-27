@@ -72,12 +72,14 @@
       pomodoro-gtk          # GTK Pomodoro Timer
       stremio               # Stremio (media center)
 
-      # Hunpell dicts:
+      # Hunpell/Hyphen dicts:
       hunspell
       hunspellDicts.en_US
       hunspellDicts.ru_RU
       hunspellDicts.uk_UA
       hunspellDicts.pl_PL
+      hyphen
+      hyphenDicts.en_US
 
       # Photo/Video/Graphics stuff:
       inkscape              # Inkscape (vector graphics editor)
