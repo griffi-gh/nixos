@@ -62,7 +62,8 @@
       # Software:
       snapshot              # Gnome's Camera App
       libreoffice-qt6-fresh # LibreOffice
-      transmission_4-qt6    # Transmission (Qt)
+      # transmission_4-qt6    # Transmission (Qt)
+      qbittorrent           # qBittorrent
       bitwarden-desktop     # BitWarden Desktop client
       okteta                # Okteta (hex editor)
       imhex                 # imhex  (hex editor)
