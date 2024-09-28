@@ -120,6 +120,10 @@
         "gfx.webrender.compositor.force-enabled" = true;
         "gfx.webrender.fallback.software" = false; # Disable software fallback
 
+        # Enable hw accel for video decoding
+        "media.ffmpeg.encoder.enabled" = true;
+        "media.ffmpeg.vaapi.enabled" = true;
+
         # Set content blocking to "Strict"
         "browser.contentblocking.category" = "strict";
 
