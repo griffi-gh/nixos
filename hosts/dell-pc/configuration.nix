@@ -66,7 +66,7 @@ in {
   boot.kernelParams = [ "nohibernate" ];
 
   # HACK: steam scaling
-  # environment.sessionVariables = {
-  #   STEAM_FORCE_DESKTOPUI_SCALING = "1.25";
-  # };
+  environment.sessionVariables = {
+    STEAM_FORCE_DESKTOPUI_SCALING = "1.25";
+  };
 }
