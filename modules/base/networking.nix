@@ -22,7 +22,7 @@
         1714 1764 # kde connect
         18886 # torrent
         61208 61209 # glances server
-        2234  # soulseek/nicotine+
+        # 2234  # soulseek/nicotine+
       ];
       allowedUDPPorts = [
         3389  # rdp
