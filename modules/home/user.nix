@@ -72,6 +72,7 @@
       logisim-evolution     # Logisim Evolution (digital logic simulator)
       pomodoro-gtk          # GTK Pomodoro Timer
       stremio               # Stremio (media center)
+      nicotine-plus         # Nicotine+ (Soulseek client)
 
       # Hunpell/Hyphen dicts:
       hunspell
