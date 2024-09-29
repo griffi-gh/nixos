@@ -48,6 +48,14 @@
         kwin-reconfigure = ''
           qdbus org.kde.KWin /KWin reconfigure;
         '';
+        drop-caches = ''
+          sudo sync;
+          echo 3 | sudo tee /proc/sys/vm/drop_caches;
+        '';
+        drop-swap = ''
+          sudo swapoff -a;
+          sudo swapon -a;
+        '';
       };
     };
     bash = {
