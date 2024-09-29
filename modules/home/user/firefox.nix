@@ -121,6 +121,7 @@
         "gfx.webrender.fallback.software" = false; # Disable software fallback
 
         # Enable hw accel for video decoding
+        "media.hardware-video-decoding.force-enabled" = true;
         "media.ffmpeg.encoder.enabled" = true;
         "media.ffmpeg.vaapi.enabled" = true;
 
