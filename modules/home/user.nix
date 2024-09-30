@@ -6,6 +6,7 @@
     packages = with pkgs; let
       # "we have overlays at home"
       ciscoPacketTracer8 = import ../../pkgs/ciscoPacketTracer8.nix { inherit pkgs; };
+      libreoffice-x11 = import ../../pkgs/libreoffice-x11.nix { inherit pkgs; };
     in [
       # fix for bash :p
       bashInteractive
@@ -61,7 +62,7 @@
 
       # Software:
       snapshot              # Gnome's Camera App
-      libreoffice-qt6-fresh # LibreOffice
+      libreoffice-x11       # LibreOffice
       # transmission_4-qt6    # Transmission (Qt)
       qbittorrent           # qBittorrent
       bitwarden-desktop     # BitWarden Desktop client
