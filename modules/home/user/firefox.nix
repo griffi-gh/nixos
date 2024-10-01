@@ -125,6 +125,9 @@
         "gfx.webrender.compositor" = true; # Use native WL compositor
         "gfx.webrender.compositor.force-enabled" = true;
         "gfx.webrender.fallback.software" = false; # Disable software fallback
+        # Enable shader caching:
+        "gfx.webrender.program-binary-disk" = true;
+        "gfx.webrender.precache-shaders" = true;
 
         # Enable hw accel for video decoding
         "media.hardware-video-decoding.force-enabled" = true;
