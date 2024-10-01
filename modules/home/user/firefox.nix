@@ -1,6 +1,12 @@
 { pkgs, ... }:  {
   programs.firefox = {
     enable = true;
+    package = pkgs.firefox.override {
+      cfg = {
+        pipewireSupport = true;
+        ffmpegSupport = true;
+      };
+    };
     nativeMessagingHosts = with pkgs; [
       kdePackages.plasma-browser-integration
     ];
