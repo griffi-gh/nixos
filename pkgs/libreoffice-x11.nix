@@ -1,3 +1,4 @@
+# libreoffice-qt6-fresh using Xwayland
 { pkgs, ... }:
 pkgs.symlinkJoin {
   name = "libreoffice-x11";
