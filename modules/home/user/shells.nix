@@ -43,7 +43,11 @@
         '';
         nuke-sycoca = ''
           rm ~/.cache/ksycoca6_* -rf;
-          kbuildsycoca6 --noincremental
+          kbuildsycoca6 --noincremental;
+        '';
+        plasmashell-restart = ''
+          kquitapp6 plasmashell;
+          kstart plasmashell;
         '';
         kwin-reconfigure = ''
           qdbus org.kde.KWin /KWin reconfigure;
