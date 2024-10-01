@@ -45,7 +45,7 @@
           rm ~/.cache/ksycoca6_* -rf;
           kbuildsycoca6 --noincremental;
         '';
-        plasmashell-restart = ''
+        restart-plasmashell = ''
           kquitapp6 plasmashell;
           kstart plasmashell;
         '';
