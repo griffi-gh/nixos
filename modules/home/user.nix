@@ -90,7 +90,7 @@
       blender-hip           # Blender (with HIP support)
       gimp                  # GIMP  (image editor)
       krita                 # Krita (image editor)
-      kdenlive              # Kdenlive (video editor)
+      kdePackages.kdenlive  # Kdenlive (video editor)
 
       # Audio stuff:
       easyeffects           # EasyEffects (pa audio effects)
