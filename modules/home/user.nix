@@ -6,7 +6,7 @@
     packages = with pkgs; let
       # "we have overlays at home"
       ciscoPacketTracer8 = import ../../pkgs/ciscoPacketTracer8.nix { inherit pkgs; };
-      # libreoffice-x11 = import ../../pkgs/libreoffice-x11.nix { inherit pkgs; };
+      libreoffice-x11 = import ../../pkgs/libreoffice-x11.nix { inherit pkgs; };
     in [
       # fix for bash :p
       bashInteractive
@@ -62,9 +62,9 @@
 
       # Software:
       snapshot              # Gnome's Camera App
-      libreoffice-fresh     # LibreOffice (GTK)
+      # libreoffice-fresh     # LibreOffice (GTK)
       # libreoffice-qt6-fresh # LibreOffice (Qt6)
-      # libreoffice-x11       # LibreOffice (Qt6-X11)
+      libreoffice-x11       # LibreOffice (Qt6-X11)
       # transmission_4-qt6    # Transmission (Qt)
       qbittorrent           # qBittorrent
       bitwarden-desktop     # BitWarden Desktop client
@@ -75,7 +75,6 @@
       logisim-evolution     # Logisim Evolution (digital logic simulator)
       pomodoro-gtk          # GTK Pomodoro Timer
       stremio               # Stremio (media center)
-      # nicotine-plus       # Nicotine+ (Soulseek client)
 
       # Hunpell/Hyphen dicts:
       hunspell
