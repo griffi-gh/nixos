@@ -65,11 +65,14 @@
     bash = {
       enable = true;
       enableVteIntegration = true;
+    };
+    nushell = {
+      enable = true;
       extraConfig = ''
         $env.TRANSIENT_PROMPT_COMMAND = ^starship module character;
+        $env.TRANSIENT_PROMPT_COMMAND_RIGHT = "";
       '';
     };
-    nushell.enable = true;
 
     # direnv:
     direnv = {
