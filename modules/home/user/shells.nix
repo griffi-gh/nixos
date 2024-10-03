@@ -65,6 +65,9 @@
     bash = {
       enable = true;
       enableVteIntegration = true;
+      extraConfig = ''
+        $env.TRANSIENT_PROMPT_COMMAND = ^starship module character;
+      '';
     };
     nushell.enable = true;
 
