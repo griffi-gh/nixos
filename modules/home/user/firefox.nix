@@ -53,6 +53,7 @@
     profiles.default = {
       userChrome = ''
         @-moz-document url("chrome://browser/content/browser.xhtml") {
+          /* Allow shrinking below the minimum window size */
           #main-window {
             min-width: 300px !important;
           }
@@ -69,6 +70,18 @@
             #picture-in-picture-button {
               display: none !important;
             }
+          }
+
+          /* Change the tab style */
+          tab[selected="true"] .tab-background {
+            border-bottom: none;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+            transform: translateY(0.3rem) scaleY(1.4);
+          }
+          tab[selected="true"] .tab-background {
+            border-top: 2px solid #a9858d;
+            background: #4a4d50 !important;
           }
         };
       '';
