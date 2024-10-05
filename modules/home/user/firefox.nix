@@ -73,7 +73,7 @@
           }
 
           /* Change the tab style */
-          tab[selected="true"] .tab-background {
+          /* tab[selected="true"] .tab-background {
             border-bottom: none;
             border-bottom-right-radius: 0;
             border-bottom-left-radius: 0;
@@ -83,7 +83,7 @@
             border-top: 2px solid #a9858d;
             background: #4a4d50 !important;
           }
-        };
+        }; */
       '';
       settings = {
         # Make configured extensions work
