@@ -1,6 +1,11 @@
 { pkgs, vscode-extensions, ... }: let
   projectsFolder = "~/projects";
 in {
+  imports = [
+    ./vscode/vs-nix.nix
+    ./vscode/vs-csharp.nix
+    ./vscode/vs-zig.nix
+  ];
   programs.vscode = {
     enable = true;
     # package = pkgs.vscodium;
@@ -24,24 +29,11 @@ in {
       bierner.markdown-footnotes
       bierner.markdown-mermaid
 
-      # Nix/NixOS
-      mkhl.direnv
-      jnoortheen.nix-ide
-
       # Rust
       rust-lang.rust-analyzer # (nixpkgs is outdated)
 
       # TOML
       tamasfe.even-better-toml
-
-      # Zig
-      ziglang.vscode-zig
-
-      # C#/dotnet
-      from-nixpkgs.ms-dotnettools.csdevkit
-      from-nixpkgs.ms-dotnettools.csharp
-      from-nixpkgs.ms-dotnettools.vscode-dotnet-runtime
-      ms-dotnettools.dotnet-maui
 
       # JS/TS
       dbaeumer.vscode-eslint
@@ -91,7 +83,6 @@ in {
       from-nixpkgs.visualstudioexptteam.vscodeintellicode
       visualstudioexptteam.vscodeintellicode-completions
       from-nixpkgs.visualstudioexptteam.intellicode-api-usage-examples
-      from-nixpkgs.ms-dotnettools.vscodeintellicode-csharp # IntelliCode support for C# DevKit
 
       # Misc.
       ms-vscode.hexeditor    # Built-in hex editor
@@ -138,9 +129,6 @@ in {
 
       # ====== EXTENSION SETTINGS ======
 
-      # direnv:
-      "direnv.restart.automatic" = true;
-
       # Vsicons
       "vsicons.dontShowNewVersionMessage" = true;
 
@@ -151,53 +139,20 @@ in {
       # GitLens:
       "gitlens.telemetry.enabled" = false;
 
-      # FireDbg:
-      "firedbg.telemetry" = false;
-      "firedbg.showWelcome" = false;
-
       # Project Manager:
       "projectManager.projectsLocation" = projectsFolder;
       "projectManager.git.baseFolders" = [ projectsFolder ];
       "projectManager.removeCurrentProjectFromList" = false;
       "projectManager.ignoreProjectsWithinProjects" = true;
 
-      # C#:
-      "dotnetAcquisitionExtension.enableTelemetry" = false;
-      "dotnetAcquisitionExtension.installTimeoutValue" = 0;
-      "csharp.preview.improvedLaunchExperience" = true;
-      "csharp.experimental.debug.hotReload" = true;
-      "nuget.includePrereleasePackageVersions" = true;
-      "csharp.inlayHints.enableInlayHintsForImplicitObjectCreation" = true;
-      "csharp.inlayHints.enableInlayHintsForImplicitVariableTypes" = true;
-      "csharp.inlayHints.enableInlayHintsForLambdaParameterTypes" = true;
-      "csharp.inlayHints.enableInlayHintsForTypes" = true;
-      "dotnet.inlayHints.enableInlayHintsForIndexerParameters" = true;
-      "dotnet.inlayHints.enableInlayHintsForLiteralParameters" = true;
-      "dotnet.inlayHints.enableInlayHintsForObjectCreationParameters" = true;
-      "dotnet.inlayHints.enableInlayHintsForOtherParameters" = true;
-      "dotnet.inlayHints.enableInlayHintsForParameters" = true;
-      "dotnet.inlayHints.suppressInlayHintsForParametersThatDifferOnlyBySuffix" = true;
-      "dotnet.inlayHints.suppressInlayHintsForParametersThatMatchArgumentName" = true;
-      "dotnet.inlayHints.suppressInlayHintsForParametersThatMatchMethodIntent" = true;
-
-      # Nix IDE
-      "nix.enableLanguageServer" = true;
-      "nix.serverPath" = "${pkgs.nil}/bin/nil";
-
       # Live Server
       "liveServer.settings.donotShowInfoMsg" = true;
       "liveServer.settings.useLocalIp" = false;
       "liveServer.settings.donotVerifyTags" = true;
 
-      # Zig
-      "zig.initialSetupDone" = true;
-      "zig.path" = "zig";
-      "zig.checkForUpdate" = false;
-      "zig.zls.path" = "zls";
-      "zig.zls.checkForUpdate" = false;
-      "zig.zls.enableBuildOnSave" = true;
-      "zig.zls.inlayHintsHideRedundantParamNames" = true;
-      "zig.zls.inlayHintsHideRedundantParamNamesLastToken" = true;
+      # FireDbg:
+      "firedbg.telemetry" = false;
+      "firedbg.showWelcome" = false;
     };
   };
 
