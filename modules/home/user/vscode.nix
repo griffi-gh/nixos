@@ -188,6 +188,16 @@ in {
       "liveServer.settings.donotShowInfoMsg" = true;
       "liveServer.settings.useLocalIp" = false;
       "liveServer.settings.donotVerifyTags" = true;
+
+      # Zig
+      "zig.initialSetupDone" = true;
+      "zig.path" = "zig";
+      "zig.checkForUpdate" = false;
+      "zig.zls.path" = "zls";
+      "zig.zls.checkForUpdate" = false;
+      "zig.zls.enableBuildOnSave" = true;
+      "zig.zls.inlayHintsHideRedundantParamNames" = true;
+      "zig.zls.inlayHintsHideRedundantParamNamesLastToken" = true;
     };
   };
 
