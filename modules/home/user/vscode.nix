@@ -43,6 +43,7 @@ in {
       # JS/TS
       dbaeumer.vscode-eslint
       ms-vscode.vscode-typescript-next
+      christian-kohler.npm-intellisense
 
       # Nushell
       thenuprojectcontributors.vscode-nushell-lang
@@ -66,6 +67,8 @@ in {
       from-openvsx.drmerfy.overtype
       alefragnani.project-manager
       fill-labs.dependi # Rust and other lang dependency info
+      esbenp.prettier-vscode # Prettier formatter
+      christian-kohler.path-intellisense # Path autocompletion
 
       # Misc. config file/language support
       editorconfig.editorconfig # .editorconfig
