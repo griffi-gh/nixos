@@ -34,6 +34,9 @@ in {
       # TOML
       tamasfe.even-better-toml
 
+      # Zig
+      ziglang.vscode-zig
+
       # C#/dotnet
       from-nixpkgs.ms-dotnettools.csdevkit
       from-nixpkgs.ms-dotnettools.csharp
