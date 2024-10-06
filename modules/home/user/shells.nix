@@ -1,5 +1,6 @@
 { ... }: {
   home.shellAliases = {
+    p = "pwd";
     ls = "eza -a";
     cat = "bat -pp";
     helix = "hx";
