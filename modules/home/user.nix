@@ -148,6 +148,7 @@
       # Stuff i need for uni:
       ciscoPacketTracer8
       gns3-gui # GNS3 GUI
+      azuredatastudio # Azure Data Studio
     ];
   };
 
