@@ -19,6 +19,12 @@ in {
       inherit wallpaper;
       lookAndFeel = "org.kde.breezedark.desktop";
     };
+    desktop = {
+      mouseActions.leftClick = null;
+      mouseActions.rightClick = "contextMenu";
+      mouseActions.middleClick = null;
+      mouseActions.verticalScroll = null;
+    };
     kscreenlocker.appearance = {
       inherit wallpaper;
     };
