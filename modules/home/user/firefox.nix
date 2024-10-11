@@ -89,9 +89,18 @@
         # Make configured extensions work
         "extensions.autoDisableScopes" = 0;
 
-        # Enable overscroll and autoscroll
-        "apz.overscroll.enabled" = 1;
+        # Enable overscroll (middle click to scroll)
         "general.autoScroll" = 1;
+
+        # touchpad/scroll
+        "apz.overscroll.enabled" = 1;
+        "apz.gtk.kinetic_scroll.enabled" = true;
+        "apz.gtk.pangesture.delta_mode" = 2;
+        "apz.gtk.pangesture.pixel_delta_mode_multiplier" = 50.0;
+
+        # gtk tweaks
+        "widget.gtk.legacy-cursors.enabled" = true;
+        "widget.gtk.non-native-titlebar-buttons.enabled" = false;
 
         # Enable Hover-Preview
         "browser.tabs.hoverPreview.enabled" = true;
