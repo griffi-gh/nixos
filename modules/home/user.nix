@@ -41,7 +41,7 @@
       rclone
 
       # cloud storage:
-      # nextcloud-client # Nextcloud client
+      nextcloud-client # Nextcloud client
 
       # net:
       # trayscale   # Trayscale (GTK Tailscale gui)

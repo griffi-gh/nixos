@@ -50,6 +50,8 @@
                 "kded6"
                 "KTailctl"
                 "Yakuake"
+                "Nextcloud"
+                "Xwayland Video Bridge_pipewireToXProxy"
               ];
               shown = [
                 "org.kde.plasma.networkmanagement"
@@ -74,6 +76,8 @@
                 "org.kde.plasma.volume"
                 "org.kde.kdeconnect"
                 "org.kde.plasma.printmanager"
+                "Nextcloud"
+                "Xwayland Video Bridge_pipewireToXProxy"
               ];
               configs = {
                 battery.showPercentage = true;
