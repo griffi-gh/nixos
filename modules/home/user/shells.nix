@@ -1,12 +1,23 @@
 { ... }: {
   home.shellAliases = {
+    cls = "clear";
     p = "pwd";
     ls = "eza -a";
     cat = "bat -pp";
     helix = "hx";
-    cls = "clear";
+    y = "yazi";
     # cd = "z"; # causes loop on fish
     # grep = "rg"; # not 100% compatible
+
+    # git
+    g = "git";
+    gp = "git push";
+    gc = "git commit";
+    gcam = "git commit -am";
+    ga = "git add";
+    gb = "git branch";
+    gco = "git checkout";
+    gcb = "git checkout -b";
   };
   programs = {
     # Shells:
@@ -95,6 +106,14 @@
 
     # cli sw.
     htop.enable = true;
+
+    yazi = {
+      enable = true;
+      enableFishIntegration = true;
+      enableNushellIntegration = true;
+      enableBashIntegration = true;
+      # enableZshIntegration = true;
+    };
 
     # tools:
     thefuck.enable = true;
