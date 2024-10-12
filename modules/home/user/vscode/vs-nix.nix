@@ -1,8 +1,6 @@
 { pkgs, vscode-extensions, ... }: {
   programs.vscode = {
     extensions =
-      let from-nixpkgs = pkgs.vscode-extensions;
-          from-openvsx = vscode-extensions.open-vsx; in
       with vscode-extensions.vscode-marketplace;
     [
       jnoortheen.nix-ide

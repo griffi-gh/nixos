@@ -3,8 +3,10 @@
 in {
   imports = [
     ./vscode/vs-nix.nix
+    ./vscode/vs-cpp.nix
     ./vscode/vs-csharp.nix
     ./vscode/vs-zig.nix
+    # ./vscode/vs-tizen.nix
   ];
   programs.vscode = {
     enable = true;
@@ -32,8 +34,6 @@ in {
       # Rust
       rust-lang.rust-analyzer # (nixpkgs is outdated)
 
-      # TOML
-      tamasfe.even-better-toml
 
       # JS/TS
       dbaeumer.vscode-eslint
@@ -42,6 +42,13 @@ in {
 
       # Nushell
       thenuprojectcontributors.vscode-nushell-lang
+
+      # TOML
+      tamasfe.even-better-toml
+
+      # RedHat LSPs for xml/yaml:
+      redhat.vscode-xml
+      redhat.vscode-yaml
 
       # Debugging:
       from-nixpkgs.vadimcn.vscode-lldb
