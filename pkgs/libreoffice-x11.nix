@@ -1,9 +1,13 @@
 # libreoffice-qt6-fresh using Xwayland
-{ pkgs, ... }:
-pkgs.symlinkJoin {
+{
+  libreoffice-qt6-fresh,
+  symlinkJoin,
+  makeWrapper,
+}:
+symlinkJoin {
   name = "libreoffice-x11";
-  paths = [ pkgs.libreoffice-qt6-fresh ];
-  buildInputs = [ pkgs.makeWrapper ];
+  paths = [ libreoffice-qt6-fresh ];
+  buildInputs = [ makeWrapper ];
   postBuild = ''
     wrapProgram $out/bin/libreoffice --set WAYLAND_DISPLAY ""
     wrapProgram $out/bin/soffice --set WAYLAND_DISPLAY ""

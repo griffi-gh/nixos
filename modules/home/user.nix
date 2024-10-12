@@ -5,8 +5,8 @@
     homeDirectory = "/home/user";
     packages = with pkgs; let
       # "we have overlays at home"
-      ciscoPacketTracer8 = import ../../pkgs/ciscoPacketTracer8.nix { inherit pkgs; };
-      libreoffice-x11 = import ../../pkgs/libreoffice-x11.nix { inherit pkgs; };
+      ciscoPacketTracer8 = callPackage ../../pkgs/ciscoPacketTracer8.nix { };
+      libreoffice-x11 = callPackage ../../pkgs/libreoffice-x11.nix { };
     in [
       # fix for bash :p
       bashInteractive
