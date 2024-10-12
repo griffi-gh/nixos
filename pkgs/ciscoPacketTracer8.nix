@@ -19,7 +19,7 @@ symlinkJoin {
   nativeBuildInputs = [ makeWrapper ];
   postBuild = ''
     wrapProgram $out/bin/packettracer8 \
-      --set WAYLAND_DISPLAY "" \
+      --set GDK_BACKEND "x11" \
       --set XDG_CURRENT_DESKTOP "GNOME";
   '';
 }
