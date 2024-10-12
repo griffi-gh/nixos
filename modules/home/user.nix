@@ -7,6 +7,7 @@
       # "we have overlays at home"
       ciscoPacketTracer8 = callPackage ../../pkgs/ciscoPacketTracer8.nix { };
       libreoffice-x11 = callPackage ../../pkgs/libreoffice-x11.nix { };
+      principia = callPackage ../../pkgs/principia-x11.nix { };
     in [
       # fix for bash :p
       bashInteractive
