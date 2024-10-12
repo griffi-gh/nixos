@@ -125,7 +125,8 @@ in {
       "workbench.settings.enableNaturalLanguageSearch" = false;
 
       # Misc.:
-      "extensions.autoUpdate" = false;
+      "extensions.autoUpdate" = false; # isn't compatible with mutableExtensionsDir = false
+      "update.showReleaseNotes" = false; # disable release notes after every update
 
       # ====== EXTENSION SETTINGS ======
 
@@ -153,6 +154,9 @@ in {
       # FireDbg:
       "firedbg.telemetry" = false;
       "firedbg.showWelcome" = false;
+
+      # LLDB
+      "lldb.suppressUpdateNotifications" = true;
     };
   };
 
