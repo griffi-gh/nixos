@@ -81,7 +81,7 @@
               ];
               configs = {
                 battery.showPercentage = true;
-                # keyboardLayout.displayStyle = "label";
+                keyboardLayout.displayStyle = "label";
               };
             };
           };
