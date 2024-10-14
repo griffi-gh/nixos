@@ -4,6 +4,7 @@
       let from-nixpkgs = pkgs.vscode-extensions; in
       with vscode-extensions.vscode-marketplace;
     [
+      ms-vscode.cmake-tools
       from-nixpkgs.ms-vscode.cpptools
       llvm-vs-code-extensions.vscode-clangd
     ];
