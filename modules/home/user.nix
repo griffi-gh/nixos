@@ -76,6 +76,7 @@
       logisim-evolution     # Logisim Evolution (digital logic simulator)
       pomodoro-gtk          # GTK Pomodoro Timer
       stremio               # Stremio (media center)
+      parsec-bin            # Parsec (game streaming)
 
       # Hunpell/Hyphen dicts:
       hunspell
