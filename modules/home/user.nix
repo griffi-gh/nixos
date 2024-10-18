@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, pkgs-master, ... }: {
   home = {
     stateVersion = "24.11";
     username = "user";
@@ -68,7 +68,7 @@
       libreoffice-x11       # LibreOffice (Qt6-X11)
       # transmission_4-qt6    # Transmission (Qt)
       qbittorrent           # qBittorrent
-      bitwarden-desktop     # BitWarden Desktop client
+      pkgs-master.bitwarden-desktop  # BitWarden Desktop client
       okteta                # Okteta (hex editor)
       imhex                 # imhex  (hex editor)
       apostrophe            # GTK Markdown editor

@@ -3,6 +3,9 @@
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
+    nixpkgs-master = {
+      url = "github:NixOS/nixpkgs/master";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -32,7 +35,7 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, ... }:
+  outputs = inputs@{ nixpkgs, nixpkgs-master, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -51,6 +54,12 @@
           setFlakeRegistry = true;
         };
       };
+      pkgs-master = import nixpkgs-master {
+        inherit system;
+        config = {
+          allowUnfree = true;
+        };
+      };
       vscode-extensions = inputs.nix-vscode-extensions.extensions.${system};
       nixosModules = with inputs; {
         home-manager    = home-manager.nixosModules.home-manager;
@@ -64,7 +73,7 @@
       };
 
       specialArgs = {
-        inherit inputs pkgs vscode-extensions system;
+        inherit inputs pkgs pkgs-master vscode-extensions system;
       };
     in {
       nixosConfigurations = let
