@@ -3,7 +3,7 @@
     {
       location = "bottom";
       hiding = "none";
-      floating = false;
+      floating = true;
       lengthMode = "fill";
       height = 42;
       widgets = [
