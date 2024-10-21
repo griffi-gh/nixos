@@ -68,7 +68,7 @@
       libreoffice-x11       # LibreOffice (Qt6-X11)
       # transmission_4-qt6    # Transmission (Qt)
       qbittorrent           # qBittorrent
-      pkgs-master.bitwarden-desktop  # BitWarden Desktop client
+      bitwarden-desktop     # BitWarden Desktop client
       okteta                # Okteta (hex editor)
       imhex                 # imhex  (hex editor)
       apostrophe            # GTK Markdown editor
