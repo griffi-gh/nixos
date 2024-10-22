@@ -3,6 +3,7 @@
     gns3-server
     ubridge
     dynamips
+    qemu
   ];
   security.wrappers.ubridge = {
     source = lib.getExe pkgs.ubridge;
