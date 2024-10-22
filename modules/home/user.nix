@@ -71,7 +71,8 @@
       bitwarden-desktop     # BitWarden Desktop client
       okteta                # Okteta (hex editor)
       imhex                 # imhex  (hex editor)
-      apostrophe            # GTK Markdown editor
+      # DISABLED BECAUSE OF BUILD FAILURE IN node-env
+      # apostrophe            # GTK Markdown editor
       obs-studio            # OBS Studio (streaming/recording tool)
       logisim-evolution     # Logisim Evolution (digital logic simulator)
       pomodoro-gtk          # GTK Pomodoro Timer
