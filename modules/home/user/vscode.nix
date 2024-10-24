@@ -6,6 +6,7 @@ in {
     ./vscode/vs-cpp.nix
     ./vscode/vs-csharp.nix
     ./vscode/vs-zig.nix
+    ./vscode/vs-flutter.nix
     # ./vscode/vs-tizen.nix
   ];
   programs.vscode = {
@@ -71,6 +72,7 @@ in {
       fill-labs.dependi # Rust and other lang dependency info
       esbenp.prettier-vscode # Prettier formatter
       christian-kohler.path-intellisense # Path autocompletion
+      wraith13.zoombar-vscode # Zoom bar
 
       # Misc. config file/language support
       editorconfig.editorconfig # .editorconfig
