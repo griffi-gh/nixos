@@ -29,6 +29,7 @@
         5900  # vnc
         1714 1764 # kde connect
         18886 # torrent
+        34197 # factorio
       ];
     };
 
