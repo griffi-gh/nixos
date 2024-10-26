@@ -16,6 +16,7 @@
     ./base/fonts.nix
     ./base/user.nix
     ./base/udevrules.nix
+    ./base/tpm2.nix
     ./base/debug.nix
     ./base/location.nix
     ./base/services/ssh.nix
