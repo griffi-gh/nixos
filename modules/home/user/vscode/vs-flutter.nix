@@ -7,7 +7,7 @@
       dart-code.flutter
     ];
     userSettings = {
-      # ...
+      # "dart.showDebuggerNumbersAsHex" = true;
     };
   };
 }

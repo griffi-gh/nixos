@@ -137,6 +137,9 @@ in {
       "extensions.autoUpdate" = false; # isn't compatible with mutableExtensionsDir = false
       "update.showReleaseNotes" = false; # disable release notes after every update
 
+      # Diff Editor:
+      # "diffEditor.maxComputationTime" = 0; # (0 = unlimited)
+
       # ====== EXTENSION SETTINGS ======
 
       # Vsicons
