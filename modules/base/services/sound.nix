@@ -14,7 +14,9 @@
       # fix audio stuttering
       "10-clock-min-quantum" = {
         "context.properties" = {
-          "default.clock.min-quantum" = 256;
+          "clock.power-of-two-quantum" = true;
+          "default.clock.min-quantum" = 512;
+          "default.clock.max-quantum" = 4096;
         };
       };
     };
