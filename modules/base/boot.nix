@@ -1,11 +1,13 @@
-{ pkgs, ... }: {
+{ pkgs, ... }: let
+  linux = pkgs.linuxPackages_zen;
+in {
   # Use the systemd-boot EFI boot loader.
   boot = {
     bootspec = {
       enable = true;
       enableValidation = false;
     };
-    kernelPackages = pkgs.linuxPackages_zen; # Use latest stable Linux
+    kernelPackages = linux; # linuxPackages_latest
     kernelParams = [
       "modprobe.blacklist=sp5100_tco"
       "nmi_watchdog=0"
@@ -38,4 +40,7 @@
       theme = "bgrt";
     };
   };
+  environment.systemPackages = with linux; [
+    perf
+  ];
 }
