@@ -33,6 +33,7 @@
     ./base/programs/virtualbox.nix
     ./base/programs/gns3-server.nix
     ./base/programs/wireshark.nix
+    ./base/programs/wine.nix
   ];
 
   # Locale/timezone
