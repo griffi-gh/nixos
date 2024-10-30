@@ -105,7 +105,9 @@
 
     # archive:
     zip
+    unzip
     unrar
+    arj
     p7zip
 
     # exe icons
@@ -146,6 +148,10 @@
     # VCL_DOUBLEBUFFERING_FORCE_ENABLE = "1";
 
     # SDL_VIDEODRIVER = "wayland";
+
+    # Qt:
+    # Fix janky fonts
+    QT_SCALE_FACTOR_ROUNDING_POLICY = "RoundPreferFloor";
   };
 
   # environment.profiles = lib.mkBefore [
