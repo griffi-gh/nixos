@@ -70,11 +70,11 @@ in {
   #   qdbus org.kde.KWin /KWin reconfigure
   # '';
 
-  home.file."/home/user/.config/systemd/user/plasma-ksplash-ready.service.d/override.conf" = {
-    # fix bug where splash screen doesn't disappear
-    text = ''
-      [Service]
-      ExecStart=/etc/profiles/per-user/user/bin/dbus-send --session --reply-timeout=1 --type=method_call --dest=org.kde.KSplash /KSplash org.kde.KSplash.setStage string:ready
-    '';
-  };
+  # home.file."/home/user/.config/systemd/user/plasma-ksplash-ready.service.d/override.conf" = {
+  #   # fix bug where splash screen doesn't disappear
+  #   text = ''
+  #     [Service]
+  #     ExecStart=/etc/profiles/per-user/user/bin/dbus-send --session --reply-timeout=1 --type=method_call --dest=org.kde.KSplash /KSplash org.kde.KSplash.setStage string:ready
+  #   '';
+  # };
 }
