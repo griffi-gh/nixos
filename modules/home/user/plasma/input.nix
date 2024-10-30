@@ -4,6 +4,7 @@
     layouts = [
       { layout = "us"; }
       { layout = "ua"; }
+      { layout = "pl"; }
     ];
     options = [
       "grp:win_space_toggle"
