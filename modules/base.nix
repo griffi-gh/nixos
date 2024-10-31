@@ -140,18 +140,25 @@
     MOZ_DBUS_REMOTE = "1";
 
     # Electron:
+    # Force use of Wayland
+    # XXX: Causes issues with taskbar icons in ALL electron apps (can be fixed by manual kwin rules)
     NIXOS_OZONE_WL = "1";
 
     # LibreOffice:
     SAL_DISABLE_WATCHDOG = "1";
+    # XXX: Causes issues in writer (selected text not visible)
     # VCL_DOUBLEBUFFERING_ENABLE = "1";
     # VCL_DOUBLEBUFFERING_FORCE_ENABLE = "1";
 
+    # SDL2:
+    # XXX: Causes issues in some games
+    # (tpt: blurry scaling)
     # SDL_VIDEODRIVER = "wayland";
 
     # Qt:
     # Fix janky fonts
-    QT_SCALE_FACTOR_ROUNDING_POLICY = "RoundPreferFloor";
+    # XXX: causes blurry rendering in Spectacle and warnings whenever any Qt app is run
+    # QT_SCALE_FACTOR_ROUNDING_POLICY = "RoundPreferFloor";
   };
 
   # environment.profiles = lib.mkBefore [
