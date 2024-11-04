@@ -13,6 +13,9 @@
         # Set chat theme to dark
         "messenger.options.messagesStyle.variant" = "Dark";
 
+        # Toolbar extensions: only show icons, not labels
+        "toolbar.unifiedtoolbar.buttonstyle" = 2;
+
         # Disable startpage
         "mailnews.start_page.enabled" = false;
 
