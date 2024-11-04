@@ -8,6 +8,7 @@
       ciscoPacketTracer8 = callPackage ../../pkgs/ciscoPacketTracer8.nix { };
       libreoffice-x11 = callPackage ../../pkgs/libreoffice-x11.nix { };
       principia = callPackage ../../pkgs/principia-x11.nix { };
+      earbuds = callPackage ../../pkgs/earbuds/package.nix { };
     in [
       # fix for bash :p
       bashInteractive
@@ -122,6 +123,7 @@
       # Device drivers etc
       # TODO fix galaxy-buds-client somehow (borked and outdated)
       # galaxy-buds-client  # GalaxyBudsClient (unofficial)
+      earbuds               # Samsung Galaxy Buds (earbuds cli)
 
       # Games:
       principia      # Principia
