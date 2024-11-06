@@ -8,7 +8,9 @@
       # useEmbeddedBitmaps = true;
     };
     enableDefaultPackages = false; # (Specified explicitly below instead)
-    packages = with pkgs; [
+    packages = with pkgs; let
+      segoe-ui-linux = callPackage ../../pkgs/segoe-ui-linux/package.nix { };
+    in [
       # Emoji
       noto-fonts-color-emoji
 
@@ -23,6 +25,7 @@
       unifont
 
       # Microsoft fonts
+      segoe-ui-linux
       corefonts
       vistafonts
 
