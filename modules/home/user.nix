@@ -63,6 +63,7 @@
       kdePackages.kcolorchooser # KColorChooser (color picker)
 
       # Software:
+      vlc                   # VLC Media Player
       snapshot              # Gnome's Camera App
       # libreoffice-fresh     # LibreOffice (GTK)
       # libreoffice-qt6-fresh # LibreOffice (Qt6)
