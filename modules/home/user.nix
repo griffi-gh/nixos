@@ -8,7 +8,6 @@
       ciscoPacketTracer8 = callPackage ../../pkgs/ciscoPacketTracer8.nix { };
       libreoffice-x11 = callPackage ../../pkgs/libreoffice-x11.nix { };
       principia = callPackage ../../pkgs/principia-x11.nix { };
-      earbuds = callPackage ../../pkgs/earbuds/package.nix { };
     in [
       # fix for bash :p
       bashInteractive
@@ -173,5 +172,6 @@
     ./user/thunderbird.nix
     ./user/vscode.nix
     ./user/vscode-server.nix
+    ./user/hacks
   ];
 }
