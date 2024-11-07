@@ -127,6 +127,9 @@ in {
       "git.openRepositoryInParentFolders" = "never";
       "git.enableSmartCommit" = true;
       "git.confirmSync" = false;
+      # disable auto auth:
+      "git.terminalAuthentication" = false;
+      "github.gitAuthentication" = false;
 
       # Disable Telemetry and some Online Features:
       "telemetry.telemetryLevel" = "off";
