@@ -124,13 +124,14 @@
       # Device drivers etc
       # TODO fix galaxy-buds-client somehow (borked and outdated)
       # galaxy-buds-client  # GalaxyBudsClient (unofficial)
-      earbuds               # Samsung Galaxy Buds (earbuds cli)
+      pkgs-master.earbuds   # Samsung Galaxy Buds (earbuds cli)
 
       # Games:
       principia      # Principia
       the-powder-toy # The Powder Toyelopers: PCGamingWiki staff m
       osu-lazer-bin  # Osu (lazer)
       prismlauncher  # Minecraft (Prism Launcher)
+      space-cadet-pinball # Space Cadet Pinball for Windows
       # everest-mons # mons (Celeste/Everest mod loader installer)
 
       # Heroic Legendary/GOG/Amazon
