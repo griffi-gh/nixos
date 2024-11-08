@@ -112,6 +112,10 @@
 
     # exe icons
     icoutils
+
+    # encrypted fs layers
+    cryfs
+    gocryptfs
   ];
 
   services = {
