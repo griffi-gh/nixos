@@ -1,4 +1,6 @@
-{ pkgs, ... }: {
+{ pkgs, ... }: let
+  buildTmpDir = "/nix/tmp";
+in {
   nix = {
     package = pkgs.nixVersions.git;
     settings = {
@@ -57,4 +59,10 @@
       persistent = true;
     };
   };
+
+  nix.settings.build-dir = buildTmpDir;
+  systemd.services.nix-daemon.environment.TMPDIR = buildTmpDir;
+  systemd.tmpfiles.rules = [
+    "d ${buildTmpDir} 770 root nixbld"
+  ];
 }
