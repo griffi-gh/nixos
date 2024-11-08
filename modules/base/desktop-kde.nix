@@ -35,6 +35,7 @@
   environment.systemPackages = with pkgs.kdePackages; [
     kdbusaddons
     plasma-browser-integration
+    plasma-vault
     kaccounts-integration
     kaccounts-providers
     qtimageformats

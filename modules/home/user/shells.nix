@@ -45,7 +45,7 @@
           set_color normal;
         '';
         rebuild-switch = ''
-          NIX_REMOTE=daemon sudo nixos-rebuild switch --flake ~/nixos#$hostname;
+          NIX_REMOTE=daemon sudo nixos-rebuild switch --flake ~/nixos#$hostname --fast;
         '';
         rebuild-boot = ''
           NIX_REMOTE=daemon sudo nixos-rebuild boot --flake ~/nixos#$hostname;
