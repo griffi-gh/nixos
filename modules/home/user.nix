@@ -91,7 +91,7 @@
 
       # Photo/Video/Graphics stuff:
       inkscape              # Inkscape (vector graphics editor)
-      blender-hip           # Blender (with HIP support)
+      pkgs-master.blender-hip           # Blender (with HIP support)
       gimp                  # GIMP  (image editor)
       krita                 # Krita (image editor)
       kdePackages.kdenlive  # Kdenlive (video editor)
@@ -146,7 +146,7 @@
 
       # Emulators:
       ryujinx        # Ryujinx (Switch)
-      cemu           # Cemu (Wii U) (borked package)
+      pkgs-master.cemu           # Cemu (Wii U) (borked package)
       mgba           # mGBA (GB/GBC/GBA)
       melonDS        # MelonDS (DS)
       # vita3k is not in nixpkgs :<
