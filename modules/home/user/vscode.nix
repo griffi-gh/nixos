@@ -2,6 +2,7 @@
   projectsFolder = "~/projects";
 in {
   imports = [
+    ./vscode/vs-copilot.nix
     ./vscode/vs-nix.nix
     ./vscode/vs-cpp.nix
     ./vscode/vs-csharp.nix
@@ -35,7 +36,6 @@ in {
       # Rust
       rust-lang.rust-analyzer # (nixpkgs is outdated)
 
-
       # JS/TS
       dbaeumer.vscode-eslint
       ms-vscode.vscode-typescript-next
@@ -58,10 +58,6 @@ in {
       # Webdev/Browser Support/Web server:
       firefox-devtools.vscode-firefox-debug
       ritwickdey.liveserver
-
-      # Copilot:
-      from-nixpkgs.github.copilot
-      from-nixpkgs.github.copilot-chat
 
       # Generic/Editor:
       gruntfuggly.todo-tree
