@@ -15,6 +15,6 @@
     podman
     podman-tui
     podman-compose
-    pods
+    # pods
   ];
 }
