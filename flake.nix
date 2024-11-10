@@ -35,7 +35,7 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, nixpkgs-master, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-master, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -73,9 +73,16 @@
       };
 
       specialArgs = {
-        inherit inputs pkgs pkgs-master vscode-extensions system;
+        inherit self inputs pkgs pkgs-master vscode-extensions system;
       };
     in {
+      packages."${system}" = {
+        ciscoPacketTracer8 = pkgs.callPackage ./pkgs/ciscoPacketTracer8.nix {};
+        libreoffice-x11 = pkgs.callPackage ./pkgs/libreoffice-x11.nix {};
+        principia-x11 = pkgs.callPackage ./pkgs/principia-x11.nix {};
+        segoe-ui-linux = pkgs.callPackage ./pkgs/segoe-ui-linux/package.nix {};
+      };
+
       nixosConfigurations = let
         buildNixosSystem = host: nixpkgs.lib.nixosSystem {
           inherit system specialArgs;

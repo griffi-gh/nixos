@@ -1,14 +1,9 @@
-{ pkgs, pkgs-master, ... }: {
+{ self, pkgs, pkgs-master, system, ... }: {
   home = {
     stateVersion = "24.11";
     username = "user";
     homeDirectory = "/home/user";
-    packages = with pkgs; let
-      # "we have overlays at home"
-      ciscoPacketTracer8 = callPackage ../../pkgs/ciscoPacketTracer8.nix { };
-      libreoffice-x11 = callPackage ../../pkgs/libreoffice-x11.nix { };
-      principia = callPackage ../../pkgs/principia-x11.nix { };
-    in [
+    packages = with pkgs; with self.packages."${system}"; [
       # fix for bash :p
       bashInteractive
 
