@@ -10,7 +10,8 @@ in {
   networking.hostName = hostname;
 
   # early gpu init (DO NOT USE, CAUSES FLICKER)
-  # hardware.amdgpu.initrd.enable = true;
+  # (maybe fixed?)
+  hardware.amdgpu.initrd.enable = true;
 
   # opencl
   # i'm overriding the default opencl option to use rocm 5 instead:
