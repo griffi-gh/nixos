@@ -23,6 +23,9 @@
         "mailnews.default_sort_type" = 18;
         "mailnews.default_sort_order" = 2;
 
+        # Increase amount of visible hours in calendar from 9 to 12
+        "calendar.view.visiblehours" = 12;
+
         # autosync
         "mail.server.default.autosync_max_age_days" = 30;
 
@@ -55,6 +58,16 @@
         "mail.instrumentation.userOptedIn" = false;
 
         # TODO: these are mostly shared with Firefox:
+
+        # gtk tweaks
+        "widget.gtk.legacy-cursors.enabled" = true;
+        "widget.gtk.non-native-titlebar-buttons.enabled" = false;
+
+        # touchpad/scroll
+        "apz.overscroll.enabled" = 1;
+        "apz.gtk.kinetic_scroll.enabled" = true;
+        "apz.gtk.pangesture.delta_mode" = 2;
+        "apz.gtk.pangesture.pixel_delta_mode_multiplier" = 50.0;
 
         # Disable accessibility
         "accessibility.force_disabled" = 1;
@@ -92,6 +105,10 @@
         "widget.use-xdg-desktop-portal.mime-handler" = 1;
         "widget.use-xdg-desktop-portal.open-uri" = 1;
         "widget.use-xdg-desktop-portal.settings" = 1;
+
+        # Enable hw accel for video
+        "media.ffmpeg.vaapi.enabled" = true;
+        "media.ffmpeg.encoder.enabled" = true;
       };
     };
   };
