@@ -34,6 +34,7 @@
     ./base/programs/gns3-server.nix
     ./base/programs/wireshark.nix
     ./base/programs/wine.nix
+    ./base/programs/podman.nix
   ];
 
   # Locale/timezone
