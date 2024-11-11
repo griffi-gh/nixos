@@ -147,7 +147,7 @@
       # vita3k is not in nixpkgs :<
 
       # Stuff i need for uni:
-      ciscoPacketTracer8
+      ciscoPacketTracer8-wrapped
       gns3-gui # GNS3 GUI
       winbox4 # Winbox (Mikrotik RouterOS GUI)
       azuredatastudio # Azure Data Studio

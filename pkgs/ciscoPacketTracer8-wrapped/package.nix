@@ -5,7 +5,7 @@
   makeWrapper,
 }:
 symlinkJoin {
-  name = "ciscoPacketTracer8";
+  name = "ciscoPacketTracer8-wrapped";
   paths = let
     ciscoPacketTracer8' = ciscoPacketTracer8.overrideAttrs (prev: {
       src = fetchurl {

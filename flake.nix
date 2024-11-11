@@ -76,12 +76,7 @@
         inherit self inputs pkgs pkgs-master vscode-extensions system;
       };
     in {
-      packages."${system}" = {
-        ciscoPacketTracer8 = pkgs.callPackage ./pkgs/ciscoPacketTracer8.nix {};
-        libreoffice-x11 = pkgs.callPackage ./pkgs/libreoffice-x11.nix {};
-        principia-x11 = pkgs.callPackage ./pkgs/principia-x11.nix {};
-        segoe-ui-linux = pkgs.callPackage ./pkgs/segoe-ui-linux/package.nix {};
-      };
+      packages."${system}" = import ./pkgs { inherit pkgs; };
 
       nixosConfigurations = let
         buildNixosSystem = host: nixpkgs.lib.nixosSystem {
