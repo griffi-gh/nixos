@@ -45,13 +45,13 @@
           set_color normal;
         '';
         rebuild-switch = ''
-          NIX_REMOTE=daemon sudo nixos-rebuild switch --flake ~/nixos#$hostname --fast;
+          NIX_REMOTE=daemon sudo nixos-rebuild switch --flake ~/nixos#$hostname --fast
         '';
         rebuild-boot = ''
-          NIX_REMOTE=daemon sudo nixos-rebuild boot --flake ~/nixos#$hostname;
+          NIX_REMOTE=daemon sudo nixos-rebuild boot --flake ~/nixos#$hostname
         '';
         flake-update = ''
-          nix flake update --flake ~/nixos;
+          nix flake update --flake ~/nixos
         '';
         nuke-sycoca = ''
           rm ~/.cache/ksycoca6_* -rf;

@@ -53,6 +53,7 @@
           setNixPath = true;
           setFlakeRegistry = true;
         };
+        overlays = import ./overlays;
       };
       pkgs-master = import nixpkgs-master {
         inherit system;

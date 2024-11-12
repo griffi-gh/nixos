@@ -42,6 +42,8 @@ in {
       pure-eval = false;
       use-cgroups = true;
       use-xdg-base-directories = true;
+
+      builders-use-substitutes = true;
     };
     optimise = {
       automatic = true;
