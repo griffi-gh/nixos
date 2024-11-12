@@ -105,6 +105,7 @@ in {
       # Editor:
       "editor.linkedEditing" = true;
       "editor.cursorSmoothCaretAnimation" = "explicit";
+      "editor.inlayHints.enabled" = "onUnlessPressed";
 
       # Terminal:
       "terminal.integrated.fontFamily" = "FiraCode Nerd Font Mono";
