@@ -4,6 +4,7 @@
     ubridge
     dynamips
     qemu
+    vpcs
   ];
   security.wrappers.ubridge = {
     source = lib.getExe pkgs.ubridge;
