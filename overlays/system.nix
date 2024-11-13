@@ -1,10 +1,11 @@
-{ pkgs, ... }: let
-  # Use custom libinput with Hold-and-Tap support
-  # (MR 500: https://gitlab.freedesktop.org/libinput/libinput/-/merge_requests/500)
-  usePatchedLibinput = false;
+# Use custom libinput with Hold-and-Tap support
+# (MR 500: https://gitlab.freedesktop.org/libinput/libinput/-/merge_requests/500)
+{ pkgs, lib, ... }:
+let
+  # ... what have i done ...
+  actuallyEnableThisScaryStuff = false;
 in
-
-(if usePatchedLibinput then {
+lib.optionalAttrs actuallyEnableThisScaryStuff {
   environment.systemPackages = with pkgs; [
     libinput-patched
   ];
@@ -18,4 +19,4 @@ in
       replacement = kwin-patched.out;
     }
   ];
-} else {})
+}

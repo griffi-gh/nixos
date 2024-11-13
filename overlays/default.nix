@@ -1,6 +1,6 @@
 [
   (final: prev: {
-    libinput-patched = prev.libinput.overrideAttrs (oldAttrs: {
+    libinput-patched = prev.libinput.overrideAttrs (oldAttrs: rec {
       src = final.fetchFromGitLab {
         domain = "gitlab.freedesktop.org";
         owner = "libinput";
