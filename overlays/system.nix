@@ -9,14 +9,14 @@ lib.optionalAttrs actuallyEnableThisScaryStuff {
   environment.systemPackages = with pkgs; [
     libinput-patched
   ];
-  system.replaceRuntimeDependencies = with pkgs; let
+  system.replaceDependencies.replacements = with pkgs; let
     kwin-patched = kdePackages.kwin.override {
       libinput = libinput-patched;
     };
   in [
     {
-      original = kdePackages.kwin.out;
-      replacement = kwin-patched.out;
+      oldDependency = kdePackages.kwin.out;
+      newDependency = kwin-patched.out;
     }
   ];
 }
