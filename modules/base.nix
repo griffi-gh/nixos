@@ -6,7 +6,7 @@
 
   imports = [
     # ./base/hacks/fontconfig-unbreak.nix # no longer needed
-    ./overlays/system.nix
+    ./../overlays/system.nix
     ./base/nix.nix
     ./base/boot.nix
     ./base/sudo.nix

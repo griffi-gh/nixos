@@ -1,6 +1,6 @@
 [
   (final: prev: let
-    libinput = prev.libinput.overrideAttrs (oldAttrs: {
+    libinpux = prev.libinput.overrideAttrs (oldAttrs: {
       src = final.fetchFromGitLab {
         domain = "gitlab.freedesktop.org";
         owner = "libinput";
@@ -14,11 +14,6 @@
       ];
     });
   in {
-    # kdePackages = prev.kdePackages.overrideScope(kfinal: kprev: {
-    #   kwin = kprev.kwin.override {
-    #     inherit libinput;
-    #   };
-    # });
-    libinpux = libinput;
+    inherit libinpux;
   })
 ]
