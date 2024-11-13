@@ -1,19 +1,21 @@
 { pkgs, ... }: let
   # Use custom libinput with Hold-and-Tap support
   # (MR 500: https://gitlab.freedesktop.org/libinput/libinput/-/merge_requests/500)
-  doUseLibinpux = true;
-in if doUseLibinpux then {
+  usePatchedLibinput = false;
+in
+
+(if usePatchedLibinput then {
   environment.systemPackages = with pkgs; [
-    libinpux
+    libinput-patched
   ];
   system.replaceRuntimeDependencies = with pkgs; let
-    kwinx = kdePackages.kwin.override {
-      libinput = libinpux;
+    kwin-patched = kdePackages.kwin.override {
+      libinput = libinput-patched;
     };
   in [
     {
       original = kdePackages.kwin.out;
-      replacement = kwinx.out;
+      replacement = kwin-patched.out;
     }
   ];
-} else {}
+} else {})

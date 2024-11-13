@@ -1,3 +1,5 @@
 /secrets/** filter=git-crypt diff=git-crypt
 pr-*.patch linguist-vendored
-
+mr-*.patch linguist-vendored
+*-pr-*.patch linguist-vendored
+*-mr-*.patch linguist-vendored

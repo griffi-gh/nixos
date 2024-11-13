@@ -1,6 +1,6 @@
 [
-  (final: prev: let
-    libinpux = prev.libinput.overrideAttrs (oldAttrs: {
+  (final: prev: {
+    libinput-patched = prev.libinput.overrideAttrs (oldAttrs: {
       src = final.fetchFromGitLab {
         domain = "gitlab.freedesktop.org";
         owner = "libinput";
@@ -9,11 +9,9 @@
         sha256 = "sha256-iFs2RaPopqfLRvKF2Vvw0qCLtqIc4w6tVectSxbw9jM=";
       };
       patches = oldAttrs.patches or [] ++ [
-        ./libinput/pr-500.patch
-        ./libinput/zzz-hold-tap-default.patch
+        ./libinput-patches/0001-mr-500.patch
+        ./libinput-patches/0002-hold-tap-default.patch
       ];
     });
-  in {
-    inherit libinpux;
   })
 ]
