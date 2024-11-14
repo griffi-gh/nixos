@@ -36,6 +36,7 @@
     ./base/programs/wireshark.nix
     ./base/programs/wine.nix
     ./base/programs/podman.nix
+    ./base/programs/firejail.nix
   ];
 
   # Locale/timezone
