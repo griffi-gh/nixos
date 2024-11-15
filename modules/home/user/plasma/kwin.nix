@@ -24,6 +24,9 @@ in
 
       # "Navigation Wraps Around"
       Windows.RollOverDesktops = false;
+
+      # Set the Task Switcher to "Sidebar"
+      TabBox.LayoutName = "Sidebar";
     };
   };
 }
