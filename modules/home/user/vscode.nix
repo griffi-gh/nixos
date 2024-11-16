@@ -2,6 +2,7 @@
   projectsFolder = "~/projects";
 in {
   imports = [
+    ./vscode/vs-rust.nix
     ./vscode/vs-copilot.nix
     ./vscode/vs-nix.nix
     ./vscode/vs-cpp.nix
@@ -33,9 +34,6 @@ in {
       bierner.markdown-footnotes
       bierner.markdown-mermaid
 
-      # Rust
-      rust-lang.rust-analyzer # (nixpkgs is outdated)
-
       # JS/TS
       dbaeumer.vscode-eslint
       ms-vscode.vscode-typescript-next
@@ -53,7 +51,6 @@ in {
 
       # Debugging:
       from-nixpkgs.vadimcn.vscode-lldb
-      seaql.firedbg-rust
 
       # Webdev/Browser Support/Web server:
       firefox-devtools.vscode-firefox-debug
@@ -103,6 +100,7 @@ in {
       "window.dialogStyle" = "custom";
 
       # Editor:
+      "editor.tabSize" = 2;
       "editor.linkedEditing" = true;
       "editor.cursorSmoothCaretAnimation" = "explicit";
       "editor.inlayHints.enabled" = "onUnlessPressed";
@@ -161,10 +159,6 @@ in {
       "liveServer.settings.donotShowInfoMsg" = true;
       "liveServer.settings.useLocalIp" = false;
       "liveServer.settings.donotVerifyTags" = true;
-
-      # FireDbg:
-      "firedbg.telemetry" = false;
-      "firedbg.showWelcome" = false;
 
       # LLDB
       "lldb.suppressUpdateNotifications" = true;
