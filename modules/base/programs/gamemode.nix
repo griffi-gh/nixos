@@ -16,7 +16,8 @@
       };
     };
   };
-  environment.sessionVariables = {
-    GAMEMODERUNEXEC = "powerprofilesctl launch";
-  };
+  # Breaks Steam games:
+  # environment.sessionVariables = {
+  #   GAMEMODERUNEXEC = "powerprofilesctl launch";
+  # };
 }
