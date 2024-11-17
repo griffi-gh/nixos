@@ -106,7 +106,7 @@
       teams-for-linux       # Microsoft Teams (unofficial open-source electron wrapper)
 
       # Dev. Stuff/Code editors
-      zed-editor            # Zed Editor (gui)
+      pkgs-master.zed-editor # Zed Editor (gui)
       helix                 # Helix Editor (cli)
       renderdoc             # RenderDoc (graphics debugger)
       # rgp                 # Radeon GPU Profiler (compatible with RenderDoc)

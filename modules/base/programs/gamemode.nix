@@ -16,4 +16,7 @@
       };
     };
   };
+  environment.sessionVariables = {
+    GAMEMODERUNEXEC = "powerprofilesctl launch";
+  };
 }
