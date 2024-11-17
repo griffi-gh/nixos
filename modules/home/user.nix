@@ -29,6 +29,7 @@
       glances      # (system monitor) Glances (with server)
       ffmpeg       # ffmpeg
       http-server   # http-server (node.js)
+      amdgpu_top # (MAYBE move to hw modules?)
 
       # file stuff:
       vaults       # Vaults (gocryptfs GTK GUI)
