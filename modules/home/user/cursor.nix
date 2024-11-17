@@ -14,11 +14,12 @@
     size = 24;
   };
 in {
-  home.pointerCursor = {
-    inherit (cursor) name package size;
-    gtk.enable = true;
-    x11.enable = true;
-  };
+  # Just leave this up to KDE
+  # home.pointerCursor = {
+  #   inherit (cursor) name package size;
+  #   gtk.enable = true;
+  #   x11.enable = true;
+  # };
   programs.plasma.workspace.cursor = {
     inherit (cursor) size;
     theme = cursor.name;
