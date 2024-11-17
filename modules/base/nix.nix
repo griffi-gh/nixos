@@ -28,7 +28,7 @@ in {
         "read-only-local-store"
         "recursive-nix"
         "repl-automation"
-        "repl-flake.md"
+        # "repl-flake.md"
       ] else [
         # 2024-07-24
         # https://github.com/NixOS/nix/blob/fb450de20ec8df558f9f7f167d748acf7cabe151/src/libutil/experimental-features.cc
