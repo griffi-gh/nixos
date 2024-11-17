@@ -17,6 +17,7 @@
       # C#:
       "dotnetAcquisitionExtension.enableTelemetry" = false;
       "dotnetAcquisitionExtension.installTimeoutValue" = 0;
+      "csharp.suppressDotnetInstallWarning" = true;
       "csharp.preview.improvedLaunchExperience" = true;
       "csharp.experimental.debug.hotReload" = true;
       "nuget.includePrereleasePackageVersions" = true;
