@@ -18,5 +18,8 @@
   programs.gh = {
     enable = true;
     gitCredentialHelper.enable = false;
+    extensions = with pkgs; [
+      gh-copilot
+    ];
   };
 }

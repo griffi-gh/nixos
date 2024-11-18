@@ -9,8 +9,10 @@ in {
     ./plasma/kwin.nix
     ./plasma/window-rules.nix
     ./plasma/input.nix
+    ./plasma/shortcuts.nix
     ./plasma/dolphin.nix
     ./plasma/konsole.nix
+    ./plasma/spectacle.nix
   ];
   programs.plasma = {
     enable = true;

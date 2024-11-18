@@ -148,6 +148,18 @@ in {
 
       # GitLens:
       "gitlens.telemetry.enabled" = false;
+      "gitlens.views.scm.grouped.views" = {
+        "commits" = false;
+        "branches" = true;
+        "remotes" = true;
+        "stashes" = true;
+        "tags" = true;
+        "worktrees" = true;
+        "contributors" = true;
+        "repositories" = false;
+        "searchAndCompare" = false;
+        "launchpad" = false;
+      };
 
       # Project Manager:
       "projectManager.projectsLocation" = projectsFolder;
