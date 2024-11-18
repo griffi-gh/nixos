@@ -67,6 +67,7 @@
       # transmission_4-qt6    # Transmission (Qt)
       qbittorrent           # qBittorrent
       bitwarden-desktop     # BitWarden Desktop client
+      keyguard              # BitWarden (Keyguard)
       okteta                # Okteta (hex editor)
       imhex                 # imhex  (hex editor)
       # DISABLED BECAUSE OF BUILD FAILURE IN node-env

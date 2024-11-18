@@ -82,9 +82,14 @@ in {
     };
   };
 
+  environment.sessionVariables = {
+    NIXPKGS_ALLOW_UNFREE = 1;
+  };
+
   nix.settings.build-dir = buildTmpDir;
   systemd.services.nix-daemon.environment.TMPDIR = buildTmpDir;
   systemd.tmpfiles.rules = [
     "d ${buildTmpDir} 770 root nixbld"
   ];
+
 }
