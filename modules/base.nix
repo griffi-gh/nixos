@@ -36,7 +36,6 @@
     ./base/programs/wireshark.nix
     ./base/programs/wine.nix
     ./base/programs/podman.nix
-    ./base/programs/firejail.nix
   ];
 
   # Locale/timezone
@@ -124,9 +123,6 @@
   services = {
     # Flatpaks
     flatpak.enable = true;
-
-    # GNS3
-    # gns3-server.enable = true;
   };
 
   # bump nofile limits
