@@ -9,6 +9,7 @@ in {
     ./vscode/vs-csharp.nix
     ./vscode/vs-zig.nix
     ./vscode/vs-flutter.nix
+    ./vscode/vs-sh.nix
     # ./vscode/vs-tizen.nix
   ];
   programs.vscode = {
@@ -38,9 +39,6 @@ in {
       dbaeumer.vscode-eslint
       ms-vscode.vscode-typescript-next
       christian-kohler.npm-intellisense
-
-      # Nushell
-      thenuprojectcontributors.vscode-nushell-lang
 
       # TOML
       tamasfe.even-better-toml
