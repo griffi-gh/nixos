@@ -80,6 +80,8 @@ in {
       options = "--delete-older-than 7d";
       persistent = true;
     };
+    # improve responsiveness of desktop system during rebuild
+    daemonCPUSchedPolicy = "idle";
   };
 
   environment.sessionVariables = {

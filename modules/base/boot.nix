@@ -1,5 +1,5 @@
 { pkgs, ... }: let
-  linux = pkgs.linuxPackages_zen;
+  linux = pkgs.linuxPackages.latest;
 in {
   # Use the systemd-boot EFI boot loader.
   boot = {
