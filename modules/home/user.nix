@@ -1,9 +1,13 @@
-{ self, pkgs, pkgs-master, system, ... }: {
+{ self, pkgs, pkgs-master, pkgs-stable, system, ... }: {
   home = {
     stateVersion = "24.11";
     username = "user";
     homeDirectory = "/home/user";
-    packages = with pkgs; with self.packages."${system}"; [
+    packages = with pkgs; with self.packages."${system}";
+    let
+      libreoffice-x11 = pkgs-stable.callPackage ./../../pkgs/libreoffice-x11/package.nix {};
+    in
+    [
       # fix for bash :p
       bashInteractive
 
@@ -108,7 +112,7 @@
       teams-for-linux       # Microsoft Teams (unofficial open-source electron wrapper)
 
       # Dev. Stuff/Code editors
-      pkgs-master.zed-editor # Zed Editor (gui)
+      zed-editor            # Zed Editor (gui)
       helix                 # Helix Editor (cli)
       renderdoc             # RenderDoc (graphics debugger)
       # rgp                 # Radeon GPU Profiler (compatible with RenderDoc)
