@@ -30,8 +30,13 @@ in {
       apply.desktopfile = "/etc/profiles/per-user/user/share/applications/transmission-qt.desktop";
     }
     {
-      description = "hm-vscode-desktop-file";
+      description = "hm-vscode-desktop-file-0";
       match.window-class = "code code-url-handler";
+      apply.desktopfile = "/etc/profiles/per-user/user/share/applications/code.desktop";
+    }
+    {
+      description = "hm-vscode-desktop-file-1";
+      match.window-class = "code code";
       apply.desktopfile = "/etc/profiles/per-user/user/share/applications/code.desktop";
     }
     {
