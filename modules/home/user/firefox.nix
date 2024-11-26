@@ -208,10 +208,14 @@
         "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
         "browser.newtabpage.activity-stream.telemetry" = false;
         "browser.newtabpage.activity-stream.telemetry.structuredIngestion.endpoint" = "";
+        "browser.newtabpage.activity-stream.telemetry.ut.events" = false;
         "browser.newtabpage.activity-stream.feeds.discoverystreamfeed" = false;
         "browser.newtabpage.activity-stream.feeds.telemetry" = false;
         "browser.newtabpage.activity-stream.feeds.topsites" = false;
         "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
+
+        # Disable ff account telemetry
+        "identity.fxaccounts.telemetry.clientAssociationPing.enabled" = false;
 
         # Opt out of Studies
         "app.shield.optoutstudies.enabled" = true;
@@ -224,9 +228,10 @@
         # Disable ping centre telemetry
         "browser.ping-centre.telemetry" = false;
 
-        # Disable "coverage" ping
+        # Disable "coverage" and "user_characteristics_ping" ping
         "toolkit.coverage.opt-out" = true;
         "toolkit.telemetry.coverage.opt-out" = true;
+        "toolkit.telemetry.user_characteristics_ping.opt-out" = true;
         "toolkit.coverage.endpoint.base" = "";
 
         # Disable telemetry stuff
