@@ -337,7 +337,7 @@
         "browser.startup.homepage_override.mstone" = "ignore";
 
         # Use BeaconDB for geolocation
-        "geo.provider.network.url" = import ../../../secrets/geolocate.nix;
+        "geo.provider.network.url" = "https://beacondb.net/v1/geolocate";
 
         # Enable AI thingy
         "browser.ml.chat.enabled" = true;
