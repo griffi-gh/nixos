@@ -27,7 +27,7 @@
     ./base/services/printing.nix
     ./base/services/xserver.nix
     ./base/services/tailscale.nix
-    # ./base/programs/gamescope.nix # broken
+    ./base/programs/gamescope.nix # broken
     ./base/programs/appimage.nix
     ./base/programs/gamemode.nix
     ./base/programs/steam.nix

@@ -72,6 +72,9 @@
           sudo swapoff -a;
           sudo swapon -a;
         '';
+        http-serve = ''
+          http-server -c-1 -p 18886 -a ::
+        '';
       };
     };
     bash = {
