@@ -156,6 +156,9 @@
         "media.ffmpeg.encoder.enabled" = true;
         "media.ffmpeg.vaapi.enabled" = true;
 
+        # Enable hw accel for PDF (!!! may actually be slower, e.g. w/ most dedicated gpus)
+        "pdfjs.enableHWA" = true;
+
         # Set content blocking to "Strict"
         "browser.contentblocking.category" = "strict";
 
