@@ -26,7 +26,6 @@
       osslsigncode # verify code signatures
       yt-dlp       # yt-dlp (youtube-dl fork)
       btop         # (system monitor) htop but even more autistic :3
-      glances      # (system monitor) Glances (with server)
       ffmpeg       # ffmpeg
       http-server   # http-server (node.js)
 
