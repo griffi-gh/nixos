@@ -1,13 +1,9 @@
-{ self, pkgs, pkgs-master, pkgs-stable, system, ... }: {
+{ self, pkgs, pkgs-master, system, ... }: {
   home = {
     stateVersion = "24.11";
     username = "user";
     homeDirectory = "/home/user";
-    packages = with pkgs; with self.packages."${system}";
-    let
-      libreoffice-x11 = pkgs-stable.callPackage ./../../pkgs/libreoffice-x11/package.nix {};
-    in
-    [
+    packages = with pkgs; with self.packages."${system}"; [
       # fix for bash :p
       bashInteractive
 

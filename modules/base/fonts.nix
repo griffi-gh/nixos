@@ -39,13 +39,16 @@
       fira-code-symbols
 
       # Nerd fonts
-      (nerdfonts.override {
-        fonts = [
-          "NerdFontsSymbolsOnly"
-          "SourceCodePro"
-          "FiraCode"
-        ];
-      })
+      nerd-fonts.symbols-only
+      nerd-fonts.sauce-code-pro
+      nerd-fonts.fira-code
+      # (nerdfonts.override {
+      #   fonts = [
+      #     "NerdFontsSymbolsOnly"
+      #     "SourceCodePro"
+      #     "FiraCode"
+      #   ];
+      # })
     ];
   };
 }

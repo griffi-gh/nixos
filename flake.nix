@@ -3,9 +3,9 @@
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
-    nixpkgs-stable = {
-      url = "github:NixOS/nixpkgs/nixos-24.11";
-    };
+    # nixpkgs-stable = {
+    #   url = "github:NixOS/nixpkgs/nixos-24.11";
+    # };
     nixpkgs-master = {
       url = "github:NixOS/nixpkgs/master";
     };
@@ -38,7 +38,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-master, nixpkgs-stable, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-master, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -58,10 +58,10 @@
         };
         overlays = import ./overlays;
       };
-      pkgs-stable = import nixpkgs-stable {
-        inherit system;
-        config.allowUnfree = true;
-      };
+      # pkgs-stable = import nixpkgs-stable {
+      #   inherit system;
+      #   config.allowUnfree = true;
+      # };
       pkgs-master = import nixpkgs-master {
         inherit system;
         config.allowUnfree = true;
@@ -79,7 +79,7 @@
       };
 
       specialArgs = {
-        inherit self inputs pkgs pkgs-stable pkgs-master vscode-extensions system;
+        inherit self inputs pkgs pkgs-master vscode-extensions system;
       };
     in {
       packages."${system}" = import ./pkgs { inherit pkgs; };
