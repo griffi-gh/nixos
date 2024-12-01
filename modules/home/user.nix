@@ -123,7 +123,7 @@
       pkgs-master.earbuds   # Samsung Galaxy Buds (earbuds cli)
 
       # Games:
-      principia      # Principia
+      principia-x11  # Principia
       the-powder-toy # The Powder Toyelopers: PCGamingWiki staff m
       osu-lazer-bin  # Osu (lazer)
       prismlauncher  # Minecraft (Prism Launcher)
