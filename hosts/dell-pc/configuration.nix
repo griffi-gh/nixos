@@ -43,7 +43,7 @@ in {
 
   # services
   services.fstrim.enable = true;
-  services.thermald.enable = true;
+  # services.thermald.enable = true;
   services.fwupd.enable = true;
 
   # cpu
