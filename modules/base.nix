@@ -81,6 +81,7 @@
       enable = true;
       openFirewall = true;
     };
+    firejail.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
