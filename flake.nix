@@ -28,8 +28,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    flake-programs-sqlite = {
-      url = "github:wamserma/flake-programs-sqlite";
+    # flake-programs-sqlite = {
+    #   url = "github:wamserma/flake-programs-sqlite";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     vscode-server = {
@@ -69,12 +73,14 @@
       vscode-extensions = inputs.nix-vscode-extensions.extensions.${system};
       nixosModules = with inputs; {
         home-manager    = home-manager.nixosModules.home-manager;
-        programs-sqlite = flake-programs-sqlite.nixosModules.programs-sqlite;
+        # programs-sqlite = flake-programs-sqlite.nixosModules.programs-sqlite;
+        # nix-index       = nix-index-database.nixosModules.nix-index;
       };
       homeModules = with inputs; {
         plasma-manager  = plasma-manager.homeManagerModules.plasma-manager;
       	vscode-server   = vscode-server.homeModules.default;
         nix-flatpak     = nix-flatpak.homeManagerModules.nix-flatpak;
+        nix-index       = nix-index-database.hmModules.nix-index;
         # chaotic         = chaotic.homeManagerModules.default;
       };
 
@@ -91,7 +97,7 @@
             (import ./hosts/${host}/configuration.nix)
             (import ./modules/base.nix)
             nixosModules.home-manager
-            nixosModules.programs-sqlite
+            # nixosModules.programs-sqlite
             {
               home-manager = {
                 users = {
@@ -103,6 +109,7 @@
                   homeModules.plasma-manager
                   homeModules.vscode-server
                   homeModules.nix-flatpak
+                  homeModules.nix-index
                 ];
                 useGlobalPkgs = true;
                 useUserPackages = true;

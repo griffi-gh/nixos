@@ -85,6 +85,9 @@
   };
 
   environment.systemPackages = with pkgs; [
+    # nix stuff:
+    comma
+
     # deps:
     bashInteractive
     efibootmgr
