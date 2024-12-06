@@ -1,4 +1,4 @@
-{ lib, ... }: let
+{ pkgs, lib, ... }: let
   # TODO use relative path?
   wallpaper = "/home/user/nixos/wallpapers/whatever.png";
   accentColor = "250,140,200";
@@ -31,15 +31,27 @@ in {
       inherit wallpaper;
     };
     configFile = {
-      kdeglobals.General = {
-        # accent color
-        AccentColor = accentColor;
-        LastUsedCustomAccentColor = accentColor;
+      kdeglobals = {
+        General = {
+          # accent color
+          AccentColor = accentColor;
+          LastUsedCustomAccentColor = accentColor;
 
-        # enable font antialiasing
-        XftAntialias = true;
-        XftHintStyle = "hintslight";
-        XftSubPixel = "rgb";
+          # enable font antialiasing
+          XftAntialias = true;
+          XftHintStyle = "hintslight";
+          XftSubPixel = "rgb";
+        };
+        QtQuickRendererSettings = {
+          SceneGraphBackend = "opengl";
+          ForceGlCoreProfile = true;
+          RenderLoop = "threaded";
+        };
+        WM = {
+          # window outline
+          # inactiveFrame = "239,240,241";
+          # frame = accentColor;
+        };
       };
 
       # Highlight non-default settings
@@ -68,6 +80,12 @@ in {
       };
     };
   };
+  home.packages = with pkgs; [
+    # (rlly like it, especially with colored borders...)
+    # (but it causes Qt6 apps to be blurry on HiDPI displays for some reason)
+    # kde-rounded-corners
+  ];
+
   # home.activation."kwin_reconfigure" = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
   #   qdbus org.kde.KWin /KWin reconfigure
   # '';
