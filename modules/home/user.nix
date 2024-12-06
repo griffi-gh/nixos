@@ -121,6 +121,8 @@
       # TODO fix galaxy-buds-client somehow (borked and outdated)
       # galaxy-buds-client  # GalaxyBudsClient (unofficial)
       pkgs-master.earbuds   # Samsung Galaxy Buds (earbuds cli)
+      # Dev/
+      pkgs-master.zepp-simulator
 
       # Games:
       principia-x11  # Principia

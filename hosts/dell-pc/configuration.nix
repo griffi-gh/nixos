@@ -9,9 +9,14 @@ in {
   # hostname
   networking.hostName = hostname;
 
-  # early gpu init (DO NOT USE, CAUSES FLICKER)
-  # (maybe fixed?)
-  hardware.amdgpu.initrd.enable = true;
+  # kernel param
+  boot.kernelParams = [
+    "nohibernate" # HACK: disable hibernation
+    "amd_pstate=active"
+  ];
+
+  # used to cause flicker, sometimes prevents plymouth from showing
+  # hardware.amdgpu.initrd.enable = true;
 
   # opencl
   # i'm overriding the default opencl option to use rocm 5 instead:
@@ -62,9 +67,6 @@ in {
     options rtw_core disable_lps_deep=y
     options rtw_pci disable_msi=y disable_aspm=y
   '';
-
-  # HACK: disable hibernation
-  boot.kernelParams = [ "nohibernate" ];
 
   # HACK: steam scaling
   environment.sessionVariables = {
