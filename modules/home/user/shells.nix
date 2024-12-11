@@ -19,6 +19,8 @@
     gco = "git checkout";
     gcb = "git checkout -b";
     nix-query = "nix-locate --top-level";
+
+    flake = "nix flake";
   };
   programs = {
     # Shells:
