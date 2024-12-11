@@ -103,6 +103,7 @@
     killall
     inetutils
     iputils
+    openssl
 
     # runtimes:
     jdk21

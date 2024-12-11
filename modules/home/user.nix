@@ -126,7 +126,8 @@
 
       # Games:
       principia-x11  # Principia
-      the-powder-toy # The Powder Toyelopers: PCGamingWiki staff m
+      the-powder-toy # The Powder Toy
+      minetest       # Luanti/Minetest
       osu-lazer-bin  # Osu (lazer)
       prismlauncher  # Minecraft (Prism Launcher)
       space-cadet-pinball # Space Cadet Pinball for Windows
