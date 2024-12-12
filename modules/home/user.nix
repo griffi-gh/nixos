@@ -76,6 +76,7 @@
       pomodoro-gtk          # GTK Pomodoro Timer
       stremio               # Stremio (media center)
       parsec-bin            # Parsec (game streaming)
+      tidal-hifi            # tidal hifi electron music player thingy
 
       # Hunpell/Hyphen dicts:
       hunspell
