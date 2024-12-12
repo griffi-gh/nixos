@@ -93,6 +93,7 @@
       gimp                  # GIMP  (image editor)
       krita                 # Krita (image editor)
       kdePackages.kdenlive  # Kdenlive (video editor)
+      aseprite              # Aseprite (from source)
 
       # Audio stuff:
       easyeffects           # EasyEffects (pa audio effects)
