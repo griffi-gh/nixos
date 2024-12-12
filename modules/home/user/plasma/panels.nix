@@ -34,9 +34,9 @@
               "applications:vesktop.desktop"
               "applications:org.telegram.desktop.desktop"
               "applications:nheko.desktop"
+              "applications:tidal-hifi.desktop"
               "applications:dev.zed.Zed.desktop"
               "applications:code.desktop"
-              "applications:tidal-hifi.desktop"
               "applications:com.heroicgameslauncher.hgl.desktop"
               "applications:steam.desktop"
             ];
