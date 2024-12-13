@@ -85,6 +85,9 @@
   };
 
   environment.systemPackages = with pkgs; [
+    # required
+    git-crypt
+
     # nix stuff:
     comma
 
