@@ -177,6 +177,9 @@
   #   "/run/current-system/sw"
   # ];
 
+  # set fallback cursor theme to Breeze
+  xdg.icons.fallbackCursorThemes = [ "breeze" ];
+
   security = {
     # enable rtkit
     rtkit.enable = true;
