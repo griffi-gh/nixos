@@ -178,7 +178,7 @@
   # ];
 
   # set fallback cursor theme to Breeze
-  xdg.icons.fallbackCursorThemes = [ "breeze" ];
+  # xdg.icons.fallbackCursorThemes = [ "breeze" ];
 
   security = {
     # enable rtkit
