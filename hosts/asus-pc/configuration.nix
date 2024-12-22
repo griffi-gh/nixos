@@ -32,5 +32,8 @@ in {
     "space_cache=v2"
   ];
 
+  # force tpm2 off
+  security.tpm2.enable = lib.mkForce false;
+
   # boot.initrd.kernelModules = [ "amdgpu" "radeon" ];
 }

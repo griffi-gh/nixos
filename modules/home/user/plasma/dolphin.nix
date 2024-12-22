@@ -6,5 +6,8 @@
       RememberOpenedTabs = false;
       ShowFullPath = true;
     };
+    PlacesPanel = {
+      IconSize = -1;
+    };
   };
 }
