@@ -10,7 +10,7 @@ in {
 
   # cpu
   hardware.cpu.amd.updateMicrocode = true;
-  powerManagement.cpuFreqGovernor = "schedutil";
+  powerManagement.cpuFreqGovernor = "performance"; # "schedutil";
 
   # gpu
   boot.blacklistedKernelModules = [ "radeon" ];
@@ -38,7 +38,5 @@ in {
   # boot.initrd.kernelModules = [ "amdgpu" "radeon" ];
 
   # disable mitigations
-  boot.kernelParams = [
-    "mitigations=off"
-  ];
+  boot.kernelParams = [ "mitigations=off" ];
 }
