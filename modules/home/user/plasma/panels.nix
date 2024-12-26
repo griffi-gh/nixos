@@ -22,6 +22,9 @@
               fill = true;
               iconSpacing = "small";
             };
+            behavior = {
+              middleClickAction = "close";
+            };
             launchers = [
               "applications:systemsettings.desktop"
               "applications:org.kde.konsole.desktop"
