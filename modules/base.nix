@@ -178,6 +178,7 @@
   # ];
 
   # set fallback cursor theme to Breeze
+  # XXX: not sure if this actually works, should fix cursor in Steam and PacketTracer
   xdg.icons.fallbackCursorThemes = [
     "breeze_cursors"
   ];
