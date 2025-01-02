@@ -11,7 +11,7 @@
     "KFileDialog Settings" = {
       "Places Icons Auto-resize" = false;
       "Places Icons Static Size" = sidebarIconSize;
-    }
+    };
     PlacesPanel = {
       IconSize = sidebarIconSize;
     };
