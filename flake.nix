@@ -10,6 +10,11 @@
       url = "github:NixOS/nixpkgs/master";
     };
 
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -73,6 +78,7 @@
       vscode-extensions = inputs.nix-vscode-extensions.extensions.${system};
       nixosModules = with inputs; {
         home-manager    = home-manager.nixosModules.home-manager;
+        nixos-hardware  = nixos-hardware.nixosModules;
         # programs-sqlite = flake-programs-sqlite.nixosModules.programs-sqlite;
         # nix-index       = nix-index-database.nixosModules.nix-index;
       };
@@ -91,7 +97,7 @@
       packages."${system}" = import ./pkgs { inherit pkgs; };
 
       nixosConfigurations = let
-        buildNixosSystem = host: nixpkgs.lib.nixosSystem {
+        buildNixosSystem = host: extraModules: nixpkgs.lib.nixosSystem {
           inherit system specialArgs;
           modules = [
             (import ./hosts/${host}/configuration.nix)
@@ -110,7 +116,7 @@
                   homeModules.vscode-server
                   homeModules.nix-flatpak
                   homeModules.nix-index
-                ];
+                ] ++ extraModules;
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 backupFileExtension = "hm-bak";
@@ -119,8 +125,11 @@
           ];
         };
       in {
-        dell-pc = buildNixosSystem "dell-pc";
-        asus-pc = buildNixosSystem "asus-pc";
+        dell-pc = buildNixosSystem "dell-pc" [];
+        asus-pc = buildNixosSystem "asus-pc" [];
+        fw13 = buildNixosSystem "fw13" [
+          nixosModules.nixos-hardware.framework-13-7040-amd
+        ];
       };
     };
 }
