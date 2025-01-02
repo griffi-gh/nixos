@@ -7,6 +7,8 @@ in {
 
   system.stateVersion = "25.05";
 
+  networking.hostName = hostname;
+
   fileSystems = let
     btrfsOptions = [ "ssd" "noatime" "nodiscard" "compress=zstd:1" ];
   in {
