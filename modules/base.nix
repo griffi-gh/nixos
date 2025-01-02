@@ -115,7 +115,7 @@
     zip
     unzip
     unrar
-    arj
+#     arj # build failure
     p7zip
 
     # exe icons
