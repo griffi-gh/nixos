@@ -15,4 +15,4 @@ in {
     "/nix".options =  btrfsOptions;
     "/boot".options = [ "noatime" ];
   };
-};
+}
