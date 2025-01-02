@@ -115,7 +115,7 @@
                   homeModules.vscode-server
                   homeModules.nix-flatpak
                   homeModules.nix-index
-                ]
+                ];
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 backupFileExtension = "hm-bak";
