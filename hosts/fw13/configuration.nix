@@ -17,4 +17,9 @@ in {
     "/nix".options =  btrfsOptions;
     "/boot".options = [ "noatime" ];
   };
+
+  services.fwupd = {
+    enable = true;
+    extraRemotes = [ "lvfs-testing" ];
+  };
 }
