@@ -19,12 +19,6 @@
       options = [ "subvol=root" ];
     };
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/5a8dc13c-8135-42a5-b29c-7c586f03cafa";
-      fsType = "btrfs";
-      options = [ "subvol=root" ];
-    };
-
   fileSystems."/home" =
     { device = "/dev/disk/by-uuid/5a8dc13c-8135-42a5-b29c-7c586f03cafa";
       fsType = "btrfs";
