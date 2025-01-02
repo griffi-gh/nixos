@@ -1,6 +1,6 @@
 { pkgs, ... }: {
+  hardware.enableRedistributableFirmware = true;
   hardware.enableAllFirmware = true;
-  # hardware.enableRedistributableFirmware = true;
 
   imports = [
     # ./base/hacks/fontconfig-unbreak.nix # no longer needed

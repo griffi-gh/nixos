@@ -115,13 +115,13 @@
                   homeModules.vscode-server
                   homeModules.nix-flatpak
                   homeModules.nix-index
-                ] ++ extraModules;
+                ]
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 backupFileExtension = "hm-bak";
               };
             }
-          ];
+          ] ++ extraModules;
         };
       in {
         dell-pc = buildNixosSystem "dell-pc" [];
