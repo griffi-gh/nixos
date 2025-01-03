@@ -4,7 +4,7 @@
     uninstallUnmanaged = true;
     update.onActivation = true;
     remotes = let
-      trustedkey = repo: ../../../assets/trustedkeys/${repo}.trustedkeys.gpg;
+      trustedkey = repo: "${../../../assets/trustedkeys/${repo}.trustedkeys.gpg}";
     in [
       {
         name = "flathub";
