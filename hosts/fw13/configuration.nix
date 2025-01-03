@@ -28,4 +28,15 @@ in {
     enable = true;
     extraRemotes = [ "lvfs-testing" ];
   };
+
+  hardware.amdgpu = {
+    opencl.enable = true;
+    initrd.enable = true;
+  };
+
+  hardware.cpu.amd.updateMicrocode = true;
+
+  boot.kernel.sysctl = {
+    "vm.swappiness" = 10;
+  };
 }

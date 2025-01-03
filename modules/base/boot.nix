@@ -37,7 +37,8 @@ in {
     };
     plymouth = {
       enable = true;
-      theme = "bgrt";
+      # theme = "bgrt";
+      theme = "breeze";
     };
   };
   environment.systemPackages = with linux; [
