@@ -11,7 +11,7 @@
       core.editor = "nano";
       credential = {
         credentialStore = "secretservice";
-        credential.helper = "${pkgs.gitFull}/bin/git-credential-libsecret";
+        helper = "${pkgs.gitFull}/bin/git-credential-libsecret";
       };
     };
   };
