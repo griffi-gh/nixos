@@ -139,6 +139,7 @@ in {
 
       # Vsicons
       "vsicons.dontShowNewVersionMessage" = true;
+      "vsicons.presets.foldersAllDefaultIcon" = true; # No custom folder icons
 
       # Trailing Spaces:
       "trailing-spaces.trimOnSave" = true;
