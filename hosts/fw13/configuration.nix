@@ -8,12 +8,14 @@ in {
   system.stateVersion = "25.05";
   networking.hostName = hostname;
 
-  hardware.framework.laptop13.audioEnhancement = true;
-
   boot.kernelParams = [
     "resume=UUID=4f0b5893-4d99-4dbc-9ba0-1ab0ac6c3cfc"
     # "i915.enable_psr=1"
   ];
+
+  boot.kernel.sysctl = {
+    "vm.swappiness" = 10;
+  };
 
   fileSystems = let
     btrfsOptions = [ "ssd" "noatime" "nodiscard" "compress=zstd:1" ];
@@ -29,6 +31,10 @@ in {
     extraRemotes = [ "lvfs-testing" ];
   };
 
+  hardware.framework.laptop13 = {
+    audioEnhancement.enable = true;
+  };
+
   hardware.amdgpu = {
     opencl.enable = true;
     initrd.enable = true;
@@ -36,9 +42,5 @@ in {
 
   hardware.cpu.amd = {
     updateMicrocode = true;
-  };
-
-  boot.kernel.sysctl = {
-    "vm.swappiness" = 10;
   };
 }
