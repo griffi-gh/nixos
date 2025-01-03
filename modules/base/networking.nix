@@ -20,7 +20,7 @@
         3389  # rdp
         5900  # vnc
         1714 1764 # kde connect
-        18886 # torrent
+        18885 18886 # torrent
         61208 61209 # glances server
         # 2234  # soulseek/nicotine+
       ];

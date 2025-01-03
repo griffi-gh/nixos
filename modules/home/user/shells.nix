@@ -78,6 +78,15 @@
         servedir = ''
           http-server -c-1 -p 18886 -a :: --cors -gb --log-ip
         '';
+        uncow = ''
+          set file $argv[1]
+          set tmp_file $file.(random)
+          mv $file $tmp_file
+          touch $file
+          chattr +C $file
+          cat $tmp_file > $file
+          rm $tmp_file
+        '';
       };
     };
     bash = {

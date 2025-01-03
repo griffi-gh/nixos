@@ -57,6 +57,7 @@
       kdePackages.filelight # Filelight (disk usage analyzer)
       kdePackages.krdc      # KRDC (remote desktop client)
       kdePackages.kcolorchooser # KColorChooser (color picker)
+      kdePackages.akregator # RSS reader
 
       # Software:
       vlc                   # VLC Media Player
