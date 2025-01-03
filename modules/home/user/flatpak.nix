@@ -3,10 +3,24 @@
     enable = true;
     uninstallUnmanaged = true;
     update.onActivation = true;
-    remotes = [
-      { name = "flathub"; location = "https://flathub.org/repo/flathub.flatpakrepo"; }
-      { name = "flathub-beta"; location = "https://flathub.org/beta-repo/flathub-beta.flatpakrepo"; }
-      { name = "sober"; location = "https://sober.vinegarhq.org/repo/"; }
+    remotes = let
+      trustedkey = repo: ../../../assets/trustedkeys/${repo}.trustedkeys.gpg;
+    in [
+      {
+        name = "flathub";
+        location = "https://flathub.org/repo/flathub.flatpakrepo";
+        gpg-import = trustedkey "flathub";
+      }
+      {
+        name = "flathub-beta";
+        location = "https://flathub.org/beta-repo/flathub-beta.flatpakrepo";
+        gpg-import = trustedkey "flathub-beta";
+      }
+      {
+        name = "sober";
+        location = "https://sober.vinegarhq.org/repo/";
+        gpg-import = trustedkey "sober";
+      }
     ];
     packages = [
       { appId = "org.vinegarhq.Sober"; origin = "sober";  }
@@ -27,18 +41,18 @@
   };
 
   # gpg signature for flatpak repos
-  xdg.dataFile = let
-    trustRepo = repo: {
-      "flatpak/repo/${repo}.trustedkeys.gpg" = {
-        enable = true;
-        source = ../../../assets/trustedkeys/${repo}.trustedkeys.gpg;
-      };
-    };
-  in (
-    (trustRepo "flathub") //
-    (trustRepo "flathub-beta") //
-    (trustRepo "sober")
-  );
+#   xdg.dataFile = let
+#     trustRepo = repo: {
+#       "flatpak/repo/${repo}.trustedkeys.gpg" = {
+#         enable = true;
+#         source = ../../../assets/trustedkeys/${repo}.trustedkeys.gpg;
+#       };
+#     };
+#   in (
+#     (trustRepo "flathub") //
+#     (trustRepo "flathub-beta") //
+#     (trustRepo "sober")
+#   );
 
   # fix app icons not appearing
   xdg.systemDirs.data = [

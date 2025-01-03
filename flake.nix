@@ -25,7 +25,7 @@
       inputs.home-manager.follows = "home-manager";
     };
     nix-flatpak = {
-      url = "github:gmodena/nix-flatpak/?ref=v0.4.1";
+      url = "github:gmodena/nix-flatpak/latest";
     };
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";

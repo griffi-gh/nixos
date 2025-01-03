@@ -87,6 +87,9 @@
           cat $tmp_file > $file
           rm $tmp_file
         '';
+        efz = ''
+          $EDITOR $(fzf)
+        '';
       };
     };
     bash = {
