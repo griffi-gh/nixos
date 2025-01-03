@@ -24,9 +24,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-    nix-flatpak = {
-      url = "github:gmodena/nix-flatpak/latest";
-    };
+    # nix-flatpak = {
+    #   url = "github:gmodena/nix-flatpak/latest";
+    # };
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -84,7 +84,7 @@
       homeModules = with inputs; {
         plasma-manager  = plasma-manager.homeManagerModules.plasma-manager;
       	vscode-server   = vscode-server.homeModules.default;
-        nix-flatpak     = nix-flatpak.homeManagerModules.nix-flatpak;
+        # nix-flatpak     = nix-flatpak.homeManagerModules.nix-flatpak;
         nix-index       = nix-index-database.hmModules.nix-index;
         # chaotic         = chaotic.homeManagerModules.default;
       };
@@ -113,7 +113,7 @@
                   { programs.home-manager.enable = true; }
                   homeModules.plasma-manager
                   homeModules.vscode-server
-                  homeModules.nix-flatpak
+                  # homeModules.nix-flatpak
                   homeModules.nix-index
                 ];
                 useGlobalPkgs = true;
