@@ -32,7 +32,8 @@ in {
   };
 
   hardware.framework.laptop13 = {
-    audioEnhancement.enable = true;
+    # XXX: hides the headphone port
+    # audioEnhancement.enable = true;
   };
 
   hardware.amdgpu = {
