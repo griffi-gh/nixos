@@ -47,6 +47,11 @@ in {
     opencl.enable = true;
     initrd.enable = true;
   };
+
+  # misc. opencl support
+  hardware.graphics.extraPackages = with pkgs; [
+    rocmPackages.clr.icd
+  ];
   systemd.tmpfiles.rules =
     let
       rocmEnv = pkgs.symlinkJoin {
