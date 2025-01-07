@@ -8,6 +8,7 @@ in {
   system.stateVersion = "25.05";
   networking.hostName = hostname;
 
+  # === Kernel ===
   boot.kernelParams = [
     "resume=UUID=4f0b5893-4d99-4dbc-9ba0-1ab0ac6c3cfc"
     # "i915.enable_psr=1"
@@ -17,6 +18,8 @@ in {
     "vm.swappiness" = 10;
   };
 
+  # === Filesystems ===
+
   fileSystems = let
     btrfsOptions = [ "ssd" "noatime" "nodiscard" "compress=zstd:1" ];
   in {
@@ -25,6 +28,8 @@ in {
     "/nix".options =  btrfsOptions;
     "/boot".options = [ "noatime" ];
   };
+
+  # === Misc ===
 
   services.fwupd = {
     enable = true;
@@ -36,12 +41,27 @@ in {
     # audioEnhancement.enable = true;
   };
 
+  # === GPU ===
+
   hardware.amdgpu = {
     opencl.enable = true;
     initrd.enable = true;
   };
+  systemd.tmpfiles.rules =
+    let
+      rocmEnv = pkgs.symlinkJoin {
+        name = "rocm-combined";
+        paths = with pkgs.rocmPackages; [
+          rocblas
+          hipblas
+          clr
+        ];
+      };
+    in [
+      "L+    /opt/rocm   -    -    -     -    ${rocmEnv}"
+    ];
+  services.xserver.videoDrivers = [ "amdgpu" ];
 
-  hardware.cpu.amd = {
-    updateMicrocode = true;
-  };
+  # === CPU ===
+  hardware.cpu.amd.updateMicrocode = true;
 }
