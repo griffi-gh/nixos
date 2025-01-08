@@ -38,10 +38,10 @@
         "mail.e2ee.auto_disable" = true;
 
         # Make configured extensions work
-        # "extensions.autoDisableScopes" = 0;
+        "extensions.autoDisableScopes" = 0;
 
         # Allow unsigned extensions
-        # "xpinstall.signatures.required" = false;
+        "xpinstall.signatures.required" = false;
 
         # spam stuff
         "mail.spam.manualMark" = true;
