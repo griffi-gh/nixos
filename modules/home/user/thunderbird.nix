@@ -1,4 +1,7 @@
 { pkgs, ... }: {
+  home.file.".thunderbird/default/extensions/{aee472cc-993b-522a-b6e8-c904c250a8d9}.xpi" = {
+    source = ../../../assets/thunderbird/extensions/catppuccin-mocha-pink.xpi;
+  };
   programs.thunderbird = {
     enable = true;
     package = pkgs.thunderbird-latest;
