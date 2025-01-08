@@ -92,7 +92,7 @@ in {
     userSettings = {
       # UI:
       "workbench.startupEditor" = "none";
-      "workbench.colorTheme" = "GitHub Dark Default";
+      # "workbench.colorTheme" = "GitHub Dark Default";
       "workbench.iconTheme" = "vscode-icons";
       "window.titleBarStyle" = "custom";
       "window.dialogStyle" = "custom";

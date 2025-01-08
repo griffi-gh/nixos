@@ -164,6 +164,7 @@
   };
 
   imports = [
+    ./user/theming.nix
     ./user/face.nix
     ./user/shells.nix
     ./user/git.nix
