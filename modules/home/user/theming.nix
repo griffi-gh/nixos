@@ -2,7 +2,7 @@
   # accentColor = "250,140,200";
   # accentColor = "255,184,228";
   accentColor = "245,194,231";
-  wallpaper = "/home/user/nixos/wallpapers/abstract-swirls.png";
+  wallpaper = "/home/user/nixos/wallpapers/abstract-swirls.jpg";
   catppuccin-flavour = "mocha";
   catppuccin-accent = "pink";
   # TODO automate these:
