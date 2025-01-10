@@ -49,6 +49,8 @@ in {
     initrd.enable = true;
   };
 
+  services.xserver.videoDrivers = [ "amdgpu" ];
+
   # misc. opencl support
   hardware.graphics.extraPackages = with pkgs; [
     rocmPackages.clr.icd
@@ -66,7 +68,6 @@ in {
     in [
       "L+    /opt/rocm   -    -    -     -    ${rocmEnv}"
     ];
-  services.xserver.videoDrivers = [ "amdgpu" ];
 
   # === CPU ===
   hardware.cpu.amd.updateMicrocode = true;
