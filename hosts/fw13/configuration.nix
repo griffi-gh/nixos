@@ -23,7 +23,7 @@ in {
   # === Filesystems ===
 
   fileSystems = let
-    btrfsOptions = [ "ssd" "noatime" "compress=zstd:1" ];
+    btrfsOptions = [ "ssd" "noatime" "discard=async" "compress=zstd:1" ];
   in {
     "/".options = btrfsOptions;
     "/home".options = btrfsOptions;
