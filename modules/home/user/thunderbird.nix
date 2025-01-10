@@ -17,6 +17,9 @@
         # Set chat theme to dark
         "messenger.options.messagesStyle.variant" = "Dark";
 
+        # Enable dark reader for web content (Experimental)
+        "mail.dark-reader.enabled" = true;
+
         # Toolbar extensions: only show icons, not labels
         "toolbar.unifiedtoolbar.buttonstyle" = 2;
 
