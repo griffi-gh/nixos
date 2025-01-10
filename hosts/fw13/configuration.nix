@@ -26,7 +26,7 @@ in {
 
   fileSystems = let
     btrfsOptions =
-      [ "ssd" "noatime" "nodiscard" "compress=zstd:1" ]
+      [ "ssd" "noatime" "compress=zstd:1" ]
       ++ (if btrfs-nodiscard then [ "nodiscard" ] else [ "discard=async" ]);
   in {
     "/".options = btrfsOptions;
