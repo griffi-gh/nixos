@@ -11,6 +11,7 @@ in {
   # === Kernel ===
   boot.kernelParams = [
     "resume=UUID=4f0b5893-4d99-4dbc-9ba0-1ab0ac6c3cfc"
+    "amdgpu.sg_display=0"
     # "i915.enable_psr=1"
   ];
 
