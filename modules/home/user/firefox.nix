@@ -345,6 +345,10 @@
         "browser.ml.chat.sidebar" = true;
         "browser.ml.chat.shortcuts" = false;
         "browser.ml.chat.provider" = "https://chatgpt.com";
+
+        # Enable Chromium Widevine CDM, and use beta versions
+        "media.gmp-widevinecdm.force-chromium-update" = true;
+        "media.gmp-widevinecdm.force-chromium-beta" = true;
       };
     };
   };
