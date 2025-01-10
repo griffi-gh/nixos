@@ -1,5 +1,7 @@
 { config, lib, pkgs, ... }: let
   hostname = "fw13";
+  # If true, use weekly fstrim.service instead of discard=async
+  btrfs-nodiscard = true;
 in {
   imports = [
     ./hardware-configuration.nix
@@ -23,13 +25,17 @@ in {
   # === Filesystems ===
 
   fileSystems = let
-    btrfsOptions = [ "ssd" "noatime" "discard=async" "compress=zstd:1" ];
+    btrfsOptions =
+      [ "ssd" "noatime" "nodiscard" "compress=zstd:1" ]
+      ++ (if btrfs-nodiscard then [ "nodiscard" ] else [ "discard=async" ]);
   in {
     "/".options = btrfsOptions;
     "/home".options = btrfsOptions;
     "/nix".options =  btrfsOptions;
     "/boot".options = [ "noatime" ];
   };
+
+  services.fstrim.enable = btrfs-nodiscard;
 
   # === Misc ===
 
