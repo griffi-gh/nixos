@@ -17,6 +17,7 @@ in {
 
   boot.kernel.sysctl = {
     "vm.swappiness" = 10;
+    "vm.dirty_writeback_centisecs" = 1500;
   };
 
   # === Filesystems ===
