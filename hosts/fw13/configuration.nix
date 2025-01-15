@@ -12,10 +12,17 @@ in {
 
   # === Kernel ===
   boot.kernelParams = [
+    # added this for hibernation, idk if it's necessary
     "resume=UUID=4f0b5893-4d99-4dbc-9ba0-1ab0ac6c3cfc"
+
     # scatter-whatever. can cause issues with external displays.
     "amdgpu.sg_display=0"
-    # AMD backlight management (aka Vari-Bright). ruins colors and suspected cause for flicker issues.
+
+    # AMD backlight management (aka Vari-Bright).
+    # ruins colors and suspected cause for flicker issues.
+    # Yep, should be fixed in a future kernel, TODO: remove this
+    # https://gitlab.freedesktop.org/drm/amd/-/issues/3853
+    # https://lore.kernel.org/all/20241227073700.3102801-1-alexander.deucher@amd.com/
     "amdgpu.abmlevel=0"
   ];
 
