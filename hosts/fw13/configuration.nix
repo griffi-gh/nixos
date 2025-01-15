@@ -13,8 +13,10 @@ in {
   # === Kernel ===
   boot.kernelParams = [
     "resume=UUID=4f0b5893-4d99-4dbc-9ba0-1ab0ac6c3cfc"
+    # scatter-whatever. can cause issues with external displays.
     "amdgpu.sg_display=0"
-    # "i915.enable_psr=1"
+    # AMD backlight management (aka Vari-Bright). ruins colors and suspected cause for flicker issues.
+    "amdgpu.abmlevel=0"
   ];
 
   boot.kernel.sysctl = {
