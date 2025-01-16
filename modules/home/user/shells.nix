@@ -15,6 +15,7 @@
     gc = "git commit";
     gcam = "git commit -am";
     ga = "git add";
+    gaa = "git add -A";
     gb = "git branch";
     gco = "git checkout";
     gcb = "git checkout -b";
