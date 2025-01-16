@@ -173,6 +173,9 @@ in {
 
       # LLDB
       "lldb.suppressUpdateNotifications" = true;
+
+      # fw13: terminal causes GPU hangs?
+      "terminal.integrated.gpuAcceleration" = "off";
     };
   };
 
