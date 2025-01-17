@@ -160,6 +160,9 @@
       gns3-gui # GNS3 GUI
       winbox4 # Winbox (Mikrotik RouterOS GUI)
       azuredatastudio # Azure Data Studio
+
+      # testing:
+      ocelot-desktop
     ];
   };
 
