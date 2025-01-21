@@ -14,12 +14,15 @@ symlinkJoin {
     #     sha256 = "6cd2b8891df92d2cad8b6fdc47480fc089de085c4f3fe95eb80d5450a2a7f72d";
     #   };
     # });
-    ciscoPacketTracer8' = ciscoPacketTracer8.overrideAttrs(_: {
-      packetTracerSource = fetchurl {
-        url = "https://files-cdn.girl.pp.ua/cisco/Packet_Tracer822_amd64_signed.deb";
-        sha256 = "6cd2b8891df92d2cad8b6fdc47480fc089de085c4f3fe95eb80d5450a2a7f72d";
+    ciscoPacketTracer8' = ciscoPacketTracer8.override {
+      version = "8.2.2";
+      __functionArgs = {
+        packetTracerSource = fetchurl {
+          url = "https://files-cdn.girl.pp.ua/cisco/Packet_Tracer822_amd64_signed.deb";
+          sha256 = "6cd2b8891df92d2cad8b6fdc47480fc089de085c4f3fe95eb80d5450a2a7f72d";
+        };
       };
-    });
+    };
   in [
     ciscoPacketTracer8'
   ];
