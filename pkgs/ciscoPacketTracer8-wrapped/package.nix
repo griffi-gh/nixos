@@ -20,9 +20,9 @@ symlinkJoin {
   ];
   nativeBuildInputs = [ makeWrapper ];
   postBuild = ''
-    ln -s $out/bin/packettracer8 $out/bin/packettracer8-wl
     wrapProgram $out/bin/packettracer8 \
       --set GDK_BACKEND "x11" \
       --set XDG_CURRENT_DESKTOP "GNOME";
+    ln -s $out/bin/.packettracer8-wrapped $out/bin/packettracer8-wl
   '';
 }
