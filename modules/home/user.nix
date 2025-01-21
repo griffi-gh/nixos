@@ -137,7 +137,8 @@
       space-cadet-pinball # Space Cadet Pinball for Windows
       # everest-mons # mons (Celeste/Everest mod loader installer)
 
-      # Heroic Legendary/GOG/Amazon
+      # Heroic/Lutris and Legendary/GOG/Amazon
+      lutris
       heroic
       legendary-gl # legendary (epic games)
       gogdl        # gogdl (GOG downloader)
