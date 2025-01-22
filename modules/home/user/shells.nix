@@ -20,7 +20,6 @@
     gcam = "git commit -am";
     gam = "git commit --amend";
     gaam = "git add -A; git commit --amend --no-edit";
-    gaampf = "git add -A; git commit --amend --no-edit; git push --force-with-lease";
     ga = "git add";
     gaa = "git add -A";
     gb = "git branch";
