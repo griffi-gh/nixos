@@ -24,6 +24,7 @@
     gb = "git branch";
     gco = "git checkout";
     gcb = "git checkout -b";
+    gaampf = "git add -A; git commit --amend --no-edit; git push --force-with-lease";
 
     nix-query = "nix-locate --top-level";
 
