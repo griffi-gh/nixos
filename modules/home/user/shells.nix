@@ -12,13 +12,19 @@
     # git
     g = "git";
     gp = "git push";
+    gpf = "git push --force-with-lease";
+    gpff = "git push --force";
+    gpl = "git pull";
     gc = "git commit";
+    gcm = "git commit -m";
     gcam = "git commit -am";
+    gam = "git commit --amend";
     ga = "git add";
     gaa = "git add -A";
     gb = "git branch";
     gco = "git checkout";
     gcb = "git checkout -b";
+
     nix-query = "nix-locate --top-level";
 
     flake = "nix flake";
