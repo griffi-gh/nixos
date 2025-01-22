@@ -3,7 +3,7 @@
   stdenv,
   fetchurl,
 
-  makeBinaryWrapper,
+  makeWrapper,
   makeDesktopItem,
   copyDesktopItems,
 
@@ -47,88 +47,95 @@ stdenv.mkDerivation (finalAttrs: {
   preferLocal = true;
 
   nativeBuildInputs = [
-    makeBinaryWrapper
+    # cannot use makeBinaryWrapper due to https://github.com/NixOS/nixpkgs/issues/330471
+    makeWrapper
     copyDesktopItems
     unzip
   ];
 
-  installPhase = let
-    runtimeLibs = [
-      # openal
-      alsa-lib
-      libjack2
-      libpulseaudio
-      pipewire
+  installPhase =
+    let
+      # does darwin need any deps?
+      runtimeLibs = lib.optionals stdenv.hostPlatform.isLinux [
+        # openal
+        alsa-lib
+        libjack2
+        libpulseaudio
+        pipewire
 
-      # lwjgl
-      libGL
-      libX11
-      libXcursor
-      libXext
-      libXrandr
-      libXxf86vm
-    ];
-    runtimePrograms = [
-      # https://github.com/LWJGL/lwjgl/issues/128
-      xrandr
-    ];
-  in
-  ''
-    runHook preInstall
+        # lwjgl
+        libGL
+        libX11
+        libXcursor
+        libXext
+        libXrandr
+        libXxf86vm
+      ];
+      runtimePrograms = lib.optionals stdenv.hostPlatform.isLinux [
+        # https://github.com/LWJGL/lwjgl/issues/128
+        xrandr
+      ];
+    in
+    ''
+      runHook preInstall
 
-    mkdir -p $out/{bin,share/${finalAttrs.pname}}
-    install -Dm644 ${finalAttrs.src} $out/share/${finalAttrs.pname}/ocelot-desktop.jar
+      mkdir -p $out/{bin,share/${finalAttrs.pname}}
+      install -Dm644 ${finalAttrs.src} $out/share/${finalAttrs.pname}/ocelot-desktop.jar
 
-    makeBinaryWrapper ${jre}/bin/java $out/bin/ocelot-desktop \
-      --set JAVA_HOME ${jre.home} \
-      --prefix LD_LIBRARY_PATH : "${lib.makeLibraryPath runtimeLibs}" \
-      --prefix PATH : "${lib.makeBinPath runtimePrograms}" \
-      --add-flags "-jar $out/share/${finalAttrs.pname}/ocelot-desktop.jar"
+      # TODO: remove the explicit -DLWJGL_WM_CLASS once the next release is out (it has been fixed upstream)
+      # https://gitlab.com/cc-ru/ocelot/ocelot-desktop/-/commit/a898e04dc395227f44398ccee70d935167838b1f
 
-    # copy icons from zip file
-    # ocelot/desktop/images/icon*.png
-    # 16,32,64,128,256
+      makeWrapper ${jre}/bin/java $out/bin/ocelot-desktop \
+        --set JAVA_HOME ${jre.home} \
+        --prefix LD_LIBRARY_PATH : "${lib.makeLibraryPath runtimeLibs}" \
+        --prefix PATH : "${lib.makeBinPath runtimePrograms}" \
+        --add-flags "-DLWJGL_WM_CLASS='Ocelot Desktop'" \
+        --add-flags "-jar $out/share/${finalAttrs.pname}/ocelot-desktop.jar"
 
-    for size in 16 32 64 128 256; do
-      mkdir -p $out/share/icons/hicolor/"$size"x"$size"/apps
-      unzip -p $out/share/${finalAttrs.pname}/ocelot-desktop.jar \
-        ocelot/desktop/images/icon"$size".png > $out/share/icons/hicolor/"$size"x"$size"/apps/ocelot-desktop.png
-    done
+      # copy icons from zip file
+      # ocelot/desktop/images/icon*.png
+      # 16,32,64,128,256
 
-    runHook postInstall
-  '';
+      for size in 16 32 64 128 256; do
+        mkdir -p $out/share/icons/hicolor/"$size"x"$size"/apps
+        unzip -p $out/share/${finalAttrs.pname}/ocelot-desktop.jar \
+          ocelot/desktop/images/icon"$size".png > $out/share/icons/hicolor/"$size"x"$size"/apps/ocelot-desktop.png
+      done
 
-  desktopItems = [(makeDesktopItem {
-    name = "ocelot-desktop";
-    desktopName = "Ocelot Desktop";
-    genericName = "OpenComputers Emulator";
-    comment = "An advanced OpenComputers emulator";
-    tryExec = "ocelot-desktop";
-    exec = "ocelot-desktop -w %f";
-    icon = "ocelot-desktop";
-    startupNotify = true;
-    # `xprop WM_CLASS`
-    # MUST BE UPDATED *MANUALLY* ON EVERY UPDATE (since it changes with every build)
-    startupWMClass = "Ocelot Desktop 1.12.0 (ac5bfc6)";
-    terminal = false;
-    keywords = [
-      "OpenComputers"
-      "Emulator"
-      "oc"
-      "lua"
-      "OpenOS"
-      "ocemu"
-      "mc"
-      "Minecraft"
-    ];
-    categories = [
-      "Development"
-      "Emulator"
-    ];
-    mimeTypes = [
-      "inode/directory"
-    ];
-  })];
+      runHook postInstall
+    '';
+
+  desktopItems = [
+    (makeDesktopItem {
+      name = "ocelot-desktop";
+      desktopName = "Ocelot Desktop";
+      genericName = "OpenComputers Emulator";
+      comment = "An advanced OpenComputers emulator";
+      tryExec = "ocelot-desktop";
+      exec = "ocelot-desktop -w %f";
+      icon = "ocelot-desktop";
+      startupNotify = true;
+      startupWMClass = "Ocelot Desktop";
+      terminal = false;
+      keywords = [
+        "OpenComputers"
+        "Emulator"
+        "oc"
+        "lua"
+        "OpenOS"
+        "ocemu"
+        "mc"
+        "Minecraft"
+      ];
+      categories = [
+        "Development"
+        "Emulator"
+      ];
+      mimeTypes = [
+        "inode/directory"
+      ];
+    })
+  ];
 
   # passthru.updateScript = gitUpdater { rev-prefix = "v"; };
 
