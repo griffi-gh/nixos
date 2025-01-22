@@ -3,7 +3,7 @@
   stdenv,
   fetchurl,
 
-  makeWrapper,
+  makeBinaryWrapper,
   makeDesktopItem,
   copyDesktopItems,
 
@@ -47,8 +47,7 @@ stdenv.mkDerivation (finalAttrs: {
   preferLocal = true;
 
   nativeBuildInputs = [
-    # cannot use makeBinaryWrapper due to https://github.com/NixOS/nixpkgs/issues/330471
-    makeWrapper
+    makeBinaryWrapper
     copyDesktopItems
     unzip
   ];
@@ -82,14 +81,10 @@ stdenv.mkDerivation (finalAttrs: {
       mkdir -p $out/{bin,share/${finalAttrs.pname}}
       install -Dm644 ${finalAttrs.src} $out/share/${finalAttrs.pname}/ocelot-desktop.jar
 
-      # TODO: remove the explicit -DLWJGL_WM_CLASS once the next release is out (it has been fixed upstream)
-      # https://gitlab.com/cc-ru/ocelot/ocelot-desktop/-/commit/a898e04dc395227f44398ccee70d935167838b1f
-
-      makeWrapper ${jre}/bin/java $out/bin/ocelot-desktop \
+      makeBinaryWrapper ${jre}/bin/java $out/bin/ocelot-desktop \
         --set JAVA_HOME ${jre.home} \
         --prefix LD_LIBRARY_PATH : "${lib.makeLibraryPath runtimeLibs}" \
         --prefix PATH : "${lib.makeBinPath runtimePrograms}" \
-        --add-flags "-DLWJGL_WM_CLASS='Ocelot Desktop'" \
         --add-flags "-jar $out/share/${finalAttrs.pname}/ocelot-desktop.jar"
 
       # copy icons from zip file
@@ -115,7 +110,10 @@ stdenv.mkDerivation (finalAttrs: {
       exec = "ocelot-desktop -w %f";
       icon = "ocelot-desktop";
       startupNotify = true;
-      startupWMClass = "Ocelot Desktop";
+      # MUST BE UPDATED *MANUALLY* ON EVERY UPDATE (since it changes between versions)
+      # Use `xprop WM_CLASS`; to find the WM_CLASS of the window
+      # (see issue: https://gitlab.com/cc-ru/ocelot/ocelot-desktop/-/issues/148)
+      startupWMClass = "Ocelot Desktop 1.12.0 (ac5bfc6)";
       terminal = false;
       keywords = [
         "OpenComputers"
