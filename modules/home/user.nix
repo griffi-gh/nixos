@@ -67,8 +67,6 @@
       libreoffice-x11       # LibreOffice (Qt6-X11)
       # transmission_4-qt6    # Transmission (Qt)
       qbittorrent           # qBittorrent
-      bitwarden-desktop     # BitWarden Desktop client
-      keyguard              # BitWarden (Keyguard) DOES NOT BUILD
       okteta                # Okteta (hex editor)
       imhex                 # imhex  (hex editor)
       # DISABLED BECAUSE OF BUILD FAILURE IN node-env
@@ -79,6 +77,11 @@
       stremio               # Stremio (media center)
       parsec-bin            # Parsec (game streaming)
       tidal-hifi            # tidal hifi electron music player thingy
+
+      # Bitwarden clients (because two aren't enough)
+      bitwarden-desktop     # BitWarden Desktop client
+      keyguard            # BitWarden (Keyguard)
+      #goldwarden            # BitWarden (Goldwarden)
 
       # Hunpell/Hyphen dicts:
       hunspell

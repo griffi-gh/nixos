@@ -8,6 +8,7 @@
     y = "yazi";
     # cd = "z"; # causes loop on fish
     # grep = "rg"; # not 100% compatible
+    mkd = "mkdir -p";
 
     # git
     g = "git";
