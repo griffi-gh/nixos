@@ -6,6 +6,7 @@
     # ./base/hacks/fontconfig-unbreak.nix # no longer needed
     ./../overlays/system.nix
     ./base/nix.nix
+    ./base/nixpkgs.nix
     ./base/boot.nix
     ./base/sudo.nix
     ./base/networking.nix
