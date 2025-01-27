@@ -49,7 +49,10 @@
   outputs = inputs@{ self, nixpkgs, nixpkgs-master, ... }:
     let
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
       # pkgs-stable = import nixpkgs-stable {
       #   inherit system;
       #   config.allowUnfree = true;
