@@ -21,10 +21,15 @@ in {
       @import 'colors.css'; /* breeze accents */
       @import '${stylesheet}'; /* adw-catppuccin */
 
-      headerbar button.titlebutton.close:not(:hover),
-      headerbar button.titlebutton.minimize:not(:hover),
-      headerbar button.titlebutton.maximize:not(:hover) {
+      headerbar .titlebutton.close:not(:hover),
+      headerbar .titlebutton.minimize:not(:hover),
+      headerbar .titlebutton.maximize:not(:hover) {
         background: none;
+      }
+
+      window.csd:not(.tiled):not(.maximized):not(.fullscreen) > decoration,
+      window.csd:not(.tiled):not(.maximized):not(.fullscreen) headerbar {
+        border-radius: 6px 6px 0px 0px;
       }
     '';
   in {
