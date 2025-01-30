@@ -2,23 +2,21 @@
   # Manage GTK stuff
   gtk = {
     enable = true;
-    theme = {
-      package = pkgs.kdePackages.breeze-gtk;
-      name = "Breeze-Dark";
-      # package = pkgs.adw-gtk3;
-      # name = "adw-gtk3-dark";
-    };
+    # theme = {
+    #   package = pkgs.kdePackages.breeze-gtk;
+    #   name = "Breeze-Dark";
+    # };
     gtk3 = {
       extraCss = "@import 'colors.css';";
       extraConfig = {
         # gtk-modules = "colorreload-gtk-module:window-decoration-gtk-module";
-        gtk-application-prefer-dark-theme = true;
+        # gtk-application-prefer-dark-theme = true;
       };
     };
     gtk4 = {
       extraCss = "@import 'colors.css';";
       extraConfig = {
-        gtk-application-prefer-dark-theme = true;
+        # gtk-application-prefer-dark-theme = true;
       };
     };
   };
