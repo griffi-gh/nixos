@@ -10,11 +10,16 @@
   catppuccin-accent-uppercased = "Pink";
 in {
   gtk = let
-    adw-catppuccin = pkgs.fetchFromGitHub {
-      owner = "claymorwan";
-      repo = "adw-catppuccin";
-      rev = "e2a3352bb3a1eac7306d397a9945108c878a4c58";
-      hash = "sha256-wrqQTyHOaNgPsgxdGGOMY3oBzPPcjtUfqHELcgw8/gE=";
+    adw-catppuccin = pkgs.applyPatches {
+      src = pkgs.fetchFromGitHub {
+        owner = "claymorwan";
+        repo = "adw-catppuccin";
+        rev = "e2a3352bb3a1eac7306d397a9945108c878a4c58";
+        hash = "sha256-wrqQTyHOaNgPsgxdGGOMY3oBzPPcjtUfqHELcgw8/gE=";
+      };
+      patches = [
+        ../../../assets/adw-catppuccin/mocha-pink.patch
+      ];
     };
     stylesheet = "${adw-catppuccin}/${catppuccin-flavour}/gtk.css";
     extraCss = ''

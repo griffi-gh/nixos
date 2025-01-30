@@ -1,0 +1,28 @@
+diff --git a/mocha-pink.patch b/mocha-pink.patch
+new file mode 100644
+index 0000000..e69de29
+diff --git a/mocha/gtk.css b/mocha/gtk.css
+index 9b8db50..9b9ba53 100644
+--- a/mocha/gtk.css
++++ b/mocha/gtk.css
+@@ -2,6 +2,7 @@
+ based on the solarized dark colours from adw-colors: https://github.com/lassekongo83/adw-colors/tree/main/themes/solarized-dark */
+ 
+ /* Catppuccin colors */
++@define-color pink #f5c2e7;
+ @define-color mauve #cba6f7;
+ @define-color red #f38ba8;
+ @define-color green #a6e3a1;
+@@ -10,9 +11,10 @@ based on the solarized dark colours from adw-colors: https://github.com/lassekon
+ @define-color base #1e1e2e;
+ @define-color crust #11111b;
+ 
++
+ /* Adwaita stuff */
+-@define-color accent_color @mauve;
+-@define-color accent_bg_color @mauve;
++@define-color accent_color @pink;
++@define-color accent_bg_color @pink;
+ @define-color accent_fg_color @crust;
+ 
+ @define-color window_bg_color @base;
