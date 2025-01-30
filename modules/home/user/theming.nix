@@ -9,13 +9,37 @@
   catppuccin-flavour-uppercased = "Mocha";
   catppuccin-accent-uppercased = "Pink";
 in {
-  gtk.theme = {
-    name = "Adwaita";
-    # name = "catppuccin-${catppuccin-flavour}-${catppuccin-accent}-standard";
-    # package = pkgs.catppuccin-gtk.override {
-    #   variant = catppuccin-flavour;
-    #   accents = [ catppuccin-accent ];
-    # };
+  gtk = let
+    adw-catppuccin = pkgs.fetchFromGitHub {
+      owner = "claymorwan";
+      repo = "adw-catppuccin";
+      rev = "e2a3352bb3a1eac7306d397a9945108c878a4c58";
+      hash = "sha256-wrqQTyHOaNgPsgxdGGOMY3oBzPPcjtUfqHELcgw8/gE=";
+    };
+    stylesheet = "${adw-catppuccin}/${catppuccin-flavour}/gtk.css";
+    extraCss = ''
+      @import '${stylesheet}';
+
+      headerbar button.titlebutton.close:not(:hover),
+      headerbar button.titlebutton.minimize:not(:hover),
+      headerbar button.titlebutton.maximize:not(:hover) {
+        background: none;
+      }
+    '';
+  in {
+    theme = {
+      # name = "Adwaita";
+      name = "adw-gtk3-dark";
+      package = pkgs.adw-gtk3;
+    };
+
+    gtk3 = {
+      inherit extraCss;
+    };
+
+    gtk4 = {
+      inherit extraCss;
+    };
   };
 
   # programs.firefox.profiles.default.extensions = [
