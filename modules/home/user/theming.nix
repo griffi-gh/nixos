@@ -23,7 +23,7 @@ in {
     };
     stylesheet = "${adw-catppuccin}/${catppuccin-flavour}/gtk.css";
     extraCss = ''
-      @import 'colors.css'; /* breeze accents */
+      @import 'colors.css';    /* breeze accents */
       @import '${stylesheet}'; /* adw-catppuccin */
 
       headerbar .titlebutton.close:not(:hover),
