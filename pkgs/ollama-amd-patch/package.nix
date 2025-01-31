@@ -25,6 +25,8 @@ symlinkJoin {
   nativeBuildInputs = [ makeWrapper ];
   postBuild = ''
     wrapProgram $out/bin/ollama \
-      --set-default HSA_OVERRIDE_GFX_VERSION "11.0.1"
+      --set-default HSA_OVERRIDE_GFX_VERSION "11.0.1" \
+      --set-default OLLAMA_MAX_LOADED_MODELS "1" \
+      --set-default OLLAMA_MAX_LOADED_MODELS "1"
   '';
 }
