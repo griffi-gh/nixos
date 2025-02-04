@@ -69,6 +69,23 @@ in {
       apply.above = true;
       apply.desktops = ALL_DESKTOPS;
     }
+    {
+      # Fix non-resizable device manager windows in Tizen Studio
+      description = "hm-tizen-studio-device-manager";
+      match.window-class = "org.tizen.device.manager.Main";
+      apply.resizable = {
+        apply = "force";
+        value = true;
+      };
+      apply.maxsize = {
+        apply = "force";
+        value = "9999,9999";
+      };
+      apply.minsize = {
+        apply = "force";
+        value = "300,100";
+      };
+    }
   ];
   programs.plasma.configFile."kwinrulesrc".General = {
     count.immutable = lib.mkForce false;
