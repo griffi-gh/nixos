@@ -7,6 +7,9 @@
       # fix for bash :p
       bashInteractive
 
+      # (i only use it for tizen studio rn :p)
+      distrobox
+
       # CLI tools:
       tree
       ripgrep
