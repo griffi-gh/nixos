@@ -10,6 +10,7 @@
       "zig.initialSetupDone" = true;
       "zig.path" = "zig";
       "zig.checkForUpdate" = false;
+      "zig.zls.enabled" = "on";
       "zig.zls.path" = "zls";
       "zig.zls.checkForUpdate" = false;
       "zig.zls.enableBuildOnSave" = true;
