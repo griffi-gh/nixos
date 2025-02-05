@@ -7,7 +7,7 @@
     ];
     userSettings = {
       # Zig
-      "zig.initialSetupDone" = true;
+      # "zig.initialSetupDone" = true;
       "zig.path" = "zig";
       "zig.checkForUpdate" = false;
       "zig.zls.enabled" = "on";
