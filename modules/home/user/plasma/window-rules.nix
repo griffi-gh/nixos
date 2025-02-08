@@ -10,6 +10,13 @@ in {
       apply.desktops = ALL_DESKTOPS;
     }
     {
+      description = "hm-tidal-pip";
+      match.window-class = "tidal-hifi tidal-hifi";
+      match.title = "Picture-in-picture";
+      apply.above = true;
+      apply.desktops = ALL_DESKTOPS;
+    }
+    {
       description = "hm-xeyes";
       match.window-class = "xeyes XEyes";
       apply.above = true;
