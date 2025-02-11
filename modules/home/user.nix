@@ -109,7 +109,11 @@
       audacity              # Audacity (audio editor)
 
       # Social/Communication stuff:
-      vesktop               # Discord (vesktop/vencord)
+      # vesktop               # Discord (vesktop/vencord)
+      (discord-canary.override {
+        withOpenASAR = true;
+        withVencord = true;
+      })
       # goofcord            # Discord (goofcord)
       telegram-desktop      # Telegram
       nheko                 # Nheko (matrix)
