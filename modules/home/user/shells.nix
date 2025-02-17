@@ -27,10 +27,14 @@
     gco = "git checkout";
     gcb = "git checkout -b";
     gl = "git log --oneline";
+    gs = "git status";
 
     nix-query = "nix-locate --top-level";
 
     flake = "nix flake";
+
+    zed = "zeditor .";
+    # cope = "code .";
   };
   programs = {
     # Shells:
