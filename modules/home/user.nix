@@ -110,10 +110,13 @@
 
       # Social/Communication stuff:
       # vesktop               # Discord (vesktop/vencord)
-      (discord-canary.override {
-        withOpenASAR = true;
-        withVencord = true;
+      (vesktop.override {
+        electron = electron_33;
       })
+      # (discord-canary.override {
+      #   withOpenASAR = true;
+      #   withVencord = true;
+      # })
       # goofcord            # Discord (goofcord)
       telegram-desktop      # Telegram
       nheko                 # Nheko (matrix)
