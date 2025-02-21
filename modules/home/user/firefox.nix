@@ -349,6 +349,9 @@
         # Enable Chromium Widevine CDM, and use beta versions
         "media.gmp-widevinecdm.force-chromium-update" = true;
         "media.gmp-widevinecdm.force-chromium-beta" = true;
+
+        # tab groups
+        "browser.tabs.groups.enabled" = true;
       };
     };
   };
