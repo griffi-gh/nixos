@@ -103,6 +103,11 @@ in {
       "editor.cursorSmoothCaretAnimation" = "explicit";
       "editor.inlayHints.enabled" = "onUnlessPressed";
 
+      # File Explorer:
+      "explorer.confirmDelete" = false; # disable confirm
+      "explorer.confirmDragAndDrop" = false;
+      "explorer.confirmPasteNative" = false;
+
       # Terminal:
       "terminal.integrated.fontFamily" = "FiraCode Nerd Font Mono";
 
