@@ -10,6 +10,7 @@ in {
     ./vscode/vs-zig.nix
     ./vscode/vs-flutter.nix
     ./vscode/vs-sh.nix
+    ./vscode/vs-slint.nix
     # ./vscode/vs-tizen.nix
   ];
   programs.vscode = {
