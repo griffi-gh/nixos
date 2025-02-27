@@ -169,6 +169,8 @@
     # Fix janky fonts
     # XXX: causes blurry rendering in Spectacle and warnings whenever any Qt app is run
     # QT_SCALE_FACTOR_ROUNDING_POLICY = "RoundPreferFloor";
+
+    DO_NOT_TRACK = "1";
   };
 
   # environment.profiles = lib.mkBefore [
