@@ -3,6 +3,7 @@
     extensions = with vscode-extensions.vscode-marketplace; [
       rust-lang.rust-analyzer # (nixpkgs is outdated)
       seaql.firedbg-rust
+      slint.slint # (for Slint UI)
     ];
     userSettings = {
       # Rust-analyzer:
