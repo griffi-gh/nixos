@@ -10,10 +10,6 @@
       url = "github:NixOS/nixpkgs/master";
     };
 
-    nixos-hardware = {
-      url = "github:NixOS/nixos-hardware/master";
-    };
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -44,6 +40,14 @@
       url = "github:nix-community/nixos-vscode-server";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware/master";
+    };
+    fw-fanctrl = {
+      url = "github:TamtamHero/fw-fanctrl/packaging/nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, nixpkgs-master, ... }:
@@ -65,6 +69,7 @@
       nixosModules = with inputs; {
         home-manager    = home-manager.nixosModules.home-manager;
         nixos-hardware  = nixos-hardware.nixosModules;
+        fw-fanctrl      = fw-fanctrl.nixosModules;
         # programs-sqlite = flake-programs-sqlite.nixosModules.programs-sqlite;
         # nix-index       = nix-index-database.nixosModules.nix-index;
       };
@@ -115,6 +120,7 @@
         asus-pc = buildNixosSystem "asus-pc" [];
         fw13 = buildNixosSystem "fw13" [
           nixosModules.nixos-hardware.framework-13-7040-amd
+          nixosModules.fw-fanctrl.default
         ];
       };
     };

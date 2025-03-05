@@ -58,6 +58,11 @@ in {
     # audioEnhancement.enable = true;
   };
 
+  # === Packages ===
+  environment.systemPackages = with pkgs; [
+    fw-ectool
+  ];
+
   # === GPU ===
 
   hardware.amdgpu = {
@@ -87,4 +92,10 @@ in {
 
   # === CPU ===
   hardware.cpu.amd.updateMicrocode = true;
+
+  # === Fans ===
+  programs.fw-fanctrl = {
+    enable = true;
+    config.defaultStrategy = "lazy";
+  };
 }
