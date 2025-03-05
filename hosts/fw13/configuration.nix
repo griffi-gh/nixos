@@ -96,6 +96,9 @@ in {
   # === Fans ===
   programs.fw-fanctrl = {
     enable = true;
-    config.defaultStrategy = "lazy";
+    config = {
+      defaultStrategy = "lazy";
+      strategyOnDischarging = "laziest";
+    };
   };
 }
