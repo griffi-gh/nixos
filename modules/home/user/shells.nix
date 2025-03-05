@@ -104,6 +104,13 @@
         efz = ''
           $EDITOR $(fzf)
         '';
+        fw-fan100 = ''
+          fw-fanctrl pause;
+          sudo ectool fanduty 100;
+          read;
+          sudo ectool autofanctrl;
+          fw-fanctrl resume;
+        '';
       };
     };
     bash = {
