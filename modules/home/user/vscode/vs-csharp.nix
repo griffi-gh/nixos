@@ -7,7 +7,8 @@
       # C#/dotnet
       from-nixpkgs.ms-dotnettools.csdevkit
       from-nixpkgs.ms-dotnettools.csharp
-      from-nixpkgs.ms-dotnettools.vscode-dotnet-runtime
+      # from-nixpkgs.ms-dotnettools.vscode-dotnet-runtime
+      ms-dotnettools.vscode-dotnet-runtime
       ms-dotnettools.dotnet-maui
 
       # IntelliCode support for C# DevKit
