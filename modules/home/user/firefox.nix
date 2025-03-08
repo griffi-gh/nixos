@@ -352,6 +352,16 @@
 
         # tab groups
         "browser.tabs.groups.enabled" = true;
+
+        # XXX: both recently un-broken, but may cause issues, disable if thoubleshooting
+        "widget.wayland.fractional-scale.enabled" = true;
+        # gtk3 has broken move-to-rect (fixed only in gtk4)
+        # disabling this makes popups janky though...
+        # "widget.wayland.use-move-to-rect" = false;
+
+        # global menu? dont use it but nice to have ig
+        "widget.gtk.global-menu.enabled" = true;
+        "widget.gtk.global-menu.wayland.enabled" = true; # (support dbus_annotation protocol)
       };
     };
   };
