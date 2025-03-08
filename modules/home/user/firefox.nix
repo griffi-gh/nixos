@@ -1,7 +1,7 @@
 { pkgs, ... }:  {
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox.override {
+    package = pkgs.firefox_nightly.override {
       cfg = {
         pipewireSupport = true;
         ffmpegSupport = true;
@@ -144,8 +144,8 @@
         # Enable WebRender on all devices
         "gfx.webrender.all" = true;
         "gfx.webrender.batched-texture-uploads" = true;
-        "gfx.webrender.compositor" = true; # Use native WL compositor
-        "gfx.webrender.compositor.force-enabled" = true;
+        # "gfx.webrender.compositor" = true; # Use native WL compositor
+        # "gfx.webrender.compositor.force-enabled" = true;
         "gfx.webrender.fallback.software" = false; # Disable software fallback
         # Enable shader caching:
         "gfx.webrender.program-binary-disk" = true;
@@ -362,6 +362,10 @@
         # global menu? dont use it but nice to have ig
         "widget.gtk.global-menu.enabled" = true;
         "widget.gtk.global-menu.wayland.enabled" = true; # (support dbus_annotation protocol)
+
+        # webgpu
+        "dom.webgpu.indirect-draw.enabled" = true;
+        "dom.webgpu.allow-present-without-readback" = false; # https://bugzilla.mozilla.org/show_bug.cgi?id=1952670
       };
     };
   };

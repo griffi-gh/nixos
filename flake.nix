@@ -9,6 +9,11 @@
     nixpkgs-master = {
       url = "github:NixOS/nixpkgs/master";
     };
+    chaotic = {
+      url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+      inputs.home-manager.follows = "home-manager";
+      # inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -67,6 +72,7 @@
       };
       vscode-extensions = inputs.nix-vscode-extensions.extensions.${system};
       nixosModules = with inputs; {
+        chaotic         = chaotic.nixosModules.default;
         home-manager    = home-manager.nixosModules.home-manager;
         nixos-hardware  = nixos-hardware.nixosModules;
         fw-fanctrl      = fw-fanctrl.nixosModules;
@@ -94,6 +100,7 @@
             (import ./hosts/${host}/configuration.nix)
             (import ./modules/base.nix)
             nixosModules.home-manager
+            nixosModules.chaotic
             # nixosModules.programs-sqlite
             {
               home-manager = {

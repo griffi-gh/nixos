@@ -41,6 +41,14 @@
   i18n.defaultLocale = "en_IE.UTF-8";
   time.timeZone = "Europe/Warsaw";
 
+  # Use mesa-git
+  # TODO (needs extraPackages and extraPackages32)
+  # chaotic.mesa-git = {
+  #   enable = true;
+  #   fallbackSpecialisation = true;
+  #   replaceBasePackage = true; # (impure)
+  # };
+
   # Enable 32-bit graphics packages
   hardware.graphics = {
     enable = true;
