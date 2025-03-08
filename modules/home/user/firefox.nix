@@ -369,7 +369,7 @@
         "dom.webgpu.allow-present-without-readback" = false; # https://bugzilla.mozilla.org/show_bug.cgi?id=1952670
 
         # enable JpegXL
-        "image.jxl.enabled" = true;
+        # "image.jxl.enabled" = true; # broken transparency and animations atm
       };
     };
   };
