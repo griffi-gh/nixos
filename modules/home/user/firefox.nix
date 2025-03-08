@@ -262,6 +262,7 @@
 
         # Preferences - Enable the "Experimental" tab
         "browser.preferences.experimental" = true;
+        "browser.preferences.experimental.hidden" = false;
 
         # Preferences - Hide "More from Mozilla" button
         "browser.preferences.moreFromMozilla" = false;
