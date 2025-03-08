@@ -367,6 +367,9 @@
         # webgpu
         "dom.webgpu.indirect-draw.enabled" = true;
         "dom.webgpu.allow-present-without-readback" = false; # https://bugzilla.mozilla.org/show_bug.cgi?id=1952670
+
+        # enable JpegXL
+        "image.jxl.enabled" = true;
       };
     };
   };
