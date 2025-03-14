@@ -1,6 +1,6 @@
-{ vscode-extensions, ... }: {
+{ pkgs, ... }: {
   programs.vscode = {
-    extensions = with vscode-extensions.vscode-marketplace; [
+    extensions = with pkgs.vscode-marketplace; [
       # bash
       mads-hartmann.bash-ide-vscode
       rogalmic.bash-debug

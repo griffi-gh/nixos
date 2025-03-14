@@ -22,7 +22,7 @@ in {
     extensions =
       let from-nixpkgs = pkgs.vscode-extensions;
           from-openvsx = vscode-extensions.open-vsx; in
-      with vscode-extensions.vscode-marketplace;
+      with pkgs.vscode-marketplace;
     [
       # Git
       eamodio.gitlens

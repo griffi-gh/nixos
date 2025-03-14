@@ -1,6 +1,6 @@
-{ vscode-extensions, ... }: {
+{ pkgs, ... }: {
   programs.vscode = {
-    extensions = with vscode-extensions.vscode-marketplace; [
+    extensions = with pkgs.vscode-marketplace; [
       rust-lang.rust-analyzer # (nixpkgs is outdated)
       seaql.firedbg-rust
     ];

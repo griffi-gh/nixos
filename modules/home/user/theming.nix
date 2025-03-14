@@ -119,7 +119,7 @@ in {
   ];
 
   programs.vscode = {
-    extensions = with vscode-extensions.vscode-marketplace; [
+    extensions = with pkgs.vscode-marketplace; [
       catppuccin.catppuccin-vsc
       # devgauravjatt.github-catppuccin-dark
     ];

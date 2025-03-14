@@ -1,7 +1,7 @@
-{ vscode-extensions, ... }: {
+{ pkgs, ... }: {
   programs.vscode = {
     extensions =
-      with vscode-extensions.vscode-marketplace;
+      with pkgs.vscode-marketplace;
     [
       dart-code.dart-code
       dart-code.flutter

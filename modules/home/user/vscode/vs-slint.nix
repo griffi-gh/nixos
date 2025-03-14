@@ -1,6 +1,6 @@
-{ vscode-extensions, ... }: {
+{ pkgs, ... }: {
   programs.vscode = {
-    extensions = with vscode-extensions.vscode-marketplace; [
+    extensions = with pkgs.vscode-marketplace; [
       /* TODO either add these to LD_LIBRARY_PATH or use slint-lsp from nixpkgs instead
         fuse3
         openssl

@@ -1,8 +1,8 @@
-{ pkgs, vscode-extensions, ... }: {
+{ pkgs, ... }: {
   programs.vscode = {
     extensions =
       let from-nixpkgs = pkgs.vscode-extensions; in
-      with vscode-extensions.vscode-marketplace;
+      with pkgs.vscode-marketplace;
     [
       # Cmake
       twxs.cmake

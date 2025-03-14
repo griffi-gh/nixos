@@ -1,17 +1,18 @@
 { lib, ... }: let
-  thunderbird = { login ? true, check ? login }: {
+  thunderbird = { login ? true, check ? login, oauth ? true }: {
     thunderbird = {
       enable = true;
-      settings = id: let OAuth2 = 10; in {
-        "mail.smtpserver.smtp_${id}.authMethod" = OAuth2;
-        "mail.server.server_${id}.authMethod" = OAuth2;
+      settings = id: ({
         "mail.server.server_${id}.autosync_max_age_days" = 30;
         "mail.server.server_${id}.cleanupBodies" = true;
         "mail.server.server_${id}.daysToKeepBodies" = 30;
         "mail.server.server_${id}.daysToKeepHdrs" = 30;
         "mail.server.server_${id}.login_at_startup" = login;
         "mail.server.server_${id}.check_new_mail" = check;
-      };
+      } // (if oauth then (let OAuth2 = 10; in {
+        "mail.smtpserver.smtp_${id}.authMethod" = OAuth2;
+        "mail.server.server_${id}.authMethod" = OAuth2;
+      }) else {}));
     };
   };
   emailAccounts = import ../../../secrets/emailAccounts.nix { inherit thunderbird; };

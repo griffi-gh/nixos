@@ -1,14 +1,14 @@
-{ pkgs, vscode-extensions, ... }: {
+{ pkgs, ... }: {
   programs.vscode = {
     extensions =
       let from-nixpkgs = pkgs.vscode-extensions; in
-      with vscode-extensions.vscode-marketplace;
+      with pkgs.vscode-marketplace;
     [
       # C#/dotnet
       from-nixpkgs.ms-dotnettools.csdevkit
       from-nixpkgs.ms-dotnettools.csharp
-      # from-nixpkgs.ms-dotnettools.vscode-dotnet-runtime
-      ms-dotnettools.vscode-dotnet-runtime
+      from-nixpkgs.ms-dotnettools.vscode-dotnet-runtime
+      # ms-dotnettools.vscode-dotnet-runtime
       ms-dotnettools.dotnet-maui
 
       # IntelliCode support for C# DevKit
