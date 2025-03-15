@@ -132,7 +132,7 @@
 
       # httpie (http client)
       httpie
-      # httpie-desktop
+      httpie-desktop # (unfree)
 
       # Device drivers etc
       # TODO fix galaxy-buds-client somehow (borked and outdated)
