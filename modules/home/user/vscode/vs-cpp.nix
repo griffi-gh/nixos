@@ -5,7 +5,7 @@
       with pkgs.vscode-marketplace;
     [
       # Cmake
-      twxs.cmake
+      # twxs.cmake
       ms-vscode.cmake-tools
 
       # Ninja syntax highlighting
