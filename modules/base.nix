@@ -133,6 +133,9 @@
     # encrypted fs layers
     cryfs
     gocryptfs
+
+    # for power monitor
+    powertop
   ];
 
   services = {
