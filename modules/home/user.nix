@@ -194,6 +194,7 @@
     ./user/thunderbird.nix
     ./user/vscode.nix
     ./user/vscode-server.nix
+    ./user/zed.nix
     ./user/hacks
   ];
 }
