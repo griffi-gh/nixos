@@ -65,6 +65,7 @@ in {
       esbenp.prettier-vscode # Prettier formatter
       christian-kohler.path-intellisense # Path autocompletion
       wraith13.zoombar-vscode # Zoom bar
+      kisstkondoros.vscode-gutter-preview # image preview
 
       # Misc. config file/language support
       editorconfig.editorconfig # .editorconfig
