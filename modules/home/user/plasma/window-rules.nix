@@ -1,20 +1,29 @@
 { lib, ... }: let
   ALL_DESKTOPS = "\\0";
 in {
-  programs.plasma.window-rules = [
+  programs.plasma.window-rules = let
+    pip-rules = {
+      above = true;
+      desktops = ALL_DESKTOPS;
+    };
+  in [
     {
       description = "firefox-pip";
       match.window-class = "firefox firefox";
       match.title = "Picture-in-Picture";
-      apply.above = true;
-      apply.desktops = ALL_DESKTOPS;
+      apply = pip-rules;
+    }
+    {
+      description = "firefox-pip-nightly";
+      match.window-class = "firefox firefox-nightly";
+      match.title = "Picture-in-Picture";
+      apply = pip-rules;
     }
     {
       description = "tidal-pip";
       match.window-class = "tidal-hifi tidal-hifi";
       match.title = "Picture-in-picture";
-      apply.above = true;
-      apply.desktops = ALL_DESKTOPS;
+      apply = pip-rules;
     }
     {
       description = "xeyes";
@@ -73,8 +82,7 @@ in {
       # Pomodoro timer: Above all windows and pin to all desktops
       description = "pomodoro-gtk";
       match.window-class = "gjs-console io.gitlab.idevecore.Pomodoro";
-      apply.above = true;
-      apply.desktops = ALL_DESKTOPS;
+      apply = pip-rules;
     }
     # Fix non-resizable device manager windows in Tizen Studio
     # TODO fix this
