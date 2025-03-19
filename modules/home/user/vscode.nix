@@ -11,6 +11,7 @@ in {
     ./vscode/vs-flutter.nix
     ./vscode/vs-sh.nix
     ./vscode/vs-slint.nix
+    ./vscode/vs-python.nix
     # ./vscode/vs-tizen.nix
   ];
   programs.vscode = {
