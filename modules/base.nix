@@ -195,6 +195,12 @@
     "breeze_cursors"
   ];
 
+  # enable system76 scheduler
+  services.system76-scheduler = {
+    enable = true;
+    useStockConfig = true;
+  };
+
   security = {
     # enable rtkit
     rtkit.enable = true;
