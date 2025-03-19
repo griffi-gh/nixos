@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  programs.vscode = {
+  programs.vscode.profiles.default = {
     extensions =
       # let from-nixpkgs = pkgs.vscode-extensions; in
       with pkgs.vscode-marketplace;

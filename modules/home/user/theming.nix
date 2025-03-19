@@ -118,7 +118,7 @@ in {
     # kde-rounded-corners
   ];
 
-  programs.vscode = {
+  programs.vscode.profiles.default = {
     extensions = with pkgs.vscode-marketplace; [
       catppuccin.catppuccin-vsc
       # devgauravjatt.github-catppuccin-dark

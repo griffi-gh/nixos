@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  programs.vscode = {
+  programs.vscode.profiles.default = {
     extensions = with pkgs.vscode-marketplace; [
       rust-lang.rust-analyzer # (nixpkgs is outdated)
       seaql.firedbg-rust
