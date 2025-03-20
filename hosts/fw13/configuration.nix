@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }: let
+{ pkgs, pkgs-mesa, ... }: let
   hostname = "fw13";
   # If true, use weekly fstrim.service instead of discard=async
   btrfs-nodiscard = true;
@@ -23,7 +23,17 @@ in {
     # Yep, should be fixed in a future kernel, TODO: remove this
     # https://gitlab.freedesktop.org/drm/amd/-/issues/3853
     # https://lore.kernel.org/all/20241227073700.3102801-1-alexander.deucher@amd.com/
-    "amdgpu.abmlevel=0"
+    # "amdgpu.abmlevel=0"
+  ];
+
+  #hack: downgrade mesa to 24
+  hardware.graphics = {
+    package = pkgs-mesa.mesa.drivers;
+    package32 = pkgs-mesa.driversi686Linux.mesa.drivers;
+  };
+  system.replaceDependencies.replacements = [
+    { oldDependency = pkgs.mesa.out; newDependency = pkgs-mesa.mesa.out; }
+    { oldDependency = pkgs.pkgsi686Linux.mesa.out; newDependency = pkgs-mesa.pkgsi686Linux.mesa.out; }
   ];
 
   boot.kernel.sysctl = {

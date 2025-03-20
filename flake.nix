@@ -9,6 +9,9 @@
     nixpkgs-master = {
       url = "github:NixOS/nixpkgs/master";
     };
+    nixpkgs-mesa-pinned = {
+      url = "github:nixos/nixpkgs?rev=6a0ba68039594c1382d503f68e71a5217b3eb1b9";
+    };
     chaotic = {
       url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
       inputs.home-manager.follows = "home-manager";
@@ -60,7 +63,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-master, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-master, nixpkgs-mesa-pinned, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -75,6 +78,7 @@
         inherit system;
         config.allowUnfree = true;
       };
+      pkgs-mesa = import nixpkgs-mesa-pinned { inherit system; };
       vscode-extensions = inputs.nix-vscode-extensions.extensions.${system};
       nixosModules = with inputs; {
         chaotic         = chaotic.nixosModules.default;
@@ -93,7 +97,7 @@
       };
 
       specialArgs = {
-        inherit self inputs pkgs-master vscode-extensions system;
+        inherit self inputs pkgs-master pkgs-mesa vscode-extensions system;
       };
     in {
       packages."${system}" = import ./pkgs { inherit pkgs; };
