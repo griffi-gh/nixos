@@ -8,7 +8,7 @@
   # DBus proxy
   systemd.user.services."com.system76.Scheduler.dbusproxy" = {
     Unit.Description = "Forward com.system76.Scheduler session DBus messages to the system bus";
-    Service.ExecStart = "${inputs.kwin-system76-scheduler-integration}/system76-scheduler-dbus-proxy.sh";
+    Service.ExecStart = "/usr/bin/env bash ${inputs.kwin-system76-scheduler-integration}/system76-scheduler-dbus-proxy.sh";
     Install.WantedBy = [ "default.target" ];
   };
 }
