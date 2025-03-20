@@ -53,6 +53,11 @@
       url = "github:TamtamHero/fw-fanctrl/packaging/nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    kwin-system76-scheduler-integration = {
+      url = "github:maxiberta/kwin-system76-scheduler-integration";
+      flake = false;
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, nixpkgs-master, ... }:

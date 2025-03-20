@@ -1,8 +1,9 @@
-{ pkgs, lib, ... }: {
+{ ... }: {
   imports = [
     ./plasma/panels.nix
     ./plasma/widgets.nix
     ./plasma/kwin.nix
+    ./plasma/kwin-system76-scheduler.nix
     ./plasma/window-rules.nix
     ./plasma/input.nix
     ./plasma/shortcuts.nix

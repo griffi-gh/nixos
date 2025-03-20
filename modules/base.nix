@@ -19,6 +19,7 @@
     ./base/tpm2.nix
     ./base/debug.nix
     ./base/location.nix
+    ./base/system76-scheduler.nix
     ./base/services/ssh.nix
     ./base/services/sound.nix
     ./base/services/libinput.nix
@@ -35,6 +36,7 @@
     ./base/programs/wireshark.nix
     ./base/programs/wine.nix
     ./base/programs/podman.nix
+
   ];
 
   # Locale/timezone
@@ -194,13 +196,6 @@
   xdg.icons.fallbackCursorThemes = [
     "breeze_cursors"
   ];
-
-  # enable system76 scheduler
-  # TODO: prioritize plasmashell, kwin and KRunner
-  services.system76-scheduler = {
-    enable = true;
-    useStockConfig = true;
-  };
 
   security = {
     # enable rtkit

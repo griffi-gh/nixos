@@ -177,6 +177,22 @@
         "type": "github"
       }
     },
+    "kwin-system76-scheduler-integration": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1714059639,
+        "narHash": "sha256-dLeBnK5xqygJAsIdTQ50efso1KaQluo0CjDdOjLNn64=",
+        "owner": "maxiberta",
+        "repo": "kwin-system76-scheduler-integration",
+        "rev": "e00f1b74998d6513552633c791ea23ffa3fe78a0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "maxiberta",
+        "repo": "kwin-system76-scheduler-integration",
+        "type": "github"
+      }
+    },
     "nix-github-actions": {
       "inputs": {
         "nixpkgs": [
@@ -333,6 +349,7 @@
         "chaotic": "chaotic",
         "fw-fanctrl": "fw-fanctrl",
         "home-manager": "home-manager",
+        "kwin-system76-scheduler-integration": "kwin-system76-scheduler-integration",
         "nix-index-database": "nix-index-database",
         "nix-vscode-extensions": "nix-vscode-extensions",
         "nixos-hardware": "nixos-hardware",
