@@ -114,6 +114,11 @@ in {
 
         # Terminal:
         "terminal.integrated.fontFamily" = "FiraCode Nerd Font Mono";
+        "terminal.integrated.shellIntegration.enabled" = true;
+        "python.terminal.shellIntegration.enabled" = true;
+        "terminal.integrated.shellIntegration.environmentReporting" = true;
+        "terminal.integrated.gpuAcceleration" = "off"; # fw13: terminal causes GPU hangs?
+        "terminal.integrated.suggest.enabled" = true; # experimental
 
         # Search:
         "search.exclude" = {
@@ -182,9 +187,6 @@ in {
 
         # LLDB
         "lldb.suppressUpdateNotifications" = true;
-
-        # fw13: terminal causes GPU hangs?
-        "terminal.integrated.gpuAcceleration" = "off";
       };
     };
   };
