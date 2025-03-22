@@ -7,13 +7,26 @@
     lfs.enable = true;
     extraConfig = {
       init.defaultBranch = "master";
+      commit.verbose = true;
+      pull.rebase = true;
       push.autoSetupRemote = true;
       core.editor = "nano";
+      diff.colorMoved = "default";
+      rerere.enable = true; # https://git-scm.com/book/en/v2/Git-Tools-Rerere
       credential = {
         credentialStore = "secretservice";
-        # helper = "${pkgs.gitFull}/bin/git-credential-libsecret";
         helper = "${pkgs.git-credential-manager}/bin/git-credential-manager";
       };
+    };
+    ignores = [
+      ".direnv"
+      "*.kate-swp"
+    ];
+  };
+  programs.git.delta = {
+    enable = true;
+    options = {
+      features = "decorations";
     };
   };
   programs.gh = {
