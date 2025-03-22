@@ -4,7 +4,6 @@
     networkmanager = {
       enable = true;
       # wifi.backend = "iwd";
-      # DOES NOT PLAY WELL WITH KDE!
       # issues:
       # - makes it forget wifi network is protected
       # - wpa3 is borked
