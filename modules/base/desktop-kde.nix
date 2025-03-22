@@ -47,6 +47,7 @@
     kwalletmanager
     partitionmanager
     kclock
+    ksystemlog
   ];
 
   # kde connect
