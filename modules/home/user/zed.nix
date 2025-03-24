@@ -108,7 +108,7 @@
           formatter = {
             external = {
               command = "rustfmt";
-              arguments = ["--emit=stdout"];
+              arguments = ["--edition=2024" "--emit=stdout"];
             };
           };
         };
