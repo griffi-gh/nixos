@@ -27,14 +27,14 @@ in {
   ];
 
   #hack: downgrade mesa to 24
-  hardware.graphics = {
-    package = pkgs-mesa.mesa.drivers;
-    package32 = pkgs-mesa.driversi686Linux.mesa.drivers;
-  };
-  system.replaceDependencies.replacements = [
-    { oldDependency = pkgs.mesa.out; newDependency = pkgs-mesa.mesa.out; }
-    { oldDependency = pkgs.pkgsi686Linux.mesa.out; newDependency = pkgs-mesa.pkgsi686Linux.mesa.out; }
-  ];
+  # hardware.graphics = {
+  #   package = pkgs-mesa.mesa.drivers;
+  #   package32 = pkgs-mesa.driversi686Linux.mesa.drivers;
+  # };
+  # system.replaceDependencies.replacements = [
+  #   { oldDependency = pkgs.mesa.out; newDependency = pkgs-mesa.mesa.out; }
+  #   { oldDependency = pkgs.pkgsi686Linux.mesa.out; newDependency = pkgs-mesa.pkgsi686Linux.mesa.out; }
+  # ];
 
   boot.kernel.sysctl = {
     "vm.swappiness" = 10;
