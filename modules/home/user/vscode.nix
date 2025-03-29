@@ -148,6 +148,7 @@ in {
 
         # Diff Editor:
         # "diffEditor.maxComputationTime" = 0; # (0 = unlimited)
+        "diffEditor.ignoreTrimWhitespace" = false; # show whitespace changes
 
         # ====== EXTENSION SETTINGS ======
 
