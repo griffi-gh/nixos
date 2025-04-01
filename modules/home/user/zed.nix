@@ -44,7 +44,7 @@
         rust-analyzer = {
           initialization_options = {
             check = {
-              # Use clippy as the cargo check command
+              # Use clippy as the cargo check commandc
               command = "clippy";
             };
             diagnostics = {
@@ -58,15 +58,46 @@
             # };
           };
         };
+        # "roslyn": {
+        #         "inlayHintsOptions": {
+        #             "enable": true, // Or false to disable
+        #             "maxLength": 20, // Adjust as needed
+        #             "useParameterNames": true
+        #         }
+        #     }
+        omnisharp = {
+          # XXX: seems to not work :<
+          initialization_options = {
+            RoslynExtensionsOptions = {
+              inlayHintsOptions = {
+                enableForParameters = true;
+                forLiteralParameters = true;
+                forIndexerParameters = true;
+                forObjectCreationParameters = true;
+                forOtherParameters = true;
+                suppressForParametersThatDifferOnlyBySuffix = true;
+                suppressForParametersThatMatchMethodIntent = true;
+                suppressForParametersThatMatchArgumentName = true;
+                enableForTypes = true;
+                forImplicitVariableTypes = true;
+                forLambdaParameterTypes = true;
+                forImplicitObjectCreation = true;
+              };
+            };
+          };
+        };
       };
 
       # AI stuff
-      assistant = {
-        default_model = {
+      assistant = let
+        claude = {
           provider = "zed.dev";
           model = "claude-3-7-sonnet-latest";
         };
+      in {
         version = "2";
+        default_model = claude;
+        editor_model = claude;
       };
 
       features = {
