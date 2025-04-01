@@ -10,6 +10,9 @@
       # (i only use it for tizen studio rn :p)
       distrobox
 
+      # prefix manager
+      bottles
+
       # CLI tools:
       tree
       ripgrep
