@@ -91,6 +91,10 @@
       inlay_hints = {
         enabled = true;
         show_background = true;
+        toggle_on_modifiers_press = {
+          ctrl = true;
+          alt = true;
+        };
       };
 
       # Language-specific settings
