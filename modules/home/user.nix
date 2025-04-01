@@ -11,7 +11,7 @@
       distrobox
 
       # prefix manager
-      bottles
+      #bottles
 
       # CLI tools:
       tree
