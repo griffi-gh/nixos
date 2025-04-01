@@ -123,7 +123,7 @@
         enabled = true;
         show_background = true;
         toggle_on_modifiers_press = {
-          ctrl = true;
+          control = true;
           alt = true;
         };
       };
