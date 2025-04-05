@@ -24,6 +24,7 @@
       "xml"
       "zed-legacy-themes"
       "zig"
+      "nu"
     ];
     userSettings = {
       # Font/size
