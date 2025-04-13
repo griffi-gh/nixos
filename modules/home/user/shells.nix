@@ -104,12 +104,22 @@
         efz = ''
           $EDITOR $(fzf)
         '';
-        fw-fan100 = ''
-          fw-fanctrl pause;
-          sudo ectool fanduty 100;
-          read;
-          sudo ectool autofanctrl;
-          fw-fanctrl resume;
+        fw-setfan = ''
+          if test (count $argv) -eq 0
+            echo "Restoring automatic fan control..."
+            sudo ectool autofanctrl
+            fw-fanctrl resume
+          else
+            set -l speed $argv[1]
+            if test "$speed" -ge 0 -a "$speed" -le 100
+              echo "Overriding fan speed to $speed%"
+              fw-fanctrl pause
+              sudo ectool fanduty $speed
+            else
+              echo "Invalid fan speed: $speed. Please provide a value between 0 and 100."
+              return 1
+            end
+          end
         '';
       };
     };
