@@ -4,7 +4,7 @@
 in {
   nix = {
     package = if useLix then
-      pkgs.lixVersions.latest
+      pkgs.lixPackageSets.latest.lix
     else
       pkgs.nixVersions.git;
     settings = {
