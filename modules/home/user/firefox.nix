@@ -15,7 +15,8 @@
       DisableFeedbackCommands = true;
 
       # Set the initial state of the bookmarks toolbar:
-      DisplayBookmarksToolbar = "always";
+      # DisplayBookmarksToolbar = "always";
+      DisplayBookmarksToolbar = "never";
 
       # Customize Firefox Suggest (US only).
       FirefoxSuggest = {
