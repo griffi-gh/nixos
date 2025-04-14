@@ -370,6 +370,12 @@
 
         # enable JpegXL
         # "image.jxl.enabled" = true; # broken transparency and animations atm
+
+        # enable dmabuf stuff
+        # (WARN: auto-disabled due to broken driver on fw13, seems to work fine tho)
+        "widget.dmabuf.force-enabled" = true;
+        "widget.dmabuf-export.force-enabled" = true;
+        "widget.dmabuf-textures.enabled" = true;
       };
     };
   };
