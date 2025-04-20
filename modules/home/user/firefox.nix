@@ -1,7 +1,10 @@
-{ pkgs, ... }:  {
-  programs.firefox = {
+{ inputs, pkgs, ... }:  {
+  programs.firefox = let
+    # pkg = pkgs.firefox_nightly;
+    pkg = inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin;
+  in {
     enable = true;
-    package = pkgs.firefox_nightly.override {
+    package = pkg.override {
       cfg = {
         pipewireSupport = true;
         ffmpegSupport = true;

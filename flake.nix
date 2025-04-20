@@ -18,6 +18,12 @@
       # inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # temporary workaround
+    firefox = {
+      url = "github:nix-community/flake-firefox-nightly";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";

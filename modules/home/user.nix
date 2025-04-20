@@ -101,7 +101,7 @@
       # Photo/Video/Graphics stuff:
       inkscape              # Inkscape (vector graphics editor)
       blender-hip           # Blender (with HIP support)
-      gimp                  # GIMP  (image editor)
+      gimp3                 # GIMP  (image editor)
       krita                 # Krita (image editor)
       kdePackages.kdenlive  # Kdenlive (video editor)
       aseprite              # Aseprite (from source)
