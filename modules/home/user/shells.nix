@@ -165,7 +165,8 @@
     };
 
     # tools:
-    thefuck.enable = true;
+    # thefuck.enable = true;
+    pay-respects.enable = true;
     fzf.enable = true;
     zoxide.enable = true;
     bat.enable = true;
