@@ -166,7 +166,8 @@
 
     # tools:
     # thefuck.enable = true;
-    pay-respects.enable = true;
+    # TODO disable command-not-found integration as it uses nix profiles
+    # pay-respects.enable = true;
     fzf.enable = true;
     zoxide.enable = true;
     bat.enable = true;
