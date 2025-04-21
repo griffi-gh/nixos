@@ -249,8 +249,8 @@
         "toolkit.telemetry.unified" = false;
         "toolkit.telemetry.updatePing.enabled" = false;
 
-        # Disable Beacon (telemetry)
-        "beacon.enabled" = false;
+        # Disable Beacon
+        # "beacon.enabled" = false;
 
         # Disable discovery (telemetry)
         "browser.discovery.enabled" = false;
