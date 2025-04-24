@@ -1,7 +1,7 @@
-{ inputs, pkgs, ... }:  {
+{ pkgs, ... }:  {
   programs.firefox = let
-    # pkg = pkgs.firefox_nightly;
-    pkg = inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin;
+    pkg = pkgs.firefox_nightly;
+    # pkg = inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin;
   in {
     enable = true;
     package = pkg.override {
