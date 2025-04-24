@@ -7,6 +7,8 @@
       ConfirmClosingMultipleTabs = false;
       RememberOpenedTabs = false;
       ShowFullPath = true;
+      ShowStatusBar = "FullWidth";
+      ShowZoomSlider = true;
     };
     "KFileDialog Settings" = {
       "Places Icons Auto-resize" = false;
@@ -14,6 +16,12 @@
     };
     PlacesPanel = {
       IconSize = sidebarIconSize;
+    };
+    "Notification Messages" = {
+      warnAboutRisksBeforeActingAsAdmin = false;
+    };
+    VersionControl = {
+      enabledPlugins = "Git";
     };
   };
 }
