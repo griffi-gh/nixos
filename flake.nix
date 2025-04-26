@@ -68,7 +68,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-master, nixpkgs-mesa-pinned, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-master, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
