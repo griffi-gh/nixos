@@ -1,4 +1,4 @@
-{ pkgs, pkgs-mesa, ... }: let
+{ pkgs, ... }: let
   hostname = "fw13";
   # If true, use weekly fstrim.service instead of discard=async
   btrfs-nodiscard = true;
@@ -9,6 +9,15 @@ in {
 
   system.stateVersion = "25.05";
   networking.hostName = hostname;
+
+  # === Misc. hardware ===
+  services.udev.extraRules = ''
+    # PCI auto suspend
+    SUBSYSTEM=="pci", ATTR{power/control}="auto"
+    # USB auto suspend
+    ACTION=="add", SUBSYSTEM=="usb", TEST=="power/control", ATTR{power/control}="auto"
+  '';
+  hardware.sensor.iio.enable = true; # ambient light sensor
 
   # === Kernel ===
   boot.kernelParams = [
