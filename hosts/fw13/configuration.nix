@@ -33,6 +33,10 @@ in {
     # https://gitlab.freedesktop.org/drm/amd/-/issues/3853
     # https://lore.kernel.org/all/20241227073700.3102801-1-alexander.deucher@amd.com/
     # "amdgpu.abmlevel=0"
+
+    # lower power use?
+    "pcie_aspm=force"
+    "pcie_aspm.policy=powersupersave"
   ];
 
   #hack: downgrade mesa to 24
