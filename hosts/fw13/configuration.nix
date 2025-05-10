@@ -35,7 +35,7 @@ in {
     # "amdgpu.abmlevel=0"
 
     # lower power use?
-    "pcie_aspm=force"
+    # "pcie_aspm=force"
     "pcie_aspm.policy=powersupersave"
   ];
 
