@@ -170,7 +170,8 @@
 
       # Emulators:
       ryujinx        # Ryujinx (Switch)
-      cemu-amd-patch # Cemu (Wii U)
+      # cemu-amd-patch # Cemu (Wii U)
+      cemu
       mgba           # mGBA (GB/GBC/GBA)
       melonDS        # MelonDS (DS)
       # vita3k is not in nixpkgs :<
