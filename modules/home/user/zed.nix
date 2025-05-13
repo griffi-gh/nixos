@@ -25,6 +25,7 @@
       "zed-legacy-themes"
       "zig"
       "nu"
+      "fish"
     ];
     userSettings = {
       # Font/size
@@ -102,7 +103,8 @@
       };
 
       features = {
-        edit_prediction_provider = "zed"; # "copilot"
+        # edit_prediction_provider = "zed";
+        edit_prediction_provider = "copilot";
       };
 
       # Disable telemetry and auto-update
