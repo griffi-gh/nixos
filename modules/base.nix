@@ -105,6 +105,7 @@
     efibootmgr
     e2fsprogs
     btrfs-progs
+    ntfs3g
     lm_sensors
 
     # basic cli tools
