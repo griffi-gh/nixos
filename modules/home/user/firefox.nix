@@ -382,6 +382,8 @@
         # holes in pages???:
         # "widget.dmabuf.force-enabled" = true;
         # "widget.dmabuf-export.force-enabled" = true;
+
+        "browser.tabs.fadeOutUnloadedTabs" = true;
       };
     };
   };
