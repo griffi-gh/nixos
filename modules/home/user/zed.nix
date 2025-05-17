@@ -8,6 +8,7 @@
       "catppuccin-blur-plus"
       "catppuccin-icons"
       "csharp"
+      "csv"
       "dart"
       "discord-presence"
       "dockerfile"
@@ -27,6 +28,7 @@
       "nu"
       "fish"
       "emmet"
+      "jinja2"
     ];
     userSettings = {
       # Font/size
