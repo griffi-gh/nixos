@@ -26,6 +26,7 @@
       "zig"
       "nu"
       "fish"
+      "emmet"
     ];
     userSettings = {
       # Font/size
