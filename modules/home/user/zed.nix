@@ -29,6 +29,7 @@
       "fish"
       "emmet"
       "jinja2"
+      "neocmake"
     ];
     userSettings = {
       # Font/size
