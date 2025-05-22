@@ -15,16 +15,11 @@ in {
       "quiet"
     ];
     initrd = {
-      systemd = {
-        enable = true;
-        strip = true;
-      };
+      systemd.enable = true;
       verbose = true;
     };
     loader = {
-      efi = {
-        canTouchEfiVariables = true;
-      };
+      efi.canTouchEfiVariables = true;
       systemd-boot = {
         enable = true;
         editor = false;

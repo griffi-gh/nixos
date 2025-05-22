@@ -26,7 +26,7 @@ in {
         "parse-toml-timestamps"
         "pipe-operator"
         "read-only-local-store"
-        "recursive-nix"
+        # "recursive-nix"
         "repl-automation"
         # "repl-flake.md"
       ] else [
