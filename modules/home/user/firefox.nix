@@ -357,6 +357,7 @@
 
         # tab groups
         "browser.tabs.groups.enabled" = true;
+        "browser.tabs.groups.smart.optin" = true;
 
         # XXX: both recently un-broken, but may cause issues, disable if thoubleshooting
         "widget.wayland.fractional-scale.enabled" = true;
