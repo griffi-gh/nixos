@@ -121,11 +121,9 @@ in {
   programs.vscode.profiles.default = {
     extensions = with pkgs.vscode-marketplace; [
       catppuccin.catppuccin-vsc
-      # devgauravjatt.github-catppuccin-dark
     ];
     userSettings = {
       "workbench.colorTheme" = "Catppuccin ${catppuccin-flavour-uppercased}";
-      # "Github Catppuccin Dark Mix";
     };
   };
 }
