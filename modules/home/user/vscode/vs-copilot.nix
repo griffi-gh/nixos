@@ -5,7 +5,8 @@
       github.copilot-chat
     ];
     userSettings = {
-      "chat.commandCenter.enabled" = false;
+      # "chat.commandCenter.enabled" = false;
+      "github.copilot.nextEditSuggestions.enabled" = true;
     };
   };
 }
