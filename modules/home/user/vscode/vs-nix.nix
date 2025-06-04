@@ -5,6 +5,7 @@
     [
       jnoortheen.nix-ide
       mkhl.direnv
+      signageos.signageos-vscode-sops
     ];
     userSettings = {
       # Nix IDE
