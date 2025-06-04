@@ -14,8 +14,6 @@
 
       # direnv:
       "direnv.restart.automatic" = true;
-
-      "sops.beta" = true;
     };
   };
 }
