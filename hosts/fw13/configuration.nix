@@ -14,9 +14,10 @@ in {
   services.udev.extraRules = ''
     # PCI auto suspend
     SUBSYSTEM=="pci", ATTR{power/control}="auto"
-    # USB auto suspend
-    ACTION=="add", SUBSYSTEM=="usb", TEST=="power/control", ATTR{power/control}="auto"
   '';
+  #   # USB auto suspend
+  #   ACTION=="add", SUBSYSTEM=="usb", TEST=="power/control", ATTR{power/control}="auto"
+  # '';
   hardware.sensor.iio.enable = true; # ambient light sensor
 
   # === Kernel ===
