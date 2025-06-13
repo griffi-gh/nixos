@@ -94,4 +94,8 @@ in {
     "d ${buildTmpDir} 770 root nixbld"
   ];
 
+  programs.nh = {
+    enable = true;
+    flake = "/home/user/nixos"; # XXX: is hardcoding this a good idea?
+  };
 }
