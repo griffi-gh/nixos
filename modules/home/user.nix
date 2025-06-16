@@ -202,6 +202,7 @@
     ./user/vscode.nix
     ./user/vscode-server.nix
     ./user/zed.nix
+    ./user/mpv.nix
     ./user/hacks
   ];
 }
