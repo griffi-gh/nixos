@@ -144,5 +144,9 @@
           nixosModules.fw-fanctrl.default
         ];
       };
+
+      templates = {
+        rust.path = ./templates/rust;
+      };
     };
 }

@@ -1,4 +1,4 @@
-{ pkgs, ... }: let
+{ inputs, pkgs, ... }: let
   buildTmpDir = "/nix/tmp";
   useLix = true;
 in {
@@ -83,6 +83,9 @@ in {
     };
     # improve responsiveness of desktop system during rebuild
     daemonCPUSchedPolicy = "idle";
+    registry = {
+      self.flake = inputs.self;
+    };
   };
 
   environment.sessionVariables = {
