@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   users.users.user = {
+    description = "Luna";
     isNormalUser = true;
     extraGroups = [
       "wheel"
