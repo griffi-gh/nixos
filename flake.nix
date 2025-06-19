@@ -103,6 +103,7 @@
 
       specialArgs = {
         inherit self inputs pkgs-master vscode-extensions system;
+        root = ./.;
       };
     in {
       packages."${system}" = import ./pkgs { inherit pkgs; };
