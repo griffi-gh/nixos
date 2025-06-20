@@ -95,15 +95,15 @@
       };
 
       # AI stuff
-      assistant = let
+      agent = let
         claude = {
           provider = "zed.dev";
-          model = "claude-3-7-sonnet-latest";
+          model = "claude-sonnet-4";
         };
       in {
         version = "2";
         default_model = claude;
-        editor_model = claude;
+        # editor_model = claude;
       };
 
       features = {
