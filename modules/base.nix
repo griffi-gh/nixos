@@ -58,10 +58,10 @@
   };
 
   # Enable switch-ng
-  system.switch = {
-    enable = false;
-    enableNg = true;
-  };
+  # system.switch = {
+  #   enable = false;
+  #   enableNg = true;
+  # };
 
   # console = {
   #   font = "Lat2-Terminus16";
