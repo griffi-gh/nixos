@@ -20,6 +20,12 @@ in {
       apply = pip-rules;
     }
     {
+      description = "firefox-pip-nightly-2";
+      match.window-class = "firefox-nightly firefox-nightly";
+      match.title = "Picture-in-Picture";
+      apply = pip-rules;
+    }
+    {
       description = "tidal-pip";
       match.window-class = "tidal-hifi tidal-hifi";
       match.title = "Picture-in-picture";
