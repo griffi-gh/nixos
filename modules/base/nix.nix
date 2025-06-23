@@ -75,12 +75,12 @@ in {
     channel = {
       enable = false;
     };
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 7d";
-      persistent = true;
-    };
+    # gc = {
+    #   automatic = true;
+    #   dates = "weekly";
+    #   options = "--delete-older-than 7d";
+    #   persistent = true;
+    # };
     # improve responsiveness of desktop system during rebuild
     daemonCPUSchedPolicy = "idle";
     registry = {
