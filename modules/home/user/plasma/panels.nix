@@ -37,7 +37,7 @@
               "applications:vesktop.desktop"
               # "applications:discord-canary.desktop"
               "applications:org.telegram.desktop.desktop"
-              "applications:nheko.desktop"
+              # "applications:nheko.desktop"
               # "applications:tidal-hifi.desktop"
               "applications:TIDAL Hi-Fi.desktop"
               "applications:dev.zed.Zed.desktop"
