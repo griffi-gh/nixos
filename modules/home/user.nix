@@ -70,8 +70,8 @@
       vlc                   # VLC Media Player
       snapshot              # Gnome's Camera App
       # libreoffice-fresh     # LibreOffice (GTK)
-      # libreoffice-qt6-fresh # LibreOffice (Qt6)
-      libreoffice-x11       # LibreOffice (Qt6-X11)
+      libreoffice-qt6-fresh # LibreOffice (Qt6)
+      # libreoffice-x11       # LibreOffice (Qt6-X11)
       # transmission_4-qt6    # Transmission (Qt)
       qbittorrent           # qBittorrent
       okteta                # Okteta (hex editor)
