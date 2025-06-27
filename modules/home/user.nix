@@ -154,6 +154,7 @@
       minetest       # Luanti/Minetest
       osu-lazer-bin  # Osu (lazer)
       prismlauncher  # Minecraft (Prism Launcher)
+      vintagestory   # Vintage Story
       space-cadet-pinball # Space Cadet Pinball for Windows
       # everest-mons # mons (Celeste/Everest mod loader installer)
 

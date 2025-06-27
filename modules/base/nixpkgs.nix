@@ -8,6 +8,7 @@
         "olm-3.2.16"
         "electron-32.3.3"
         "electron-33.4.11"
+        "dotnet-runtime-7.0.20"
       ];
       firefox.enablePlasmaBrowserIntegration = true;
     };
