@@ -6,7 +6,7 @@
   makeWrapper,
 }:
 symlinkJoin {
-  name = "principia-x11";
+  name = "principia-wrapped";
   paths = [ principia ];
   nativeBuildInputs = [ makeWrapper ];
   postBuild = ''

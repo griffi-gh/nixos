@@ -73,7 +73,12 @@
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
-        config.allowUnfree = true;
+        config = {
+          allowUnfree = true;
+          permittedInsecurePackages = [
+            "dotnet-runtime-7.0.20"
+          ];
+        };
       };
       # pkgs-stable = import nixpkgs-stable {
       #   inherit system;

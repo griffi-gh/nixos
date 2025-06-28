@@ -149,12 +149,14 @@
       pkgs-master.zepp-simulator
 
       # Games:
-      principia-x11  # Principia
+
+      # Principia
+      principia-wrapped # Principia
       the-powder-toy # The Powder Toy
       minetest       # Luanti/Minetest
       osu-lazer-bin  # Osu (lazer)
       prismlauncher  # Minecraft (Prism Launcher)
-      vintagestory   # Vintage Story
+      vintagestory-wrapped # Vintage Story
       space-cadet-pinball # Space Cadet Pinball for Windows
       # everest-mons # mons (Celeste/Everest mod loader installer)
 
