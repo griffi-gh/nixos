@@ -173,7 +173,7 @@
       mangohud       # MangoHud (fps overlay)
 
       # Emulators:
-      ryujinx        # Ryujinx (Switch)
+      ryubing        # Ryujinx (Switch)
       # cemu-amd-patch # Cemu (Wii U)
       cemu
       mgba           # mGBA (GB/GBC/GBA)
