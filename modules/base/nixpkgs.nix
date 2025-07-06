@@ -9,6 +9,7 @@
         "electron-32.3.3"
         "electron-33.4.11"
         "dotnet-runtime-7.0.20"
+        "libxml2-2.13.8"
       ];
       firefox.enablePlasmaBrowserIntegration = true;
     };

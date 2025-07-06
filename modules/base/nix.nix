@@ -14,13 +14,13 @@ in {
         # 2024-11-17
         # https://git.lix.systems/lix-project/lix/src/branch/main/src/libutil/experimental-features
         "auto-allocate-uids"
-        "ca-derivations"
+        # "ca-derivations"
         "cgroups"
         "daemon-trust-override"
-        "dynamic-derivations"
+        # "dynamic-derivations"
         "fetch-closure"
         "flakes"
-        "impure-derivations"
+        # "impure-derivations"
         "nix-command"
         "no-url-literals"
         "parse-toml-timestamps"

@@ -77,6 +77,7 @@
           allowUnfree = true;
           permittedInsecurePackages = [
             "dotnet-runtime-7.0.20"
+            "libxml2-2.13.8"
           ];
         };
       };

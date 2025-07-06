@@ -57,11 +57,11 @@
     enable32Bit = true;
   };
 
-  # Enable switch-ng
-  system.switch = {
-    enable = false;
-    enableNg = true;
-  };
+  # # Enable switch-ng
+  # system.switch = {
+  #   enable = false;
+  #   enableNg = true;
+  # };
 
   # console = {
   #   font = "Lat2-Terminus16";

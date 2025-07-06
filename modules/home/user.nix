@@ -139,7 +139,7 @@
 
       # reverse-engineering:
       ghidra
-      binaryninja-free
+      pkgs-master.binaryninja-free # master due to build failure
 
       # Device drivers etc
       # TODO fix galaxy-buds-client somehow (borked and outdated)
