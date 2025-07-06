@@ -39,7 +39,7 @@
               "applications:org.telegram.desktop.desktop"
               # "applications:nheko.desktop"
               # "applications:tidal-hifi.desktop"
-              "applications:TIDAL Hi-Fi.desktop"
+              # "applications:TIDAL Hi-Fi.desktop"
               "applications:dev.zed.Zed.desktop"
               "applications:code.desktop"
               "applications:com.heroicgameslauncher.hgl.desktop"
