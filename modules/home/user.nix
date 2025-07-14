@@ -154,7 +154,7 @@
       principia-wrapped # Principia
       the-powder-toy # The Powder Toy
       minetest       # Luanti/Minetest
-      osu-lazer-bin  # Osu (lazer)
+      osu-lazer-bin-wrapped  # Osu (lazer)
       prismlauncher  # Minecraft (Prism Launcher)
       vintagestory-wrapped # Vintage Story
       space-cadet-pinball # Space Cadet Pinball for Windows
