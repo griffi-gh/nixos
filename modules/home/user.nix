@@ -83,7 +83,8 @@
       pomodoro-gtk          # GTK Pomodoro Timer
       stremio               # Stremio (media center)
       parsec-bin            # Parsec (game streaming)
-      tidal-hifi            # tidal hifi electron music player thingy
+      # tidal-hifi            # tidal hifi electron music player thingy
+      pkgs-master.high-tide # High Tide (Tidal client)
 
       # Bitwarden clients (because two aren't enough)
       bitwarden-desktop     # BitWarden Desktop client
