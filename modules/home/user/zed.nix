@@ -34,7 +34,8 @@
     userSettings = {
       # Font/size
       ui_font_size = 16;
-      buffer_font_size = 16;
+      buffer_font_size = 15.5;
+      buffer_line_height.custom = 1.4;
 
       # Theme/icons
       theme = {
