@@ -103,7 +103,7 @@
         plasma-manager  = plasma-manager.homeManagerModules.plasma-manager;
       	vscode-server   = vscode-server.homeModules.default;
         # nix-flatpak     = nix-flatpak.homeManagerModules.nix-flatpak;
-        nix-index       = nix-index-database.hmModules.nix-index;
+        nix-index       = nix-index-database.homeModules.nix-index;
         # chaotic         = chaotic.homeManagerModules.default;
       };
 

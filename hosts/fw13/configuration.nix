@@ -37,7 +37,7 @@ in {
 
     # lower power use?
     # "pcie_aspm=force"
-    "pcie_aspm.policy=powersupersave"
+    # "pcie_aspm.policy=powersupersave"
   ];
 
   #hack: downgrade mesa to 24

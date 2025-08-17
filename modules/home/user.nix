@@ -86,10 +86,10 @@
       # tidal-hifi            # tidal hifi electron music player thingy
       pkgs-master.high-tide # High Tide (Tidal client)
 
-      # Bitwarden clients (because two aren't enough)
+      # Bitwarden
       bitwarden-desktop     # BitWarden Desktop client
-      keyguard            # BitWarden (Keyguard)
-      #goldwarden            # BitWarden (Goldwarden)
+      # keyguard            # BitWarden (Keyguard)
+      # goldwarden          # BitWarden (Goldwarden)
 
       # Hunpell/Hyphen dicts:
       hunspell
@@ -114,10 +114,10 @@
       audacity              # Audacity (audio editor)
 
       # Social/Communication stuff:
-      # vesktop               # Discord (vesktop/vencord)
-      (vesktop.override {
-        electron = electron_33;
-      })
+      vesktop               # Discord (vesktop/vencord)
+      # (vesktop.override {
+      #   electron = electron_33;
+      # })
       # (discord-canary.override {
       #   withOpenASAR = true;
       #   withVencord = true;
@@ -140,7 +140,7 @@
 
       # reverse-engineering:
       ghidra
-      pkgs-master.binaryninja-free # master due to build failure
+      binaryninja-free
 
       # Device drivers etc
       # TODO fix galaxy-buds-client somehow (borked and outdated)

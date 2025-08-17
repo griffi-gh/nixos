@@ -147,7 +147,9 @@
   };
 
   # bump nofile limits
-  systemd.extraConfig = "DefaultLimitNOFILE=524288";
+  systemd.settings.Manager = {
+    DefaultLimitNOFILE = 524288;
+  };
   security.pam.loginLimits = [
     { domain = "*"; item = "nofile"; type = "-"; value = "524288"; }
     { domain = "*"; item = "memlock"; type = "-"; value = "32768"; }
