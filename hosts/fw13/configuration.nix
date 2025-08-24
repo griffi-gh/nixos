@@ -1,13 +1,13 @@
-{ pkgs, ... }: let
+{ lib, pkgs, ... }: let
   hostname = "fw13";
   # If true, use weekly fstrim.service instead of discard=async
-  btrfs-nodiscard = true;
+  # btrfs-nodiscard = true;
 in {
   imports = [
     ./hardware-configuration.nix
   ];
 
-  system.stateVersion = "25.05";
+  system.stateVersion = "25.11";
   networking.hostName = hostname;
 
   # === Misc. hardware ===
@@ -23,7 +23,7 @@ in {
   # === Kernel ===
   boot.kernelParams = [
     # added this for hibernation, idk if it's necessary
-    "resume=UUID=4f0b5893-4d99-4dbc-9ba0-1ab0ac6c3cfc"
+    # "resume=UUID=4f0b5893-4d99-4dbc-9ba0-1ab0ac6c3cfc"
 
     # scatter-whatever. can cause issues with external displays.
     # "amdgpu.sg_display=0"
@@ -54,21 +54,6 @@ in {
     "vm.swappiness" = 10;
     "vm.dirty_writeback_centisecs" = 1500;
   };
-
-  # === Filesystems ===
-
-  fileSystems = let
-    btrfsOptions =
-      [ "ssd" "noatime" "compress=zstd:1" ]
-      ++ (if btrfs-nodiscard then [ "nodiscard" ] else [ "discard=async" ]);
-  in {
-    "/".options = btrfsOptions;
-    "/home".options = btrfsOptions;
-    "/nix".options =  btrfsOptions;
-    "/boot".options = [ "noatime" ];
-  };
-
-  services.fstrim.enable = btrfs-nodiscard;
 
   # === Misc ===
 
@@ -125,4 +110,28 @@ in {
       strategyOnDischarging = "laziest";
     };
   };
+
+  # LUKS setup and filesystems
+  boot.initrd.kernelModules = [ "dm-snapshot" "cryptd" ];
+  boot.initrd.luks.devices."cryptroot" = {
+    device = "/dev/disk/by-label/NIXLUKS";
+    preLVM = true;
+    bypassWorkqueues = true;
+    allowDiscards = true;
+  };
+  fileSystems = let
+    btrfsOptions = {
+      device = lib.mkForce "/dev/disk/by-label/nixos";
+      options = [ "ssd" "noatime" "compress=zstd:1" "discard=async" ];
+    };
+  in {
+    "/" = btrfsOptions;
+    "/home" = btrfsOptions;
+    "/nix" = btrfsOptions;
+    "/boot" = {
+      device = lib.mkForce "/dev/disk/by-label/BOOT";
+      options = [ "noatime" ];
+    };
+  };
+  services.fstrim.enable = true;
 }
