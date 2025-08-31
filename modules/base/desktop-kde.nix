@@ -15,7 +15,6 @@
   services.desktopManager.plasma6.enable = true;
   environment.plasma6.excludePackages = with pkgs; [
     kdePackages.discover # remove discover
-    libsForQt5.kwalletmanager
   ];
 
   # environment.plasma6.excludePackages = with pkgs.kdePackages; [

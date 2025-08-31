@@ -103,6 +103,7 @@
       # Photo/Video/Graphics stuff:
       inkscape              # Inkscape (vector graphics editor)
       blender-hip           # Blender (with HIP support)
+      blockbench            # Blockbench
       gimp3                 # GIMP  (image editor)
       krita                 # Krita (image editor)
       kdePackages.kdenlive  # Kdenlive (video editor)

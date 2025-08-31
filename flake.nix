@@ -100,7 +100,7 @@
         # nix-index       = nix-index-database.nixosModules.nix-index;
       };
       homeModules = with inputs; {
-        plasma-manager  = plasma-manager.homeManagerModules.plasma-manager;
+        plasma-manager  = plasma-manager.homeModules.plasma-manager;
       	vscode-server   = vscode-server.homeModules.default;
         # nix-flatpak     = nix-flatpak.homeManagerModules.nix-flatpak;
         nix-index       = nix-index-database.homeModules.nix-index;
