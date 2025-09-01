@@ -57,10 +57,10 @@
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware/master";
     };
-    fw-fanctrl = {
-      url = "github:TamtamHero/fw-fanctrl/packaging/nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # fw-fanctrl = {
+    #   url = "github:TamtamHero/fw-fanctrl/packaging/nix";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     kwin-system76-scheduler-integration = {
       url = "github:maxiberta/kwin-system76-scheduler-integration";
@@ -95,7 +95,7 @@
         chaotic         = chaotic.nixosModules.default;
         home-manager    = home-manager.nixosModules.home-manager;
         nixos-hardware  = nixos-hardware.nixosModules;
-        fw-fanctrl      = fw-fanctrl.nixosModules;
+        # fw-fanctrl      = fw-fanctrl.nixosModules;
         # programs-sqlite = flake-programs-sqlite.nixosModules.programs-sqlite;
         # nix-index       = nix-index-database.nixosModules.nix-index;
       };
@@ -148,7 +148,7 @@
         asus-pc = buildNixosSystem "asus-pc" [];
         fw13 = buildNixosSystem "fw13" [
           nixosModules.nixos-hardware.framework-13-7040-amd
-          nixosModules.fw-fanctrl.default
+          # nixosModules.fw-fanctrl.default
         ];
       };
 
