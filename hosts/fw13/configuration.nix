@@ -105,6 +105,10 @@ in {
   # === Fans ===
   hardware.fw-fanctrl = {
     enable = true;
+    # workaround
+    package = pkgs.fw-fanctrl.overrideAttrs (finalAttrs: prevAttrs: {
+      patches = (prevAttrs.patches or []) ++ [ ./fw-fanctrl.patch ];
+    });
     config = {
       defaultStrategy = "lazy";
       strategyOnDischarging = "laziest";
