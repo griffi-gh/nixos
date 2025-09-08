@@ -1,8 +1,10 @@
-{ lib, pkgs, ... }: let
+{ lib, pkgs, ... }:
+let
   hostname = "fw13";
   # If true, use weekly fstrim.service instead of discard=async
   # btrfs-nodiscard = true;
-in {
+in
+{
   imports = [
     ./hardware-configuration.nix
   ];
@@ -95,7 +97,8 @@ in {
           clr
         ];
       };
-    in [
+    in
+    [
       "L+    /opt/rocm   -    -    -     -    ${rocmEnv}"
     ];
 
@@ -106,9 +109,9 @@ in {
   hardware.fw-fanctrl = {
     enable = true;
     # workaround
-    package = pkgs.fw-fanctrl.overrideAttrs (finalAttrs: prevAttrs: {
-      patches = (prevAttrs.patches or []) ++ [ ./fw-fanctrl.patch ];
-    });
+    # package = pkgs.fw-fanctrl.overrideAttrs (finalAttrs: prevAttrs: {
+    #   patches = (prevAttrs.patches or []) ++ [ ./fw-fanctrl.patch ];
+    # });
     config = {
       defaultStrategy = "lazy";
       strategyOnDischarging = "laziest";
@@ -116,26 +119,36 @@ in {
   };
 
   # LUKS setup and filesystems
-  boot.initrd.kernelModules = [ "dm-snapshot" "cryptd" ];
+  boot.initrd.kernelModules = [
+    "dm-snapshot"
+    "cryptd"
+  ];
   boot.initrd.luks.devices."cryptroot" = {
     device = "/dev/disk/by-label/NIXLUKS";
     preLVM = true;
     bypassWorkqueues = true;
     allowDiscards = true;
   };
-  fileSystems = let
-    btrfsOptions = {
-      device = lib.mkForce "/dev/disk/by-label/nixos";
-      options = [ "ssd" "noatime" "compress=zstd:1" "discard=async" ];
+  fileSystems =
+    let
+      btrfsOptions = {
+        device = lib.mkForce "/dev/disk/by-label/nixos";
+        options = [
+          "ssd"
+          "noatime"
+          "compress=zstd:1"
+          "discard=async"
+        ];
+      };
+    in
+    {
+      "/" = btrfsOptions;
+      "/home" = btrfsOptions;
+      "/nix" = btrfsOptions;
+      "/boot" = {
+        device = lib.mkForce "/dev/disk/by-label/BOOT";
+        options = [ "noatime" ];
+      };
     };
-  in {
-    "/" = btrfsOptions;
-    "/home" = btrfsOptions;
-    "/nix" = btrfsOptions;
-    "/boot" = {
-      device = lib.mkForce "/dev/disk/by-label/BOOT";
-      options = [ "noatime" ];
-    };
-  };
   services.fstrim.enable = true;
 }
