@@ -21,6 +21,7 @@
     ./base/debug.nix
     ./base/location.nix
     ./base/system76-scheduler.nix
+    ./base/vm.nix
     ./base/services/ssh.nix
     ./base/services/sound.nix
     ./base/services/libinput.nix
@@ -32,7 +33,6 @@
     ./base/programs/appimage.nix
     ./base/programs/gamemode.nix
     ./base/programs/steam.nix
-    # ./base/programs/virtualbox.nix
     # ./base/programs/gns3-server.nix
     ./base/programs/wireshark.nix
     ./base/programs/wine.nix
