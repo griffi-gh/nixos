@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   hardware.enableRedistributableFirmware = true;
   hardware.enableAllFirmware = true;
 
@@ -31,7 +32,7 @@
     ./base/programs/appimage.nix
     ./base/programs/gamemode.nix
     ./base/programs/steam.nix
-    ./base/programs/virtualbox.nix
+    # ./base/programs/virtualbox.nix
     # ./base/programs/gns3-server.nix
     ./base/programs/wireshark.nix
     ./base/programs/wine.nix
@@ -127,7 +128,7 @@
     zip
     unzip
     unrar
-#     arj # build failure
+    #     arj # build failure
     p7zip
 
     # exe icons
@@ -151,8 +152,18 @@
     DefaultLimitNOFILE = 524288;
   };
   security.pam.loginLimits = [
-    { domain = "*"; item = "nofile"; type = "-"; value = "524288"; }
-    { domain = "*"; item = "memlock"; type = "-"; value = "32768"; }
+    {
+      domain = "*";
+      item = "nofile";
+      type = "-";
+      value = "524288";
+    }
+    {
+      domain = "*";
+      item = "memlock";
+      type = "-";
+      value = "32768";
+    }
   ];
 
   environment.variables = {
