@@ -103,7 +103,10 @@ in
     ];
 
   # === CPU ===
-  hardware.cpu.amd.updateMicrocode = true;
+  hardware.cpu.amd = {
+    updateMicrocode = true;
+    ryzen-smu.enable = true;
+  };
 
   # === Fans ===
   hardware.fw-fanctrl = {
