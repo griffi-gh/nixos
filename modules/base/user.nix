@@ -7,6 +7,7 @@
       "networkmanager"
       "gamemode"
       "kvm"
+      "dialout"
       # "adbusers"
     ];
     # make sure to change it after install:
