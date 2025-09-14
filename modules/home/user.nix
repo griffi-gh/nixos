@@ -190,6 +190,8 @@
 
       # testing:
       ocelot-desktop
+
+      dbeaver-bin
     ];
   };
 
