@@ -5,5 +5,7 @@ pkgs.mkShell {
     git-crypt
     nixd
     nil
+    nixfmt-rfc-style
+    nixfmt-tree
   ];
 }
