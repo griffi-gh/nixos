@@ -9,6 +9,7 @@
     ./base/nix.nix
     ./base/nixpkgs.nix
     ./base/boot.nix
+    ./base/secure-boot.nix
     ./base/sudo.nix
     ./base/networking.nix
     ./base/bluetooth.nix

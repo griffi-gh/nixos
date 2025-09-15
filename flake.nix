@@ -66,9 +66,14 @@
       url = "github:maxiberta/kwin-system76-scheduler-integration";
       flake = false;
     };
+    
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.4.2";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-master, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-master, lanzaboote, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -95,6 +100,7 @@
         chaotic         = chaotic.nixosModules.default;
         home-manager    = home-manager.nixosModules.home-manager;
         nixos-hardware  = nixos-hardware.nixosModules;
+        lanzaboote      = lanzaboote.nixosModules.lanzaboote;
         # fw-fanctrl      = fw-fanctrl.nixosModules;
         # programs-sqlite = flake-programs-sqlite.nixosModules.programs-sqlite;
         # nix-index       = nix-index-database.nixosModules.nix-index;
@@ -118,6 +124,7 @@
         buildNixosSystem = host: extraModules: nixpkgs.lib.nixosSystem {
           inherit system specialArgs;
           modules = [
+            nixosModules.lanzaboote
             (import ./hosts/${host}/configuration.nix)
             (import ./modules/base.nix)
             nixosModules.home-manager
