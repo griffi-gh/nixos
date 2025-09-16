@@ -78,7 +78,7 @@ in
 
   hardware.amdgpu = {
     opencl.enable = true;
-    initrd.enable = true;
+    # initrd.enable = true;
   };
 
   services.xserver.videoDrivers = [ "amdgpu" ];

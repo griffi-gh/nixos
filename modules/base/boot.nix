@@ -1,18 +1,21 @@
-{ pkgs, ... }: let
-  linux = pkgs.linuxPackages_latest;
-in {
+{ pkgs, ... }:
+let
+  kernelPackages = pkgs.linuxPackages_latest;
+in
+{
   # Use the systemd-boot EFI boot loader.
   boot = {
+    inherit kernelPackages;
     bootspec = {
       enable = true;
       enableValidation = false;
     };
-    kernelPackages = linux; # linuxPackages_latest
     kernelParams = [
       "modprobe.blacklist=sp5100_tco"
       "nmi_watchdog=0"
       "nowatchdog"
       "quiet"
+      "plymouth.use-simpledrm"
     ];
     initrd = {
       systemd.enable = true;
@@ -36,7 +39,7 @@ in {
       # theme = "breeze";
     };
   };
-  environment.systemPackages = with linux; [
+  environment.systemPackages = with kernelPackages; [
     perf
   ];
 }
