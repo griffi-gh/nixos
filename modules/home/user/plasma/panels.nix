@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   programs.plasma.panels = [
     {
       location = "bottom";
@@ -12,7 +13,9 @@
             compactDisplayStyle = true;
           };
         }
-        "org.kde.plasma.pager"
+        {
+          pager = { };
+        }
         {
           iconTasks = {
             appearance = {
@@ -85,14 +88,17 @@
                 "Nextcloud"
                 "Xwayland Video Bridge_pipewireToXProxy"
               ];
-              configs = {
-                battery.showPercentage = true;
-                keyboardLayout.displayStyle = "label";
-              };
+              # currently broken
+              # configs = {
+              #   battery.showPercentage = true;
+              #   keyboardLayout.displayStyle = "label";
+              # };
             };
           };
         }
-        "org.kde.plasma.digitalclock"
+        {
+          digitalClock = { };
+        }
         "org.kde.plasma.showdesktop"
       ];
     }

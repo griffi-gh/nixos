@@ -29,10 +29,12 @@
     };
 
     plasma-manager = {
-      url = "github:nix-community/plasma-manager";
+      # url = "github:nix-community/plasma-manager";
+      url = "github:AlexNabokikh/plasma-manager/c3da2f1d1b7047388c255fce9f17ea9aa3b01bf9";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+
     # nix-flatpak = {
     #   url = "github:gmodena/nix-flatpak/latest";
     # };
@@ -66,14 +68,21 @@
       url = "github:maxiberta/kwin-system76-scheduler-integration";
       flake = false;
     };
-    
+
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.2";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-master, lanzaboote, ... }:
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      nixpkgs-master,
+      lanzaboote,
+      ...
+    }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -97,67 +106,79 @@
       # pkgs-mesa = import nixpkgs-mesa-pinned { inherit system; };
       vscode-extensions = inputs.nix-vscode-extensions.extensions.${system};
       nixosModules = with inputs; {
-        chaotic         = chaotic.nixosModules.default;
-        home-manager    = home-manager.nixosModules.home-manager;
-        nixos-hardware  = nixos-hardware.nixosModules;
-        lanzaboote      = lanzaboote.nixosModules.lanzaboote;
+        chaotic = chaotic.nixosModules.default;
+        home-manager = home-manager.nixosModules.home-manager;
+        nixos-hardware = nixos-hardware.nixosModules;
+        lanzaboote = lanzaboote.nixosModules.lanzaboote;
         # fw-fanctrl      = fw-fanctrl.nixosModules;
         # programs-sqlite = flake-programs-sqlite.nixosModules.programs-sqlite;
         # nix-index       = nix-index-database.nixosModules.nix-index;
       };
       homeModules = with inputs; {
-        plasma-manager  = plasma-manager.homeModules.plasma-manager;
-      	vscode-server   = vscode-server.homeModules.default;
+        plasma-manager = plasma-manager.homeManagerModules.plasma-manager;
+        vscode-server = vscode-server.homeModules.default;
         # nix-flatpak     = nix-flatpak.homeManagerModules.nix-flatpak;
-        nix-index       = nix-index-database.homeModules.nix-index;
+        nix-index = nix-index-database.homeModules.nix-index;
         # chaotic         = chaotic.homeManagerModules.default;
       };
 
       specialArgs = {
-        inherit self inputs pkgs-master vscode-extensions system;
+        inherit
+          self
+          inputs
+          pkgs-master
+          vscode-extensions
+          system
+          ;
         root = ./.;
       };
-    in {
+    in
+    {
       packages."${system}" = import ./pkgs { inherit pkgs; };
 
-      nixosConfigurations = let
-        buildNixosSystem = host: extraModules: nixpkgs.lib.nixosSystem {
-          inherit system specialArgs;
-          modules = [
-            nixosModules.lanzaboote
-            (import ./hosts/${host}/configuration.nix)
-            (import ./modules/base.nix)
-            nixosModules.home-manager
-            nixosModules.chaotic
-            # nixosModules.programs-sqlite
-            {
-              home-manager = {
-                users = {
-                  user = import ./modules/home/user.nix;
-                };
-                extraSpecialArgs = specialArgs;
-                sharedModules = [
-                  { programs.home-manager.enable = true; }
-                  homeModules.plasma-manager
-                  homeModules.vscode-server
-                  # homeModules.nix-flatpak
-                  homeModules.nix-index
-                ];
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                backupFileExtension = "hm-bak";
-              };
-            }
-          ] ++ extraModules;
+      nixosConfigurations =
+        let
+          buildNixosSystem =
+            host: extraModules:
+            nixpkgs.lib.nixosSystem {
+              inherit system specialArgs;
+              modules = [
+                nixosModules.lanzaboote
+                (import ./hosts/${host}/configuration.nix)
+                (import ./modules/base.nix)
+                nixosModules.home-manager
+                nixosModules.chaotic
+                # nixosModules.programs-sqlite
+                {
+                  home-manager = {
+                    users = {
+                      user = import ./modules/home/user.nix;
+                    };
+                    extraSpecialArgs = specialArgs;
+                    sharedModules = [
+                      { programs.home-manager.enable = true; }
+                      homeModules.plasma-manager
+                      homeModules.vscode-server
+                      # homeModules.nix-flatpak
+                      homeModules.nix-index
+                    ];
+                    useGlobalPkgs = true;
+                    useUserPackages = true;
+                    backupFileExtension = "hm-bak";
+                  };
+                }
+              ]
+              ++ extraModules;
+            };
+        in
+        {
+          dell-pc = buildNixosSystem "dell-pc" [ ];
+          asus-pc = buildNixosSystem "asus-pc" [ ];
+          fw13 = buildNixosSystem "fw13" [
+            nixosModules.nixos-hardware.framework-13-7040-amd
+            # nixosModules.fw-fanctrl.default
+          ];
         };
-      in {
-        dell-pc = buildNixosSystem "dell-pc" [];
-        asus-pc = buildNixosSystem "asus-pc" [];
-        fw13 = buildNixosSystem "fw13" [
-          nixosModules.nixos-hardware.framework-13-7040-amd
-          # nixosModules.fw-fanctrl.default
-        ];
-      };
 
       templates = {
         rust.path = ./templates/rust;
