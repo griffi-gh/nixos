@@ -1,7 +1,9 @@
-{ ... }: {
+{ ... }:
+{
   programs.zed-editor = {
     enable = true;
     installRemoteServer = true;
+
     extensions = [
       "catppuccin"
       "catppuccin-blur"
@@ -30,119 +32,45 @@
       "emmet"
       "jinja2"
       "neocmake"
+
+      # mcp servers
+      "postgres-context-server"
+      "mcp-server-sequential-thinking"
     ];
+
     userSettings = {
-      # Font/size
-      ui_font_size = 16;
-      buffer_font_size = 15.5;
-      buffer_line_height.custom = 1.4;
-
-      # Theme/icons
-      theme = {
-        mode = "system";
-        light = "Catppuccin Latte";
-        dark = "Catppuccin Mocha";
-      };
-
-      icon_theme = "Catppuccin Mocha";
-
-      # LSP options
-      lsp = {
-        rust-analyzer = {
-          initialization_options = {
-            check = {
-              # Use clippy as the cargo check commandc
-              command = "clippy";
-            };
-            diagnostics = {
-              experimental = {
-                enable = false;
-              };
-            };
-            # TODO remove this
-            # binary = {
-            #   ignore_system_version = true;
-            # };
-          };
-        };
-        # "roslyn": {
-        #         "inlayHintsOptions": {
-        #             "enable": true, // Or false to disable
-        #             "maxLength": 20, // Adjust as needed
-        #             "useParameterNames": true
-        #         }
-        #     }
-        omnisharp = {
-          # XXX: seems to not work :<
-          initialization_options = {
-            RoslynExtensionsOptions = {
-              inlayHintsOptions = {
-                enableForParameters = true;
-                forLiteralParameters = true;
-                forIndexerParameters = true;
-                forObjectCreationParameters = true;
-                forOtherParameters = true;
-                suppressForParametersThatDifferOnlyBySuffix = true;
-                suppressForParametersThatMatchMethodIntent = true;
-                suppressForParametersThatMatchArgumentName = true;
-                enableForTypes = true;
-                forImplicitVariableTypes = true;
-                forLambdaParameterTypes = true;
-                forImplicitObjectCreation = true;
-              };
-            };
-          };
-        };
-      };
-
-      # AI stuff
-      agent = let
-        claude = {
-          provider = "zed.dev";
-          model = "claude-sonnet-4";
-        };
-      in {
-        version = "2";
-        default_model = claude;
-        # editor_model = claude;
-      };
-
-      features = {
-        # edit_prediction_provider = "zed";
-        edit_prediction_provider = "copilot";
-      };
-
-      # Disable telemetry and auto-update
-      telemetry = {
-        diagnostics = false;
-        metrics = false;
-      };
-
       auto_update = false;
 
-      # only use LSP, not Prettier
-      # formatter = "language_server";
-      # prettier = {
-      #   allowed = false;
-      # };
+      buffer_font_size = 15.5;
+      buffer_line_height.custom = 1.4;
+      ui_font_size = 16;
 
-      # Enable inlay hints
+      theme = {
+        dark = "Catppuccin Mocha";
+        light = "Catppuccin Latte";
+        mode = "system";
+      };
+      icon_theme = "Catppuccin Mocha";
+
       inlay_hints = {
         enabled = true;
         show_background = true;
         toggle_on_modifiers_press = {
-          control = true;
           alt = true;
+          control = true;
         };
       };
 
-      # Language-specific settings
       languages = {
         Nix = {
+          format_on_save = "on";
           formatter = {
             external = {
               command = "nixfmt";
-              arguments = ["--quiet" "--"];
+              arguments = [
+                "--quiet"
+                "--"
+              ];
             };
           };
         };
@@ -151,10 +79,68 @@
           formatter = {
             external = {
               command = "rustfmt";
-              arguments = ["--edition=2024" "--emit=stdout"];
+              arguments = [
+                "--edition=2024"
+                "--emit=stdout"
+              ];
             };
           };
         };
+      };
+
+      lsp = {
+        rust-analyzer = {
+          initialization_options = {
+            check = {
+              command = "clippy";
+            };
+            diagnostics = {
+              experimental = {
+                enable = false;
+              };
+            };
+          };
+        };
+
+        omnisharp = {
+          initialization_options = {
+            RoslynExtensionsOptions = {
+              inlayHintsOptions = {
+                enableForParameters = true;
+                enableForTypes = true;
+                forImplicitObjectCreation = true;
+                forImplicitVariableTypes = true;
+                forIndexerParameters = true;
+                forLambdaParameterTypes = true;
+                forLiteralParameters = true;
+                forObjectCreationParameters = true;
+                forOtherParameters = true;
+                suppressForParametersThatDifferOnlyBySuffix = true;
+                suppressForParametersThatMatchArgumentName = true;
+                suppressForParametersThatMatchMethodIntent = true;
+              };
+            };
+          };
+        };
+      };
+
+      telemetry = {
+        diagnostics = false;
+        metrics = false;
+      };
+
+      agent = {
+        inline_assistant_model = {
+          provider = "copilot_chat";
+          model = "claude-sonnet-4";
+        };
+        default_model = {
+          provider = "copilot_chat";
+          model = "claude-sonnet-4";
+        };
+      };
+      features = {
+        edit_prediction_provider = "copilot";
       };
     };
   };
