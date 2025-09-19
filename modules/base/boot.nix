@@ -16,6 +16,9 @@ in
       "nowatchdog"
       "quiet"
       "plymouth.use-simpledrm"
+      "splash"
+      "udev.log_priority=3"
+      "rd.systemd.show_status=auto"
     ];
     initrd = {
       systemd.enable = true;
@@ -35,8 +38,10 @@ in
     };
     plymouth = {
       enable = true;
-      theme = "bgrt";
-      # theme = "breeze";
+      theme = "blahaj";
+      themePackages = with pkgs; [
+        plymouth-blahaj-theme
+      ];
     };
   };
   environment.systemPackages = with kernelPackages; [
