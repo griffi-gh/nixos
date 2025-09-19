@@ -6,24 +6,26 @@ in
   # Use the systemd-boot EFI boot loader.
   boot = {
     inherit kernelPackages;
-    bootspec = {
-      enable = true;
-      enableValidation = false;
-    };
+
     kernelParams = [
       "modprobe.blacklist=sp5100_tco"
       "nmi_watchdog=0"
       "nowatchdog"
       "quiet"
-      "plymouth.use-simpledrm"
       "splash"
+      "udev.log_level=3"
       "udev.log_priority=3"
       "rd.systemd.show_status=auto"
+      "plymouth.use-simpledrm"
+      "amdgpu.seamless=1"
     ];
+
     initrd = {
       systemd.enable = true;
-      verbose = true;
+      verbose = false;
     };
+    consoleLogLevel = 0;
+
     loader = {
       efi.canTouchEfiVariables = true;
       systemd-boot = {
@@ -32,10 +34,12 @@ in
       };
       timeout = 0;
     };
+
     tmp = {
       useTmpfs = true;
       cleanOnBoot = true;
     };
+
     plymouth = {
       enable = true;
       theme = "blahaj";
@@ -44,6 +48,7 @@ in
       ];
     };
   };
+
   environment.systemPackages = with kernelPackages; [
     perf
   ];
