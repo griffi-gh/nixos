@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   hostname = "fw13";
   # If true, use weekly fstrim.service instead of discard=async
@@ -107,9 +112,9 @@ in
     updateMicrocode = true;
     ryzen-smu.enable = true;
   };
-  boot.extraModulePackages = with config.boot.kernelPackages; [
-    zenpower
-  ];
+  # boot.extraModulePackages = with config.boot.kernelPackages; [
+  #   zenpower
+  # ];
 
   # === Fans ===
   hardware.fw-fanctrl = {
