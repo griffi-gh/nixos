@@ -91,7 +91,7 @@
         obs-studio # OBS Studio (streaming/recording tool)
         logisim-evolution # Logisim Evolution (digital logic simulator)
         pomodoro-gtk # GTK Pomodoro Timer
-        stremio # Stremio (media center)
+        # stremio # Stremio (media center)
         parsec-bin # Parsec (game streaming)
         # tidal-hifi            # tidal hifi electron music player thingy
         pkgs-master.high-tide # High Tide (Tidal client)
