@@ -2,12 +2,14 @@
   config,
   lib,
   pkgs,
+  pkgs-stable,
   ...
 }:
 let
   hostname = "fw13";
   # If true, use weekly fstrim.service instead of discard=async
   # btrfs-nodiscard = true;
+  rocm-pkgs = pkgs-stable;
 in
 {
   imports = [
@@ -81,22 +83,23 @@ in
 
   # === GPU ===
 
-  hardware.amdgpu = {
-    opencl.enable = true;
-    # initrd.enable = true;
-  };
+  # hardware.amdgpu = {
+  #   opencl.enable = true;
+  #   # initrd.enable = true;
+  # };
 
   services.xserver.videoDrivers = [ "amdgpu" ];
 
   # misc. opencl support
-  hardware.graphics.extraPackages = with pkgs; [
-    rocmPackages.clr.icd
+  hardware.graphics.extraPackages = with rocm-pkgs.rocmPackages; [
+    clr
+    clr.icd
   ];
   systemd.tmpfiles.rules =
     let
-      rocmEnv = pkgs.symlinkJoin {
+      rocmEnv = rocm-pkgs.symlinkJoin {
         name = "rocm-combined";
-        paths = with pkgs.rocmPackages; [
+        paths = with rocm-pkgs.rocmPackages; [
           rocblas
           hipblas
           clr

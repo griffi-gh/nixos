@@ -8,21 +8,21 @@
   };
 
   # dns
-  networking.resolvconf.enable = false;
-  services.resolved = {
-    enable = true;
-    dnssec = "false";
-    dnsovertls = "opportunistic";
-    fallbackDns = [
-      # opendns sandbox
-      "2620:0:ccd::2"
-      "2620:0:ccc::2"
-      "208.67.220.2"
-      "208.67.222.2"
-      # tailscale
-      # "100.100.100.100"
-    ];
-  };
+  # networking.resolvconf.enable = false;
+  # services.resolved = {
+  #   enable = true;
+  #   dnssec = "false";
+  #   dnsovertls = "opportunistic";
+  #   fallbackDns = [
+  #     # opendns sandbox
+  #     "2620:0:ccd::2"
+  #     "2620:0:ccc::2"
+  #     "208.67.220.2"
+  #     "208.67.222.2"
+  #     # tailscale
+  #     # "100.100.100.100"
+  #   ];
+  # };
 
   # firewall
   networking.nftables.enable = true;

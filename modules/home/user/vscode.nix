@@ -80,7 +80,7 @@ in
 
           # Themes/Icons/etc.:
           github.github-vscode-theme
-          vscode-icons-team.vscode-icons
+          from-nixpkgs.vscode-icons-team.vscode-icons
 
           # Remote
           ms-vscode.remote-explorer

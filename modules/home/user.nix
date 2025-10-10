@@ -33,6 +33,7 @@
         inxi
         nmap
         dig
+        file
         pwgen
         compsize # btrfs-compsize (btrfs compression ratio)
         trash-cli # trash-cli (trash command)

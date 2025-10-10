@@ -3,9 +3,9 @@
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
-    # nixpkgs-stable = {
-    #   url = "github:NixOS/nixpkgs/nixos-24.11";
-    # };
+    nixpkgs-stable = {
+      url = "github:NixOS/nixpkgs/nixos-25.05";
+    };
     nixpkgs-master = {
       url = "github:NixOS/nixpkgs/master";
     };
@@ -80,6 +80,7 @@
       self,
       nixpkgs,
       nixpkgs-master,
+      nixpkgs-stable,
       lanzaboote,
       ...
     }:
@@ -95,10 +96,10 @@
           ];
         };
       };
-      # pkgs-stable = import nixpkgs-stable {
-      #   inherit system;
-      #   config.allowUnfree = true;
-      # };
+      pkgs-stable = import nixpkgs-stable {
+        inherit system;
+        config.allowUnfree = true;
+      };
       pkgs-master = import nixpkgs-master {
         inherit system;
         config.allowUnfree = true;
@@ -127,6 +128,7 @@
           self
           inputs
           pkgs-master
+          pkgs-stable
           vscode-extensions
           system
           ;

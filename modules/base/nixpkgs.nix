@@ -1,4 +1,10 @@
-{ inputs, ... }: {
+{
+  inputs,
+  lib,
+  pkgs-stable,
+  ...
+}:
+{
   nixpkgs = {
     config = {
       allowUnfree = true;
@@ -20,6 +26,7 @@
     };
     overlays = [
       inputs.nix-vscode-extensions.overlays.default
-    ] ++ (import ../../overlays);
+    ]
+    ++ (import ../../overlays { inherit lib pkgs-stable; });
   };
 }
