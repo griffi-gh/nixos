@@ -3,8 +3,8 @@
   # networking :3
   networking.networkmanager = {
     enable = true;
-    dns = "systemd-resolved";
     wifi.backend = "iwd";
+    # dns = "systemd-resolved";
   };
 
   # dns
