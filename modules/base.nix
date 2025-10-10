@@ -218,4 +218,18 @@
     protectKernelImage = false;
     allowSimultaneousMultithreading = true;
   };
+
+  # services.ratbagd = {
+  #   enable = true;
+  #   # support for holtek mice
+  #   # https://github.com/libratbag/libratbag/pull/1561
+  #   package = pkgs.libratbag.overrideAttrs (old: {
+  #     src = pkgs.fetchFromGitHub {
+  #       owner = "lubasowo0";
+  #       repo = "libratbag";
+  #       rev = "e61221e9ed75f311692b5b345df7a9bdfa331d78";
+  #       hash = "sha256-6Sz2y5JWazh0q2/tC3NqfV/swPTtrCmktjgVBzwF/fU=";
+  #     };
+  #   });
+  # };
 }
