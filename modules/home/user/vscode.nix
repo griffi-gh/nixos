@@ -83,7 +83,10 @@ in
           from-nixpkgs.vscode-icons-team.vscode-icons
 
           # Remote
+          ms-vscode-remote.vscode-remote-extensionpack
           ms-vscode.remote-explorer
+          ms-vscode.remote-server
+          ms-vscode.remote-repositories
           from-nixpkgs.ms-vscode-remote.remote-ssh
           from-nixpkgs.ms-vscode-remote.remote-ssh-edit
 
