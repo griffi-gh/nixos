@@ -1,77 +1,96 @@
-{ root, pkgs, vscode-extensions, ... }: let
-  # accentColor = "250,140,200";
-  # accentColor = "255,184,228";
-  accentColor = "245,194,231";
+{
+  lib,
+  root,
+  pkgs,
+  ...
+}:
+let
   wallpaper = "${root}/assets/wallpapers/abstract-swirls.jpg";
+
+  accentColor = "245,194,231";
+
   catppuccin-flavour = "mocha";
   catppuccin-accent = "pink";
-  # TODO automate these:
-  catppuccin-flavour-uppercased = "Mocha";
-  catppuccin-accent-uppercased = "Pink";
-in {
-  gtk = let
-    adw-catppuccin = pkgs.applyPatches {
-      src = pkgs.fetchFromGitHub {
-        owner = "claymorwan";
-        repo = "adw-catppuccin";
-        rev = "e2a3352bb3a1eac7306d397a9945108c878a4c58";
-        hash = "sha256-wrqQTyHOaNgPsgxdGGOMY3oBzPPcjtUfqHELcgw8/gE=";
+
+  catppuccin-flavour-uppercased = lib.concatStrings [
+    (lib.toUpper (lib.substring 0 1 catppuccin-flavour))
+    (lib.substring 1 (-1) catppuccin-flavour)
+  ];
+  catppuccin-accent-uppercased = lib.concatStrings [
+    (lib.toUpper (lib.substring 0 1 catppuccin-accent))
+    (lib.substring 1 (-1) catppuccin-accent)
+  ];
+in
+{
+  gtk =
+    let
+      # TODO: deprecated; use https://github.com/claymorwan/catppuccin instead.
+      adw-catppuccin = pkgs.applyPatches {
+        src = pkgs.fetchFromGitHub {
+          owner = "claymorwan";
+          repo = "adw-catppuccin";
+          rev = "e2a3352bb3a1eac7306d397a9945108c878a4c58";
+          hash = "sha256-wrqQTyHOaNgPsgxdGGOMY3oBzPPcjtUfqHELcgw8/gE=";
+        };
+        patches = [
+          "${root}/assets/adw-catppuccin/mocha-pink.patch"
+        ];
       };
-      patches = [
-        ../../../assets/adw-catppuccin/mocha-pink.patch
-      ];
+      stylesheet = "${adw-catppuccin}/${catppuccin-flavour}/gtk.css";
+      extraCss = ''
+        @import 'colors.css';    /* breeze accents */
+        @import '${stylesheet}'; /* adw-catppuccin */
+      '';
+      extraConfig = {
+        gtk-enable-animations = true;
+        gtk-application-prefer-dark-theme = true;
+        gtk-button-images = 1;
+        gtk-menu-images = 1;
+        gtk-enable-event-sounds = 1;
+        gtk-enable-input-feedback-sounds = 1;
+        gtk-xft-antialias = 1;
+        gtk-xft-hinting = 1;
+        gtk-xft-hintstyle = "hintslight";
+        gtk-xft-rgba = "rgb";
+        gtk-modules = "colorreload-gtk-module"; # for kde-gtk-config
+      };
+      # headerbar .titlebutton.close:not(:hover),
+      # headerbar .titlebutton.minimize:not(:hover),
+      # headerbar .titlebutton.maximize:not(:hover) {
+      #   background: none;
+      # }
+
+      # window.csd:not(.tiled):not(.maximized):not(.fullscreen) > decoration,
+      # window.csd:not(.tiled):not(.maximized):not(.fullscreen) headerbar {
+      #   border-radius: 6px 6px 0px 0px;
+      # }
+    in
+    {
+      iconTheme.name = "breeze-dark";
+      theme.name = "Breeze-Dark";
+      # theme.name = "adw-gtk3-dark";
+      gtk3 = { inherit extraCss extraConfig; };
+      gtk4 = {
+        inherit extraCss;
+        extraConfig = extraConfig // {
+          gtk-theme-name = "Adwaita";
+        };
+      };
     };
-    stylesheet = "${adw-catppuccin}/${catppuccin-flavour}/gtk.css";
-    extraCss = ''
-      @import 'colors.css';    /* breeze accents */
-      @import '${stylesheet}'; /* adw-catppuccin */
-
-      headerbar .titlebutton.close:not(:hover),
-      headerbar .titlebutton.minimize:not(:hover),
-      headerbar .titlebutton.maximize:not(:hover) {
-        background: none;
-      }
-
-      window.csd:not(.tiled):not(.maximized):not(.fullscreen) > decoration,
-      window.csd:not(.tiled):not(.maximized):not(.fullscreen) headerbar {
-        border-radius: 6px 6px 0px 0px;
-      }
-    '';
-  in {
-    theme = {
-      # name = "Adwaita";
-      name = "adw-gtk3-dark";
-      package = pkgs.adw-gtk3;
-    };
-
-    gtk3 = {
-      inherit extraCss;
-    };
-
-    gtk4 = {
-      inherit extraCss;
-    };
-  };
-
-  # programs.firefox.profiles.default.extensions = [
-  #   (pkgs.fetchFirefoxAddon {
-  #     name = "catppuccin_${catppuccin-flavour}_${catppuccin-accent}";
-  #     url = "https://github.com/catppuccin/firefox/releases/download/old/catppuccin_${catppuccin-flavour}_${catppuccin-accent}.xpi";
-  #     sha256 = "MPaGVZMjqdqbDA7dbiSl5qQ2ji+aKyftLJiISY5ShQI=";
-  #   })
-  # ];
 
   programs.firefox.policies.ExtensionSettings = {
-    "{0a2d1098-69a9-4e98-a62c-a861766ac24d}" = let
-      addon_xpi = pkgs.fetchurl {
-        url = "https://github.com/catppuccin/firefox/releases/download/old/catppuccin_${catppuccin-flavour}_${catppuccin-accent}.xpi";
-        hash = "sha256-MPaGVZMjqdqbDA7dbiSl5qQ2ji+aKyftLJiISY5ShQI=";
+    "{0a2d1098-69a9-4e98-a62c-a861766ac24d}" =
+      let
+        addon_xpi = pkgs.fetchurl {
+          url = "https://github.com/catppuccin/firefox/releases/download/old/catppuccin_${catppuccin-flavour}_${catppuccin-accent}.xpi";
+          hash = "sha256-MPaGVZMjqdqbDA7dbiSl5qQ2ji+aKyftLJiISY5ShQI=";
+        };
+      in
+      {
+        install_url = "file://${addon_xpi}";
+        installation_mode = "force_installed";
+        updates_disabled = true;
       };
-    in {
-      install_url = "file://${addon_xpi}";
-      installation_mode = "force_installed";
-      updates_disabled = true;
-    };
   };
 
   home.file.".thunderbird/default/extensions/{aee472cc-993b-522a-b6e8-c904c250a8d9}.xpi" = {
@@ -108,9 +127,13 @@ in {
   };
 
   home.packages = with pkgs; [
+    adw-gtk3
+    kdePackages.breeze-gtk
+    kdePackages.breeze-icons
+    kdePackages.kde-gtk-config
     (catppuccin-kde.override {
-      flavour = [ catppuccin-flavour];
-      accents = [ catppuccin-accent];
+      flavour = [ catppuccin-flavour ];
+      accents = [ catppuccin-accent ];
       winDecStyles = [ "modern" ];
     })
     # (rlly like it, especially with colored borders...)
