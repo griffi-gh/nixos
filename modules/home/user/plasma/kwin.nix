@@ -6,8 +6,8 @@ let
     };
   };
 in
-  outOfTreePlugin "morphingpopups" //
-{
+outOfTreePlugin "morphingpopups"
+// {
   programs.plasma = {
     kwin = {
       virtualDesktops = {

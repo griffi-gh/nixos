@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   # Gamemoderun
   programs.gamemode = {
     enable = true;

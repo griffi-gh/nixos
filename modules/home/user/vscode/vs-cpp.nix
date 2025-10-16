@@ -1,20 +1,23 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.vscode.profiles.default = {
     extensions =
-      let from-nixpkgs = pkgs.vscode-extensions; in
+      let
+        from-nixpkgs = pkgs.vscode-extensions;
+      in
       with pkgs.vscode-marketplace;
-    [
-      # Cmake
-      # twxs.cmake
-      ms-vscode.cmake-tools
+      [
+        # Cmake
+        # twxs.cmake
+        ms-vscode.cmake-tools
 
-      # Ninja syntax highlighting
-      surajbarkale.ninja
+        # Ninja syntax highlighting
+        surajbarkale.ninja
 
-      # C/C++ support
-      from-nixpkgs.ms-vscode.cpptools
-      llvm-vs-code-extensions.vscode-clangd
-    ];
+        # C/C++ support
+        from-nixpkgs.ms-vscode.cpptools
+        llvm-vs-code-extensions.vscode-clangd
+      ];
     userSettings = {
       "C_Cpp.intelliSenseEngine" = "disabled"; # Use clangd's intellisense engine
       # "cmake.options.statusBarVisibility" = "compact";

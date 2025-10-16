@@ -1,4 +1,5 @@
-{ inputs, ... }: {
+{ inputs, ... }:
+{
   # KWin script
   home.file.".local/share/kwin/scripts/kwin-system76-scheduler-integration" = {
     source = inputs.kwin-system76-scheduler-integration;

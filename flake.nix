@@ -82,6 +82,12 @@
       nixpkgs-master,
       nixpkgs-stable,
       lanzaboote,
+      nixos-hardware,
+      home-manager,
+      chaotic,
+      plasma-manager,
+      vscode-server,
+      nix-index-database,
       ...
     }:
     let
@@ -104,24 +110,7 @@
         inherit system;
         config.allowUnfree = true;
       };
-      # pkgs-mesa = import nixpkgs-mesa-pinned { inherit system; };
       vscode-extensions = inputs.nix-vscode-extensions.extensions.${system};
-      nixosModules = with inputs; {
-        chaotic = chaotic.nixosModules.default;
-        home-manager = home-manager.nixosModules.home-manager;
-        nixos-hardware = nixos-hardware.nixosModules;
-        lanzaboote = lanzaboote.nixosModules.lanzaboote;
-        # fw-fanctrl      = fw-fanctrl.nixosModules;
-        # programs-sqlite = flake-programs-sqlite.nixosModules.programs-sqlite;
-        # nix-index       = nix-index-database.nixosModules.nix-index;
-      };
-      homeModules = with inputs; {
-        plasma-manager = plasma-manager.homeManagerModules.plasma-manager;
-        vscode-server = vscode-server.homeModules.default;
-        # nix-flatpak     = nix-flatpak.homeManagerModules.nix-flatpak;
-        nix-index = nix-index-database.homeModules.nix-index;
-        # chaotic         = chaotic.homeManagerModules.default;
-      };
 
       specialArgs = {
         inherit
@@ -145,11 +134,11 @@
             nixpkgs.lib.nixosSystem {
               inherit system specialArgs;
               modules = [
-                nixosModules.lanzaboote
+                lanzaboote.nixosModules.lanzaboote
                 (import ./hosts/${host}/configuration.nix)
                 (import ./modules/base.nix)
-                nixosModules.home-manager
-                nixosModules.chaotic
+                home-manager.nixosModules.home-manager
+                chaotic.nixosModules.default
                 # nixosModules.programs-sqlite
                 {
                   home-manager = {
@@ -159,10 +148,9 @@
                     extraSpecialArgs = specialArgs;
                     sharedModules = [
                       { programs.home-manager.enable = true; }
-                      homeModules.plasma-manager
-                      homeModules.vscode-server
-                      # homeModules.nix-flatpak
-                      homeModules.nix-index
+                      plasma-manager.homeManagerModules.plasma-manager
+                      vscode-server.homeModules.default
+                      nix-index-database.homeModules.nix-index
                     ];
                     useGlobalPkgs = true;
                     useUserPackages = true;
@@ -174,16 +162,15 @@
             };
         in
         {
-          dell-pc = buildNixosSystem "dell-pc" [ ];
-          asus-pc = buildNixosSystem "asus-pc" [ ];
           fw13 = buildNixosSystem "fw13" [
-            nixosModules.nixos-hardware.framework-13-7040-amd
-            # nixosModules.fw-fanctrl.default
+            nixos-hardware.nixosModules.framework-13-7040-amd
           ];
         };
 
       templates = {
         rust.path = ./templates/rust;
       };
+
+      formatter.x86_64-linux = pkgs.nixfmt-tree;
     };
 }

@@ -1,8 +1,7 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.vscode.profiles.default = {
-    extensions =
-      with pkgs.vscode-marketplace;
-    [
+    extensions = with pkgs.vscode-marketplace; [
       jnoortheen.nix-ide
       mkhl.direnv
       signageos.signageos-vscode-sops

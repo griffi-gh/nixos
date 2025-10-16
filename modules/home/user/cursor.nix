@@ -1,4 +1,5 @@
-{ pkgs, ... }: let
+{ pkgs, ... }:
+let
   cursor = {
     # package = pkgs.phinger-cursors;
     # name = "phinger-cursors-dark";
@@ -13,7 +14,8 @@
     name = "breeze_cursors";
     size = 24;
   };
-in {
+in
+{
   # Just leave this up to KDE
   # home.pointerCursor = {
   #   inherit (cursor) name package size;

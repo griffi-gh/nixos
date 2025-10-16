@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   programs.plasma.configFile.spectaclerc = {
     General.autoSaveImage = true;
     General.clipboardGroup = "PostScreenshotCopyImage";

@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   imports = [
     ./plasma/panels.nix
     ./plasma/widgets.nix
@@ -41,24 +42,26 @@
       };
 
       # Locale
-      plasma-localerc.Formats = let
-        lang = "en_US.UTF8";
-        locale = "en_IE.UTF-8";
-      in {
-        LANG = lang;
-        LC_CTYPE = locale;
-        LC_NUMERIC = locale;
-        LC_TIME = locale;
-        LC_COLLATE = locale;
-        LC_MONETARY = locale;
-        LC_MESSAGES = locale;
-        LC_PAPER = locale;
-        LC_NAME = locale;
-        LC_ADDRESS = locale;
-        LC_TELEPHONE = locale;
-        LC_MEASUREMENT = locale;
-        LC_IDENTIFICATION = locale;
-      };
+      plasma-localerc.Formats =
+        let
+          lang = "en_US.UTF8";
+          locale = "en_IE.UTF-8";
+        in
+        {
+          LANG = lang;
+          LC_CTYPE = locale;
+          LC_NUMERIC = locale;
+          LC_TIME = locale;
+          LC_COLLATE = locale;
+          LC_MONETARY = locale;
+          LC_MESSAGES = locale;
+          LC_PAPER = locale;
+          LC_NAME = locale;
+          LC_ADDRESS = locale;
+          LC_TELEPHONE = locale;
+          LC_MEASUREMENT = locale;
+          LC_IDENTIFICATION = locale;
+        };
     };
   };
 

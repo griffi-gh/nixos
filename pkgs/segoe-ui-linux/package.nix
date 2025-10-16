@@ -1,4 +1,9 @@
-{ stdenv, fetchFromGitHub, fontconfig, lib }:
+{
+  stdenv,
+  fetchFromGitHub,
+  fontconfig,
+  lib,
+}:
 stdenv.mkDerivation {
   pname = "segoe-ui-linux";
   version = "1.0.0-unstable-2024-05-17";

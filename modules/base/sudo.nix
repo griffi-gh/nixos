@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   # sudo
   security.sudo.enable = false;
   security.sudo-rs = {

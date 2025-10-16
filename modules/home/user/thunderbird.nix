@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.thunderbird = {
     enable = true;
     package = pkgs.thunderbird-latest;
@@ -80,7 +81,8 @@
         "browser.aboutConfig.showWarning" = false;
 
         # Use Mozilla location services
-        "geo.provider.network.url" = "https://location.services.mozilla.com/v1/geolocate?key=%MOZILLA_API_KEY%";
+        "geo.provider.network.url" =
+          "https://location.services.mozilla.com/v1/geolocate?key=%MOZILLA_API_KEY%";
 
         # Disable telemetry
         "datareporting.healthreport.uploadEnabled" = false;

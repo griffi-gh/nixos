@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   programs.plasma.input.keyboard = {
     switchingPolicy = "global";
     layouts = [

@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   # XXX: borked
   # programs.plasma.shortcuts = {
   #   # yakuake.toggle-window-state = "Calculator,F12,Open/Retract Yakuake";

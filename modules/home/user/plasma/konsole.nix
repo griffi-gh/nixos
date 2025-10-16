@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   # TODO use programs.konsole instead
   programs.plasma.configFile.konsolerc = {
     "Desktop Entry" = {

@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   environment.systemPackages = with pkgs; [
     wineWowPackages.staging
     (writeShellScriptBin "wine64" ''

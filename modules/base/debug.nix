@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   services.nixseparatedebuginfod.enable = true; # Debug symbols
 
   # system debugging tools

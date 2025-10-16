@@ -1,4 +1,5 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, ... }:
+{
   # services.gns3-server.enable = true;
   environment.systemPackages = with pkgs; [
     gns3-server

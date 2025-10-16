@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   # Steam can only be installed system-wide :<\
   programs.steam = {
     enable = true;

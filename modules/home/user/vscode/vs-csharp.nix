@@ -1,19 +1,22 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.vscode.profiles.default = {
     extensions =
-      let from-nixpkgs = pkgs.vscode-extensions; in
+      let
+        from-nixpkgs = pkgs.vscode-extensions;
+      in
       with pkgs.vscode-marketplace;
-    [
-      # C#/dotnet
-      from-nixpkgs.ms-dotnettools.csdevkit
-      from-nixpkgs.ms-dotnettools.csharp
-      from-nixpkgs.ms-dotnettools.vscode-dotnet-runtime
-      # ms-dotnettools.vscode-dotnet-runtime
-      ms-dotnettools.dotnet-maui
+      [
+        # C#/dotnet
+        from-nixpkgs.ms-dotnettools.csdevkit
+        from-nixpkgs.ms-dotnettools.csharp
+        from-nixpkgs.ms-dotnettools.vscode-dotnet-runtime
+        # ms-dotnettools.vscode-dotnet-runtime
+        ms-dotnettools.dotnet-maui
 
-      # IntelliCode support for C# DevKit
-      from-nixpkgs.ms-dotnettools.vscodeintellicode-csharp
-    ];
+        # IntelliCode support for C# DevKit
+        from-nixpkgs.ms-dotnettools.vscodeintellicode-csharp
+      ];
     userSettings = {
       # C#:
       "dotnetAcquisitionExtension.enableTelemetry" = false;

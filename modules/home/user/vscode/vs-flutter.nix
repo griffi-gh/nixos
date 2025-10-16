@@ -1,8 +1,7 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.vscode.profiles.default = {
-    extensions =
-      with pkgs.vscode-marketplace;
-    [
+    extensions = with pkgs.vscode-marketplace; [
       dart-code.dart-code
       dart-code.flutter
     ];

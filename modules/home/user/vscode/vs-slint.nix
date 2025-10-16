@@ -1,7 +1,9 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.vscode.profiles.default = {
     extensions = with pkgs.vscode-marketplace; [
-      /* TODO either add these to LD_LIBRARY_PATH or use slint-lsp from nixpkgs instead
+      /*
+        TODO either add these to LD_LIBRARY_PATH or use slint-lsp from nixpkgs instead
         fuse3
         openssl
         curl
@@ -16,7 +18,8 @@
         libinput
         mesa
         fontconfig
-        freetype */
+        freetype
+      */
       slint.slint
     ];
     userSettings = {

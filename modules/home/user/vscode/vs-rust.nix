@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.vscode.profiles.default = {
     extensions = with pkgs.vscode-marketplace; [
       rust-lang.rust-analyzer # (nixpkgs is outdated)
