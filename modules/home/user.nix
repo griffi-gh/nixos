@@ -78,8 +78,8 @@
         kdePackages.akregator # RSS reader
 
         # Software:
-        vlc # VLC Media Player
-        snapshot # Gnome's Camera App
+        vlc' # VLC Media Player
+        snapshot # Gnome'amera App
         # libreoffice-fresh     # LibreOffice (GTK)
         libreoffice-qt6-fresh # LibreOffice (Qt6)
         # libreoffice-x11       # LibreOffice (Qt6-X11)
@@ -95,7 +95,6 @@
         # stremio # Stremio (media center)
         parsec-bin # Parsec (game streaming)
         # tidal-hifi            # tidal hifi electron music player thingy
-        pkgs-master.high-tide # High Tide (Tidal client)
 
         # Bitwarden
         bitwarden-desktop # BitWarden Desktop client
@@ -154,22 +153,15 @@
         ghidra
         binaryninja-free
 
-        # Device drivers etc
-        # TODO fix galaxy-buds-client somehow (borked and outdated)
-        # galaxy-buds-client  # GalaxyBudsClient (unofficial)
-        pkgs-master.earbuds # Samsung Galaxy Buds (earbuds cli)
-        # Dev/
-        pkgs-master.zepp-simulator
-
         # Games:
 
         # Principia
-        principia-wrapped # Principia
+        principia # Principia
         the-powder-toy # The Powder Toy
         minetest # Luanti/Minetest
-        osu-lazer-bin-wrapped # Osu (lazer)
+        osu-lazer-bin # Osu (lazer)
         prismlauncher # Minecraft (Prism Launcher)
-        vintagestory-wrapped # Vintage Story
+        vintagestory # Vintage Story
         space-cadet-pinball # Space Cadet Pinball for Windows
         # everest-mons # mons (Celeste/Everest mod loader installer)
 
@@ -200,8 +192,11 @@
         # winbox4 # Winbox (Mikrotik RouterOS GUI)
         # azuredatastudio # Azure Data Studio
 
-        # testing:
-        ocelot-desktop
+        # stuff i maintain (built from master)
+        pkgs-master.ocelot-desktop
+        pkgs-master.earbuds # Samsung Galaxy Buds (earbuds cli)
+        pkgs-master.zepp-simulator
+        pkgs-master.high-tide # High Tide (Tidal client)
 
         dbeaver-bin
       ];
