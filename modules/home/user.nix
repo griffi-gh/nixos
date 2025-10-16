@@ -207,6 +207,20 @@
       ];
   };
 
+  # for development
+  programs.chromium = {
+    enable = true;
+    commandLineArgs = [
+      "--enable-features=TouchpadOverscrollHistoryNavigation,VaapiVideoDecoder,VaapiVideoEncoder,VaapiVideoDecodeLinuxGL"
+      "--ignore-gpu-blocklist"
+      "--restore-last-session"
+      "--unsafely-disable-devtools-self-xss-warnings"
+      "--no-default-browser-check"
+      "--enable-extension-actor-api"
+      "--enable-unsafe-extension-debugging"
+    ];
+  };
+
   imports = [
     ./user/theming.nix
     ./user/face.nix
