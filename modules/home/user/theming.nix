@@ -47,12 +47,18 @@ in
         gtk-button-images = 1;
         gtk-menu-images = 1;
         gtk-enable-event-sounds = 1;
-        gtk-enable-input-feedback-sounds = 1;
+        gtk-error-bell = 0;
+        gtk-enable-input-feedback-sounds = 0;
         gtk-xft-antialias = 1;
         gtk-xft-hinting = 1;
         gtk-xft-hintstyle = "hintslight";
         gtk-xft-rgba = "rgb";
-        gtk-modules = "colorreload-gtk-module"; # for kde-gtk-config
+        gtk-decoration-layout = "icon:minimize,maximize,close";
+        gtk-modules = lib.concatStringsSep ":" [
+          # for kde-gtk-config
+          "colorreload-gtk-module"
+          "window-decorations-gtk-module"
+        ];
       };
       # headerbar .titlebutton.close:not(:hover),
       # headerbar .titlebutton.minimize:not(:hover),
@@ -66,6 +72,7 @@ in
       # }
     in
     {
+      enable = true;
       iconTheme.name = "breeze-dark";
       theme.name = "Breeze-Dark";
       # theme.name = "adw-gtk3-dark";
@@ -77,6 +84,13 @@ in
         };
       };
     };
+  # foce overwrite gtkrc
+  # home.file.".gtkrc-2.0".force = pkgs.lib.mkForce true;
+  home.activation.removeGtkRc = {
+    data = "rm -f $HOME/.gtkrc-2.0";
+    before = [ "checkLinkTargets" ];
+    after = [ ];
+  };
 
   programs.firefox.policies.ExtensionSettings = {
     "{0a2d1098-69a9-4e98-a62c-a861766ac24d}" =

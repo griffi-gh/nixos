@@ -227,7 +227,6 @@
     ./user/shells.nix
     ./user/git.nix
     ./user/plasma.nix
-    ./user/gtk.nix
     ./user/flatpak.nix
     ./user/cursor.nix
     ./user/firefox.nix
