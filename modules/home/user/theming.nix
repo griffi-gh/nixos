@@ -86,11 +86,6 @@ in
     };
   # foce overwrite gtkrc
   # home.file.".gtkrc-2.0".force = pkgs.lib.mkForce true;
-  home.activation.removeGtkRc = {
-    data = "rm -f $HOME/.gtkrc-2.0";
-    before = [ "checkLinkTargets" ];
-    after = [ ];
-  };
 
   programs.firefox.policies.ExtensionSettings = {
     "{0a2d1098-69a9-4e98-a62c-a861766ac24d}" =

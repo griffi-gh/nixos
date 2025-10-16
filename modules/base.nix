@@ -4,8 +4,6 @@
   hardware.enableAllFirmware = true;
 
   imports = [
-    # ./base/hacks/fontconfig-unbreak.nix # no longer needed
-    ./../overlays/system.nix
     ./base/nix.nix
     ./base/nixpkgs.nix
     ./base/boot.nix

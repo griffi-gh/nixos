@@ -1,6 +1,7 @@
-{ ... }: {
+{ ... }:
+{
   imports = [
-    ./rm-hmfonts.nix
+    ./hm-collisions.nix
     ./xdg-legacy.nix
   ];
 }
