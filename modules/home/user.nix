@@ -28,6 +28,8 @@
         ripgrep
         ripgrep-all # (conflicts with radeon gpu profiler)
         pciutils
+        usbutils
+        ethtool
         glxinfo
         libva-utils
         inxi
@@ -45,9 +47,9 @@
         btop # (system monitor) htop but even more autistic :3
         ffmpeg # ffmpeg
         imagemagick # ImageMagick (default version)
+
         http-server # http-server (node.js)
         ani-cli # anime cli
-
         amdgpu_top # (MAYBE move to hw modules?)
 
         # file stuff:
