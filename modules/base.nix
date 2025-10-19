@@ -97,9 +97,6 @@
     # required
     git-crypt
 
-    # nix stuff:
-    comma
-
     # deps:
     bashInteractive
     efibootmgr
