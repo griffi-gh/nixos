@@ -167,33 +167,17 @@
   };
 
   environment.sessionVariables = {
-    # Mozilla/Firefox/Thunderbird:
-    MOZ_USE_XINPUT2 = "1";
-    MOZ_ENABLE_WAYLAND = "1";
-    MOZ_DBUS_REMOTE = "1";
-
-    # Electron:
-    # Force use of Wayland
-    # XXX: Causes issues with taskbar icons in ALL electron apps (can be fixed by manual kwin rules)
-    NIXOS_OZONE_WL = "1";
-
-    # LibreOffice:
-    SAL_DISABLE_WATCHDOG = "1";
-    # XXX: Causes issues in writer (selected text not visible)
-    # VCL_DOUBLEBUFFERING_ENABLE = "1";
-    # VCL_DOUBLEBUFFERING_FORCE_ENABLE = "1";
-
-    # SDL2:
-    # XXX: Causes issues in some games
-    # (tpt: blurry scaling)
-    # SDL_VIDEODRIVER = "wayland";
-
-    # Qt:
-    # Fix janky fonts
-    # XXX: causes blurry rendering in Spectacle and warnings whenever any Qt app is run
-    # QT_SCALE_FACTOR_ROUNDING_POLICY = "RoundPreferFloor";
-
     DO_NOT_TRACK = "1";
+    MOZ_ENABLE_WAYLAND = "1";
+    MOZ_USE_XINPUT2 = "1";
+    MOZ_DBUS_REMOTE = "1";
+    NIXOS_OZONE_WL = "1";
+    # SDL_VIDEODRIVER = "wayland"; # blurry
+    SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS = "0";
+    # PROTON_ENABLE_WAYLAND = "1";
+    SAL_DISABLE_WATCHDOG = "1"; # LibreOffice
+    # VCL_DOUBLEBUFFERING_ENABLE = "1"; # LibreOffice
+    # VCL_DOUBLEBUFFERING_FORCE_ENABLE = "1";
   };
 
   # environment.profiles = lib.mkBefore [
