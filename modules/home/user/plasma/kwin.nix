@@ -24,14 +24,17 @@ in
       };
     };
     configFile.kwinrc = {
-      # Effects: "Sheet"
-      Plugins.sheetEnabled = true;
-
-      # "Navigation Wraps Around"
-      Windows.RollOverDesktops = false;
-
-      # Set the Task Switcher to "Sidebar"
-      TabBox.LayoutName = "Sidebar";
+      # desktop effects:
+      Plugins = {
+        sheetEnabled = true; # "sheet"
+        blurEnabled = false;
+        forceblurEnabled = true; # Effect-blurplus
+      };
+      Effect-blurplus = {
+        FakeBlur = true;
+        FakeBlurDisableWhenWindowBehind = false;
+        WindowClasses = "";
+      };
     };
   };
 }
