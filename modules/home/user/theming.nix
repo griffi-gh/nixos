@@ -111,15 +111,17 @@ in
 
   programs.plasma = {
     workspace = {
-      inherit wallpaper;
       # lookAndFeel = "org.kde.breezedark.desktop";
-      # lookAndFeel = "Catppuccin-${catppuccin-flavour-uppercased}-${catppuccin-accent-uppercased}";
       colorScheme = "Catppuccin${catppuccin-flavour-uppercased}${catppuccin-accent-uppercased}";
+      theme = "default";
       windowDecorations = {
         library = "org.kde.breeze";
         theme = "Breeze";
       };
-      splashScreen.theme = "Catppuccin-${catppuccin-flavour-uppercased}-${catppuccin-accent-uppercased}";
+      iconTheme = "breeze-dark";
+      inherit wallpaper;
+      splashScreen.theme = "Breeze";
+      # splashScreen.theme = "Catppuccin-${catppuccin-flavour-uppercased}-${catppuccin-accent-uppercased}";
     };
     kscreenlocker.appearance = {
       inherit wallpaper;
