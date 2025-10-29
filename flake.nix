@@ -1,33 +1,22 @@
 {
   inputs = {
-    nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixos-unstable";
-    };
-    nixpkgs-stable = {
-      url = "github:NixOS/nixpkgs/nixos-25.05";
-    };
-    nixpkgs-master = {
-      url = "github:NixOS/nixpkgs/master";
-    };
-    # nixpkgs-mesa-pinned = {
-    #   url = "github:nixos/nixpkgs?rev=6a0ba68039594c1382d503f68e71a5217b3eb1b9";
-    # };
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs-master.url = "github:NixOS/nixpkgs/master";
+
     chaotic = {
       url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
       inputs.home-manager.follows = "home-manager";
-      # inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # firefox = {
-    #   url = "github:nix-community/flake-firefox-nightly";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    firefox = {
+      url = "github:nix-community/flake-firefox-nightly";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     plasma-manager = {
       # url = "github:nix-community/plasma-manager";
       url = "github:AlexNabokikh/plasma-manager/c3da2f1d1b7047388c255fce9f17ea9aa3b01bf9";
@@ -43,10 +32,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # flake-programs-sqlite = {
-    #   url = "github:wamserma/flake-programs-sqlite";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -59,19 +44,14 @@
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware/master";
     };
-    # fw-fanctrl = {
-    #   url = "github:TamtamHero/fw-fanctrl/packaging/nix";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     kwin-system76-scheduler-integration = {
       url = "github:maxiberta/kwin-system76-scheduler-integration";
       flake = false;
-    };
-
-    lanzaboote = {
-      url = "github:nix-community/lanzaboote/v0.4.2";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 

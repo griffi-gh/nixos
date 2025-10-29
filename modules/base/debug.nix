@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  services.nixseparatedebuginfod.enable = true; # Debug symbols
+  services.nixseparatedebuginfod2.enable = true; # Debug symbols
 
   # system debugging tools
   # (must be installed system-wide for nixseparatedebuginfod to work?)

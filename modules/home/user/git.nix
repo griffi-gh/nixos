@@ -3,10 +3,10 @@
   programs.git = {
     enable = true;
     package = pkgs.gitFull;
-    userName = "griffi-gh";
-    userEmail = "prasol258@gmail.com";
     lfs.enable = true;
-    extraConfig = {
+    settings = {
+      user.name = "griffi-gh";
+      user.email = "prasol258@gmail.com";
       init.defaultBranch = "master";
       commit.verbose = true;
       pull.rebase = true;
@@ -25,11 +25,10 @@
       "*.kate-swp"
     ];
   };
-  programs.git.delta = {
+  programs.delta = {
     enable = true;
-    options = {
-      features = "decorations";
-    };
+    enableGitIntegration = true;
+    options.features = "decorations";
   };
   programs.gh = {
     enable = true;

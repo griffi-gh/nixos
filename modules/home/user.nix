@@ -82,21 +82,16 @@
         # Software:
         vlc' # VLC Media Player
         snapshot # Gnome'amera App
-        # libreoffice-fresh     # LibreOffice (GTK)
         libreoffice-qt6-fresh # LibreOffice (Qt6)
-        # libreoffice-x11       # LibreOffice (Qt6-X11)
-        # transmission_4-qt6    # Transmission (Qt)
         qbittorrent # qBittorrent
         okteta # Okteta (hex editor)
         imhex # imhex  (hex editor)
-        # DISABLED BECAUSE OF BUILD FAILURE IN node-env
-        # apostrophe            # GTK Markdown editor
+        # apostrophe # GTK Markdown editor
         obs-studio # OBS Studio (streaming/recording tool)
         logisim-evolution # Logisim Evolution (digital logic simulator)
         pomodoro-gtk # GTK Pomodoro Timer
         # stremio # Stremio (media center)
         parsec-bin # Parsec (game streaming)
-        # tidal-hifi            # tidal hifi electron music player thingy
 
         # Bitwarden
         bitwarden-desktop # BitWarden Desktop client
@@ -185,7 +180,7 @@
         cemu
         mgba # mGBA (GB/GBC/GBA)
         melonDS # MelonDS (DS)
-        azahar # Citra/3ds
+        # azahar # Citra/3ds
         # vita3k is not in nixpkgs :<
 
         # Stuff i need for uni:
@@ -197,8 +192,8 @@
         # stuff i maintain (built from master)
         pkgs-master.ocelot-desktop
         pkgs-master.earbuds # Samsung Galaxy Buds (earbuds cli)
-        pkgs-master.zepp-simulator
         pkgs-master.high-tide # High Tide (Tidal client)
+        # pkgs-master.zepp-simulator
 
         dbeaver-bin
       ];
