@@ -53,6 +53,10 @@
       url = "github:maxiberta/kwin-system76-scheduler-integration";
       flake = false;
     };
+    kwin-effects-forceblur = {
+      url = "github:taj-ny/kwin-effects-forceblur";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

@@ -1,13 +1,18 @@
 { ... }:
 let
-  outOfTreePlugin = name: {
-    home.file.".local/share/kwin/effects/${name}" = {
-      source = ../../../../assets/kwin/plugins/${name}/package;
+  outOfTreePlugin =
+    name:
+    { ... }:
+    {
+      home.file.".local/share/kwin/effects/${name}" = {
+        source = ../../../../assets/kwin/plugins/${name}/package;
+      };
     };
-  };
 in
-outOfTreePlugin "morphingpopups"
-// {
+{
+  imports = [
+    (outOfTreePlugin "morphingpopups")
+  ];
   programs.plasma = {
     kwin = {
       virtualDesktops = {

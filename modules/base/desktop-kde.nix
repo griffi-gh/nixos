@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   # desktop nya :3
   services.displayManager.sddm = {
@@ -33,6 +33,8 @@
 
   # extra stuff
   environment.systemPackages = with pkgs.kdePackages; [
+    inputs.kwin-effects-forceblur.packages.${pkgs.system}.default
+
     kdbusaddons
     plasma-browser-integration
     plasma-vault
