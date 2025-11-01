@@ -147,8 +147,8 @@
         # Enable WebRender on all devices
         "gfx.webrender.all" = true;
         "gfx.webrender.batched-texture-uploads" = true;
-        "gfx.webrender.compositor" = true; # Use native WL compositor
-        "gfx.webrender.compositor.force-enabled" = true;
+        # "gfx.webrender.compositor" = true; # Use native WL compositor
+        # "gfx.webrender.compositor.force-enabled" = true;
         "gfx.webrender.fallback.software" = false; # Disable software fallback
         # Enable shader caching:
         "gfx.webrender.program-binary-disk" = true;
