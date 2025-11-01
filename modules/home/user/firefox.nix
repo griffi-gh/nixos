@@ -147,8 +147,8 @@
         # Enable WebRender on all devices
         "gfx.webrender.all" = true;
         "gfx.webrender.batched-texture-uploads" = true;
-        # "gfx.webrender.compositor" = true; # Use native WL compositor
-        # "gfx.webrender.compositor.force-enabled" = true;
+        "gfx.webrender.compositor" = true; # Use native WL compositor
+        "gfx.webrender.compositor.force-enabled" = true;
         "gfx.webrender.fallback.software" = false; # Disable software fallback
         # Enable shader caching:
         "gfx.webrender.program-binary-disk" = true;
@@ -256,7 +256,7 @@
         "browser.newtabpage.activity-stream.asrouter.userprefs.cfr" = false;
 
         # Disable Breakpad (crash reporting)
-        "breakpad.reportURL" = "";
+        # "breakpad.reportURL" = "";
 
         # Disable health reporting
         "datareporting.healthreport.uploadEnabled" = false;
@@ -380,7 +380,7 @@
         # makes window controls janky and disappear
         # "widget.dmabuf-textures.enabled" = true;
         # holes in pages???:
-        # "widget.dmabuf.force-enabled" = true;
+        "widget.dmabuf.force-enabled" = true;
         # "widget.dmabuf-export.force-enabled" = true;
 
         "browser.tabs.fadeOutUnloadedTabs" = true;

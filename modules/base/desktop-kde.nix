@@ -37,7 +37,7 @@
 
     kdbusaddons
     plasma-browser-integration
-    plasma-vault
+    # plasma-vault
     kaccounts-integration
     kaccounts-providers
     qtimageformats
